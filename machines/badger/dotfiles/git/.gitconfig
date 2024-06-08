@@ -1,0 +1,26 @@
+[init]
+defaultBranch = main
+
+[user]
+name = Jens Meindertsma
+email = mail@jensmeindertsma.com
+	signingKey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEG0u2sQkfE5QvH8xv7ZaY4lvca3aAZQX1cljJmNsNqx jens@badger
+
+[push]
+autoSetupRemote = true
+followTags = true
+
+[alias]
+setup = !git commit --allow-empty -m 'Initial commit' && git push
+
+[pull]
+rebase = false
+
+[commit]
+	gpgsign = true
+[tag]
+	gpgsign = true
+[gpg]
+	format = ssh
+[gpg "ssh"]
+	allowedSignersFile = /Users/jens/.config/git/allowed_signers
