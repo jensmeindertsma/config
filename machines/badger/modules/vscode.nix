@@ -2,7 +2,6 @@ nix-vscode-extensions: {pkgs, ...}: {
   home.packages = with pkgs; [
     alejandra
     nil
-    python3
     ruff
   ];
 
