@@ -14,9 +14,12 @@ nix-vscode-extensions: {pkgs, ...}: {
       vscode-marketplace.arrterian.nix-env-selector
       vscode-marketplace.charliermarsh.ruff
       vscode-marketplace.esbenp.prettier-vscode
+      vscode-marketplace.github.github-vscode-theme
       vscode-marketplace.jdinhlife.gruvbox
       vscode-marketplace.jnoortheen.nix-ide
+      vscode-marketplace.usernamehw.errorlens
       vscode-marketplace.ms-python.python
+      vscode-marketplace.ms-vscode-remote.remote-ssh
       vscode-marketplace.skellock.just
     ];
 
@@ -51,8 +54,8 @@ nix-vscode-extensions: {pkgs, ...}: {
       window.titleBarStyle = "native";
       window.zoomLevel = 0.1;
       workbench.layoutControl.enabled = false;
-      workbench.preferredLightColorTheme = "Gruvbox Light Hard";
-      workbench.preferredDarkColorTheme = "Gruvbox Dark Hard";
+      workbench.preferredLightColorTheme = "GitHub Light";
+      workbench.preferredDarkColorTheme = "GitHub Dark";
       workbench.startupEditor = "none";
       "[markdown]".editor.defaultFormatter = "esbenp.prettier-vscode";
       "[python]".editor.defaultFormatter = "charliermarsh.ruff";
