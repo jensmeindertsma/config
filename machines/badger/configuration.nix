@@ -9,6 +9,8 @@
   nixpkgs.hostPlatform = "aarch64-darwin";
   nixpkgs.config.allowUnfree = true;
 
+  security.pam.enableSudoTouchIdAuth = true;
+
   users.users.jens = {
     home = "/Users/Jens";
   };
