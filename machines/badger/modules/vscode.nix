@@ -20,6 +20,7 @@ nix-vscode-extensions: {...}: {
       editor.inlayHints.enabled = "offUnlessPressed";
       editor.minimap.enabled = false;
       explorer.confirmDragAndDrop = false;
+      git.autofetch = true;
       git.confirmSync = false;
       nix.enableLanguageServer = true;
       nix.serverPath = "nil";
