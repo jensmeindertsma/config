@@ -2,30 +2,33 @@
   description = "A single (snow)flake that produces all my configuration for all my devices";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";
-    nixpkgs-darwin.url = "github:nixos/nixpkgs/nixpkgs-23.11-darwin";
-    
-    nix-darwin.url = "github:lnl7/nix-darwin";
-    nix-darwin.inputs.nixpkgs.follows = "nixpkgs-darwin";
+    nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-24.05-darwin";
 
-    home-manager.url = "github:nix-community/home-manager/release-23.11";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    nix-darwin = {
+      url = "github:lnl7/nix-darwin";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    home-manager = {
+      url = "github:nix-community/home-manager/release-24.05";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
   };
 
-  outputs = inputs@{ self, nixpkgs, nixpkgs-darwin, nix-darwin, home-manager }:
-  {
-    # nixosConfigurations.vanguard = nixpkgs.lib.nixosSystem {
-    #     system = "x86_64-linux";
-    #     modules = [
-    #       home-manager.nixosModules.home-manager
-    #       ./machines/vanguard/configuration.nix
-    #     ];
-    #   };
+  outputs = inputs @ {
+    self,
+    nixpkgs,
+    nix-darwin,
+    home-manager,
+    nix-vscode-extensions
+  }: {
     darwinConfigurations.badger = nix-darwin.lib.darwinSystem {
       system = "aarch64-darwin";
-      modules = [ 
+      modules = [
         home-manager.darwinModules.home-manager
-        ./machines/badger/configuration.nix
+        (import ./machines/badger/configuration.nix inputs)
       ];
     };
   };
