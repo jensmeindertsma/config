@@ -1,17 +1,27 @@
-nix-vscode-extensions: {...}: {
+nix-vscode-extensions: {pkgs, ...}: {
+  home.packages = with pkgs; [
+    alejandra
+    nil
+    python3
+    ruff
+  ];
+
   programs.vscode = {
     enable = true;
 
     extensions = with nix-vscode-extensions.extensions.aarch64-darwin; [
       open-vsx-release.rust-lang.rust-analyzer
       vscode-marketplace.arrterian.nix-env-selector
+      vscode-marketplace.charliermarsh.ruff
+      vscode-marketplace.esbenp.prettier-vscode
       vscode-marketplace.jdinhlife.gruvbox
       vscode-marketplace.jnoortheen.nix-ide
       vscode-marketplace.ms-python.python
-      vscode-marketplace.charliermarsh.ruff
+      vscode-marketplace.skellock.just
     ];
 
     userSettings = {
+      editor.codeActionsOnSave.source.fixAll = "enabled";
       editor.codeLens = false;
       editor.fontFamily = "'JetBrainsMono Nerd Font', monospace";
       editor.fontLigatures = true;
@@ -31,6 +41,7 @@ nix-vscode-extensions: {...}: {
           };
         };
       };
+      ruff.nativeServer = true;
       rust-analyzer.check.command = "clippy";
       security.workspace.trust.untrustedFiles = "open";
       terminal.integrated.fontSize = 17;
@@ -43,6 +54,8 @@ nix-vscode-extensions: {...}: {
       workbench.preferredLightColorTheme = "Gruvbox Light Hard";
       workbench.preferredDarkColorTheme = "Gruvbox Dark Hard";
       workbench.startupEditor = "none";
+      "[markdown]".editor.defaultFormatter = "esbenp.prettier-vscode";
+      "[python]".editor.defaultFormatter = "charliermarsh.ruff";
     };
   };
 }

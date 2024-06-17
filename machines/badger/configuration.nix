@@ -36,7 +36,6 @@
     programs.home-manager.enable = true;
 
     home.packages = with pkgs; [
-      alejandra
       bat
       btop
       cowsay
@@ -45,16 +44,9 @@
       dua
       eza
       gh
-      gnupg
       just
-      license-generator
       neofetch
       neovim
-      nil
-      python3
-      ruff
-      starship
-      stow
       tmux
     ];
 
