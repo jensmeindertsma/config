@@ -10,22 +10,22 @@ nix-vscode-extensions: {pkgs, ...}: {
 
     extensions = with nix-vscode-extensions.extensions.aarch64-darwin; [
       open-vsx-release.rust-lang.rust-analyzer
-      vscode-marketplace.arrterian.nix-env-selector
       vscode-marketplace.charliermarsh.ruff
       vscode-marketplace.esbenp.prettier-vscode
       vscode-marketplace.github.github-vscode-theme
       vscode-marketplace.jdinhlife.gruvbox
       vscode-marketplace.jnoortheen.nix-ide
-      vscode-marketplace.usernamehw.errorlens
+      vscode-marketplace.mkhl.direnv
       vscode-marketplace.ms-python.python
       vscode-marketplace.ms-vscode-remote.remote-ssh
+      vscode-marketplace.usernamehw.errorlens
       vscode-marketplace.skellock.just
     ];
 
     userSettings = {
       editor.codeActionsOnSave.source.fixAll = "enabled";
       editor.codeLens = false;
-      editor.fontFamily = "'JetBrainsMono Nerd Font', monospace";
+      editor.fontFamily = "'JetBrainsMono Nerd Font Mono', monospace";
       editor.fontLigatures = true;
       editor.fontSize = 18;
       editor.formatOnSave = true;
@@ -43,11 +43,12 @@ nix-vscode-extensions: {pkgs, ...}: {
           };
         };
       };
+      python.terminal.activateEnvironment = false;
       ruff.nativeServer = true;
       rust-analyzer.check.command = "clippy";
       security.workspace.trust.untrustedFiles = "open";
       terminal.integrated.fontSize = 17;
-      terminal.integrated.shellIntegration.decorationsEnabled = "never";
+      terminal.integrated.shellIntegration.enabled = false;
       window.autoDetectColorScheme = true;
       window.commandCenter = false;
       window.titleBarStyle = "native";
@@ -56,6 +57,8 @@ nix-vscode-extensions: {pkgs, ...}: {
       workbench.preferredLightColorTheme = "GitHub Light";
       workbench.preferredDarkColorTheme = "GitHub Dark";
       workbench.startupEditor = "none";
+      "[json]".editor.defaultFormatter = "esbenp.prettier-vscode";
+      "[jsonc]".editor.defaultFormatter = "esbenp.prettier-vscode";
       "[markdown]".editor.defaultFormatter = "esbenp.prettier-vscode";
       "[python]".editor.defaultFormatter = "charliermarsh.ruff";
     };

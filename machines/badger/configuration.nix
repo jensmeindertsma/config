@@ -19,9 +19,12 @@
     git
   ];
 
-  fonts.fonts = with pkgs; [
-    (nerdfonts.override {fonts = ["JetBrainsMono"];})
-  ];
+  fonts = {
+    fontDir.enable = true;
+    fonts = with pkgs; [
+      (nerdfonts.override {fonts = ["JetBrainsMono"];})
+    ];
+  };
 
   programs.zsh.enable = true;
 
@@ -51,9 +54,9 @@
 
     imports = [
       ./modules/git.nix
+      ./modules/shell.nix
       ./modules/ssh.nix
       (import ./modules/vscode.nix nix-vscode-extensions)
-      ./modules/zsh.nix
     ];
   };
 }
