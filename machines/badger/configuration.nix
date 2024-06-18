@@ -28,6 +28,10 @@
 
   programs.zsh.enable = true;
 
+  imports = [
+    ./system/apps.nix
+  ];
+
   home-manager.useGlobalPkgs = true;
   home-manager.useUserPackages = true;
 
@@ -53,10 +57,10 @@
     ];
 
     imports = [
-      ./modules/git.nix
-      ./modules/shell.nix
-      ./modules/ssh.nix
-      (import ./modules/vscode.nix nix-vscode-extensions)
+      ./home/git.nix
+      ./home/shell.nix
+      ./home/ssh.nix
+      (import ./home/vscode.nix nix-vscode-extensions)
     ];
   };
 }
