@@ -34,7 +34,6 @@
 
   home-manager.useGlobalPkgs = true;
   home-manager.useUserPackages = true;
-
   home-manager.users.jens = {pkgs, ...}: {
     home.stateVersion = "24.05";
 

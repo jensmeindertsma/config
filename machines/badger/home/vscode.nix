@@ -3,6 +3,7 @@ nix-vscode-extensions: {pkgs, ...}: {
     alejandra
     nil
     ruff
+    rust-analyzer
   ];
 
   programs.vscode = {
@@ -20,6 +21,7 @@ nix-vscode-extensions: {pkgs, ...}: {
       vscode-marketplace.ms-vscode-remote.remote-ssh
       vscode-marketplace.usernamehw.errorlens
       vscode-marketplace.skellock.just
+      vscode-marketplace.tamasfe.even-better-toml
     ];
 
     userSettings = {
