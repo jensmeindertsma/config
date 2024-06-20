@@ -1,20 +1,25 @@
 {...}: {
   programs.ssh = {
     enable = true;
-    addKeysToAgent = "yes";
-    extraConfig = ''
-      Host github.com
-        IdentityFile    ~/.ssh/id_ed25519
-        AddKeysToAgent  yes
-        UseKeychain     yes
+    matchBlocks = {
+      "github.com" = {
+        identityFile = "~/.ssh/id_ed25519";
+        extraOptions = {
+          AddKeysToAgent = "yes";
+          UseKeychain = "yes";
+        };
+      };
 
-      Host ubuntu
-        HostName        127.0.0.1
-        Port            2001
-        User            jens
-        ForwardAgent    yes
-        AddKeysToAgent  yes
-        UseKeychain     yes
-    '';
+      ubuntu = {
+        hostname = "127.0.0.1";
+        port = 2001;
+        user = "jens";
+        forwardAgent = true;
+        extraOptions = {
+          AddKeysToAgent = "yes";
+          UseKeychain = "yes";
+        };
+      };
+    };
   };
 }
