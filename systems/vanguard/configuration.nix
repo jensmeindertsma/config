@@ -1,4 +1,4 @@
-{nix-vscode-extensions, ...}: {
+{
   config,
   pkgs,
   ...
@@ -21,14 +21,14 @@
 
   fonts = {
     packages = with pkgs; [
-      (nerdfonts.override {fonts = ["JetBrainsMono"];})
+      jetbrains-mono
     ];
   };
 
   programs.zsh.enable = true;
 
   imports = [
-    ./system/apps.nix
+    ./apps.nix
   ];
 
   home-manager.useGlobalPkgs = true;
@@ -58,7 +58,7 @@
       ./home/git.nix
       ./home/shell.nix
       ./home/ssh.nix
-      (import ./home/vscode.nix nix-vscode-extensions)
+      ./home/vscode.nix
     ];
   };
 }

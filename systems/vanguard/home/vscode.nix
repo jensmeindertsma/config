@@ -1,4 +1,4 @@
-nix-vscode-extensions: {pkgs, ...}: {
+{pkgs, ...}: {
   home.packages = with pkgs; [
     alejandra
     nil
@@ -9,25 +9,10 @@ nix-vscode-extensions: {pkgs, ...}: {
   programs.vscode = {
     enable = true;
 
-    extensions = with nix-vscode-extensions.extensions.aarch64-darwin; [
-      open-vsx-release.rust-lang.rust-analyzer
-      vscode-marketplace.charliermarsh.ruff
-      vscode-marketplace.esbenp.prettier-vscode
-      vscode-marketplace.github.github-vscode-theme
-      vscode-marketplace.jdinhlife.gruvbox
-      vscode-marketplace.jnoortheen.nix-ide
-      vscode-marketplace.mkhl.direnv
-      vscode-marketplace.ms-python.python
-      vscode-marketplace.ms-vscode-remote.remote-ssh
-      vscode-marketplace.usernamehw.errorlens
-      vscode-marketplace.skellock.just
-      vscode-marketplace.tamasfe.even-better-toml
-    ];
-
     userSettings = {
       editor.codeActionsOnSave.source.fixAll = "enabled";
       editor.codeLens = false;
-      editor.fontFamily = "'JetBrainsMono Nerd Font Mono', monospace";
+      editor.fontFamily = "'JetBrains Mono', monospace";
       editor.fontLigatures = true;
       editor.fontSize = 18;
       editor.formatOnSave = true;
