@@ -3,7 +3,7 @@
   pkgs,
   ...
 }: {
-  system.stateVersion = 4;
+  
   services.nix-daemon.enable = true;
   nix.settings.experimental-features = "nix-command flakes";
   nixpkgs.hostPlatform = "aarch64-darwin";
@@ -27,9 +27,35 @@
 
   programs.zsh.enable = true;
 
-  imports = [
-    ./apps.nix
-  ];
+  homebrew = {
+    enable = true;
+    onActivation.cleanup = "uninstall";
+
+    casks = [
+      "aldente"
+      "bitwarden"
+      "discord"
+      "docker"
+      "firefox"
+      "google-chrome"
+      "hot"
+      "iterm2"
+      "notion"
+      "microsoft-teams"
+      "monitorcontrol"
+      "protonvpn"
+      "proton-drive"
+      "protonmail-bridge"
+      "signal"
+      "spotify"
+      "utm"
+      "whatsapp"
+    ];
+
+    masApps = {
+      "QuickShade" = 931571202;
+    };
+  };
 
   home-manager.useGlobalPkgs = true;
   home-manager.useUserPackages = true;
@@ -54,11 +80,12 @@
       tmux
     ];
 
+    programs.vscode.enable = true;
+
     imports = [
       ./home/git.nix
       ./home/shell.nix
       ./home/ssh.nix
-      ./home/vscode.nix
     ];
   };
 }
