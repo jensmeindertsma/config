@@ -86,6 +86,7 @@
       ./home/git.nix
       ./home/shell.nix
       ./home/ssh.nix
+      ./home/vscode.nix
     ];
   };
 }
