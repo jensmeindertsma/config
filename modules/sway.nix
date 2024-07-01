@@ -1,8 +1,11 @@
 {
+  pkgs,
   config,
   lib,
   ...
 }: {
+  home.packages = with pkgs; [brightnessctl];
+
   wayland.windowManager.sway = {
     enable = true;
     package = null;
@@ -28,7 +31,7 @@
       };
       output = {
         "*" = {
-          background = "~/Pictures/Wallpapers/1.jpg fill";
+          background = "~/Pictures/Wallpapers/2.jpg fill";
         };
       };
       keybindings = let
@@ -43,8 +46,8 @@
           "XF86AudioMicMute" = "exec 'pactl set-source-mute @DEFAULT_SOURCE@ toggle'";
           "XF86AudioMute" = "exec 'pactl set-sink-mute @DEFAULT_SINK@ toggle'";
           "XF86AudioRaiseVolume" = "exec 'pactl set-sink-volume @DEFAULT_SINK@ +1%'";
-          "XF86MonBrightnessDown" = "exec 'light -U 5%'";
-          "XF86MonBrightnessUp" = "exec 'light -A 5%'";
+          "XF86MonBrightnessDown" = "exec 'brightnessctl set 5%-'";
+          "XF86MonBrightnessUp" = "exec 'brightnessctl set +5%'";
         };
       bars = [
         {
