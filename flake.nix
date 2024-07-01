@@ -28,6 +28,7 @@
         ./systems/vanguard/configuration.nix
       ];
     };
+
     homeConfigurations = let
       homeManager = system: modules:
         home-manager.lib.homeManagerConfiguration {
