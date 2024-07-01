@@ -66,9 +66,6 @@
   programs.ssh = {
     enable = true;
     addKeysToAgent = "yes";
-    extraOptionOverrides = {
-      "AddKeysToAgent" = "yes";
-    };
     matchBlocks = ssh.hosts;
   };
 
