@@ -118,7 +118,7 @@
   home.file = {
     ".config/git/allowed_signers" = {
       text = ''
-        mail@jensmeindertsma.com ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEG0u2sQkfE5QvH8xv7ZaY4lvca3aAZQX1cljJmNsNqx jens@vanguard
+        mail@jensmeindertsma.com
         mail@jensmeindertsma.com ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJhI5sNxApLWYWOKljGuaVzt/6rsAVlAlb2lKv0nPHyD jens@wyvern
       '';
     };
