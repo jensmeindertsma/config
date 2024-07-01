@@ -34,6 +34,10 @@ in {
         }
       ];
       input = {
+        "type:touchpad" = {
+          natural_scroll = "enabled";
+          tap = "enabled";
+        };
         "type:keyboard" = {
           xkb_options = "compose:ralt";
         };
@@ -63,12 +67,12 @@ in {
           command = "waybar";
         }
       ];
-      swaynag.enable = true;
       window = {
         border = 0;
         titlebar = false;
       };
     };
+    swaynag.enable = true;
   };
 
   home.file.sway-toggle-theme = {
@@ -76,4 +80,10 @@ in {
     target = ".config/sway/toggle.theme.sh";
     executable = true;
   };
+
+  imports = [
+    ./sway/kitty.nix
+    ./sway/fuzzel.nix
+    ./sway/waybar.nix
+  ];
 }

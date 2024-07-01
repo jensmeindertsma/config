@@ -19,7 +19,10 @@ in {
   programs.kitty = {
     enable = true;
     package = nixGLWrap pkgs.kitty;
-    font_size = 14;
+    font = {
+      size = 14;
+      name = "monospace";
+    };
     settings = {
       enable_audio_bell = "no";
     };

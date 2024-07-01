@@ -1,4 +1,5 @@
-./modules/home.nix {
+import ../../modules/home.nix {
+  imports = [../../modules/sway.nix];
   username = "jens";
   homeDirectory = "/home/jens";
   aliases = {

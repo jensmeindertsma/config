@@ -54,7 +54,6 @@
         };
     in {
       wyvern = homeManager "x86_64-linux" [
-        import
         ./systems/wyvern/home.nix
       ];
     };

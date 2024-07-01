@@ -16,6 +16,7 @@ window#waybar {
 
 button {
     border: none;
+    color: @text;
 }
 
 button:hover {

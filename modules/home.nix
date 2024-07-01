@@ -3,6 +3,7 @@
   homeDirectory,
   ssh,
   username,
+  imports,
 }: {pkgs, ...}: {
   home = {
     stateVersion = "24.11";
@@ -168,4 +169,6 @@
       "[python]".editor.defaultFormatter = "charliermarsh.ruff";
     };
   };
+
+  imports = imports;
 }
