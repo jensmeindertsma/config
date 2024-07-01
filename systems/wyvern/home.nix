@@ -1,5 +1,50 @@
 import ../../modules/home.nix {
-  imports = [../../modules/sway.nix];
+  imports = [
+    ../../modules/sway.nix
+    ../../modules/fontconfig.nix
+    ({pkgs, ...}: {
+      home.packages = with pkgs; [
+        bluetuith
+        bluez
+        bluez-tools
+        dmidecode
+        htop
+        networkmanagerapplet
+        pavucontrol
+        roboto
+        spotify
+        unzip
+        virt-manager
+        wev
+        wget
+        wl-clipboard
+      ];
+
+      xdg = {
+        enable = true;
+        userDirs = {
+          enable = true;
+          createDirectories = true;
+        };
+        portal = {
+          enable = true;
+          xdgOpenUsePortal = true;
+          extraPortals = with pkgs; [
+            xdg-desktop-portal-wlr
+            xdg-desktop-portal-gtk
+          ];
+          config = {
+            common.default = "*";
+          };
+        };
+
+        # TODO: move .desktop files here.
+        desktopEntries = {};
+      };
+
+      programs.firefox.enable = true;
+    })
+  ];
   username = "jens";
   homeDirectory = "/home/jens";
   aliases = {

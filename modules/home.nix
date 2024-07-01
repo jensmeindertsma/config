@@ -31,6 +31,7 @@
     neofetch
     neovim
     nil
+    ripgrep
     ruff
     rust-analyzer
     tmux
@@ -46,8 +47,6 @@
         cat = "bat";
         el = "eza -l";
         ela = "eza -la";
-        ll = "eza -l";
-        ls = "eza";
         mit = "license-generator mit --author 'Jens Meindertsma' --output LICENSE.md";
       }
       // aliases;
