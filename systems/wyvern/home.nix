@@ -22,22 +22,6 @@ import ../../modules/home.nix {
 
       xdg = {
         enable = true;
-        userDirs = {
-          enable = true;
-          createDirectories = true;
-        };
-        portal = {
-          enable = true;
-          xdgOpenUsePortal = true;
-          extraPortals = with pkgs; [
-            xdg-desktop-portal-wlr
-            xdg-desktop-portal-gtk
-          ];
-          config = {
-            common.default = "*";
-          };
-        };
-
         # TODO: move .desktop files here.
         desktopEntries = {};
       };

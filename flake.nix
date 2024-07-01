@@ -13,11 +13,6 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    nixgl = {
-      url = "github:nix-community/nixgl";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs = {
@@ -25,7 +20,6 @@
     nixpkgs,
     nix-darwin,
     home-manager,
-    nixgl,
   }: {
     darwinConfigurations.vanguard = nix-darwin.lib.darwinSystem {
       system = "aarch64-darwin";
@@ -37,19 +31,7 @@
     homeConfigurations = let
       homeManager = system: modules:
         home-manager.lib.homeManagerConfiguration {
-          pkgs = import nixpkgs {
-            inherit system;
-            overlays = [
-              nixgl.overlay
-              (final: prev: {
-                lib =
-                  prev.lib
-                  // {
-                    foo = bar: "baz";
-                  };
-              })
-            ];
-          };
+          pkgs = nixpkgs.legacyPackages.${system};
           modules = modules;
         };
     in {
