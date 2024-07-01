@@ -1,9 +1,4 @@
-{
-  config,
-  pkgs,
-  ...
-}: {
-  
+({pkgs, ...}: {
   services.nix-daemon.enable = true;
   nix.settings.experimental-features = "nix-command flakes";
   nixpkgs.hostPlatform = "aarch64-darwin";
@@ -14,10 +9,6 @@
   users.users.jens = {
     home = "/Users/Jens";
   };
-
-  environment.systemPackages = with pkgs; [
-    git
-  ];
 
   fonts = {
     packages = with pkgs; [
@@ -59,34 +50,5 @@
 
   home-manager.useGlobalPkgs = true;
   home-manager.useUserPackages = true;
-  home-manager.users.jens = {pkgs, ...}: {
-    home.stateVersion = "24.05";
-
-    # Let `home-manager` install and manage itself.
-    programs.home-manager.enable = true;
-
-    home.packages = with pkgs; [
-      bat
-      btop
-      cowsay
-      dive
-      doctl
-      dua
-      eza
-      gh
-      just
-      neofetch
-      neovim
-      tmux
-    ];
-
-    programs.vscode.enable = true;
-
-    imports = [
-      ./home/git.nix
-      ./home/shell.nix
-      ./home/ssh.nix
-      ./home/vscode.nix
-    ];
-  };
-}
+  home-manager.users.jens = import ./home.nix;
+})
