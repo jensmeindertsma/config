@@ -30,4 +30,9 @@ in {
       include theme.conf
     '';
   };
+
+  programs.zsh.shellAliases = {
+    s = "kitten ssh";
+    ssh = "kitten ssh";
+  };
 }

@@ -77,7 +77,7 @@ in {
 
   home.file.sway-toggle-theme = {
     source = ./sway/toggle-theme.sh;
-    target = ".config/sway/toggle.theme.sh";
+    target = ".config/sway/toggle-theme.sh";
     executable = true;
   };
 

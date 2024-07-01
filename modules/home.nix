@@ -43,11 +43,12 @@
     enable = true;
     shellAliases =
       {
+        cat = "bat";
         el = "eza -l";
         ela = "eza -la";
+        ll = "eza -l";
+        ls = "eza";
         mit = "license-generator mit --author 'Jens Meindertsma' --output LICENSE.md";
-        s = "kitten ssh";
-        ssh = "kitten ssh";
       }
       // aliases;
   };
