@@ -13,6 +13,11 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nixgl = {
+      url = "github:nix-community/nixgl";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
@@ -20,6 +25,7 @@
     nixpkgs,
     nix-darwin,
     home-manager,
+    nixgl,
   }: {
     darwinConfigurations.vanguard = nix-darwin.lib.darwinSystem {
       system = "aarch64-darwin";
@@ -29,59 +35,28 @@
       ];
     };
     homeConfigurations = let
-      homeManager = system: module:
+      homeManager = system: modules:
         home-manager.lib.homeManagerConfiguration {
-          pkgs = nixpkgs.legacyPackages.${system};
-          modules = [module];
+          pkgs = import nixpkgs {
+            inherit system;
+            overlays = [
+              nixgl.overlay
+              (final: prev: {
+                lib =
+                  prev.lib
+                  // {
+                    foo = bar: "baz";
+                  };
+              })
+            ];
+          };
+          modules = modules;
         };
     in {
-      wyvern = homeManager "x86_64-linux" (import ./modules/home.nix {
-        username = "jens";
-        homeDirectory = "/home/jens";
-        aliases = {
-          reflect = "sudo systemctl start reflector";
-        };
-        ssh = {
-          public_key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJhI5sNxApLWYWOKljGuaVzt/6rsAVlAlb2lKv0nPHyD jens@wyvern";
-          hosts = {
-            devbox = {
-              hostname = "192.168.122.66";
-              user = "jens";
-              forwardAgent = true;
-            };
-
-            "iv/ubuntu" = {
-              hostname = "192.168.100.211";
-              user = "jens";
-            };
-
-            "iv/fedora" = {
-              hostname = "192.168.100.133";
-              user = "jens";
-            };
-
-            "l+/ubuntu" = {
-              hostname = "192.168.101.167";
-              user = "jens";
-            };
-
-            "l+/fedora" = {
-              hostname = "192.168.101.240";
-              user = "jens";
-            };
-
-            "l+/suse" = {
-              hostname = "192.168.101.152";
-              user = "jens";
-            };
-
-            "l+/rocky" = {
-              hostname = "192.168.101.215";
-              user = "jens";
-            };
-          };
-        };
-      });
+      wyvern = homeManager "x86_64-linux" [
+        import
+        ./systems/wyvern/home.nix
+      ];
     };
   };
 }
