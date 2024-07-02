@@ -1,8 +1,8 @@
 {
-  shell ? { aliases = {}; },
+  shell ? {aliases = {};},
   ssh,
   config,
-  imports ? []
+  imports ? [],
 }: {pkgs, ...}: {
   home = {
     stateVersion = "24.11";
@@ -15,7 +15,8 @@
 
   # Let `home-manager` install and manage itself.
   programs.home-manager.enable = true;
-	
+
+  # TODO load config.modules
   imports = imports;
 
   home.packages = with pkgs; [
@@ -70,7 +71,7 @@
     addKeysToAgent = "yes";
     matchBlocks = ssh.hosts;
   };
- 
+
   programs.git = {
     enable = true;
 

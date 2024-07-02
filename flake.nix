@@ -77,6 +77,26 @@
           (import
             ./modules/fontconfig.nix)
           (import ./modules/nvim.nix)
+          ({pkgs, ...}: {
+            home.packages = with pkgs; [
+              bluetuith
+              dmidecode
+              htop
+              networkmanagerapplet
+              pavucontrol
+              roboto
+              spotify
+              unzip
+              virt-manager
+              wev
+              wget
+              wl-clipboard
+            ];
+
+            services.ssh-agent.enable = true;
+
+            programs.firefox.enable = true;
+          })
         ];
     };
   };
