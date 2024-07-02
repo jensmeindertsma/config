@@ -77,6 +77,7 @@
           (import
             ./modules/fontconfig.nix)
           (import ./modules/nvim.nix)
+          (import ./modules/vscode.nix)
           ({pkgs, ...}: {
             home.packages = with pkgs; [
               bluetuith
@@ -98,9 +99,26 @@
             programs.firefox.enable = true;
 
             programs.zsh.initExtra = ''
-              export NVM_DIR="$HOME/.nvm"
-              [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-              [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+                            ZINIT_HOME="''${XDG_DATA_HOME:-''${HOME}/.local/share}/zinit/zinit.git"
+                            [ ! -d $ZINIT_HOME ] && mkdir -p "$(dirname $ZINIT_HOME)"
+                            [ ! -d $ZINIT_HOME/.git ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
+                            source "''${ZINIT_HOME}/zinit.zsh"
+
+                            export NVM_LAZY_LOAD=true
+                            zinit load "lukechilds/zsh-nvm"
+                            zinit load "zsh-users/zsh-autosuggestions"
+
+              # Bind UP and DOWN arrow keys to beginning search
+              bindkey '^[[A' history-beginning-search-backward
+              bindkey '^[[B' history-beginning-search-forward
+
+              # Enable the necessary widgets for history search
+              autoload -U up-line-or-beginning-search
+              autoload -U down-line-or-beginning-search
+              zle -N history-beginning-search-backward up-line-or-beginning-search
+              zle -N history-beginning-search-forward down-line-or-beginning-search
+
+
             '';
           })
         ];
