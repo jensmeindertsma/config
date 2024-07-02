@@ -1,18 +1,22 @@
 {
-  shell ? {},
+  shell ? { aliases = {}; },
   ssh,
   config,
+  imports ? []
 }: {pkgs, ...}: {
   home = {
     stateVersion = "24.11";
     username = config.username;
     homeDirectory = config.homeDirectory;
+    enableNixpkgsReleaseCheck = false;
   };
 
   nixpkgs.config.allowUnfree = true;
 
   # Let `home-manager` install and manage itself.
   programs.home-manager.enable = true;
+	
+  imports = imports;
 
   home.packages = with pkgs; [
     alejandra
@@ -66,9 +70,7 @@
     addKeysToAgent = "yes";
     matchBlocks = ssh.hosts;
   };
-
-  services.ssh-agent.enable = true;
-
+ 
   programs.git = {
     enable = true;
 

@@ -3,10 +3,11 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-darwin.url = "github:nixos/nixpkgs/nixpkgs-24.05-darwin";
 
     nix-darwin = {
       url = "github:lnl7/nix-darwin";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs-darwin";
     };
 
     home-manager = {
@@ -18,21 +19,22 @@
   outputs = {
     self,
     nixpkgs,
+    nixpkgs-darwin,
     nix-darwin,
     home-manager,
   }: {
-    darwinConfigurations.vanguard = nix-darwin.lib.darwinSystem {
-      system = "aarch64-darwin";
-      modules = [
-        home-manager.darwinModules.home-manager
-        ./systems/vanguard/darwin.nix
-        (./modules/home.nix
-          {
-            config = ./systems/vanguard/home.nix;
-            ssh = ./systems/vanguard/home/ssh.nix;
-          })
-        ./modules/vscode.nix
-      ];
+    darwinConfigurations.vanguard = let 
+    	home = import ./modules/home.nix {
+            config = import ./systems/vanguard/home.nix;
+            ssh = import ./systems/vanguard/home/ssh.nix;
+	    imports = [./modules/vscode.nix];
+          };
+	in nix-darwin.lib.darwinSystem {
+      		system = "aarch64-darwin";
+      		modules = [
+        		home-manager.darwinModules.home-manager
+        		(import ./systems/vanguard/darwin.nix home)
+        		      ];
     };
 
     homeConfigurations = let
