@@ -10,7 +10,7 @@
         vertical-pad = 16;
         width = 40;
       };
-      color = {
+      colors = {
         background = "333333cc";
         match = "ff0000ff";
         selection = "ff0000cc";
@@ -18,6 +18,7 @@
         selection-text = "ffffffff";
         text = "ffffffff";
       };
+      border.width = 0;
     };
   };
 }

@@ -1,4 +1,9 @@
 {
+  install ? true,
+  menu,
+  terminal,
+  bar,
+}: {
   pkgs,
   config,
   lib,
@@ -8,13 +13,19 @@
 
   wayland.windowManager.sway = {
     enable = true;
-    package = null;
+    package =
+      if install == true
+      then pkgs.sway
+      else null;
     # TODO: figure out wallpaper situation...
     checkConfig = false;
+    extraConfig = ''
+      include /etc/sway/config.d/*
+    '';
     config = {
       modifier = "Mod4";
-      menu = "fuzzel";
-      terminal = "kitty";
+      menu = menu;
+      terminal = terminal;
       startup = [
         {
           command = "swayidle -w before-sleep 'swaylock -f -c 657153'";
@@ -51,7 +62,7 @@
         };
       bars = [
         {
-          command = "waybar";
+          command = bar;
         }
       ];
       window = {
@@ -66,10 +77,4 @@
     target = ".config/sway/toggle-theme.sh";
     executable = true;
   };
-
-  imports = [
-    ./sway/kitty.nix
-    ./sway/fuzzel.nix
-    ./sway/waybar.nix
-  ];
 }

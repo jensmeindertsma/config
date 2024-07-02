@@ -25,7 +25,13 @@
       system = "aarch64-darwin";
       modules = [
         home-manager.darwinModules.home-manager
-        ./systems/vanguard/configuration.nix
+        ./systems/vanguard/darwin.nix
+        (./modules/home.nix
+          {
+            config = ./systems/vanguard/home.nix;
+            ssh = ./systems/vanguard/home/ssh.nix;
+          })
+        ./modules/vscode.nix
       ];
     };
 
@@ -36,9 +42,37 @@
           modules = modules;
         };
     in {
-      wyvern = homeManager "x86_64-linux" [
-        ./systems/wyvern/home.nix
-      ];
+      wyvern = let
+        home = import ./modules/home.nix {
+          config = import ./systems/wyvern/home.nix;
+
+          shell.aliases = {
+            reflect = "sudo systemctl start reflector";
+          };
+
+          ssh = import ./systems/wyvern/home/ssh.nix;
+        };
+        sway = import ./modules/sway.nix {
+          install = false;
+          menu = "fuzzel";
+          terminal = "kitty";
+          bar = "waybar";
+        };
+        kitty = import ./modules/kitty.nix {
+          install = false;
+        };
+      in
+        homeManager "x86_64-linux" [
+          home
+          sway
+          (import
+            ./modules/fuzzel.nix)
+          kitty
+          (import
+            ./modules/waybar.nix)
+          (import
+            ./modules/fontconfig.nix)
+        ];
     };
   };
 }

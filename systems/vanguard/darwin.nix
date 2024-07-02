@@ -47,8 +47,4 @@
       "QuickShade" = 931571202;
     };
   };
-
-  home-manager.useGlobalPkgs = true;
-  home-manager.useUserPackages = true;
-  home-manager.users.jens = import ./home.nix;
 })
