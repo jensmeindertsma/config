@@ -23,19 +23,21 @@
     nix-darwin,
     home-manager,
   }: {
-    darwinConfigurations.vanguard = let 
-    	home = import ./modules/home.nix {
-            config = import ./systems/vanguard/home.nix;
-            ssh = import ./systems/vanguard/home/ssh.nix;
-	    imports = [./modules/vscode.nix];
-          };
-	in nix-darwin.lib.darwinSystem {
-      		system = "aarch64-darwin";
-      		modules = [
-        		home-manager.darwinModules.home-manager
-        		(import ./systems/vanguard/darwin.nix home)
-        		      ];
-    };
+    darwinConfigurations.vanguard = let
+      home = import ./modules/home.nix {
+        config = import ./systems/vanguard/home.nix;
+        ssh = import ./systems/vanguard/home/ssh.nix;
+        imports = [./modules/vscode.nix ./modules/nvim.nix];
+      };
+    in
+      nix-darwin.lib.darwinSystem {
+        system = "aarch64-darwin";
+        pkgs = nixpkgs-darwin;
+        modules = [
+          home-manager.darwinModules.home-manager
+          (import ./systems/vanguard/darwin.nix home)
+        ];
+      };
 
     homeConfigurations = let
       homeManager = system: modules:
@@ -74,6 +76,7 @@
             ./modules/waybar.nix)
           (import
             ./modules/fontconfig.nix)
+          (import ./modules/nvim.nix)
         ];
     };
   };

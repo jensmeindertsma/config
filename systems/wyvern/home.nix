@@ -17,8 +17,8 @@
         wget
         wl-clipboard
       ];
-      
- services.ssh-agent.enable; 
+
+      services.ssh-agent.enable = true;
 
       programs.firefox.enable = true;
     })
