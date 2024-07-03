@@ -44,7 +44,6 @@
   "window.titleBarStyle": "native",
   "window.zoomLevel": 0.1,
   "workbench.layoutControl.enabled": false,
-  "workbench.preferredDarkColorTheme": "GitHub Dark",
   "workbench.preferredLightColorTheme": "GitHub Light",
   "workbench.startupEditor": "none"
 }

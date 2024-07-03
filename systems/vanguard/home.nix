@@ -4,10 +4,11 @@ homeModules: {pkgs, ...}: {
   # Let `home-manager` install and manage itself.
   programs.home-manager.enable = true;
 
-  imports = homeModules ++ [
-    ./modules/homebrew.nix
-    ./modules/vscode.nix
-  ];
+  imports =
+    homeModules
+    ++ [
+      ./modules/homebrew.nix
+    ];
 
   programs.ssh = {
     enable = true;

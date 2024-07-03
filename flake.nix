@@ -46,6 +46,10 @@
               })
               (import ./modules/neovim.nix {absolute_path_to_project = "/Users/Jens/Development/config";})
               ./modules/rust.nix
+              (import ./modules/vscode.nix {
+                absolute_path_to_project = "/Users/Jens/Development/config";
+                target_directory = "/Library/Application Support/Code/User";
+              })
             ];
           })
         ];
@@ -83,6 +87,11 @@
           bar = "waybar";
         })
         ./modules/linux/waybar.nix
+        ./modules/rust.nix
+        (import ./modules/vscode.nix {
+          absolute_path_to_project = "/home/jens/dev/config";
+          target_directory = ".config/Code/User";
+        })
       ];
     };
   };
