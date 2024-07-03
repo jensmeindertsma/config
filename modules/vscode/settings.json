@@ -45,5 +45,6 @@
   "window.zoomLevel": 0.1,
   "workbench.layoutControl.enabled": false,
   "workbench.preferredLightColorTheme": "GitHub Light",
-  "workbench.startupEditor": "none"
+  "workbench.startupEditor": "none",
+  "window.menuBarVisibility": "hidden"
 }
