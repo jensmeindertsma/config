@@ -1,6 +1,8 @@
-home: {pkgs, ...}: {
+homeModules: {pkgs, ...}: {
   services.nix-daemon.enable = true;
+
   nix.settings.experimental-features = "nix-command flakes";
+
   nixpkgs.hostPlatform = "aarch64-darwin";
   nixpkgs.config.allowUnfree = true;
 
@@ -12,43 +14,14 @@ home: {pkgs, ...}: {
 
   fonts = {
     packages = with pkgs; [
-      jetbrains-mono
+      (nerdfonts.override {fonts = ["JetBrainsMono"];})
     ];
   };
 
+  programs.bash.enable = true;
   programs.zsh.enable = true;
 
-  homebrew = {
-    enable = true;
-    onActivation.cleanup = "uninstall";
-
-    casks = [
-      "aldente"
-      "bitwarden"
-      "discord"
-      "docker"
-      "firefox"
-      "google-chrome"
-      "hot"
-      "iterm2"
-      "notion"
-      "microsoft-teams"
-      "monitorcontrol"
-      "protonvpn"
-      "proton-drive"
-      "protonmail-bridge"
-      "signal"
-      "spotify"
-      "utm"
-      "whatsapp"
-    ];
-
-    masApps = {
-      "QuickShade" = 931571202;
-    };};
-
-    home-manager.useGlobalPkgs = true;
-    home-manager.useUserPackages = true;
-    home-manager.users.jens = home;
-  
+  home-manager.useGlobalPkgs = true;
+  home-manager.useUserPackages = true;
+  home-manager.users.jens = (import ./home.nix homeModules);
 }

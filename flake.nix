@@ -2,7 +2,7 @@
   description = "I hereby declare this file the state of the universe";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/release-24.05";
     nixpkgs-darwin.url = "github:nixos/nixpkgs/nixpkgs-24.05-darwin";
 
     nix-darwin = {
@@ -11,7 +11,7 @@
     };
 
     home-manager = {
-      url = "github:nix-community/home-manager";
+      url = "github:nix-community/home-manager/release-24.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -22,16 +22,29 @@
     nixpkgs-darwin,
     nix-darwin,
     home-manager,
-  }: {
+  }: let
+    signatures = {
+      vanguard = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEG0u2sQkfE5QvH8xv7ZaY4lvca3aAZQX1cljJmNsNqx";
+      wyvern = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJhI5sNxApLWYWOKljGuaVzt/6rsAVlAlb2lKv0nPHyD";
+    };
+  in {
     darwinConfigurations = {
-    	vanguard = nix-darwin.lib.darwinSystem {
-        	system = "aarch64-darwin";
-        	pkgs = nixpkgs-darwin;
-        	modules = [
-          		home-manager.darwinModules.home-manager
-          		(import ./systems/vanguard/darwin.nix)
-        	];
-      };};
+      vanguard = nix-darwin.lib.darwinSystem {
+        system = "aarch64-darwin";
+        pkgs = nixpkgs-darwin.legacyPackages."aarch64-darwin";
+        modules = let
+          homeModules = [
+            (import ./modules/shell.nix)
+            (import ./modules/git.nix { signatures = signatures; signing_key = signatures.vanguard;})
+            (import ./modules/homebrew.nix)
+          ];
+          configuration = import ./systems/vanguard/darwin.nix homeModules;
+        in [
+          home-manager.darwinModules.home-manager
+          configuration
+        ];
+      };
+    };
 
     homeConfigurations = let
       homeManager = system: modules:
@@ -40,67 +53,7 @@
           modules = modules;
         };
     in {
-      wyvern = let
-        home = import ./modules/home.nix {
-          config = import ./systems/wyvern/home.nix;
-
-          shell.aliases = {
-            reflect = "sudo systemctl start reflector";
-          };
-
-          ssh = import ./systems/wyvern/home/ssh.nix;
-        };
-        sway = import ./modules/sway.nix {
-          install = false;
-          menu = "fuzzel";
-          terminal = "kitty";
-          bar = "waybar";
-        };
-        kitty = import ./modules/kitty.nix {
-          install = false;
-        };
-      in
-        homeManager "x86_64-linux" [
-          home
-          sway
-          (import
-            ./modules/fuzzel.nix)
-          kitty
-          (import
-            ./modules/waybar.nix)
-          (import
-            ./modules/fontconfig.nix)
-          (import ./modules/nvim.nix)
-          ({pkgs, ...}: {
-            
-            services.ssh-agent.enable = true;
-
-            programs.firefox.enable = true;
-
-            programs.zsh.initExtra = ''
-                            ZINIT_HOME="''${XDG_DATA_HOME:-''${HOME}/.local/share}/zinit/zinit.git"
-                            [ ! -d $ZINIT_HOME ] && mkdir -p "$(dirname $ZINIT_HOME)"
-                            [ ! -d $ZINIT_HOME/.git ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
-                            source "''${ZINIT_HOME}/zinit.zsh"
-
-                            export NVM_LAZY_LOAD=true
-                            zinit load "lukechilds/zsh-nvm"
-                            zinit load "zsh-users/zsh-autosuggestions"
-
-              # Bind UP and DOWN arrow keys to beginning search
-              bindkey '^[[A' history-beginning-search-backward
-              bindkey '^[[B' history-beginning-search-forward
-
-              # Enable the necessary widgets for history search
-              autoload -U up-line-or-beginning-search
-              autoload -U down-line-or-beginning-search
-              zle -N history-beginning-search-backward up-line-or-beginning-search
-              zle -N history-beginning-search-forward down-line-or-beginning-search
-
-
-            '';
-          })
-        ];
+      wyvern = homeManager "x86_64-linux" [];
     };
   };
 }
