@@ -10,6 +10,8 @@
     home = "/Users/Jens";
   };
 
+  environment.shells = with pkgs; [zsh];
+
   fonts = {
     packages = with pkgs; [
       (nerdfonts.override {fonts = ["JetBrainsMono"];})
@@ -21,5 +23,5 @@
 
   home-manager.useGlobalPkgs = true;
   home-manager.useUserPackages = true;
-  home-manager.users.jens = (import ./home.nix homeModules);
+  home-manager.users.jens = import ./home.nix homeModules;
 }

@@ -30,6 +30,12 @@ My 2020 M1 MacBook Air running macOS Sonoma, managed by nix-darwin and home-mana
 
    You can from now on just run `just switch-vanguard` from anywhere within the repository to rebuild and apply the configuration.
 
+   You can also change your login shell to the Nix-installed copy of Zsh:
+
+   ```bash
+   $ chsh -s /run/current-system/sw/bin/zsh
+   ```
+
 5. Install the required tools for Neovim to work:
 
    ```bash
@@ -70,6 +76,7 @@ Currently, automatically installing extensions for Visual Studio Code does not w
 - `esbenp.prettier-vscode`
 - `github.github-vscode-theme`
 - `jnoortheen.nix-ide`
+- `mkhl.direnv`
 - `ms-azuretools.vscode-docker`
 - `ms-python.python`
 - `ms-vscode-remote.vscode-remote-extensionpack`
