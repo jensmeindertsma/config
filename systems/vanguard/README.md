@@ -28,15 +28,14 @@ My 2020 M1 MacBook Air running macOS Sonoma, managed by nix-darwin and home-mana
    $ nix run nix-darwin -- switch --flake .#vanguard
    ```
 
-5. Install the `just` command runner and other required tools:
+   You can from now on just run `just switch-vanguard` from anywhere within the repository to rebuild and apply the configuration.
+
+5. Install the required tools for Neovim to work:
 
    ```bash
-   $ brew install just
    $ nvm install node
    $ rustup default stable
    ```
-
-   You can from now on just run `just switch-vanguard` from anywhere within the repository to rebuild and apply the configuration.
 
 6. Install desired applications as Homebrew Casks:
 
