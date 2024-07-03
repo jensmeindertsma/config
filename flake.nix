@@ -37,7 +37,6 @@
           (import ./systems/vanguard/darwin.nix {
             homeModules = [
               (import ./modules/zsh.nix {})
-              ./modules/homebrew.nix
               (import ./modules/git.nix {
                 signatures = signatures;
                 signing_key = signatures.vanguard;
@@ -71,15 +70,15 @@
         (import ./modules/neovim.nix {absolute_path_to_project = "/home/jens/dev/config";})
         ./modules/rust.nix
 
-        ./modules/fontconfig.nix
-        ./modules/fuzzel.nix
-        ./modules/kitty.nix
-        (import ./modules/sway.nix {
+        ./modules/linux/fontconfig.nix
+        ./modules/linux/fuzzel.nix
+        (import ./modules/linux/kitty.nix { install = false; })
+        (import ./modules/linux/sway.nix {
           menu = "fuzzel";
           terminal = "kitty";
           bar = "waybar";
         })
-        ./modules/waybar.nix
+        ./modules/linux/waybar.nix
       ];
     };
   };
