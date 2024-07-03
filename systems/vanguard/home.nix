@@ -5,6 +5,7 @@ homeModules: {pkgs, ...}: {
   programs.home-manager.enable = true;
 
   imports = homeModules ++ [
+    ./modules/homebrew.nix
     ./modules/vscode.nix
   ];
 
