@@ -23,21 +23,15 @@
     nix-darwin,
     home-manager,
   }: {
-    darwinConfigurations.vanguard = let
-      home = import ./modules/home.nix {
-        config = import ./systems/vanguard/home.nix;
-        ssh = import ./systems/vanguard/home/ssh.nix;
-        imports = [./modules/vscode.nix ./modules/nvim.nix];
-      };
-    in
-      nix-darwin.lib.darwinSystem {
-        system = "aarch64-darwin";
-        pkgs = nixpkgs-darwin;
-        modules = [
-          home-manager.darwinModules.home-manager
-          (import ./systems/vanguard/darwin.nix home)
-        ];
-      };
+    darwinConfigurations = {
+    	vanguard = nix-darwin.lib.darwinSystem {
+        	system = "aarch64-darwin";
+        	pkgs = nixpkgs-darwin;
+        	modules = [
+          		home-manager.darwinModules.home-manager
+          		(import ./systems/vanguard/darwin.nix)
+        	];
+      };};
 
     homeConfigurations = let
       homeManager = system: modules:
@@ -77,23 +71,8 @@
           (import
             ./modules/fontconfig.nix)
           (import ./modules/nvim.nix)
-          (import ./modules/vscode.nix)
           ({pkgs, ...}: {
-            home.packages = with pkgs; [
-              bluetuith
-              dmidecode
-              htop
-              networkmanagerapplet
-              pavucontrol
-              roboto
-              spotify
-              unzip
-              virt-manager
-              wev
-              wget
-              wl-clipboard
-            ];
-
+            
             services.ssh-agent.enable = true;
 
             programs.firefox.enable = true;
