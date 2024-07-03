@@ -1,6 +1,6 @@
 # Vanguard
 
-My 2020 M1 MacBook Air
+My 2020 M1 MacBook Air running macOS Sonoma, managed by nix-darwin and home-manager.
 
 ## Installation Steps
 
@@ -16,22 +16,32 @@ My 2020 M1 MacBook Air
    $ curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install
    ```
 
-3. Activate the Nix configuration defined in this repository:
+3. Install Homebrew:
+
+   ```bash
+   $ /bin/bash -c $(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+   ```
+
+4. Activate the Nix configuration defined in this repository:
 
    ```
    $ nix run nix-darwin -- switch --flake .#vanguard
    ```
 
-4. Install Homebrew:
+5. Install the `just` command runner and other required tools:
 
    ```bash
-   $ /bin/bash -c$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+   $ brew install just
+   $ nvm install node
+   $ rustup default stable
    ```
 
-5. Install desired applications as Homebrew Casks:
+   You can from now on just run `just switch-vanguard` from anywhere within the repository to rebuild and apply the configuration.
+
+6. Install desired applications as Homebrew Casks:
 
    ```bash
-   $ brew install \
+   $ brew install --cask \
        aldente \
        bitwarden \
        discord \
@@ -51,3 +61,19 @@ My 2020 M1 MacBook Air
        utm \
        whatsapp
    ```
+
+## Setting up Visual Studio Code
+
+Currently, automatically installing extensions for Visual Studio Code does not work reliably with `home-manager`. Thus I do it manually, for now. Here is a list of the extensions that I use:
+
+- `charliermarsh.ruff`
+- `dbaeumer.vscode-eslint`
+- `esbenp.prettier-vscode`
+- `github.github-vscode-theme`
+- `jnoortheen.nix-ide`
+- `ms-azuretools.vscode-docker`
+- `ms-python.python`
+- `ms-vscode-remote.vscode-remote-extensionpack`
+- `ms-vscode.remote-explorer`
+- `rust-lang.rust-analyzer`
+- `tamasfe.even-better-toml`

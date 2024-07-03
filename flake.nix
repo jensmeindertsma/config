@@ -32,16 +32,20 @@
       vanguard = nix-darwin.lib.darwinSystem {
         system = "aarch64-darwin";
         pkgs = nixpkgs-darwin.legacyPackages."aarch64-darwin";
-        modules = let
-          homeModules = [
-            (import ./modules/shell.nix)
-            (import ./modules/git.nix { signatures = signatures; signing_key = signatures.vanguard;})
-            (import ./modules/homebrew.nix)
-          ];
-          configuration = import ./systems/vanguard/darwin.nix homeModules;
-        in [
+        modules = [
           home-manager.darwinModules.home-manager
-          configuration
+          (import ./systems/vanguard/darwin.nix {
+            homeModules = [
+              (import ./modules/zsh.nix {})
+              ./modules/homebrew.nix
+              (import ./modules/git.nix {
+                signatures = signatures;
+                signing_key = signatures.vanguard;
+              })
+              (import ./modules/neovim.nix {absolute_path_to_project = "/Users/Jens/Development/config";})
+              ./modules/rust.nix
+            ];
+          })
         ];
       };
     };
@@ -53,7 +57,30 @@
           modules = modules;
         };
     in {
-      wyvern = homeManager "x86_64-linux" [];
+      wyvern = homeManager "x86_64-linux" [
+        ./systems/wyvern/home.nix
+        (import ./modules/zsh.nix {
+          aliases = {
+            "reflect" = "sudo systemctl start reflector";
+          };
+        })
+        (import ./modules/git.nix {
+          signatures = signatures;
+          signing_key = signatures.wyvern;
+        })
+        (import ./modules/neovim.nix {absolute_path_to_project = "/home/jens/dev/config";})
+        ./modules/rust.nix
+
+        ./modules/fontconfig.nix
+        ./modules/fuzzel.nix
+        ./modules/kitty.nix
+        (import ./modules/sway.nix {
+          menu = "fuzzel";
+          terminal = "kitty";
+          bar = "waybar";
+        })
+        ./modules/waybar.nix
+      ];
     };
   };
 }

@@ -1,46 +1,53 @@
 * {
-    font-family: JetBrainsMono Nerd Font, Roboto, Helvetica, Arial, sans-serif;
-    font-size: 13px;
+  font-family:
+    JetBrainsMono Nerd Font,
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
+  font-size: 13px;
 }
 
-@define-color bg #333333;
-@define-color fg #555555;
-@define-color text #FFFFFF;
+@define-color bg #DDDDDD;
+@define-color fg #FFFFFF;
+@define-color text #000000;
 @define-color highlight #FF0000;
 @define-color highlight_text #FFFFFF;
 
 window#waybar {
-    background-color: @bg;
-    color: @text;
+  background-color: @bg;
+  color: @text;
 }
 
 button {
-    border: none;
-    color: @text;
+  border: none;
 }
 
 button:hover {
-    text-shadow: inherit;
-    background: inherit;
-    border: inherit;
+  text-shadow: inherit;
+  background: inherit;
+  border: inherit;
 }
 
-#workspaces button, #mode {
-    font-weight: bold;
-    padding: 0 6px;
+#workspaces button,
+#mode {
+  font-weight: bold;
+  padding: 0 6px;
 }
 
-#workspaces button:hover, #workspaces button.focused {
-    color: @highlight;
+#workspaces button:hover,
+#workspaces button.focused {
+  color: @highlight;
 }
 
 #workspaces button:only-child.focused {
-    color: @text;
+  color: @text;
 }
 
-#workspaces button.urgent, #mode {
-    background-color: @highlight;
-    color: @highlight_text;
+#workspaces button.urgent,
+#mode {
+  background-color: @highlight;
+  color: @highlight_text;
 }
 
 #workspaces button,
@@ -83,5 +90,3 @@ button:hover {
 #clock {
   padding: 0 8px;
 }
-
-

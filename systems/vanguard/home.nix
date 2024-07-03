@@ -4,19 +4,8 @@ homeModules: {pkgs, ...}: {
   # Let `home-manager` install and manage itself.
   programs.home-manager.enable = true;
 
-  imports = homeModules;
-
-  home.packages = with pkgs; [
-    btop
-    cowsay
-    dive
-    doctl
-    dua
-    fastfetch
-    gh
-    just
-    ripgrep
-    tmux
+  imports = homeModules ++ [
+    ./modules/vscode.nix
   ];
 
   programs.ssh = {
@@ -26,7 +15,7 @@ homeModules: {pkgs, ...}: {
       UseKeychain yes
     '';
     matchBlocks = {
-      ubuntu = {
+      devbox = {
         hostname = "127.0.0.1";
         port = 2001;
         user = "jens";

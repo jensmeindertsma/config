@@ -1,0 +1,50 @@
+{
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[python]": {
+    "editor.defaultFormatter": "charliermarsh.ruff"
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "always"
+  },
+  "editor.codeLens": false,
+  "editor.fontFamily": "'JetBrainsMono Nerd Font', monospace",
+  "editor.fontLigatures": true,
+  "editor.fontSize": 16,
+  "editor.formatOnSave": true,
+  "editor.inlayHints.enabled": "offUnlessPressed",
+  "editor.minimap.enabled": false,
+  "explorer.confirmDragAndDrop": false,
+  "git.autofetch": true,
+  "git.confirmSync": false,
+  "nix.enableLanguageServer": true,
+  "nix.serverPath": "nil",
+  "nix.serverSettings": {
+    "nil": {
+      "formatting": {
+        "command": ["alejandra"]
+      }
+    }
+  },
+  "python.terminal.activateEnvironment": false,
+  "ruff.nativeServer": true,
+  "rust-analyzer.check.command": "clippy",
+  "security.workspace.trust.untrustedFiles": "open",
+  "terminal.integrated.fontSize": 16,
+  "terminal.integrated.shellIntegration.enabled": false,
+  "window.autoDetectColorScheme": true,
+  "window.commandCenter": false,
+  "window.titleBarStyle": "native",
+  "window.zoomLevel": 0.1,
+  "workbench.layoutControl.enabled": false,
+  "workbench.preferredDarkColorTheme": "GitHub Dark",
+  "workbench.preferredLightColorTheme": "GitHub Light",
+  "workbench.startupEditor": "none"
+}
