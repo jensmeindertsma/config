@@ -36,7 +36,10 @@
           home-manager.darwinModules.home-manager
           (import ./systems/vanguard/darwin.nix {
             homeModules = [
-              (import ./modules/zsh.nix {})
+              ./modules/tools.nix
+              (import ./modules/zsh.nix {
+                aliases = {};
+              })
               (import ./modules/git.nix {
                 signatures = signatures;
                 signing_key = signatures.vanguard;
@@ -58,6 +61,7 @@
     in {
       wyvern = homeManager "x86_64-linux" [
         ./systems/wyvern/home.nix
+        ./modules/tools.nix
         (import ./modules/zsh.nix {
           aliases = {
             "reflect" = "sudo systemctl start reflector";
@@ -72,7 +76,7 @@
 
         ./modules/linux/fontconfig.nix
         ./modules/linux/fuzzel.nix
-        (import ./modules/linux/kitty.nix { install = false; })
+        (import ./modules/linux/kitty.nix {install = false;})
         (import ./modules/linux/sway.nix {
           menu = "fuzzel";
           terminal = "kitty";
