@@ -24,6 +24,7 @@
     home-manager,
   }: let
     signatures = {
+      isac = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBbtIOwSFqQSvNkbPO/TvhKiHi5T6bS0C/rzu5h2Sj9O jens@isac";
       vanguard = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEG0u2sQkfE5QvH8xv7ZaY4lvca3aAZQX1cljJmNsNqx";
       wyvern = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJhI5sNxApLWYWOKljGuaVzt/6rsAVlAlb2lKv0nPHyD";
     };
@@ -82,6 +83,44 @@
         ./modules/linux/fuzzel.nix
         (import ./modules/linux/kitty.nix {install = false;})
         (import ./modules/linux/sway.nix {
+          install = false;
+          scale = "1.5";
+          wallpaper = "~/Pictures/Wallpapers/2.jpg";
+
+          menu = "fuzzel";
+          terminal = "kitty";
+          bar = "waybar";
+        })
+        ./modules/linux/waybar.nix
+        ./modules/rust.nix
+        (import ./modules/vscode.nix {
+          absolute_path_to_project = "/home/jens/dev/config";
+          target_directory = ".config/Code/User";
+        })
+      ];
+
+      isac = homeManager "x86_64-linux" [
+        ./systems/isac/home.nix
+        ./modules/tools.nix
+        (import ./modules/zsh.nix {
+          aliases = {
+            "reflect" = "sudo systemctl start reflector";
+          };
+        })
+        (import ./modules/git.nix {
+          signatures = signatures;
+          signing_key = signatures.isac;
+        })
+        (import ./modules/neovim.nix {absolute_path_to_project = "/home/jens/dev/config";})
+        ./modules/rust.nix
+
+        ./modules/linux/fontconfig.nix
+        ./modules/linux/fuzzel.nix
+        (import ./modules/linux/kitty.nix {install = false;})
+        (import ./modules/linux/sway.nix {
+          install = false;
+          scale = "1.5";
+          wallpaper = "~/Pictures/Wallpapers/2.jpg";
           menu = "fuzzel";
           terminal = "kitty";
           bar = "waybar";

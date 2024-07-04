@@ -1,6 +1,8 @@
 {
   install ? true,
   menu,
+  scale ? 1,
+  wallpaper,
   terminal,
   bar,
 }: {
@@ -42,7 +44,8 @@
       };
       output = {
         "*" = {
-          background = "~/Pictures/Wallpapers/2.jpg fill";
+          scale = scale;
+          background = "${wallpaper} fill";
         };
       };
       keybindings = let

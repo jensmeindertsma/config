@@ -46,7 +46,7 @@
   "workbench.layoutControl.enabled": false,
   "workbench.preferredLightColorTheme": "GitHub Light",
   "workbench.startupEditor": "none",
-  "window.menuBarVisibility": "hidden",
   "workbench.preferredDarkColorTheme": "GitHub Dark",
-  "editor.stickyScroll.enabled": false
+  "editor.stickyScroll.enabled": false,
+  "window.menuBarVisibility": "toggle"
 }
