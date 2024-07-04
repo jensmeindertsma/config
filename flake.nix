@@ -84,7 +84,7 @@
         (import ./modules/linux/kitty.nix {install = false;})
         (import ./modules/linux/sway.nix {
           install = false;
-          scale = "1.5";
+          scale = "2";
           wallpaper = "~/Pictures/Wallpapers/2.jpg";
 
           menu = "fuzzel";
