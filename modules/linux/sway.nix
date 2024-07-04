@@ -9,7 +9,7 @@
   lib,
   ...
 }: {
-  home.packages = with pkgs; [brightnessctl];
+  home.packages = with pkgs; [brightnessctl pulseaudio];
 
   wayland.windowManager.sway = {
     enable = true;
