@@ -3,7 +3,7 @@ ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 [ ! -d $ZINIT_HOME/.git ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
 source "${ZINIT_HOME}/zinit.zsh"
 
-zinit ice wait "2"
+zinit ice lucid wait "2"
 zinit load "lukechilds/zsh-nvm"
 zinit load "zsh-users/zsh-autosuggestions"
 
