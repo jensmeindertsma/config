@@ -30,5 +30,13 @@ fi
 
 # TODO: wired connection
 
+
+# DISABLED
+IS_DISABLED=$(echo -e "INFO" | grep "wifi " -B 2 | grep "sw disabled")
+
+if [[ -n "$IS_DISABLED" ]]; then
+	printf "{\"text\": \"󱡺  disabled!\", \"tooltip\": \"\"}\n"
+	exit
+
 # 󰦝 󰴳 󰚊
 printf '{"text": " loading...", "tooltip": ""}\n'

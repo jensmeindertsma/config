@@ -1,18 +1,18 @@
-{...}: {
-  home.file.waybar-network-script = {
-    source = ./waybar/network.sh;
-    target = ".config/waybar/network.sh";
-    executable = true;
+{absolute_path_to_project}: {config, ...}: {
+  home.file.waybar-network = {
+    source = config.lib.file.mkOutOfStoreSymlink "${absolute_path_to_project}/modules/linux/waybar/network.sh";
+    target = "${config.home.homeDirectory}/.config/waybar/network.sh";
+    #executable = true;
   };
 
-  home.file.waybar-style-light = {
-    source = ./waybar/style-light.css;
-    target = ".config/waybar/style-light.css";
+  home.file.waybar-style-l = {
+    source = config.lib.file.mkOutOfStoreSymlink "${absolute_path_to_project}/modules/linux/waybar/style-light.css";
+    target = "${config.home.homeDirectory}/.config/waybar/style-light.css";
   };
 
-  home.file.waybar-style-dark = {
-    source = ./waybar/style-dark.css;
-    target = ".config/waybar/style-dark.css";
+  home.file.waybar-style-d = {
+    source = config.lib.file.mkOutOfStoreSymlink "${absolute_path_to_project}/modules/linux/waybar/style-dark.css";
+    target = "${config.home.homeDirectory}/.config/waybar/style-dark.css";
   };
 
   programs.waybar = {

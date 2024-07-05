@@ -91,8 +91,8 @@
           terminal = "kitty";
           bar = "waybar";
         })
-        ./modules/linux/waybar.nix
-        ./modules/rust.nix
+        (import ./modules/linux/waybar.nix {absolute_path_to_project = "/home/jens/dev/config";})
+
         (import ./modules/vscode.nix {
           absolute_path_to_project = "/home/jens/dev/config";
           target_directory = ".config/Code/User";
@@ -125,8 +125,8 @@
           terminal = "kitty";
           bar = "waybar";
         })
-        ./modules/linux/waybar.nix
-        ./modules/rust.nix
+        (import ./modules/linux/waybar.nix {absolute_path_to_project = "/home/jens/dev/config";})
+
         (import ./modules/vscode.nix {
           absolute_path_to_project = "/home/jens/dev/config";
           target_directory = ".config/Code/User";
