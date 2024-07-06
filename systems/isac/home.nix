@@ -15,5 +15,12 @@
   programs.ssh = {
     enable = true;
     addKeysToAgent = "yes";
+    matchBlocks = {
+      devbox = {
+        hostname = "192.168.122.8";
+        user = "jens";
+        forwardAgent = true;
+      };
+    };
   };
 }
