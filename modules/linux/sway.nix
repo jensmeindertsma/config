@@ -30,6 +30,9 @@
       terminal = terminal;
       startup = [
         {
+          command = "swaymsg workspace 1";
+        }
+        {
           command = "swayidle -w before-sleep 'swaylock -f -c 657153'";
         }
       ];
