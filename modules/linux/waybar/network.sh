@@ -9,15 +9,18 @@ IS_VPN=$(echo -e "$INFO" | grep "VPN connection")
 IS_WIRED=$(echo -e "$INFO" | grep 'ethernet (' -B 2 | grep "connected to")
 WIFI_NAME=$(nmcli -t -f active,ssid dev wifi list --rescan no | grep '^yes' | cut -d: -f2)
 
-
 if [[ -n "$IS_VPN" ]]; then
-	VPN_NAME=$(echo -e "$INFO" | grep "VPN connection" | cut -f 1 -d ' ')
-	if [[ -n "$IS_WIRED" ]]; then
-		SUBSTRING="connected to "
-		NET_NAME="${IS_WIRED#*$SUBSTRING}"
-		printf "{\"text\": \"󰦝 $IP ($VPN_NAME)\", \"tooltip\": \"󰈀  connected to '$NET_NAME'\"}\n"
-	else 
-		printf "{\"text\": \"󰦝 $IP ($VPN_NAME)\", \"tooltip\": \"󰖩  connected to '$WIFI_NAME'\"}\n"
+	if [[ -z "$IP" ]] then
+		printf '{"text": "󰦝 loading...", "tooltip": ""}\n'
+	else
+		VPN_NAME=$(echo -e "$INFO" | grep "VPN connection" | cut -f 1 -d ' ')
+		if [[ -n "$IS_WIRED" ]]; then
+			SUBSTRING="connected to "
+			NET_NAME="${IS_WIRED#*$SUBSTRING}"
+			printf "{\"text\": \"󰦝 $IP ($VPN_NAME)\", \"tooltip\": \"󰈀  connected to '$NET_NAME'\"}\n"
+		else 
+			printf "{\"text\": \"󰦝 $IP ($VPN_NAME)\", \"tooltip\": \"󰖩  connected to '$WIFI_NAME'\"}\n"
+		fi
 	fi
 	exit
 fi
@@ -42,11 +45,11 @@ if [[ -n "$IS_DISCONNECTED" ]]; then
 fi
 
 # DISABLED
-IS_DISABLED=$(echo -e "INFO" | grep "wifi " -B 2 | grep "sw disabled")
+IS_DISABLED=$(echo -e "$INFO" | grep "wifi " -B 2 | grep "sw disabled")
 
 if [[ -n "$IS_DISABLED" ]]; then
 	printf "{\"text\": \"󱡺  disabled!\", \"tooltip\": \"\"}\n"
 	exit
-
+fi
 # 󰦝 󰴳 󰚊
 printf '{"text": " loading...", "tooltip": ""}\n'
