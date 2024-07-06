@@ -94,7 +94,10 @@
           terminal = "kitty";
           bar = "waybar";
         })
-        (import ./modules/linux/waybar.nix {absolute_path_to_project = "/home/jens/dev/config";})
+        (import ./modules/linux/waybar.nix {
+          install = false;
+          absolute_path_to_project = "/home/jens/dev/config";
+        })
 
         (import ./modules/vscode.nix {
           absolute_path_to_project = "/home/jens/dev/config";

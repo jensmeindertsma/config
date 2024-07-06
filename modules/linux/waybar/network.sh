@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# This is my custom script for the waybar network module
+
 INFO=$(nmcli)
 
 IS_DISCONNECTED=$(echo -e "$INFO" | grep -v "p2p-dev" | grep disconnected)
