@@ -1,4 +1,7 @@
-{aliases ? {}}: {pkgs, ...}: {
+{
+  aliases ? {},
+  initExtra ? '''',
+}: {pkgs, ...}: {
   home.packages = with pkgs; [bat eza license-generator];
 
   programs.zsh = {
@@ -11,7 +14,7 @@
         mit = "license-generator mit --author 'Jens Meindertsma' --output LICENSE.md";
       }
       // aliases;
-    initExtra = builtins.readFile ./zsh/.zshrc;
+    initExtra = builtins.readFile ./zsh/.zshrc ++ initExtra;
   };
 
   programs.starship = {

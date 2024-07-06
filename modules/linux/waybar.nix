@@ -1,4 +1,4 @@
-{...}: {
+{install ? true}: {pkgs, ...}: {
   home.file.waybar-network-script = {
     source = ./waybar/network.sh;
     target = ".config/waybar/network.sh";
@@ -17,6 +17,11 @@
 
   programs.waybar = {
     enable = true;
+    package =
+      if install == true
+      then pkgs.kitty
+      else pkgs.runCommandNoCC "empty" {} "mkdir -p $out";
+
     settings = {
       mainBar = {
         position = "bottom";

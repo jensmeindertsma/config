@@ -40,6 +40,9 @@
               ./modules/tools.nix
               (import ./modules/zsh.nix {
                 aliases = {};
+                initExtra = ''
+                  export SSH_AUTH_SOCK = $XDG_RUNTIME_DIR/ssh-agent.socket
+                '';
               })
               (import ./modules/git.nix {
                 signatures = signatures;
@@ -125,7 +128,7 @@
           terminal = "kitty";
           bar = "waybar";
         })
-        ./modules/linux/waybar.nix
+        (import ./modules/linux/waybar.nix {install = false;})
         ./modules/rust.nix
         (import ./modules/vscode.nix {
           absolute_path_to_project = "/home/jens/dev/config";
