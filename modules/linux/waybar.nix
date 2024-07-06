@@ -1,4 +1,11 @@
-{absolute_path_to_project}: {config, ...}: {
+{
+  absolute_path_to_project,
+  install ? false,
+}: {
+  config,
+  pkgs,
+  ...
+}: {
   home.file.waybar-network = {
     source = config.lib.file.mkOutOfStoreSymlink "${absolute_path_to_project}/modules/linux/waybar/network.sh";
     target = "${config.home.homeDirectory}/.config/waybar/network.sh";
@@ -17,6 +24,11 @@
 
   programs.waybar = {
     enable = true;
+    package =
+      if install == true
+      then pkgs.kitty
+      else pkgs.runCommandNoCC "empty" {} "mkdir -p $out";
+
     settings = {
       mainBar = {
         position = "bottom";
