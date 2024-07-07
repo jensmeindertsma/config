@@ -58,6 +58,9 @@
           "${modifier}+Shift+d" = "exec 'poweroff'";
           "${modifier}+Shift+s" = "exec 'swaylock -f -c 657153 && systemctl suspend'";
           "${modifier}+Shift+t" = "exec 'swaylock -f -c 657153'";
+          "--locked ${modifier}+Shift+d" = "exec 'poweroff'";
+          "--locked ${modifier}+Shift+s" = "exec 'systemctl suspend'";
+
           "${modifier}+Shift+y" = "exec ~/.config/sway/toggle-theme.sh";
           "XF86AudioLowerVolume" = "exec 'pactl set-sink-volume @DEFAULT_SINK@ -1%'";
           "XF86AudioMicMute" = "exec 'pactl set-source-mute @DEFAULT_SOURCE@ toggle'";
