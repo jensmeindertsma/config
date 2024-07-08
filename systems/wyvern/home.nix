@@ -17,7 +17,7 @@
     addKeysToAgent = "yes";
     matchBlocks = {
       cabin = {
-        hostname = "188.166.29.90";
+        hostname = "161.35.89.119";
         user = "jens";
       };
 

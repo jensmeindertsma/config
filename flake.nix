@@ -24,7 +24,7 @@
     home-manager,
   }: let
     signatures = {
-      isac = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBbtIOwSFqQSvNkbPO/TvhKiHi5T6bS0C/rzu5h2Sj9O jens@isac";
+      isac = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBbtIOwSFqQSvNkbPO/TvhKiHi5T6bS0C/rzu5h2Sj9O";
       vanguard = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEG0u2sQkfE5QvH8xv7ZaY4lvca3aAZQX1cljJmNsNqx";
       wyvern = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJhI5sNxApLWYWOKljGuaVzt/6rsAVlAlb2lKv0nPHyD";
     };
