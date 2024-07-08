@@ -17,7 +17,7 @@
     addKeysToAgent = "yes";
     matchBlocks = {
       cabin = {
-        hostname = "161.35.89.119";
+        hostname = "ssh.jensmeindertsma.com";
         user = "jens";
       };
 

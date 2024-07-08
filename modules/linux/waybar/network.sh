@@ -17,7 +17,7 @@ if [[ -n "$IS_VPN" ]]; then
 		if [[ -n "$IS_WIRED" ]]; then
 			SUBSTRING="connected to "
 			NET_NAME="${IS_WIRED#*$SUBSTRING}"
-			printf "{\"text\": \"󰦝 $IP ($VPN_NAME)\", \"tooltip\": \"󰈀  connected to '$NET_NAME'\"}\n"
+			printf "{\"text\": \"󰦝 $IP ($VPN_NAME)\", \"tooltip\": \"󰈀 connected to '$NET_NAME'\"}\n"
 		else 
 			printf "{\"text\": \"󰦝 $IP ($VPN_NAME)\", \"tooltip\": \"󰖩  connected to '$WIFI_NAME'\"}\n"
 		fi
@@ -33,7 +33,7 @@ if [[ -n "$IS_WIFI" ]]; then
 fi
 
 if [[ -n "$IS_WIRED" ]]; then
-	printf "{\"text\": \"󰈀  $IP\", \"tooltip\": \"\"}\n"
+	printf "{\"text\": \"󰈀 $IP\", \"tooltip\": \"\"}\n"
 	exit
 fi
 

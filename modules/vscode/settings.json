@@ -48,5 +48,26 @@
   "workbench.startupEditor": "none",
   "workbench.preferredDarkColorTheme": "GitHub Dark",
   "editor.stickyScroll.enabled": false,
-  "window.menuBarVisibility": "toggle"
+  "window.menuBarVisibility": "toggle",
+  "mssql.connections": [
+    {
+      "server": "127.0.0.1",
+      "database": "",
+      "authenticationType": "SqlLogin",
+      "user": "sa",
+      "password": "",
+      "emptyPasswordInput": false,
+      "savePassword": true,
+      "profileName": "MS SQL Server",
+      "encrypt": "Mandatory",
+      "trustServerCertificate": true,
+      "connectTimeout": 15,
+      "commandTimeout": 30,
+      "applicationName": "vscode-mssql"
+    }
+  ],
+  "git.openRepositoryInParentFolders": "never",
+  "[dockercompose]": {
+    "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+  }
 }
