@@ -1,7 +1,4 @@
-{
-  aliases ? {},
-  initExtra ? '''',
-}: {
+{aliases ? {}}: {
   lib,
   pkgs,
   ...
@@ -18,7 +15,7 @@
         mit = "license-generator mit --author 'Jens Meindertsma' --output LICENSE.md";
       }
       // aliases;
-    initExtra = lib.strings.concatStrings [(builtins.readFile ./zsh/.zshrc) initExtra];
+    initExtra = builtins.readFile ./zsh/.zshrc;
   };
 
   programs.starship = {
@@ -29,6 +26,7 @@
     enable = true;
     config = {
       warn_timeout = 0;
+      hide_env_diff = true;
     };
   };
 }

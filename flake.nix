@@ -40,7 +40,9 @@
               ./modules/tools.nix
               (import ./modules/zsh.nix {
                 aliases = {};
-                initExtra = ''
+              })
+              ({...}: {
+                programs.zsh.initExtra = ''
                   export SSH_AUTH_SOCK = $XDG_RUNTIME_DIR/ssh-agent.socket
                 '';
               })
@@ -119,6 +121,7 @@
         })
         (import ./modules/neovim.nix {absolute_path_to_project = "/home/jens/dev/config";})
         ./modules/rust.nix
+        ./modules/nvm.nix
 
         ./modules/linux/fontconfig.nix
         ./modules/linux/fuzzel.nix
