@@ -19,7 +19,6 @@
       cabin = {
         hostname = "188.166.29.90";
         user = "jens";
-        forwardAgent = true;
       };
 
       devbox = {
