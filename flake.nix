@@ -83,7 +83,6 @@
         })
         (import ./modules/neovim.nix {absolute_path_to_project = "/home/jens/dev/config";})
         ./modules/rust.nix
-        ./modules/nvm.nix
 
         ./modules/linux/fontconfig.nix
         ./modules/linux/fuzzel.nix
@@ -122,7 +121,6 @@
         })
         (import ./modules/neovim.nix {absolute_path_to_project = "/home/jens/dev/config";})
         ./modules/rust.nix
-        ./modules/nvm.nix
 
         ./modules/linux/fontconfig.nix
         ./modules/linux/fuzzel.nix
