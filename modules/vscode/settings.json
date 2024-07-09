@@ -60,10 +60,7 @@
       "savePassword": true,
       "profileName": "MS SQL Server",
       "encrypt": "Mandatory",
-      "trustServerCertificate": true,
-      "connectTimeout": 15,
-      "commandTimeout": 30,
-      "applicationName": "vscode-mssql"
+      "trustServerCertificate": true
     }
   ],
   "git.openRepositoryInParentFolders": "never",

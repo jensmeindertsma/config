@@ -32,9 +32,6 @@
         {
           command = "swaymsg workspace 1";
         }
-        {
-          command = "swayidle -w before-sleep 'swaylock -f -c 657153'";
-        }
       ];
       input = {
         "type:touchpad" = {
