@@ -41,11 +41,6 @@
               (import ./modules/zsh.nix {
                 aliases = {};
               })
-              ({...}: {
-                programs.zsh.initExtra = ''
-                  export SSH_AUTH_SOCK = $XDG_RUNTIME_DIR/ssh-agent.socket
-                '';
-              })
               (import ./modules/git.nix {
                 signatures = signatures;
                 signing_key = signatures.vanguard;
