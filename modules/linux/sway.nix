@@ -1,10 +1,7 @@
 {
   install ? true,
-  menu,
   scale ? 1,
   wallpaper,
-  terminal,
-  bar,
 }: {
   pkgs,
   config,
@@ -12,6 +9,15 @@
   ...
 }: {
   home.packages = with pkgs; [brightnessctl pulseaudio];
+
+  imports = [
+    (import ./sway/kitty.nix {install = false;})
+    (import ./sway/waybar.nix {
+      install = false;
+      absolute_path_to_project = "/home/jens/dev/config";
+    })
+    ./sway/fuzzel.nix
+  ];
 
   wayland.windowManager.sway = {
     enable = true;
@@ -26,8 +32,8 @@
     '';
     config = {
       modifier = "Mod4";
-      menu = menu;
-      terminal = terminal;
+      menu = "fuzzel";
+      terminal = "kitty";
       startup = [
         {
           command = "swaymsg workspace 1";
@@ -58,7 +64,7 @@
           "--locked ${modifier}+Shift+d" = "exec 'poweroff'";
           "--locked ${modifier}+Shift+s" = "exec 'systemctl suspend'";
 
-          "${modifier}+Shift+y" = "exec ~/.config/sway/toggle-theme.sh";
+          "${modifier}+Shift+y" = "exec ~/dev/config/scripts/toggle-theme.sh";
           "XF86AudioLowerVolume" = "exec 'pactl set-sink-volume @DEFAULT_SINK@ -1%'";
           "XF86AudioMicMute" = "exec 'pactl set-source-mute @DEFAULT_SOURCE@ toggle'";
           "XF86AudioMute" = "exec 'pactl set-sink-mute @DEFAULT_SINK@ toggle'";
@@ -70,7 +76,7 @@
         };
       bars = [
         {
-          command = bar;
+          command = "waybar";
         }
       ];
       window = {
@@ -80,9 +86,9 @@
     };
   };
 
-  home.file.sway-toggle-theme = {
-    source = ./sway/toggle-theme.sh;
-    target = ".config/sway/toggle-theme.sh";
-    executable = true;
+  home.file.sway-desktop-files = {
+    source = ./sway/desktop-files;
+    target = ".local/share/applications";
+    recursive = true;
   };
 }

@@ -66,5 +66,6 @@
   "git.openRepositoryInParentFolders": "never",
   "[dockercompose]": {
     "editor.defaultFormatter": "ms-azuretools.vscode-docker"
-  }
+  },
+  "rust-analyzer.cargo.features": "all"
 }
