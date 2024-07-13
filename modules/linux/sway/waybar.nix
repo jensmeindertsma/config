@@ -26,7 +26,7 @@
     enable = true;
     package =
       if install == true
-      then pkgs.kitty
+      then pkgs.waybar
       else pkgs.runCommandNoCC "empty" {} "mkdir -p $out";
 
     settings = {
