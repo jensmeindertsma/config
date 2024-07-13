@@ -24,7 +24,7 @@
     home-manager,
   }: let
     signatures = {
-      isac = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBbtIOwSFqQSvNkbPO/TvhKiHi5T6bS0C/rzu5h2Sj9O";
+      anna = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBbtIOwSFqQSvNkbPO/TvhKiHi5T6bS0C/rzu5h2Sj9O";
       vanguard = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEG0u2sQkfE5QvH8xv7ZaY4lvca3aAZQX1cljJmNsNqx";
       wyvern = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJhI5sNxApLWYWOKljGuaVzt/6rsAVlAlb2lKv0nPHyD";
     };
@@ -107,8 +107,8 @@
         })
       ];
 
-      isac = homeManager "x86_64-linux" [
-        ./systems/isac/home.nix
+      anna = homeManager "x86_64-linux" [
+        ./systems/anna/home.nix
         ./modules/tools.nix
         (import ./modules/zsh.nix {
           aliases = {
@@ -117,7 +117,7 @@
         })
         (import ./modules/git.nix {
           signatures = signatures;
-          signing_key = signatures.isac;
+          signing_key = signatures.anna;
         })
         (import ./modules/neovim.nix {absolute_path_to_project = "/home/jens/dev/config";})
         ./modules/rust.nix
