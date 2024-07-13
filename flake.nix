@@ -26,7 +26,7 @@
     signatures = {
       anna = {
         key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBbtIOwSFqQSvNkbPO/TvhKiHi5T6bS0C/rzu5h2Sj9O";
-        username = "keener";
+        username = "jens";
       };
       vanguard = {
         key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEG0u2sQkfE5QvH8xv7ZaY4lvca3aAZQX1cljJmNsNqx";
@@ -119,7 +119,7 @@
           signatures = signatures;
           signing_key = signatures.anna.key;
         })
-        (import ./modules/neovim.nix {absolute_path_to_project = "/home/keener/dev/config";})
+        (import ./modules/neovim.nix {absolute_path_to_project = "/home/jens/dev/config";})
         ./modules/rust.nix
 
         ./modules/linux/fontconfig.nix
@@ -130,7 +130,7 @@
         })
 
         (import ./modules/vscode.nix {
-          absolute_path_to_project = "/home/keener/dev/config";
+          absolute_path_to_project = "/home/jens/dev/config";
           target_directory = ".config/Code/User";
         })
       ];

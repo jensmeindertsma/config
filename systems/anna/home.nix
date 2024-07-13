@@ -1,8 +1,8 @@
 {...}: {
   home = {
     stateVersion = "24.05";
-    username = "keener";
-    homeDirectory = "/home/keener";
+    username = "jens";
+    homeDirectory = "/home/jens";
   };
 
   nixpkgs.config.allowUnfree = true;
@@ -19,12 +19,6 @@
       cabin = {
         hostname = "161.35.89.119";
         user = "jens";
-      };
-
-      devbox = {
-        hostname = "192.168.122.8";
-        user = "jens";
-        forwardAgent = true;
       };
     };
   };
