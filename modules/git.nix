@@ -1,7 +1,11 @@
 {
   signatures,
   signing_key,
-}: {lib, ...}: {
+}: {
+  config,
+  lib,
+  ...
+}: {
   programs.git = {
     enable = true;
 
@@ -54,7 +58,7 @@
         "\n"
         (
           lib.attrsets.mapAttrsToList
-          (key: value: "mail@jensmeindertsma.com ${value.key} ${value.username}@${key}")
+          (key: value: "mail@jensmeindertsma.com ${value} ${config.home.username}@${key}")
           signatures
         );
     };

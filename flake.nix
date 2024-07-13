@@ -24,46 +24,53 @@
     home-manager,
   }: let
     signatures = {
-      anna = {
-        key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBbtIOwSFqQSvNkbPO/TvhKiHi5T6bS0C/rzu5h2Sj9O";
-        username = "jens";
-      };
-      vanguard = {
-        key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEG0u2sQkfE5QvH8xv7ZaY4lvca3aAZQX1cljJmNsNqx";
-        username = "jens";
-      };
-      wyvern = {
-        key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJhI5sNxApLWYWOKljGuaVzt/6rsAVlAlb2lKv0nPHyD";
-        username = "jens";
-      };
+      vanguard = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEG0u2sQkfE5QvH8xv7ZaY4lvca3aAZQX1cljJmNsNqx";
+      wyvern = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJhI5sNxApLWYWOKljGuaVzt/6rsAVlAlb2lKv0nPHyD";
     };
+
+    git = key: (import ./modules/git.nix {
+      signatures = signatures;
+      signing_key = key;
+    });
+
+    neovim = source: (import ./modules/neovim.nix {
+      source = source;
+    });
+
+    vscode = {
+      source,
+      destination,
+    }: (import ./modules/vscode.nix {
+      source = source;
+      destination = destination;
+    });
   in {
     darwinConfigurations = {
-      vanguard = nix-darwin.lib.darwinSystem {
-        system = "aarch64-darwin";
-        pkgs = nixpkgs-darwin.legacyPackages."aarch64-darwin";
-        modules = [
-          home-manager.darwinModules.home-manager
-          (import ./systems/vanguard/darwin.nix {
-            homeModules = [
-              ./modules/tools.nix
-              (import ./modules/zsh.nix {
-                aliases = {};
-              })
-              (import ./modules/git.nix {
-                signatures = signatures;
-                signing_key = signatures.vanguard.key;
-              })
-              (import ./modules/neovim.nix {absolute_path_to_project = "/Users/Jens/Development/config";})
-              ./modules/rust.nix
-              (import ./modules/vscode.nix {
-                absolute_path_to_project = "/Users/Jens/Development/config";
-                target_directory = "/Library/Application Support/Code/User";
-              })
-            ];
-          })
-        ];
-      };
+      vanguard = let
+        root = "/Users/Jens/Development/config";
+      in
+        nix-darwin.lib.darwinSystem {
+          system = "aarch64-darwin";
+          pkgs = nixpkgs-darwin.legacyPackages."aarch64-darwin";
+          modules = [
+            home-manager.darwinModules.home-manager
+            (import ./systems/vanguard/darwin.nix {
+              homeModules = [
+                ./modules/tools.nix
+                (import ./modules/zsh.nix {
+                  install = false;
+                })
+                (git signatures.vanguard)
+                (neovim root)
+                ./modules/rust.nix
+                (vscode {
+                  source = root;
+                  destination = "/Users/Jens/Library/Application Support/Code/User";
+                })
+              ];
+            })
+          ];
+        };
     };
 
     homeConfigurations = let
@@ -73,67 +80,40 @@
           modules = modules;
         };
     in {
-      wyvern = homeManager "x86_64-linux" [
-        ./systems/wyvern/home.nix
-        ./modules/tools.nix
-        (import ./modules/zsh.nix {
-          aliases = {
-            "reflect" = "sudo systemctl start reflector";
-          };
-        })
-        (import ./modules/git.nix {
-          signatures = signatures;
-          signing_key = signatures.wyvern.key;
-        })
-        (import ./modules/neovim.nix {absolute_path_to_project = "/home/jens/dev/config";})
+      wyvern = let
+        root = "/home/jens/dev/config";
+      in
+        homeManager "x86_64-linux" [
+          ./systems/wyvern/home.nix
+          ./modules/tools.nix
+          (import ./modules/zsh.nix {
+            install = true;
+            aliases = {
+              "reflect" = "sudo systemctl start reflector";
+            };
+          })
+          (git signatures.wyvern)
+          (neovim root)
 
-        ./modules/linux/fontconfig.nix
+          ./modules/linux/fontconfig.nix
 
-        (import ./modules/linux/sway.nix {
-          install = false;
-          scale = "2";
-          wallpaper = "~/Pictures/Wallpapers/2.jpg";
-        })
+          (import ./modules/linux/sway.nix {
+            install = false;
+            scale = "2";
+            wallpaper = "~/Pictures/Wallpapers/2.jpg";
+          })
 
-        (import ./modules/linux/i3.nix {
-          install = false;
-          scale = "2";
-          wallpaper = "~/Pictures/Wallpapers/2.jpg";
-        })
+          (import ./modules/linux/i3.nix {
+            install = false;
+            scale = "2";
+            wallpaper = "~/Pictures/Wallpapers/2.jpg";
+          })
 
-        (import ./modules/vscode.nix {
-          absolute_path_to_project = "/home/jens/dev/config";
-          target_directory = ".config/Code/User";
-        })
-      ];
-
-      anna = homeManager "x86_64-linux" [
-        ./systems/anna/home.nix
-        ./modules/tools.nix
-        (import ./modules/zsh.nix {
-          aliases = {
-            "reflect" = "sudo systemctl start reflector";
-          };
-        })
-        (import ./modules/git.nix {
-          signatures = signatures;
-          signing_key = signatures.anna.key;
-        })
-        (import ./modules/neovim.nix {absolute_path_to_project = "/home/jens/dev/config";})
-        ./modules/rust.nix
-
-        ./modules/linux/fontconfig.nix
-        (import ./modules/linux/sway.nix {
-          install = false;
-          scale = "1.5";
-          wallpaper = "~/Pictures/Wallpapers/2.jpg";
-        })
-
-        (import ./modules/vscode.nix {
-          absolute_path_to_project = "/home/jens/dev/config";
-          target_directory = ".config/Code/User";
-        })
-      ];
+          (vscode {
+            source = root;
+            destination = "~/.config/Code/User";
+          })
+        ];
     };
   };
 }

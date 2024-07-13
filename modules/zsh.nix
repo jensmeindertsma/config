@@ -1,4 +1,7 @@
-{aliases ? {}}: {
+{
+  install ? true,
+  aliases ? {},
+}: {
   lib,
   pkgs,
   ...
@@ -7,6 +10,10 @@
 
   programs.zsh = {
     enable = true;
+    package =
+      if install == true
+      then pkgs.zsh
+      else pkgs.runCommandNoCC "empty" {} "mkdir -p $out";
     shellAliases =
       {
         cat = "bat";
@@ -15,7 +22,6 @@
         mit = "license-generator mit --author 'Jens Meindertsma' --output LICENSE.md";
       }
       // aliases;
-    initExtra = builtins.readFile ./zsh/.zshrc;
   };
 
   programs.starship = {
