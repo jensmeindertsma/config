@@ -54,7 +54,7 @@
         "\n"
         (
           lib.attrsets.mapAttrsToList
-          (key: value: "mail@jensmeindertsma.com ${value} jens@${key}")
+          (key: value: "mail@jensmeindertsma.com ${value.key} ${value.username}@${key}")
           signatures
         );
     };

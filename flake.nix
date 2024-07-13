@@ -24,9 +24,18 @@
     home-manager,
   }: let
     signatures = {
-      anna = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBbtIOwSFqQSvNkbPO/TvhKiHi5T6bS0C/rzu5h2Sj9O";
-      vanguard = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEG0u2sQkfE5QvH8xv7ZaY4lvca3aAZQX1cljJmNsNqx";
-      wyvern = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJhI5sNxApLWYWOKljGuaVzt/6rsAVlAlb2lKv0nPHyD";
+      anna = {
+        key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBbtIOwSFqQSvNkbPO/TvhKiHi5T6bS0C/rzu5h2Sj9O";
+        username = "keener";
+      };
+      vanguard = {
+        key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEG0u2sQkfE5QvH8xv7ZaY4lvca3aAZQX1cljJmNsNqx";
+        username = "jens";
+      };
+      wyvern = {
+        key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJhI5sNxApLWYWOKljGuaVzt/6rsAVlAlb2lKv0nPHyD";
+        username = "jens";
+      };
     };
   in {
     darwinConfigurations = {
@@ -43,7 +52,7 @@
               })
               (import ./modules/git.nix {
                 signatures = signatures;
-                signing_key = signatures.vanguard;
+                signing_key = signatures.vanguard.key;
               })
               (import ./modules/neovim.nix {absolute_path_to_project = "/Users/Jens/Development/config";})
               ./modules/rust.nix
@@ -74,7 +83,7 @@
         })
         (import ./modules/git.nix {
           signatures = signatures;
-          signing_key = signatures.wyvern;
+          signing_key = signatures.wyvern.key;
         })
         (import ./modules/neovim.nix {absolute_path_to_project = "/home/jens/dev/config";})
 
@@ -108,9 +117,9 @@
         })
         (import ./modules/git.nix {
           signatures = signatures;
-          signing_key = signatures.anna;
+          signing_key = signatures.anna.key;
         })
-        (import ./modules/neovim.nix {absolute_path_to_project = "/home/jens/dev/config";})
+        (import ./modules/neovim.nix {absolute_path_to_project = "/home/keener/dev/config";})
         ./modules/rust.nix
 
         ./modules/linux/fontconfig.nix
@@ -121,7 +130,7 @@
         })
 
         (import ./modules/vscode.nix {
-          absolute_path_to_project = "/home/jens/dev/config";
+          absolute_path_to_project = "/home/keener/dev/config";
           target_directory = ".config/Code/User";
         })
       ];
