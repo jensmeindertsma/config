@@ -1,5 +1,4 @@
 {
-  absolute_path_to_project,
   install ? false,
 }: {
   config,
@@ -7,18 +6,18 @@
   ...
 }: {
   home.file.waybar-network = {
-    source = config.lib.file.mkOutOfStoreSymlink "${absolute_path_to_project}/modules/linux/sway/waybar/network.sh";
+    source = ./waybar/network.sh;
     target = "${config.home.homeDirectory}/.config/waybar/network.sh";
     #executable = true;
   };
 
   home.file.waybar-style-l = {
-    source = config.lib.file.mkOutOfStoreSymlink "${absolute_path_to_project}/modules/linux/sway/waybar/style-light.css";
+    source = ./waybar/style-light.css;
     target = "${config.home.homeDirectory}/.config/waybar/style-light.css";
   };
 
   home.file.waybar-style-d = {
-    source = config.lib.file.mkOutOfStoreSymlink "${absolute_path_to_project}/modules/linux/sway/waybar/style-dark.css";
+    source = ./waybar/style-dark.css;
     target = "${config.home.homeDirectory}/.config/waybar/style-dark.css";
   };
 

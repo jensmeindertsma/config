@@ -14,7 +14,6 @@
     (import ./sway/kitty.nix {install = false;})
     (import ./sway/waybar.nix {
       install = false;
-      absolute_path_to_project = "/home/jens/dev/config";
     })
     ./sway/fuzzel.nix
   ];

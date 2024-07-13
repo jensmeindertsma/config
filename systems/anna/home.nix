@@ -1,8 +1,8 @@
 {...}: {
   home = {
     stateVersion = "24.05";
-    username = "jens";
-    homeDirectory = "/home/jens";
+    username = "keener";
+    homeDirectory = "/home/keener";
   };
 
   nixpkgs.config.allowUnfree = true;
