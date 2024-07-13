@@ -125,7 +125,7 @@
         ./modules/linux/fontconfig.nix
         (import ./modules/linux/sway.nix {
           install = false;
-          scale = "1.4";
+          scale = "1.5";
           wallpaper = "~/Pictures/Wallpapers/2.jpg";
         })
 
