@@ -41,11 +41,6 @@
               (import ./modules/zsh.nix {
                 aliases = {};
               })
-              ({...}: {
-                programs.zsh.initExtra = ''
-                  export SSH_AUTH_SOCK = $XDG_RUNTIME_DIR/ssh-agent.socket
-                '';
-              })
               (import ./modules/git.nix {
                 signatures = signatures;
                 signing_key = signatures.vanguard;
@@ -82,23 +77,19 @@
           signing_key = signatures.wyvern;
         })
         (import ./modules/neovim.nix {absolute_path_to_project = "/home/jens/dev/config";})
-        ./modules/rust.nix
 
         ./modules/linux/fontconfig.nix
-        ./modules/linux/fuzzel.nix
-        (import ./modules/linux/kitty.nix {install = false;})
+
         (import ./modules/linux/sway.nix {
           install = false;
           scale = "2";
           wallpaper = "~/Pictures/Wallpapers/2.jpg";
-
-          menu = "fuzzel";
-          terminal = "kitty";
-          bar = "waybar";
         })
-        (import ./modules/linux/waybar.nix {
+
+        (import ./modules/linux/i3.nix {
           install = false;
-          absolute_path_to_project = "/home/jens/dev/config";
+          scale = "2";
+          wallpaper = "~/Pictures/Wallpapers/2.jpg";
         })
 
         (import ./modules/vscode.nix {
@@ -123,19 +114,10 @@
         ./modules/rust.nix
 
         ./modules/linux/fontconfig.nix
-        ./modules/linux/fuzzel.nix
-        (import ./modules/linux/kitty.nix {install = false;})
         (import ./modules/linux/sway.nix {
           install = false;
           scale = "1.4";
           wallpaper = "~/Pictures/Wallpapers/2.jpg";
-          menu = "fuzzel";
-          terminal = "kitty";
-          bar = "waybar";
-        })
-        (import ./modules/linux/waybar.nix {
-          install = false;
-          absolute_path_to_project = "/home/jens/dev/config";
         })
 
         (import ./modules/vscode.nix {

@@ -77,5 +77,5 @@
   "[dockercompose]": {
     "editor.defaultFormatter": "ms-azuretools.vscode-docker"
   },
-  "mssql.objectExplorer.groupBySchema": false
+  "rust-analyzer.cargo.features": "all"
 }
