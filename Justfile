@@ -1,8 +1,8 @@
 default:
   just --list
 
-switch-isac:
-    home-manager switch --flake .#isac
+switch-anna:
+    home-manager switch --flake .#anna
 
 switch-vanguard: 
     darwin-rebuild switch --flake .#vanguard
