@@ -103,12 +103,6 @@
             wallpaper = "~/Pictures/Wallpapers/2.jpg";
           })
 
-          (import ./modules/linux/i3.nix {
-            install = false;
-            scale = "2";
-            wallpaper = "~/Pictures/Wallpapers/2.jpg";
-          })
-
           (vscode {
             source = root;
             destination = "~/.config/Code/User";
