@@ -1,10 +1,7 @@
-{install ? true}: {pkgs, ...}: {
+{pkgs, ...}: {
   programs.kitty = {
     enable = true;
-    package =
-      if install == true
-      then pkgs.kitty
-      else pkgs.runCommandNoCC "empty" {} "mkdir -p $out";
+    package = pkgs.runCommandNoCC "empty" {} "mkdir -p $out";
     font = {
       size = 14;
       name = "monospace";

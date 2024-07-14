@@ -10,6 +10,10 @@ homeModules: {pkgs, ...}: {
       ./modules/homebrew.nix
     ];
 
+  programs.zsh.profileExtra = ''
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+  '';
+
   programs.ssh = {
     enable = true;
     addKeysToAgent = "yes";

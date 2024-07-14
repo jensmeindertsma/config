@@ -15,11 +15,6 @@
   programs.ssh = {
     enable = true;
     addKeysToAgent = "yes";
-    matchBlocks = {
-      cabin = {
-        hostname = "161.35.89.119";
-        user = "jens";
-      };
-    };
+    matchBlocks = {};
   };
 }
