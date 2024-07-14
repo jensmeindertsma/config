@@ -105,7 +105,7 @@
 
           (vscode {
             source = root;
-            destination = "~/.config/Code/User";
+            destination = "/home/jens/.config/Code/User";
           })
         ];
     };
