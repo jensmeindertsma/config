@@ -53,7 +53,6 @@
   "workbench.layoutControl.enabled": false,
   "workbench.preferredLightColorTheme": "GitHub Light",
   "workbench.startupEditor": "none",
-  "workbench.preferredDarkColorTheme": "GitHub Dark",
   "editor.stickyScroll.enabled": false,
   "window.menuBarVisibility": "toggle",
   "mssql.connections": [
@@ -77,5 +76,6 @@
   "[dockercompose]": {
     "editor.defaultFormatter": "ms-azuretools.vscode-docker"
   },
-  "rust-analyzer.cargo.features": "all"
+  "rust-analyzer.cargo.features": "all",
+  "workbench.preferredDarkColorTheme": "GitHub Dark"
 }
