@@ -7,5 +7,6 @@
     gh
     just
     vim
+    wget
   ];
 }

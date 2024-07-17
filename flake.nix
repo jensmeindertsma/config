@@ -95,7 +95,7 @@
       sway = options: import ./modules/sway.nix options;
     in {
       anna = let
-        root = "/home/jens/dev/config";
+        root = "/home/jens/dev/jensmeindertsma/config";
         home = import ./systems/anna/home.nix;
       in
         homeManager "x86_64-linux" [
@@ -114,7 +114,7 @@
             binaryName = "toggle-theme";
           })
           (sway {
-            scale = "2";
+            scale = "1.5";
             wallpaper = "~/Pictures/Wallpapers/001.jpg";
             theme.toggleCommand = "toggle-theme";
           })
