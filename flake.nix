@@ -47,7 +47,7 @@
   in {
     darwinConfigurations = {
       vanguard = let
-        root = "/Users/Jens/Development/config";
+        root = "/Users/Jens/Development/jensmeindertsma/config";
       in
         nix-darwin.lib.darwinSystem {
           system = "aarch64-darwin";
