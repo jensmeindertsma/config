@@ -19,11 +19,13 @@
       athena = {
         hostname = "192.168.103.213";
         user = "jens";
+        forwardAgent = true;
       };
 
       taurus = {
         hostname = "192.168.103.252";
         user = "jens";
+        forwardAgent = true;
       };
 
       "i:ubuntu" = {
