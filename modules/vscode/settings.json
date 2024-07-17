@@ -34,6 +34,7 @@
   "git.confirmSync": false,
   "nix.enableLanguageServer": true,
   "nix.serverPath": "nil",
+  "nix.formatterPath": "alejandra",
   "nix.serverSettings": {
     "nil": {
       "formatting": {
