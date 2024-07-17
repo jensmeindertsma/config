@@ -8,8 +8,6 @@
     neovim
     nil
     python3
-    pkgs
-    ["python3.12-pip"]
     ruff
   ];
 
