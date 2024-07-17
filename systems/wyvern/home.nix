@@ -27,6 +27,31 @@
         user = "jens";
         forwardAgent = true;
       };
+
+      "i:ubuntu" = {
+        hostname = "192.168.100.160";
+        user = "jens";
+      };
+      "i:fedora" = {
+        hostname = "192.168.100.207";
+        user = "jens";
+      };
+      "l:ubuntu" = {
+        hostname = "192.168.101.151";
+        user = "jens";
+      };
+      "l:fedora" = {
+        hostname = "192.168.101.226";
+        user = "jens";
+      };
+      "l:opensuse" = {
+        hostname = "192.168.101.183";
+        user = "jens";
+      };
+      "l:rocky" = {
+        hostname = "192.168.101.163";
+        user = "jens";
+      };
     };
   };
 }

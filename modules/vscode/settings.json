@@ -78,5 +78,6 @@
     "editor.defaultFormatter": "ms-azuretools.vscode-docker"
   },
   "rust-analyzer.cargo.features": "all",
-  "workbench.preferredDarkColorTheme": "GitHub Dark"
+  "workbench.preferredDarkColorTheme": "GitHub Dark",
+  "git.suggestSmartCommit": false
 }
