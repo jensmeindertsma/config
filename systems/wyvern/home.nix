@@ -16,20 +16,16 @@
     enable = true;
     addKeysToAgent = "yes";
     matchBlocks = {
-      devbox = {
-        hostname = "192.168.122.66";
+      magnus = {
+        hostname = "192.168.103.150";
         user = "jens";
         forwardAgent = true;
       };
 
-      "iv:ubuntu" = {
-        hostname = "192.168.100.211";
+      robin = {
+        hostname = "192.168.103.223";
         user = "jens";
-      };
-
-      "iv:fedora" = {
-        hostname = "192.168.100.133";
-        user = "jens";
+        forwardAgent = true;
       };
     };
   };

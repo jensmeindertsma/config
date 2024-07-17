@@ -125,7 +125,7 @@
         ];
 
       wyvern = let
-        root = "/home/jens/dev/config";
+        root = "/home/jens/dev/jensmeindertsma/config";
         home = import ./systems/wyvern/home.nix;
       in
         homeManager "x86_64-linux" [
