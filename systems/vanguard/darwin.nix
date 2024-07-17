@@ -9,6 +9,10 @@
 
   environment.shells = with pkgs; [zsh];
 
+  users.users.jens = {
+    home = "/Users/Jens";
+  };
+
   fonts = {
     packages = with pkgs; [
       (nerdfonts.override {fonts = ["JetBrainsMono"];})

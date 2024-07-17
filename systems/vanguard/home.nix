@@ -4,11 +4,7 @@ homeModules: {pkgs, ...}: {
   # Let `home-manager` install and manage itself.
   programs.home-manager.enable = true;
 
-  imports =
-    homeModules
-    ++ [
-      ./modules/homebrew.nix
-    ];
+  imports  = homeModules;
 
   programs.zsh.profileExtra = ''
     eval "$(/opt/homebrew/bin/brew shellenv)"
