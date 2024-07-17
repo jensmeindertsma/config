@@ -6,6 +6,8 @@
   home.packages = with pkgs; [
     alejandra
     neovim
+    nil
+    ruff
   ];
 
   home.file.nvim = {

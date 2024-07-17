@@ -1,7 +1,7 @@
 {
-  install ? true,
   scale ? 1,
   wallpaper,
+  theme,
 }: {
   pkgs,
   config,
@@ -11,19 +11,14 @@
   home.packages = with pkgs; [brightnessctl pulseaudio];
 
   imports = [
-    (import ./sway/kitty.nix {install = false;})
-    (import ./sway/waybar.nix {
-      install = false;
-    })
+    ./sway/kitty.nix
+    ./sway/waybar.nix
     ./sway/fuzzel.nix
   ];
 
   wayland.windowManager.sway = {
     enable = true;
-    package =
-      if install == true
-      then pkgs.sway
-      else null;
+    package = null;
     # TODO: figure out wallpaper situation...
     checkConfig = false;
     extraConfig = ''
@@ -63,7 +58,7 @@
           "--locked ${modifier}+Shift+d" = "exec 'poweroff'";
           "--locked ${modifier}+Shift+s" = "exec 'systemctl suspend'";
 
-          "${modifier}+Shift+y" = "exec ~/dev/config/scripts/toggle-theme.sh";
+          "${modifier}+Shift+y" = "exec ${theme.toggleCommand}";
           "XF86AudioLowerVolume" = "exec 'pactl set-sink-volume @DEFAULT_SINK@ -1%'";
           "XF86AudioMicMute" = "exec 'pactl set-source-mute @DEFAULT_SOURCE@ toggle'";
           "XF86AudioMute" = "exec 'pactl set-sink-mute @DEFAULT_SINK@ toggle'";

@@ -1,16 +1,11 @@
-{homeModules}: {pkgs, ...}: {
-  services.nix-daemon.enable = true;
-
-  nixpkgs.hostPlatform = "aarch64-darwin";
+{pkgs, ...}: {
   nixpkgs.config.allowUnfree = true;
+  nixpkgs.hostPlatform = "aarch64-darwin";
 
   nix.settings.experimental-features = "nix-command flakes";
 
   security.pam.enableSudoTouchIdAuth = true;
-
-  users.users.jens = {
-    home = "/Users/Jens";
-  };
+  services.nix-daemon.enable = true;
 
   environment.shells = with pkgs; [zsh];
 
@@ -22,8 +17,4 @@
 
   programs.bash.enable = true;
   programs.zsh.enable = true;
-
-  home-manager.useGlobalPkgs = true;
-  home-manager.useUserPackages = true;
-  home-manager.users.jens = import ./home.nix homeModules;
 }

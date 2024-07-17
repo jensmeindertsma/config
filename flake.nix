@@ -24,51 +24,61 @@
     home-manager,
   }: let
     signatures = {
+      anna = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHXKzgKhtwMk6R5/3aaJrq99VazfnzpfbfNvMojNx8bt";
       vanguard = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEG0u2sQkfE5QvH8xv7ZaY4lvca3aAZQX1cljJmNsNqx";
       wyvern = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJhI5sNxApLWYWOKljGuaVzt/6rsAVlAlb2lKv0nPHyD";
     };
 
-    git = key: (import ./modules/git.nix {
-      signatures = signatures;
-      signing_key = key;
-    });
+    git = key:
+      import ./modules/git.nix {
+        signatures = signatures;
+        signing_key = key;
+      };
 
-    neovim = source: (import ./modules/neovim.nix {
-      source = source;
-    });
+    neovim = source:
+      import ./modules/neovim.nix {
+        source = source;
+      };
+
+    tools = ./modules/tools.nix;
 
     vscode = {
       source,
       destination,
-    }: (import ./modules/vscode.nix {
-      source = source;
-      destination = destination;
-    });
+    }:
+      import ./modules/vscode.nix {
+        source = source;
+        destination = destination;
+      };
+
+    zsh = options: import ./modules/zsh.nix (options // {install = false;});
   in {
     darwinConfigurations = {
       vanguard = let
         root = "/Users/Jens/Development/jensmeindertsma/config";
+        darwin = import ./systems/vanguard/darwin.nix;
+        home = modules: import ./systems/vanguard/home.nix modules;
       in
         nix-darwin.lib.darwinSystem {
           system = "aarch64-darwin";
           pkgs = nixpkgs-darwin.legacyPackages."aarch64-darwin";
           modules = [
+            darwin
             home-manager.darwinModules.home-manager
-            (import ./systems/vanguard/darwin.nix {
-              homeModules = [
-                ./modules/tools.nix
-                (import ./modules/zsh.nix {
-                  install = false;
-                })
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.users.jens = home [
+                tools
                 (git signatures.vanguard)
+                (zsh {})
                 (neovim root)
-                ./modules/rust.nix
                 (vscode {
                   source = root;
                   destination = "/Users/Jens/Library/Application Support/Code/User";
                 })
               ];
-            })
+            }
           ];
         };
     };
@@ -79,39 +89,68 @@
           pkgs = nixpkgs.legacyPackages.${system};
           modules = modules;
         };
+
+      fontconfig = ./modules/fontconfig.nix;
+      theme = options: import ./modules/theme.nix options;
+      sway = options: import ./modules/sway.nix options;
     in {
-      wyvern = let
-        root = "/home/jens/dev/config";
+      anna = let
+        root = "/home/jens/dev/jensmeindertsma/config";
+        home = import ./systems/anna/home.nix;
       in
         homeManager "x86_64-linux" [
-          ./systems/wyvern/home.nix
-          ./modules/tools.nix
-          (import ./modules/zsh.nix {
-            install = true;
+          home
+          tools
+          (git signatures.anna)
+          (zsh {
+            aliases = {
+              "reflect" = "sudo systemctl start reflector";
+            };
+          })
+          (neovim root)
+          fontconfig
+          (theme {
+            enableKitty = true;
+            binaryName = "toggle-theme";
+          })
+          (sway {
+            scale = "1.5";
+            wallpaper = "~/Pictures/Wallpapers/001.jpg";
+            theme.toggleCommand = "toggle-theme";
+          })
+          (vscode {
+            source = root;
+            destination = "/home/jens/.config/Code/User";
+          })
+        ];
+
+      wyvern = let
+        root = "/home/jens/dev/jensmeindertsma/config";
+        home = import ./systems/wyvern/home.nix;
+      in
+        homeManager "x86_64-linux" [
+          home
+          tools
+          (zsh {
             aliases = {
               "reflect" = "sudo systemctl start reflector";
             };
           })
           (git signatures.wyvern)
           (neovim root)
-
-          ./modules/linux/fontconfig.nix
-
-          (import ./modules/linux/sway.nix {
-            install = false;
+          fontconfig
+          (theme {
+            enableKitty = true;
+            binaryName = "toggle-theme";
+          })
+          (sway {
             scale = "2";
             wallpaper = "~/Pictures/Wallpapers/2.jpg";
+            theme.toggleCommand = "toggle-theme";
           })
-
-          (import ./modules/linux/i3.nix {
-            install = false;
-            scale = "2";
-            wallpaper = "~/Pictures/Wallpapers/2.jpg";
-          })
-
           (vscode {
             source = root;
-            destination = "~/.config/Code/User";
+            destination = "/home/jens/.config/Code/User";
           })
         ];
     };

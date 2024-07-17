@@ -10,5 +10,5 @@ Type=Application
 Categories=Development;Building;
 StartupNotify=true
 MimeType=application/x-cmakecache;
-NoDisplay=true;
+NoDisplay=true
 

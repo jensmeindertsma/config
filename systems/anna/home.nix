@@ -16,8 +16,38 @@
     enable = true;
     addKeysToAgent = "yes";
     matchBlocks = {
-      cabin = {
-        hostname = "161.35.89.119";
+      athena = {
+        hostname = "192.168.103.213";
+        user = "jens";
+      };
+
+      taurus = {
+        hostname = "192.168.103.252";
+        user = "jens";
+      };
+
+      "i:ubuntu" = {
+        hostname = "192.168.101.240";
+        user = "jens";
+      };
+      "i:fedora" = {
+        hostname = "192.168.101.199";
+        user = "jens";
+      };
+      "l:ubuntu" = {
+        hostname = "192.168.100.192";
+        user = "jens";
+      };
+      "l:fedora" = {
+        hostname = "192.168.100.217";
+        user = "jens";
+      };
+      "l:opensuse" = {
+        hostname = "192.168.100.226";
+        user = "jens";
+      };
+      "l:rocky" = {
+        hostname = "192.168.100.130";
         user = "jens";
       };
     };
