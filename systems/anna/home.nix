@@ -16,6 +16,16 @@
     enable = true;
     addKeysToAgent = "yes";
     matchBlocks = {
+      athena = {
+        hostname = "192.168.103.213";
+        user = "jens";
+      };
+
+      taurus = {
+        hostname = "192.168.103.252";
+        user = "jens";
+      };
+
       "i:ubuntu" = {
         hostname = "192.168.101.240";
         user = "jens";
