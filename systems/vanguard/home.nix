@@ -18,7 +18,7 @@ homeModules: {pkgs, ...}: {
     '';
     matchBlocks = {
       dime = {
-        hostname = "192.168.64.6";
+        hostname = "192.168.64.7";
         user = "jens";
         forwardAgent = true;
       };
