@@ -16,16 +16,12 @@
     enable = true;
     addKeysToAgent = "yes";
     matchBlocks = {
-      "i/ubuntu" = {
-        hostname = "192.168.101.154";
-        user = "jens";
-      };
       "i/fedora" = {
         hostname = "192.168.101.149";
         user = "jens";
       };
-      "l/ubuntu" = {
-        hostname = "192.168.102.228";
+      "i/ubuntu" = {
+        hostname = "192.168.101.154";
         user = "jens";
       };
       "l/fedora" = {
@@ -38,6 +34,10 @@
       };
       "l/rocky" = {
         hostname = "192.168.102.181";
+        user = "jens";
+      };
+      "l/ubuntu" = {
+        hostname = "192.168.102.228";
         user = "jens";
       };
     };
