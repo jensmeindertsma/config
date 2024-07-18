@@ -95,7 +95,7 @@
       sway = options: import ./modules/sway.nix options;
     in {
       anna = let
-        root = "/home/jens/dev/jensmeindertsma/config";
+        root = "/home/jens/Development/jensmeindertsma/config";
         home = import ./systems/anna/home.nix;
       in
         homeManager "x86_64-linux" [
@@ -125,7 +125,7 @@
         ];
 
       wyvern = let
-        root = "/home/jens/dev/jensmeindertsma/config";
+        root = "/home/jens/Development/jensmeindertsma/config";
         home = import ./systems/wyvern/home.nix;
       in
         homeManager "x86_64-linux" [
