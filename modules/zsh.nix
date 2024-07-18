@@ -46,6 +46,9 @@
 
   programs.starship = {
     enable = true;
+    settings = {
+      command_timeout = 50000;
+    };
   };
 
   programs.direnv = {

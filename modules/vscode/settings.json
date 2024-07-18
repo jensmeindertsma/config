@@ -79,5 +79,6 @@
   },
   "rust-analyzer.cargo.features": "all",
   "workbench.preferredDarkColorTheme": "GitHub Dark",
-  "git.suggestSmartCommit": false
+  "git.suggestSmartCommit": false,
+  "explorer.confirmDelete": false
 }
