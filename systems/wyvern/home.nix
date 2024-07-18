@@ -16,40 +16,28 @@
     enable = true;
     addKeysToAgent = "yes";
     matchBlocks = {
-      magnus = {
-        hostname = "192.168.103.150";
-        user = "jens";
-        forwardAgent = true;
-      };
-
-      robin = {
-        hostname = "192.168.103.223";
-        user = "jens";
-        forwardAgent = true;
-      };
-
-      "i:ubuntu" = {
-        hostname = "192.168.100.160";
+      "i/ubuntu" = {
+        hostname = "192.168.101.154";
         user = "jens";
       };
-      "i:fedora" = {
-        hostname = "192.168.100.207";
+      "i/fedora" = {
+        hostname = "192.168.101.149";
         user = "jens";
       };
-      "l:ubuntu" = {
-        hostname = "192.168.101.151";
+      "l/ubuntu" = {
+        hostname = "192.168.102.228";
         user = "jens";
       };
-      "l:fedora" = {
-        hostname = "192.168.101.226";
+      "l/fedora" = {
+        hostname = "192.168.102.200";
         user = "jens";
       };
-      "l:opensuse" = {
-        hostname = "192.168.101.183";
+      "l/opensuse" = {
+        hostname = "192.168.102.142";
         user = "jens";
       };
-      "l:rocky" = {
-        hostname = "192.168.101.163";
+      "l/rocky" = {
+        hostname = "192.168.102.181";
         user = "jens";
       };
     };

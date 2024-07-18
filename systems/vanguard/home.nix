@@ -4,7 +4,7 @@ homeModules: {pkgs, ...}: {
   # Let `home-manager` install and manage itself.
   programs.home-manager.enable = true;
 
-  imports  = homeModules;
+  imports = homeModules;
 
   programs.zsh.profileExtra = ''
     eval "$(/opt/homebrew/bin/brew shellenv)"
@@ -16,13 +16,6 @@ homeModules: {pkgs, ...}: {
     extraConfig = ''
       UseKeychain yes
     '';
-    matchBlocks = {
-      devbox = {
-        hostname = "127.0.0.1";
-        port = 2001;
-        user = "jens";
-        forwardAgent = true;
-      };
-    };
+    matchBlocks = {};
   };
 }
