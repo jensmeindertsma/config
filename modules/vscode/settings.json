@@ -80,5 +80,8 @@
   "rust-analyzer.cargo.features": "all",
   "workbench.preferredDarkColorTheme": "GitHub Dark",
   "git.suggestSmartCommit": false,
-  "explorer.confirmDelete": false
+  "explorer.confirmDelete": false,
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
