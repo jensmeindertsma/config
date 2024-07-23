@@ -6,6 +6,7 @@
     fd
     gh
     just
+    unzip
     vim
     wget
   ];

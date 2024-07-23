@@ -147,7 +147,7 @@
           })
           (sway {
             scale = "2";
-            wallpaper = "~/Pictures/Wallpapers/2.jpg";
+            wallpaper = "~/Pictures/Wallpapers/3.jpg";
             theme.toggleCommand = "toggle-theme";
           })
           (vscode {

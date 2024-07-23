@@ -16,6 +16,18 @@
     enable = true;
     addKeysToAgent = "yes";
     matchBlocks = {
+      magnus = {
+        forwardAgent = true;
+        hostname = "192.168.100.147";
+        user = "jens";
+      };
+
+      robin = {
+        forwardAgent = true;
+        hostname = "192.168.100.211";
+        user = "jens";
+      };
+
       "i/fedora" = {
         hostname = "192.168.101.149";
         user = "jens";
