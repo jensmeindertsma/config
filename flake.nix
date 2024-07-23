@@ -40,6 +40,7 @@
         source = source;
       };
 
+    rust = ./modules/rust.nix;
     tools = ./modules/tools.nix;
 
     vscode = {
@@ -77,6 +78,7 @@
                   source = root;
                   destination = "/Users/Jens/Library/Application Support/Code/User";
                 })
+                rust
               ];
             }
           ];
