@@ -28,6 +28,11 @@
         user = "jens";
       };
 
+      wombat = {
+        hostname = "192.168.100.188";
+        user = "jens";
+      };
+
       "i/fedora" = {
         hostname = "192.168.101.149";
         user = "jens";
