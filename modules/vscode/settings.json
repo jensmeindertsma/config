@@ -83,5 +83,10 @@
   "explorer.confirmDelete": false,
   "[scss]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  "files.associations": {
+    "justfile": "just"
+  },
+  "diffEditor.ignoreTrimWhitespace": false,
+  "diffEditor.hideUnchangedRegions.enabled": true
 }

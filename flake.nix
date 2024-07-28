@@ -78,7 +78,6 @@
                   source = root;
                   destination = "/Users/Jens/Library/Application Support/Code/User";
                 })
-                rust
               ];
             }
           ];
