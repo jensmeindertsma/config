@@ -40,7 +40,6 @@
         source = source;
       };
 
-    rust = ./modules/rust.nix;
     tools = ./modules/tools.nix;
 
     vscode = {
