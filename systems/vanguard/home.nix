@@ -17,13 +17,8 @@ homeModules: {pkgs, ...}: {
       UseKeychain yes
     '';
     matchBlocks = {
-      dime = {
-        hostname = "192.168.64.6";
-        user = "jens";
-        forwardAgent = true;
-      };
-      puck = {
-        hostname = "192.168.64.7";
+      carrier = {
+        hostname = "192.168.64.8";
         user = "jens";
         forwardAgent = true;
       };
