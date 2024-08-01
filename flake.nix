@@ -69,8 +69,7 @@
               home-manager.users.jens = home [
                 tools
                 (git signatures.anna)
-                (zsh {
-                  })
+                (zsh {})
                 (neovim root)
 
                 # TODO: try hyprland
@@ -90,6 +89,30 @@
                 #   source = root;
                 #   destination = "/home/jens/.config/Code/User";
                 # })
+              ];
+            }
+          ];
+        };
+
+      athena = let
+        root = "/home/jens/config";
+        home = import ./systems/athena/home.nix;
+      in
+        nixpkgs.lib.nixosSystem {
+          system = "aarch64-linux";
+          modules = [
+            ./systems/athena/configuration.nix
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.users.jens = home [
+                tools
+                (git signatures.vanguard)
+                (zsh {})
+                (neovim root)
+
+                # TODO: try hyprland
               ];
             }
           ];

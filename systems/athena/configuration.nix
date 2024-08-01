@@ -1,0 +1,47 @@
+{pkgs, ...}: {
+  system.stateVersion = "24.05";
+
+  nix.settings.experimental-features = ["nix-command" "flakes"];
+
+  imports = [
+    ./hardware-configuration.nix
+  ];
+
+  boot = {
+    initrd.luks.devices.cryptroot.device = "/dev/disk/by-uuid/TODO";
+    loader = {
+      systemd-boot.enable = true;
+      efi.canTouchEfiVariables = true;
+    };
+  };
+
+  networking = {
+    hostName = "athena";
+    networking.networkmanager.enable = true;
+  };
+
+  time.timeZone = "Europe/Amsterdam";
+
+  # Select internationalisation properties.
+  i18n.defaultLocale = "en_US.UTF-8";
+
+  environment.systemPackages = with pkgs; [
+    git
+    vim
+  ];
+
+  users = {
+    defaultUserShell = pkgs.zsh;
+    users.jens = {
+      isNormalUser = true;
+      extraGroups = ["wheel"]; # Enable ‘sudo’ for the user.
+      packages = with pkgs; [
+        tree
+      ];
+    };
+  };
+
+  services.openssh.enable = true;
+
+  programs.zsh.enable = true;
+}

@@ -17,8 +17,14 @@ homeModules: {pkgs, ...}: {
       UseKeychain yes
     '';
     matchBlocks = {
-      carrier = {
+      cruiser = {
         hostname = "192.168.64.8";
+        user = "jens";
+        forwardAgent = true;
+      };
+
+      athena = {
+        hostname = "192.168.64.9";
         user = "jens";
         forwardAgent = true;
       };
