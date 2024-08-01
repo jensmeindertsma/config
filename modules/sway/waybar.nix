@@ -1,3 +1,4 @@
+{ install ? true }:
 {
   config,
   pkgs,
@@ -21,7 +22,7 @@
 
   programs.waybar = {
     enable = true;
-    package = pkgs.runCommandNoCC "empty" {} "mkdir -p $out";
+    package = if install == true then pkgs.waybar else pkgs.runCommandNoCC "empty" {} "mkdir -p $out";
 
     settings = {
       mainBar = {

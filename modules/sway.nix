@@ -1,4 +1,5 @@
 {
+  install ? true,
   scale ? 1,
   wallpaper,
   theme,
@@ -11,14 +12,14 @@
   home.packages = with pkgs; [brightnessctl pulseaudio];
 
   imports = [
-    ./sway/kitty.nix
-    ./sway/waybar.nix
+    (import ./sway/kitty.nix { install = install; })
+    (import ./sway/waybar.nix { install = install; })
     ./sway/fuzzel.nix
   ];
 
   wayland.windowManager.sway = {
     enable = true;
-    package = null;
+    package = if install == true then pkgs.sway else null;
     # TODO: figure out wallpaper situation...
     checkConfig = false;
     extraConfig = ''

@@ -2,7 +2,7 @@
   description = "I hereby declare this file the state of the universe";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/release-24.05";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
     nixpkgs-darwin.url = "github:nixos/nixpkgs/nixpkgs-24.05-darwin";
 
     nix-darwin = {
@@ -51,8 +51,51 @@
         destination = destination;
       };
 
-    zsh = options: import ./modules/zsh.nix (options // {install = false;});
+    zsh = options: import ./modules/zsh.nix options;
   in {
+    nixosConfigurations = {
+      anna = let
+        root = "/home/jens/Development/config";
+        home = import ./systems/anna/home.nix;
+      in
+        nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          modules = [
+            ./systems/anna/configuration.nix
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.users.jens = home [
+                tools
+                (git signatures.anna)
+                (zsh {
+                  })
+                (neovim root)
+
+                # TODO: try hyprland
+
+                # fontconfig
+                # (theme {
+                #   enableKitty = true;
+                #   binaryName = "toggle-theme";
+                # })
+                # (sway {
+                #   install = false;
+                #   scale = "1.5";
+                #   wallpaper = "~/Pictures/Wallpapers/001.jpg";
+                #   theme.toggleCommand = "toggle-theme";
+                # })
+                # (vscode {
+                #   source = root;
+                #   destination = "/home/jens/.config/Code/User";
+                # })
+              ];
+            }
+          ];
+        };
+    };
+
     darwinConfigurations = {
       vanguard = let
         root = "/Users/Jens/Development/jensmeindertsma/config";
@@ -94,36 +137,6 @@
       theme = options: import ./modules/theme.nix options;
       sway = options: import ./modules/sway.nix options;
     in {
-      anna = let
-        root = "/home/jens/Development/jensmeindertsma/config";
-        home = import ./systems/anna/home.nix;
-      in
-        homeManager "x86_64-linux" [
-          home
-          tools
-          (git signatures.anna)
-          (zsh {
-            aliases = {
-              "reflect" = "sudo systemctl start reflector";
-            };
-          })
-          (neovim root)
-          fontconfig
-          (theme {
-            enableKitty = true;
-            binaryName = "toggle-theme";
-          })
-          (sway {
-            scale = "1.5";
-            wallpaper = "~/Pictures/Wallpapers/001.jpg";
-            theme.toggleCommand = "toggle-theme";
-          })
-          (vscode {
-            source = root;
-            destination = "/home/jens/.config/Code/User";
-          })
-        ];
-
       wyvern = let
         root = "/home/jens/Development/jensmeindertsma/config";
         home = import ./systems/wyvern/home.nix;
