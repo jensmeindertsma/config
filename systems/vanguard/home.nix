@@ -24,7 +24,7 @@ homeModules: {pkgs, ...}: {
       };
 
       athena = {
-        hostname = "192.168.64.9";
+        hostname = "192.168.64.10";
         user = "jens";
         forwardAgent = true;
       };
