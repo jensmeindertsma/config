@@ -43,7 +43,7 @@
 
   services.pipewire = {
     enable = true;
-    pulse = true;
+    pulse.enable = true;
   };
 
   services.openssh.enable = true;
