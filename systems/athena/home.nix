@@ -1,9 +1,11 @@
-{pkgs, ...}: {
+modules: {pkgs, ...}: {
   home = {
     stateVersion = "24.05";
     username = "jens";
     homeDirectory = "/home/jens";
   };
+
+  imports = modules;
 
   nixpkgs.config.allowUnfree = true;
 
