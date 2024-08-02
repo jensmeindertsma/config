@@ -17,7 +17,7 @@
 
   networking = {
     hostName = "athena";
-    networking.networkmanager.enable = true;
+    networkmanager.enable = true;
   };
 
   time.timeZone = "Europe/Amsterdam";
