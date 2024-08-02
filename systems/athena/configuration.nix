@@ -8,7 +8,7 @@
   ];
 
   boot = {
-    initrd.luks.devices.cryptroot.device = "/dev/disk/by-uuid/TODO";
+    initrd.luks.devices.cryptroot.device = "/dev/disk/by-uuid/bbfa9bdf-d420-4205-80fb-2f018b3dc732";
     loader = {
       systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;
