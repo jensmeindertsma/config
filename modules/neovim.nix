@@ -21,4 +21,8 @@
     target = "${config.home.homeDirectory}/.config/nvim";
     recursive = true;
   };
+
+  home.sessionVariables = {
+    EDITOR = "nvim";
+  };
 }

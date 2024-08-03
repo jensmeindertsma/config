@@ -1,11 +1,14 @@
 {
   launcher,
+  monitor,
   terminal,
   toggle_theme_command,
 }: {
-  system = {
+  system = {pkgs, ...}: {
     programs.hyprland.enable = true;
     programs.dconf.enable = true;
+    xdg.portal.extraPortals = with pkgs; [xdg-desktop-portal-gtk];
+    security.pam.services.hyprlock = {};
   };
 
   home = {pkgs, ...}: {
@@ -28,6 +31,7 @@
           "waybar"
           "clipse -listen"
         ];
+        monitor = monitor;
         xwayland.force_zero_scaling = true;
         bind = [
           "$mainMod, RETURN, exec, $terminal"
@@ -35,7 +39,7 @@
           "$mainMod SHIFT, E, exit"
           "$mainMod SHIFT, Y, exec, ${toggle_theme_command}"
           "$mainMod, V, togglefloating"
-          "$mainMod, F, exec, $menu"
+          "$mainMod, D, exec, $menu"
           "$mainMod, P, pseudo"
           "$mainMod, J, togglesplit"
 
@@ -71,6 +75,8 @@
         ];
       };
     };
+
+    programs.hyprlock.enable = true;
 
     services.dunst = {
       enable = true;

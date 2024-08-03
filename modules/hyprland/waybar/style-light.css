@@ -36,11 +36,11 @@ button:hover {
 }
 
 #workspaces button:hover,
-#workspaces button.focused {
+#workspaces button.active {
   color: @highlight;
 }
 
-#workspaces button:only-child.focused {
+#workspaces button:only-child.active {
   color: @text;
 }
 

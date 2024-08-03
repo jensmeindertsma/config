@@ -25,7 +25,7 @@
     enable = true;
     settings = {
       mainBar = {
-        position = "bottom";
+        position = "top";
 
         modules-left = [
           "hyprland/workspaces"

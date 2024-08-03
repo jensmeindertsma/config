@@ -15,7 +15,7 @@
         gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
         ${
         if enableKitty
-        then "kitten themes --reload-in=all --cache-age -1 --config-file-name theme.conf GitHub Dark"
+        then "kitten themes --reload-in=all --cache-age -1 --config-file-name theme.conf Tokyo Night"
         else ""
       }
       }
@@ -25,7 +25,7 @@
         gsettings set org.gnome.desktop.interface color-scheme 'prefer-light'
         ${
         if enableKitty
-        then "kitten themes --reload-in=all --cache-age -1 --config-file-name theme.conf GitHub Light"
+        then "kitten themes --reload-in=all --cache-age -1 --config-file-name theme.conf Tokyo Night Day"
         else ""
       }
       }

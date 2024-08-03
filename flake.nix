@@ -77,6 +77,7 @@
           terminal = "kitty";
           launcher = "fuzzel";
           toggle_theme_command = "toggle-theme";
+          monitor = "DP-1,3840x2160@60,0x0,1.5";
         };
       in
         nixpkgs.lib.nixosSystem {
@@ -114,7 +115,11 @@
               home-manager.users.jens = home [
                 tools
                 (git signatures.anna)
-                (zsh {aliases = {vim = "nvim";};})
+                (zsh {
+                  aliases = {
+                    vim = "nvim";
+                  };
+                })
                 (neovim root)
 
                 desktop.home
