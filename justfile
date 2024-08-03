@@ -2,7 +2,7 @@ default:
   just --list
 
 switch-anna:
-    home-manager switch --flake .#anna
+    sudo nixos-rebuild switch --flake .
 
 switch-vanguard: 
     darwin-rebuild switch --flake .#vanguard

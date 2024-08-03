@@ -10,8 +10,6 @@
 
   home.packages = let
     theme-toggle-script = pkgs.writeScriptBin binaryName ''
-      #!/usr/bin/bash
-
       set_dark() {
         gsettings set org.gnome.desktop.interface gtk-theme "Adwaita"
         gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
@@ -38,5 +36,9 @@
         set_light
       fi
     '';
-  in [theme-toggle-script];
+  in [pkgs.glib pkgs.gsettings-desktop-schemas theme-toggle-script];
+
+  home.sessionVariables = {
+    XDG_DATA_DIRS = "${pkgs.gsettings-desktop-schemas}/share/gsettings-schemas/gsettings-desktop-schemas-46.0:$XDG_DATA_DIRS";
+  };
 }

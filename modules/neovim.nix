@@ -5,10 +5,15 @@
 }: {
   home.packages = with pkgs; [
     alejandra
+    gcc
     neovim
     nil
+    nixd
+    prettierd
     python3
     ruff
+    rustup
+    stylua
   ];
 
   home.file.nvim = {
