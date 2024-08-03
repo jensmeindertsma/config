@@ -11,12 +11,21 @@
     programs.dconf.enable = true;
     xdg.portal.extraPortals = with pkgs; [xdg-desktop-portal-gtk];
     security.pam.services.hyprlock = {};
+
+    services.greetd = {
+      enable = true;
+      settings = {
+        default_session.command = "${pkgs.greetd.greetd}/bin/agreety --cmd Hyprland";
+      };
+    };
   };
 
   home = {pkgs, ...}: {
     imports = [./hyprland/waybar.nix];
 
-    home.packages = with pkgs; [clipse hyprpaper];
+    home.packages = with pkgs; [
+      clipse
+    ];
 
     wayland.windowManager.hyprland = {
       # Whether to enable Hyprland wayland compositor
@@ -31,17 +40,21 @@
         "$menu" = launcher;
         exec-once = [
           "waybar"
-          "hyprpaper"
           "clipse -listen"
         ];
         monitor = monitor;
         xwayland.force_zero_scaling = true;
+        env = [
+          "XCURSOR_SIZE,48"
+        ];
         bind = [
           "$mainMod, RETURN, exec, $terminal"
           "$mainMod SHIFT, Q, killactive"
           "$mainMod SHIFT, E, exit"
           "$mainMod SHIFT, Y, exec, ${toggle_theme_command}"
           "$mainMod SHIFT, L, exec, hyprlock"
+          "$mainMod SHIFT, S, exec, systemctl suspend"
+
           "$mainMod, V, togglefloating"
           "$mainMod, D, exec, $menu"
           "$mainMod, P, pseudo"
@@ -76,8 +89,17 @@
           "$mainMod SHIFT, 8, movetoworkspace, 8"
           "$mainMod SHIFT, 9, movetoworkspace, 9"
           "$mainMod SHIFT, 0, movetoworkspace, 10"
+
+          "$mainMod CTRL, left, workspace, -1"
+          "$mainMod CTRL, right, workspace, +1"
         ];
-        animations.enable = false;
+        animation = [
+          "global,0"
+        ];
+        general = {
+          border_size = 0;
+        };
+        # input = {follow_mouse = 0;};
       };
     };
 
@@ -126,7 +148,7 @@
 
           {
             monitor = "";
-            text = "";
+            text = "  ";
             color = "rgba(255, 255, 255, 0.65)";
             font_size = 120;
             position = "0, 60";
@@ -164,6 +186,27 @@
             position = "0, -140";
             halign = "center";
             valign = "center";
+          }
+        ];
+      };
+    };
+
+    services.hypridle = {
+      enable = true;
+      settings = {
+        general = {
+          lock_cmd = "pidof hyprlock || hyprlock";
+          before_sleep_cmd = "loginctl lock-session";
+        };
+        listener = [
+          {
+            timeout = 300;
+            on-timeout = "loginctl lock-session";
+          }
+          {
+            timeout = 600;
+            on-timeout = "hyprctl dispatch dpms off";
+            on-resume = "hyprctl dispatch dpms on";
           }
         ];
       };

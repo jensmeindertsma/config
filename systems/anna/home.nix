@@ -10,6 +10,7 @@ modules: {pkgs, ...}: {
       firefox
       liquidctl
       networkmanagerapplet
+      spotify
     ];
   };
 
@@ -32,6 +33,13 @@ modules: {pkgs, ...}: {
     userDirs = {
       enable = true;
       createDirectories = true;
+    };
+  };
+
+  dconf.settings = {
+    "org/virt-manager/virt-manager/connections" = {
+      autoconnect = ["qemu:///system"];
+      uris = ["qemu:///system"];
     };
   };
 }

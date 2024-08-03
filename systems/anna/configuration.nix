@@ -14,12 +14,42 @@
       # We use Lanzaboote which replaces systemd-boot
       systemd-boot.enable = false;
       efi.canTouchEfiVariables = true;
+
+      timeout = 5;
     };
+
+    plymouth = {
+      enable = true;
+      theme = "cross_hud";
+      themePackages = with pkgs; [
+        # By default we would install all themes
+        (adi1090x-plymouth-themes.override {
+          selected_themes = ["cross_hud"];
+        })
+      ];
+    };
+
+    # Enable "Silent Boot"
+    consoleLogLevel = 0;
+    initrd.verbose = false;
+    kernelParams = [
+      "quiet"
+      "splash"
+      "boot.shell_on_fail"
+      "loglevel=3"
+      "rd.systemd.show_status=false"
+      "rd.udev.log_level=3"
+      "udev.log_priority=3"
+      "plymouth.debug"
+    ];
   };
 
-  hardware.opengl = {
+  hardware.graphics = {
     enable = true;
   };
+
+  virtualisation.libvirtd.enable = true;
+  programs.virt-manager.enable = true;
 
   networking = {
     hostName = "anna";
@@ -32,13 +62,14 @@
   environment.systemPackages = with pkgs; [
     git
     networkmanager-openvpn
+    openresolv
   ];
 
   users = {
     defaultUserShell = pkgs.zsh;
     users.jens = {
       isNormalUser = true;
-      extraGroups = ["wheel"];
+      extraGroups = ["wheel" "networkmanager" "libvirtd"];
     };
   };
 

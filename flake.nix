@@ -2,8 +2,8 @@
   description = "I hereby declare this file the state of the universe";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
-    nixpkgs-darwin.url = "github:nixos/nixpkgs/nixpkgs-24.05-darwin";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-darwin.url = "github:nixos/nixpkgs/nixpkgs-unstable";
 
     nix-darwin = {
       url = "github:lnl7/nix-darwin";
@@ -11,7 +11,7 @@
     };
 
     home-manager = {
-      url = "github:nix-community/home-manager/release-24.05";
+      url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -29,7 +29,8 @@
     nix-darwin,
     home-manager,
     lanzaboote,
-  }: let
+    ...
+  } @ inputs: let
     signatures = {
       anna = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHXKzgKhtwMk6R5/3aaJrq99VazfnzpfbfNvMojNx8bt";
       vanguard = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEG0u2sQkfE5QvH8xv7ZaY4lvca3aAZQX1cljJmNsNqx";
@@ -57,15 +58,7 @@
     kitty = ./modules/kitty.nix;
     fuzzel = ./modules/fuzzel.nix;
 
-    vscode = {
-      source,
-      destination,
-    }:
-      import ./modules/vscode.nix {
-        source = source;
-        destination = destination;
-      };
-
+    vscode = options: import ./modules/vscode.nix options;
     zsh = options: import ./modules/zsh.nix options;
   in {
     nixosConfigurations = {
@@ -134,16 +127,11 @@
 
                 kitty
                 fuzzel
-                # (sway {
-                #   install = false;
-                #   scale = "1.5";
-                #   wallpaper = "~/Pictures/Wallpapers/001.jpg";
-                #   theme.toggleCommand = "toggle-theme";
-                # })
-                # (vscode {
-                #   source = root;
-                #   destination = "/home/jens/.config/Code/User";
-                # })
+                (vscode {
+                  install = true;
+                  source = root;
+                  destination = "/home/jens/.config/Code/User";
+                })
               ];
             }
           ];
