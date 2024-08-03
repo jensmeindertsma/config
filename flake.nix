@@ -78,6 +78,8 @@
           launcher = "fuzzel";
           toggle_theme_command = "toggle-theme";
           monitor = "DP-1,3840x2160@60,0x0,1.5";
+          wallpaper = "~/Pictures/Wallpapers/Fantasy-Landscape2.png";
+          lockscreen.wallpaper = "~/Pictures/Wallpapers/MountainRainCloudsFall.png";
         };
       in
         nixpkgs.lib.nixosSystem {

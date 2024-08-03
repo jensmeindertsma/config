@@ -15,7 +15,7 @@
 @define-color highlight_text #FFFFFF;
 
 window#waybar {
-  background-color: @bg;
+  background-color: transparent;
   color: @text;
 }
 

@@ -31,6 +31,7 @@
 
   environment.systemPackages = with pkgs; [
     git
+    networkmanager-openvpn
   ];
 
   users = {
@@ -43,9 +44,6 @@
 
   programs.zsh.enable = true;
 
-  services.openssh.enable = true;
-
-  sound.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -53,6 +51,4 @@
     alsa.support32Bit = true;
     pulse.enable = true;
   };
-
-  programs.hyprland.enable = true;
 }

@@ -7,6 +7,7 @@
     };
     settings = {
       enable_audio_bell = "no";
+      background_opacity = "0.7";
     };
     extraConfig = ''
       include theme.conf
