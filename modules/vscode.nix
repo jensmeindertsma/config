@@ -19,4 +19,11 @@
     source = config.lib.file.mkOutOfStoreSymlink "${source}/modules/vscode/settings.json";
     target = "${destination}/settings.json";
   };
+
+  xdg.desktopEntries = {
+    code = {
+      name = "Visual Studio Code";
+      exec = "env ELECTRON_OZONE_PLATFORM_HINT=wayland code %F";
+    };
+  };
 }

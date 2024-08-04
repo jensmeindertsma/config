@@ -10,4 +10,11 @@
     vim
     wget
   ];
+
+  xdg.desktopEntries = {
+    btop = {
+      name = "btop";
+      noDisplay = true;
+    };
+  };
 }

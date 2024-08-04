@@ -13,4 +13,11 @@
       include theme.conf
     '';
   };
+
+  xdg.desktopEntries = {
+    kitty = {
+      name = "Kitty";
+      exec = "kitty %U";
+    };
+  };
 }

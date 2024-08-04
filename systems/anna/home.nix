@@ -34,6 +34,31 @@ modules: {pkgs, ...}: {
       enable = true;
       createDirectories = true;
     };
+
+    desktopEntries = {
+      nixos-manual = {
+        name = "NixOS Manual";
+        noDisplay = true;
+      };
+
+      nm-connection-editor = {
+        name = "Network Configuration";
+        exec = "nm-connection-editor %U";
+      };
+      burpsuite = {
+        name = "Burp Suite";
+        exec = "burpsuite %U";
+      };
+      spotify = {
+        name = "Spotify";
+        exec = "spotify --uri=%U --enable-features=UseOzonePlatform --ozone-platform=wayland";
+      };
+
+      virt-manager = {
+        name = "Virtual Machines";
+        exec = "virt-manager %U";
+      };
+    };
   };
 
   dconf.settings = {

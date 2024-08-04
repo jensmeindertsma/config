@@ -25,4 +25,11 @@
   home.sessionVariables = {
     EDITOR = "nvim";
   };
+
+  xdg.desktopEntries = {
+    nvim = {
+      name = "Neovim";
+      noDisplay = true;
+    };
+  };
 }
