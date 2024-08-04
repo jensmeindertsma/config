@@ -26,6 +26,9 @@
   virtualisation.libvirtd.enable = true;
   programs.virt-manager.enable = true;
 
+  virtualisation.docker.enable = true;
+  virtualisation.docker.storageDriver = "btrfs";
+
   networking = {
     hostName = "anna";
     networkmanager.enable = true;
@@ -44,7 +47,7 @@
     defaultUserShell = pkgs.zsh;
     users.jens = {
       isNormalUser = true;
-      extraGroups = ["wheel" "networkmanager" "libvirtd"];
+      extraGroups = ["wheel" "networkmanager" "libvirtd" "docker"];
     };
   };
 

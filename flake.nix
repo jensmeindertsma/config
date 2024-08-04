@@ -128,7 +128,6 @@
                 kitty
                 fuzzel
                 (vscode {
-                  install = true;
                   source = root;
                   destination = "/home/jens/.config/Code/User";
                 })
