@@ -1,4 +1,7 @@
-{source}: {
+{
+  source,
+  hideDesktopEntry ? true,
+}: {
   config,
   pkgs,
   ...
@@ -26,10 +29,13 @@
     EDITOR = "nvim";
   };
 
-  xdg.desktopEntries = {
-    nvim = {
-      name = "Neovim";
-      noDisplay = true;
-    };
-  };
+  xdg.desktopEntries =
+    if hideDesktopEntry == true
+    then {
+      nvim = {
+        name = "Neovim";
+        noDisplay = true;
+      };
+    }
+    else {};
 }

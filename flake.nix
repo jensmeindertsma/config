@@ -17,20 +17,18 @@
 
     lanzaboote = {
       url = "github:nix-community/lanzaboote/v0.4.1";
-
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
   outputs = {
-    self,
     nixpkgs,
     nixpkgs-darwin,
     nix-darwin,
     home-manager,
     lanzaboote,
     ...
-  } @ inputs: let
+  }: let
     signatures = {
       anna = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHXKzgKhtwMk6R5/3aaJrq99VazfnzpfbfNvMojNx8bt";
       vanguard = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEG0u2sQkfE5QvH8xv7ZaY4lvca3aAZQX1cljJmNsNqx";
@@ -43,12 +41,10 @@
         signing_key = key;
       };
 
-    neovim = source:
-      import ./modules/neovim.nix {
-        source = source;
-      };
+    neovim = options:
+      import ./modules/neovim.nix options;
 
-    tools = ./modules/tools.nix;
+    tools = options: import ./modules/tools.nix options;
 
     hyprland = options: import ./modules/hyprland.nix options;
 
@@ -108,14 +104,14 @@
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.users.jens = home [
-                tools
+                (tools {})
                 (git signatures.anna)
                 (zsh {
                   aliases = {
                     vim = "nvim";
                   };
                 })
-                (neovim root)
+                (neovim {source = root;})
 
                 desktop.home
 
@@ -149,10 +145,10 @@
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.users.jens = home [
-                tools
+                (tools {})
                 (git signatures.vanguard)
                 (zsh {})
-                (neovim root)
+                (neovim {source = root;})
 
                 # TODO: try hyprland
               ];
@@ -177,13 +173,17 @@
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.users.jens = home [
-                tools
+                (tools {hideDesktopEntries = false;})
                 (git signatures.vanguard)
                 (zsh {})
-                (neovim root)
+                (neovim {
+                  source = root;
+                  hideDesktopEntry = false;
+                })
                 (vscode {
                   source = root;
                   destination = "/Users/Jens/Library/Application Support/Code/User";
+                  createDesktopEntry = false;
                 })
               ];
             }
@@ -208,14 +208,14 @@
       in
         homeManager "x86_64-linux" [
           home
-          tools
+          (tools {})
           (zsh {
             aliases = {
               "reflect" = "sudo systemctl start reflector";
             };
           })
           (git signatures.wyvern)
-          (neovim root)
+          (neovim {source = root;})
           fontconfig
           (theme {
             enableKitty = true;

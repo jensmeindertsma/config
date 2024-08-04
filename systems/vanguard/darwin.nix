@@ -21,4 +21,30 @@
 
   programs.bash.enable = true;
   programs.zsh.enable = true;
+
+  homebrew = {
+    enable = true;
+    casks = [
+      "aldente"
+      "iterm2"
+      "protonvpn"
+      "bitwarden"
+      "microsoft-auto-update"
+      "signal"
+      "discord"
+      "microsoft-teams"
+      "spotify"
+      "docker"
+      "monitorcontrol"
+      "utm"
+      "firefox"
+      "notion"
+      "visual-studio-code"
+      "google-chrome"
+      "proton-drive"
+      "whatsapp"
+      "hot"
+      "protonmail-bridge"
+    ];
+  };
 }

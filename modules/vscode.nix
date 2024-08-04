@@ -1,6 +1,7 @@
 {
   source,
   destination,
+  createDesktopEntry ? true,
 }: {
   config,
   pkgs,
@@ -97,10 +98,13 @@
     };
   };
 
-  xdg.desktopEntries = {
-    code = {
-      name = "Visual Studio Code";
-      exec = "env ELECTRON_OZONE_PLATFORM_HINT=wayland code %F";
-    };
-  };
+  xdg.desktopEntries =
+    if createDesktopEntry == true
+    then {
+      code = {
+        name = "Visual Studio Code";
+        exec = "env ELECTRON_OZONE_PLATFORM_HINT=wayland code %F";
+      };
+    }
+    else {};
 }

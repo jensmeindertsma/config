@@ -1,4 +1,5 @@
 homeModules: {pkgs, ...}: {
+  nixpkgs.config.allowUnfree = true;
   home.stateVersion = "24.05";
 
   # Let `home-manager` install and manage itself.

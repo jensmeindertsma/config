@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{hideDesktopEntries ? true}: {pkgs, ...}: {
   home.packages = with pkgs; [
     btop
     dua
@@ -11,10 +11,13 @@
     wget
   ];
 
-  xdg.desktopEntries = {
-    btop = {
-      name = "btop";
-      noDisplay = true;
-    };
-  };
+  xdg.desktopEntries =
+    if hideDesktopEntries == true
+    then {
+      btop = {
+        name = "btop";
+        noDisplay = true;
+      };
+    }
+    else {};
 }
