@@ -30,7 +30,7 @@
   virtualisation.docker.storageDriver = "btrfs";
 
   networking = {
-    hostName = "anna";
+    hostName = "wyvern";
     networkmanager.enable = true;
   };
 
