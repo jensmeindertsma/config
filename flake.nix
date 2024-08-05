@@ -166,7 +166,7 @@
           toggle_theme_command = "toggle-theme";
           monitor = "DP-1,2650x1600@60,0x0,1";
           wallpaper = "~/Pictures/Wallpapers/Fantasy-Landscape2.png";
-          lockscreen.wallpaper = "~/Pictures/Wallpapers/MountainRainCloudsFall.png";
+          lockscreen.wallpaper = "~/Pictures/Wallpapers/Fantasy-Lake2.png";
         };
       in
         nixpkgs.lib.nixosSystem {
