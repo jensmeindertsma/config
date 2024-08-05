@@ -155,6 +155,80 @@
             }
           ];
         };
+
+      wyvern = let
+        root = "/home/jens/Development/jensmeindertsma/config";
+        home = import ./systems/wyvern/home.nix;
+
+        desktop = hyprland {
+          terminal = "kitty";
+          launcher = "fuzzel";
+          toggle_theme_command = "toggle-theme";
+          monitor = "DP-1,2650x1600@60,0x0,1";
+          wallpaper = "~/Pictures/Wallpapers/Fantasy-Landscape2.png";
+          lockscreen.wallpaper = "~/Pictures/Wallpapers/MountainRainCloudsFall.png";
+        };
+      in
+        nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          modules = [
+            ./systems/wyvern/configuration.nix
+            lanzaboote.nixosModules.lanzaboote
+            ({
+              pkgs,
+              lib,
+              ...
+            }: {
+              environment.systemPackages = [
+                pkgs.sbctl
+              ];
+
+              # Lanzaboote currently replaces the systemd-boot module.
+              # This setting is usually set to true in configuration.nix
+              # generated at installation time. So we force it to false
+              # for now.
+              boot.loader.systemd-boot.enable = lib.mkForce false;
+
+              boot.lanzaboote = {
+                enable = true;
+                pkiBundle = "/etc/secureboot";
+              };
+            })
+
+            desktop.system
+
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.users.jens = home [
+                (tools {})
+                (git signatures.anna)
+                (zsh {
+                  aliases = {
+                    vim = "nvim";
+                  };
+                })
+                (neovim {source = root;})
+
+                desktop.home
+
+                fontconfig
+                (theme {
+                  enableKitty = true;
+                  binaryName = "toggle-theme";
+                })
+
+                kitty
+                fuzzel
+                (vscode {
+                  source = root;
+                  destination = "/home/jens/.config/Code/User";
+                })
+              ];
+            }
+          ];
+        };
     };
 
     darwinConfigurations = {
@@ -189,48 +263,6 @@
             }
           ];
         };
-    };
-
-    homeConfigurations = let
-      homeManager = system: modules:
-        home-manager.lib.homeManagerConfiguration {
-          pkgs = nixpkgs.legacyPackages.${system};
-          modules = modules;
-        };
-
-      fontconfig = ./modules/fontconfig.nix;
-      theme = options: import ./modules/theme.nix options;
-      sway = options: import ./modules/sway.nix options;
-    in {
-      wyvern = let
-        root = "/home/jens/Development/jensmeindertsma/config";
-        home = import ./systems/wyvern/home.nix;
-      in
-        homeManager "x86_64-linux" [
-          home
-          (tools {})
-          (zsh {
-            aliases = {
-              "reflect" = "sudo systemctl start reflector";
-            };
-          })
-          (git signatures.wyvern)
-          (neovim {source = root;})
-          fontconfig
-          (theme {
-            enableKitty = true;
-            binaryName = "toggle-theme";
-          })
-          (sway {
-            scale = "2";
-            wallpaper = "~/Pictures/Wallpapers/3.jpg";
-            theme.toggleCommand = "toggle-theme";
-          })
-          (vscode {
-            source = root;
-            destination = "/home/jens/.config/Code/User";
-          })
-        ];
     };
   };
 }

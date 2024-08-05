@@ -14,8 +14,6 @@ modules: {pkgs, ...}: {
     ];
   };
 
-  nixpkgs.config.allowUnfree = true;
-
   imports = modules;
 
   # Let `home-manager` install and manage itself.
