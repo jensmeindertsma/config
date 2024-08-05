@@ -203,7 +203,7 @@
               home-manager.useUserPackages = true;
               home-manager.users.jens = home [
                 (tools {})
-                (git signatures.anna)
+                (git signatures.wyvern)
                 (zsh {
                   aliases = {
                     vim = "nvim";

@@ -19,6 +19,8 @@
     };
   };
 
+  systemd.services.NetworkManager-wait-online.enable = false;
+
   hardware.graphics = {
     enable = true;
   };
@@ -41,6 +43,7 @@
     git
     networkmanager-openvpn
     openresolv
+    vim
   ];
 
   users = {

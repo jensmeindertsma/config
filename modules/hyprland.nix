@@ -43,6 +43,7 @@
           "clipse -listen"
         ];
         monitor = monitor;
+        "input:touchpad".natural_scroll = true;
         xwayland.force_zero_scaling = true;
         env = [
           "XCURSOR_SIZE,48"
