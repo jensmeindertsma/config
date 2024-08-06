@@ -5,6 +5,7 @@ modules: {pkgs, ...}: {
     homeDirectory = "/home/jens";
 
     packages = with pkgs; [
+      bluetuith
       burpsuite
       efibootmgr
       firefox
@@ -24,7 +25,16 @@ modules: {pkgs, ...}: {
   programs.ssh = {
     enable = true;
     addKeysToAgent = "yes";
-    matchBlocks = {};
+    matchBlocks = {
+      "iv/ubuntu" = {
+        hostname = "192.168.100.237";
+        user = "jens";
+      };
+      "iv/fedora" = {
+        hostname = "192.168.100.212";
+        user = "jens";
+      };
+    };
   };
 
   xdg = {

@@ -9,6 +9,8 @@
   ];
 
   boot = {
+    kernelPackages = pkgs.linuxPackages_latest;
+
     initrd.luks.devices.main.device = "/dev/disk/by-uuid/471b8c02-71c7-4e3c-9f97-eae2dfa5a330";
     loader = {
       # We use Lanzaboote which replaces systemd-boot
@@ -62,5 +64,17 @@
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
+  };
+
+  hardware.bluetooth.enable = true; # enables support for Bluetooth
+  hardware.bluetooth.powerOnBoot = true;
+
+  services.tlp = {
+    enable = true;
+    settings = {
+      #Optional helps save long term battery health
+      START_CHARGE_THRESH_BAT0 = 75; # 40 and bellow it starts to charge
+      STOP_CHARGE_THRESH_BAT0 = 80; # 80 and above it stops charging
+    };
   };
 }

@@ -1,5 +1,6 @@
 {
   launcher,
+  monitor_name,
   monitor,
   terminal,
   toggle_theme_command,
@@ -218,7 +219,7 @@
       settings = {
         preload = [wallpaper];
         wallpaper = [
-          "DP-1,${wallpaper}"
+          "${monitor_name}, ${wallpaper}"
         ];
       };
     };
