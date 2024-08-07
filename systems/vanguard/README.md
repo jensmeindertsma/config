@@ -42,27 +42,3 @@ My 2020 M1 MacBook Air running macOS Sonoma, managed by nix-darwin and home-mana
    $ nvm install node
    $ rustup default stable
    ```
-
-6. Install desired applications as Homebrew Casks:
-
-   ```bash
-   $ brew install --cask \
-       aldente \
-       bitwarden \
-       discord \
-       docker \
-       firefox \
-       google-chrome \
-       hot \
-       iterm2 \
-       notion \
-       microsoft-teams \
-       monitorcontrol \
-       protonvpn \
-       proton-drive \
-       protonmail-bridge \
-       signal \
-       spotify \
-       utm \
-       whatsapp
-   ```

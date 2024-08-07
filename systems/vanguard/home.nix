@@ -18,11 +18,6 @@ homeModules: {pkgs, ...}: {
       UseKeychain yes
     '';
     matchBlocks = {
-      anna = {
-        hostname = "192.168.178.156";
-        user = "jens";
-      };
-
       athena = {
         hostname = "192.168.64.10";
         user = "jens";

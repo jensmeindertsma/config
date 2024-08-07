@@ -1,31 +1,30 @@
 {
-  source,
-  destination,
   createDesktopEntry ? true,
+  colorTheme,
+  library,
 }: {
   config,
   pkgs,
   ...
 }: {
-  home.packages = with pkgs; [alejandra nixd];
+  home.packages = with pkgs; [alejandra nil];
 
   programs.vscode = {
     enable = true;
     enableExtensionUpdateCheck = false;
     enableUpdateCheck = false;
-    mutableExtensionsDir = false;
-    extensions = with pkgs.vscode-extensions; [
-      dbaeumer.vscode-eslint
-      enkia.tokyo-night
-      esbenp.prettier-vscode
-      github.vscode-github-actions
-      jnoortheen.nix-ide
-      mkhl.direnv
-      ms-azuretools.vscode-docker
-      ms-vscode-remote.remote-ssh
-      rust-lang.rust-analyzer
-      skellock.just
-      tamasfe.even-better-toml
+    mutableExtensionsDir = true;
+    extensions = with library; [
+      vscode-marketplace.dbaeumer.vscode-eslint
+      vscode-marketplace.enkia.tokyo-night
+      vscode-marketplace.esbenp.prettier-vscode
+      vscode-marketplace.github.vscode-github-actions
+      vscode-marketplace.jnoortheen.nix-ide
+      vscode-marketplace.mkhl.direnv
+      vscode-marketplace.ms-azuretools.vscode-docker
+      vscode-marketplace.rust-lang.rust-analyzer
+      vscode-marketplace.skellock.just
+      vscode-marketplace.tamasfe.even-better-toml
     ];
     userSettings = {
       editor = {
@@ -56,9 +55,9 @@
       nix = {
         enableLanguageServer = true;
         formatterPath = "alejandra";
-        serverPath = "nixd";
+        serverPath = "nil";
         serverSettings = {
-          nixd = {
+          nil = {
             formatting = {
               command = ["alejandra"];
             };
@@ -87,13 +86,17 @@
 
       workbench = {
         layoutControl.enabled = false;
-        preferredDarkColorTheme = "Tokyo Night";
-        preferredLightColorTheme = "Tokyo Night Light";
+        preferredDarkColorTheme = colorTheme.dark;
+        preferredLightColorTheme = colorTheme.light;
         startupEditor = "none";
       };
 
       "[dockercompose]" = {
         editor.defaultFormatter = "ms-azuretools.vscode-docker";
+      };
+
+      "[nix]" = {
+        editor.defaultFormatter = "jnoortheen.nix-ide";
       };
     };
   };

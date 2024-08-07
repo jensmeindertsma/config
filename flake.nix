@@ -3,11 +3,10 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixpkgs-darwin.url = "github:nixos/nixpkgs/nixpkgs-unstable";
 
     nix-darwin = {
       url = "github:lnl7/nix-darwin";
-      inputs.nixpkgs.follows = "nixpkgs-darwin";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     home-manager = {
@@ -19,16 +18,20 @@
       url = "github:nix-community/lanzaboote/v0.4.1";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nix-vscode-extensions = { 
+      url = "github:nix-community/nix-vscode-extensions"; 
+      };
   };
 
   outputs = {
-    nixpkgs,
-    nixpkgs-darwin,
-    nix-darwin,
     home-manager,
     lanzaboote,
+    nixpkgs,
+    nix-darwin,
+    nix-vscode-extensions,
     ...
-  }: let
+  } @ inputs: let
     signatures = {
       anna = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHXKzgKhtwMk6R5/3aaJrq99VazfnzpfbfNvMojNx8bt";
       vanguard = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEG0u2sQkfE5QvH8xv7ZaY4lvca3aAZQX1cljJmNsNqx";
@@ -73,6 +76,9 @@
       in
         nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
+          specialArgs = {
+            inherit inputs;
+            };
           modules = [
             ./systems/anna/configuration.nix
             lanzaboote.nixosModules.lanzaboote
@@ -124,33 +130,12 @@
                 kitty
                 fuzzel
                 (vscode {
-                  source = root;
-                  destination = "/home/jens/.config/Code/User";
+                  library = nix-vscode-extensions.extensions."x86_64-linux";
+                  colorTheme = {
+                    light = "Tokyo Night Light";
+                    dark = "Tokyo Night";
+                  };
                 })
-              ];
-            }
-          ];
-        };
-
-      athena = let
-        root = "/home/jens/config";
-        home = import ./systems/athena/home.nix;
-      in
-        nixpkgs.lib.nixosSystem {
-          system = "aarch64-linux";
-          modules = [
-            ./systems/athena/configuration.nix
-            home-manager.nixosModules.home-manager
-            {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.users.jens = home [
-                (tools {})
-                (git signatures.vanguard)
-                (zsh {})
-                (neovim {source = root;})
-
-                # TODO: try hyprland
               ];
             }
           ];
@@ -172,6 +157,9 @@
       in
         nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
+          specialArgs = {
+            inherit inputs;
+            };
           modules = [
             ./systems/wyvern/configuration.nix
             lanzaboote.nixosModules.lanzaboote
@@ -223,8 +211,11 @@
                 kitty
                 fuzzel
                 (vscode {
-                  source = root;
-                  destination = "/home/jens/.config/Code/User";
+                  library = nix-vscode-extensions.extensions."x86_64-linux";
+                  colorTheme = {
+                    light = "Tokyo Night Light";
+                    dark = "Tokyo Night";
+                  };
                 })
               ];
             }
@@ -240,7 +231,9 @@
       in
         nix-darwin.lib.darwinSystem {
           system = "aarch64-darwin";
-          pkgs = nixpkgs-darwin.legacyPackages."aarch64-darwin";
+          specialArgs = {
+            inherit inputs;
+            };
           modules = [
             darwin
             home-manager.darwinModules.home-manager
@@ -256,9 +249,12 @@
                   hideDesktopEntry = false;
                 })
                 (vscode {
-                  source = root;
-                  destination = "/Users/Jens/Library/Application Support/Code/User";
+                  library = nix-vscode-extensions.extensions."aarch64-darwin";
                   createDesktopEntry = false;
+                  colorTheme = {
+                    light = "Tokyo Night Light";
+                    dark = "Tokyo Night";
+                  };
                 })
               ];
             }
