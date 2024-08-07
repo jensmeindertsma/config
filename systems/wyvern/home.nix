@@ -26,6 +26,12 @@ modules: {pkgs, ...}: {
     enable = true;
     addKeysToAgent = "yes";
     matchBlocks = {
+      "vestige" = {
+        hostname = "192.168.102.220";
+        user = "jens";
+        forwardAgent = true;
+      };
+
       "iv/ubuntu" = {
         hostname = "192.168.100.237";
         user = "jens";
