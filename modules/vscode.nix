@@ -106,7 +106,7 @@
     then {
       code = {
         name = "Visual Studio Code";
-        exec = "env ELECTRON_OZONE_PLATFORM_HINT=wayland code %F";
+        exec = "env SSH_AUTH_SOCK=/run/user/1001/ssh-agent ELECTRON_OZONE_PLATFORM_HINT=wayland code %F";
       };
     }
     else {};
