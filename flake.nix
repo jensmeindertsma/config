@@ -19,9 +19,9 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nix-vscode-extensions = { 
-      url = "github:nix-community/nix-vscode-extensions"; 
-      };
+    nix-vscode-extensions = {
+      url = "github:nix-community/nix-vscode-extensions";
+    };
   };
 
   outputs = {
@@ -78,7 +78,7 @@
           system = "x86_64-linux";
           specialArgs = {
             inherit inputs;
-            };
+          };
           modules = [
             ./systems/anna/configuration.nix
             lanzaboote.nixosModules.lanzaboote
@@ -151,7 +151,7 @@
           toggle_theme_command = "toggle-theme";
           monitor = "DP-1,2650x1600@60,0x0,1";
           monitor_name = "eDP-1";
-          wallpaper = "~/Pictures/Wallpapers/Courtside-Sunset.png";
+          wallpaper = "~/Pictures/Wallpapers/Manga-Portal.png";
           lockscreen.wallpaper = "~/Pictures/Wallpapers/Fantasy-Lake2.png";
         };
       in
@@ -159,7 +159,7 @@
           system = "x86_64-linux";
           specialArgs = {
             inherit inputs;
-            };
+          };
           modules = [
             ./systems/wyvern/configuration.nix
             lanzaboote.nixosModules.lanzaboote
@@ -233,7 +233,7 @@
           system = "aarch64-darwin";
           specialArgs = {
             inherit inputs;
-            };
+          };
           modules = [
             darwin
             home-manager.darwinModules.home-manager
