@@ -47,7 +47,8 @@
         "input:touchpad".natural_scroll = true;
         xwayland.force_zero_scaling = true;
         env = [
-          "XCURSOR_SIZE,48"
+          "HYPRCURSOR_THEME,McMojave"
+          "HYPRCURSOR_SIZE,32"
         ];
         bind = [
           "$mainMod, RETURN, exec, $terminal"
