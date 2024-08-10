@@ -20,6 +20,7 @@
       vscode-marketplace.esbenp.prettier-vscode
       vscode-marketplace.github.vscode-github-actions
       vscode-marketplace.jnoortheen.nix-ide
+      vscode-marketplace.jdinhlife.gruvbox
       vscode-marketplace.mkhl.direnv
       vscode-marketplace.ms-azuretools.vscode-docker
       vscode-marketplace.rust-lang.rust-analyzer

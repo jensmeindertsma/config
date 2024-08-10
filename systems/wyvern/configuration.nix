@@ -21,6 +21,8 @@
     };
   };
 
+  services.upower.enable = true;
+
   systemd.services.NetworkManager-wait-online.enable = false;
 
   hardware.graphics = {
@@ -32,6 +34,9 @@
 
   virtualisation.docker.enable = true;
   virtualisation.docker.storageDriver = "btrfs";
+
+  virtualisation.virtualbox.host.enable = true;
+  users.extraGroups.vboxusers.members = ["jens"];
 
   networking = {
     hostName = "wyvern";

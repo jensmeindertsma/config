@@ -12,6 +12,7 @@ modules: {pkgs, ...}: {
       liquidctl
       networkmanagerapplet
       spotify
+      vagrant
     ];
   };
 
