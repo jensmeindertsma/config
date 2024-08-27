@@ -17,18 +17,6 @@ homeModules: {pkgs, ...}: {
     extraConfig = ''
       UseKeychain yes
     '';
-    matchBlocks = {
-      athena = {
-        hostname = "192.168.64.10";
-        user = "jens";
-        forwardAgent = true;
-      };
-
-      cruiser = {
-        hostname = "192.168.64.8";
-        user = "jens";
-        forwardAgent = true;
-      };
-    };
+    matchBlocks = {};
   };
 }

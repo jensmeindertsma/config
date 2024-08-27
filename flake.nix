@@ -232,9 +232,6 @@
       in
         nix-darwin.lib.darwinSystem {
           system = "aarch64-darwin";
-          specialArgs = {
-            inherit inputs;
-          };
           modules = [
             darwin
             home-manager.darwinModules.home-manager
