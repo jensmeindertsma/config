@@ -215,7 +215,7 @@
                   library = nix-vscode-extensions.extensions."x86_64-linux";
                   colorTheme = {
                     light = "Tokyo Night Light";
-                    dark = "Tokyo Night";
+                    dark = "Gruvbox Dark Hard";
                   };
                 })
               ];
