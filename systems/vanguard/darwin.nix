@@ -1,4 +1,4 @@
-{pkgs, lib, ...}: {
+{pkgs, ...}: {
   nixpkgs.config.allowUnfree = true;
   nixpkgs.hostPlatform = "aarch64-darwin";
 
@@ -24,6 +24,7 @@
 
   homebrew = {
     enable = true;
+    brews = ["nvm"];
     casks = [
       "aldente"
       "iterm2"

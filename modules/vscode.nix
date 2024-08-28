@@ -23,6 +23,7 @@
       vscode-marketplace.jdinhlife.gruvbox
       vscode-marketplace.mkhl.direnv
       vscode-marketplace.ms-azuretools.vscode-docker
+      vscode-marketplace.prisma.prisma
       vscode-marketplace.rust-lang.rust-analyzer
       vscode-marketplace.skellock.just
       vscode-marketplace.tamasfe.even-better-toml
