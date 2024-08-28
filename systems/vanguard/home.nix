@@ -19,7 +19,7 @@ homeModules: {
     [ -s "$HOMEBREW_PREFIX/opt/nvm/etc/bash_completion.d/nvm" ] && \. "$HOMEBREW_PREFIX/opt/nvm/etc/bash_completion.d/nvm" # This loads nvm bash_completion
   '';
 
-  programs.direnv.enable = lib.mkForce false;
+  # programs.direnv.enable = lib.mkForce false;
 
   programs.ssh = {
     enable = true;
@@ -27,6 +27,12 @@ homeModules: {
     extraConfig = ''
       UseKeychain yes
     '';
-    matchBlocks = {};
+    matchBlocks = {
+      jupiter = {
+        hostname = "192.168.64.11";
+        user = "jens";
+        forwardAgent = true;
+      };
+    };
   };
 }
