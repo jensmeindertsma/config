@@ -4,7 +4,6 @@
 
   nix.settings.experimental-features = "nix-command flakes";
 
-  security.pam.enableSudoTouchIdAuth = true;
   services.nix-daemon.enable = true;
 
   environment.shells = with pkgs; [zsh];
