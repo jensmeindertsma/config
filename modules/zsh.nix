@@ -20,7 +20,7 @@
     history.path = "${config.xdg.dataHome}/zsh/zsh_history";
     shellAliases =
       {
-        cat = "bat";
+        bt = "bat";
         el = "eza -l";
         ela = "eza -la";
         mit = "license-generator mit --author 'Jens Meindertsma' --output LICENSE.md";
