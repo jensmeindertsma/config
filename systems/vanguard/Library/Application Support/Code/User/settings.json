@@ -1,8 +1,9 @@
 {
-    "editor.fontFamily": "JetBrains Mono",
-    "editor.fontSize": 17,
-    "git.confirmSync": false,
-    "terminal.integrated.fontSize": 15,
-    "terminal.integrated.shellIntegration.decorationsEnabled": "never",
-    "workbench.startupEditor": "none"
+  "editor.fontFamily": "JetBrains Mono",
+  "editor.fontSize": 17,
+  "git.confirmSync": false,
+  "terminal.integrated.fontSize": 15,
+  "terminal.integrated.shellIntegration.decorationsEnabled": "never",
+  "workbench.startupEditor": "none",
+  "explorer.confirmDelete": false
 }
