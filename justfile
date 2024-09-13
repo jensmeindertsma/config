@@ -1,5 +1,5 @@
 default:
   just --list
 
-stow system:
-  stow {{system}} --target ~
+sync system:
+  stow {{system}} --dir systems --target ~
