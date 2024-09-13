@@ -1,0 +1,11 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+add_newline = true
+
+[docker_context]
+disabled = true
+
+[nodejs]
+format = "on [$symbol($version )]($style)"
+version_format = '\(${raw}\)'
+symbol = 'nodejs'
