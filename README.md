@@ -44,5 +44,5 @@ $ ln -sf ~/Projects/jensmeindertsma/config/tools/vscode/settings.json ~/Library/
 #### Linux
 
 ```sh
-ln -sf ~/Projects/jensmeindertsma/config/tools/vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
+ln -sf ~/Projects/jensmeindertsma/config/tools/vscode/settings.json ~/.config/Code/User/settings.json
 ```
