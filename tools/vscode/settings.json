@@ -1,6 +1,6 @@
 {
   "editor.fontFamily": "JetBrains Mono",
-  "editor.fontSize": 17,
+  "editor.fontSize": 20,
   "git.confirmSync": false,
   "terminal.integrated.fontSize": 15,
   "terminal.integrated.shellIntegration.decorationsEnabled": "never",
@@ -10,5 +10,6 @@
   "editor.formatOnSave": true,
   "files.associations": {
     "config": "plaintext"
-  }
+  },
+  "explorer.confirmDragAndDrop": false
 }
