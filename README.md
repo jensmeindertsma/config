@@ -15,7 +15,9 @@ When I set up a NixOS virtual machine I would also like to add its configuration
 
 ## VSCode
 
-To set up shared VSCode configuration, please run one of the following commands based on your platform. **NOTE: replace adjust file paths for your system!**
+To set up shared VSCode configuration, please run one of the following commands based on your platform.
+
+**NOTE: replace adjust file paths for your system!**
 
 #### Windows
 
