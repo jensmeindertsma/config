@@ -11,7 +11,7 @@ Supported systems:
 - `wyvern-wsl` (Windows Subsystem for Linux)
 - `wyvern-linux` (Arch Linux) **\*TODO!\***
 
-For setting up Git on Windows, once you have your SSH keys in place, run the following command to set up the link:
+For setting up Git on Wyvern (Windows), once you have your SSH keys in place, run the following command to set up the link:
 
 ```sh
 $ mklink "C:\Users\Jens\.gitconfig" "C:\Users\Jens\Projects\jensmeindertsma\config\systems\wyvern-windows\.gitconfig"
