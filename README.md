@@ -11,10 +11,12 @@ Supported systems:
 - `wyvern-wsl` (Windows Subsystem for Linux)
 - `wyvern-linux` (Arch Linux) **\*TODO!\***
 
-For setting up Git on Wyvern (Windows), once you have your SSH keys in place, run the following command to set up the link:
+For setting up Wyvern (Windows), once you have your SSH keys in place, run the following command to set up the link:
 
 ```sh
+$ mklink "C:\Users\Jens\.ssh/config" "C:\Users\Jens\Projects\jensmeindertsma\config\systems\wyvern-windows\.ssh/config"
 $ mklink "C:\Users\Jens\.gitconfig" "C:\Users\Jens\Projects\jensmeindertsma\config\systems\wyvern-windows\.gitconfig"
+$ mklink "C:\Users\Jens\.git_allowed_signers" "C:\Users\Jens\Projects\jensmeindertsma\config\systems\wyvern-windows\.git_allowed_signers"
 ```
 
 When I set up a NixOS virtual machine I would also like to add its configuration here.
