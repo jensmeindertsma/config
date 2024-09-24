@@ -9,12 +9,19 @@
   "editor.inlayHints.enabled": "offUnlessPressed",
   "editor.formatOnSave": true,
   "files.associations": {
-    "config": "plaintext"
+    "config": "plaintext",
+    "justfile": "just"
   },
   "explorer.confirmDragAndDrop": false,
   "editor.codeLens": false,
-  "workbench.colorTheme": "One Dark Pro Darker",
-  "workbench.iconTheme": "Monokai Pro (Filter Spectrum) Icons",
+  "workbench.colorTheme": "Gruvbox Dark Hard",
   "window.commandCenter": false,
-  "workbench.layoutControl.enabled": false
+  "workbench.layoutControl.enabled": false,
+  "window.autoDetectColorScheme": true,
+  "workbench.preferredDarkColorTheme": "Gruvbox Dark Hard",
+  "workbench.preferredLightColorTheme": "Tokyo Night Light",
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "rust-analyzer.check.command": "clippy"
 }
