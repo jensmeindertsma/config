@@ -11,5 +11,10 @@
   "files.associations": {
     "config": "plaintext"
   },
-  "explorer.confirmDragAndDrop": false
+  "explorer.confirmDragAndDrop": false,
+  "editor.codeLens": false,
+  "workbench.colorTheme": "One Dark Pro Darker",
+  "workbench.iconTheme": "Monokai Pro (Filter Spectrum) Icons",
+  "window.commandCenter": false,
+  "workbench.layoutControl.enabled": false
 }
