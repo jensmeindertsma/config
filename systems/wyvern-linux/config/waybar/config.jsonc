@@ -1,0 +1,65 @@
+{
+    "spacing": 0,
+    "modules-left": [
+        "hyprland/workspaces"
+    ],
+    "modules-center": [
+        "hyprland/window"
+    ],
+    "modules-right": [
+        "pulseaudio",
+        "network",
+        "cpu",
+        "memory",
+	"disk",
+        "temperature",
+        "backlight",
+        "battery",
+        "clock"
+    ],
+        
+    "clock": {
+	"interval": 1,
+        "format": "{:%Y-%m-%d %H:%M:%S}"
+    },
+    "cpu": {
+        "format": "cpu {usage}%",
+        "tooltip": false
+    },
+    "memory": {
+        "format": "mem {}%"
+    },
+    "disk": {
+    	"format": "disk {percentage_used}%"
+    },
+    "temperature": {
+        "critical-threshold": 80,
+        "format": "temp {temperatureC}°C"
+    },
+    "backlight": {
+        "format": "backl {percent}%",
+	"reverse-scrolling": true
+    },
+    "battery": {
+        "format": "bat {capacity}%",
+        "format-full": "bat {capacity}% (full)",
+        "format-charging": "bat {capacity}% (charging)",
+        "format-plugged": "bat {capacity}% (plugged)",
+        "format-alt": "{time}"
+    },
+    "network": {
+        "format-wifi": "net {essid} ({signalStrength}%)",
+        "format-ethernet": "net {ipaddr}/{cidr}",
+        "tooltip-format": "net {ifname} via {gwaddr}",
+        "format-linked": "net {ifname} (no ip)",
+        "format-disconnected": "net (disconnected)",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    },
+    "pulseaudio": {
+        "format": "vol {volume}% {format_source}",
+        "format-muted": "vol (muted) {format_source}",
+        "format-source": "mic {volume}%",
+        "format-source-muted": "mic {volume}% (muted)"   
+    }
+   
+}

@@ -1,3 +1,7 @@
+HISTSIZE=10000
+SAVEHIST=10000
+setopt appendhistory
+
 mkdir -p ~/.cache/zsh
 export HISTFILE=~/.cache/zsh/history
 
@@ -22,13 +26,12 @@ zinit light-mode for \
     zdharma-continuum/zinit-annex-rust
 
 zinit light zsh-users/zsh-autosuggestions
+zinit wait lucid light-mode for lukechilds/zsh-nvm
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
-
+alias vim="nvim"
 alias mit="license-generator --author 'Jens Meindertsma' mit --output LICENSE.md"
 
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 
 eval "$(starship init zsh)"
+
