@@ -18,13 +18,14 @@
   "workbench.colorTheme": "Gruvbox Dark Hard",
   "window.commandCenter": false,
   "workbench.layoutControl.enabled": false,
-  "window.autoDetectColorScheme": true,
   "workbench.preferredDarkColorTheme": "Gruvbox Dark Medium",
-  "workbench.preferredLightColorTheme": "Atom One Light",
+  "workbench.preferredLightColorTheme": "Gruvbox Light Hard",
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "rust-analyzer.check.command": "clippy",
   "security.workspace.trust.untrustedFiles": "open",
-  "workbench.iconTheme": "material-icon-theme"
+  "workbench.iconTheme": "material-icon-theme",
+  "window.autoDetectColorScheme": true,
+  "window.titleBarStyle": "custom"
 }
