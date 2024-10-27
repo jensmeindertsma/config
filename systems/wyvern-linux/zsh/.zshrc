@@ -26,7 +26,9 @@ zinit light-mode for \
     zdharma-continuum/zinit-annex-rust
 
 zinit light zsh-users/zsh-autosuggestions
-zinit wait lucid light-mode for lukechilds/zsh-nvm
+
+export NVM_LAZY_LOAD=true
+zinit light lukechilds/zsh-nvm
 
 alias vim="nvim"
 alias mit="license-generator --author 'Jens Meindertsma' mit --output LICENSE.md"
