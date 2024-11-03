@@ -52,5 +52,5 @@ $ ln -sf ~/Development/config/tools/vscode/settings.json ~/Library/Application\ 
 #### Linux
 
 ```sh
-ln -sf ~/Development/config/tools/vscode/settings.json ~/.config/Code/User/settings.json
+ln -sf ~/dev/config/tools/vscode/settings.json ~/.config/Code/User/settings.json
 ```
