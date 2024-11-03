@@ -1,23 +1,27 @@
 {
     "spacing": 0,
     "modules-left": [
-        "hyprland/workspaces"
+        "hyprland/workspaces",
+	"temperature",
+	"cpu",
+	"memory",
+	"disk"
     ],
     "modules-center": [
-        "hyprland/window"
+	    "custom/logo"
     ],
     "modules-right": [
-        "pulseaudio",
         "network",
-        "cpu",
-        "memory",
-	"disk",
-        "temperature",
+	"pulseaudio",
         "backlight",
         "battery",
         "clock"
     ],
-        
+
+    "custom/logo": {
+	"format": "󰣇  "
+    },
+
     "clock": {
 	"interval": 1,
         "format": "{:%Y-%m-%d %H:%M:%S}"
