@@ -1,6 +1,11 @@
 {
   "spacing": 0,
-  "modules-left": ["custom/logo", "hyprland/workspaces"],
+  "modules-left": [
+    "custom/logo",
+    "custom/arrow-logo-right",
+    "hyprland/workspaces",
+    "custom/arrow-workspaces-right"
+  ],
   "modules-center": [],
   "modules-right": [
     "cpu",
@@ -68,5 +73,15 @@
   "temperature": {
     "critical-threshold": 80,
     "format": "temp {temperatureC}°C"
+  },
+
+  "custom/arrow-logo-right": {
+    "format": "",
+    "tooltip": false
+  },
+
+  "custom/arrow-workspaces-right": {
+    "format": "",
+    "tooltip": false
   }
 }
