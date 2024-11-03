@@ -1,5 +1,5 @@
 {
-  "editor.fontFamily": "JetBrains Mono",
+  "editor.fontFamily": "JetBrainsMono Nerd Font",
   "editor.fontSize": 17,
   "git.confirmSync": false,
   "terminal.integrated.fontSize": 15,
@@ -27,5 +27,6 @@
   "security.workspace.trust.untrustedFiles": "open",
   "workbench.iconTheme": "material-icon-theme",
   "window.autoDetectColorScheme": true,
-  "window.titleBarStyle": "custom"
+  "window.titleBarStyle": "custom",
+  "terminal.integrated.sendKeybindingsToShell": true
 }

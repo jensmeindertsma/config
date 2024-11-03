@@ -37,3 +37,6 @@ export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 
 eval "$(starship init zsh)"
 
+bindkey "^[[1;5C" forward-word
+bindkey "^[[1;5D" backward-word
+

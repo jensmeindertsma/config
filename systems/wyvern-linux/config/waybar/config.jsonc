@@ -1,69 +1,72 @@
 {
-    "spacing": 0,
-    "modules-left": [
-        "hyprland/workspaces",
-	"temperature",
-	"cpu",
-	"memory",
-	"disk"
-    ],
-    "modules-center": [
-	    "custom/logo"
-    ],
-    "modules-right": [
-        "network",
-	"pulseaudio",
-        "backlight",
-        "battery",
-        "clock"
-    ],
+  "spacing": 0,
+  "modules-left": ["custom/logo", "hyprland/workspaces"],
+  "modules-center": [],
+  "modules-right": [
+    "cpu",
+    "memory",
+    "disk",
+    "temperature",
+    "network",
+    "pulseaudio",
+    "backlight",
+    "battery",
+    "clock"
+  ],
 
-    "custom/logo": {
-	"format": "󰣇  "
-    },
+  "backlight": {
+    "format": "backl {percent}%",
+    "reverse-scrolling": true
+  },
 
-    "clock": {
-	"interval": 1,
-        "format": "{:%Y-%m-%d %H:%M:%S}"
-    },
-    "cpu": {
-        "format": "cpu {usage}%",
-        "tooltip": false
-    },
-    "memory": {
-        "format": "mem {}%"
-    },
-    "disk": {
-    	"format": "disk {percentage_used}%"
-    },
-    "temperature": {
-        "critical-threshold": 80,
-        "format": "temp {temperatureC}°C"
-    },
-    "backlight": {
-        "format": "backl {percent}%",
-	"reverse-scrolling": true
-    },
-    "battery": {
-        "format": "bat {capacity}%",
-        "format-full": "bat {capacity}% (full)",
-        "format-charging": "bat {capacity}% (charging)",
-        "format-plugged": "bat {capacity}% (plugged)",
-        "format-alt": "{time}"
-    },
-    "network": {
-        "format-wifi": "net {essid} ({signalStrength}%)",
-        "format-ethernet": "net {ipaddr}/{cidr}",
-        "tooltip-format": "net {ifname} via {gwaddr}",
-        "format-linked": "net {ifname} (no ip)",
-        "format-disconnected": "net (disconnected)",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}"
-    },
-    "pulseaudio": {
-        "format": "vol {volume}% {format_source}",
-        "format-muted": "vol (muted) {format_source}",
-        "format-source": "mic {volume}%",
-        "format-source-muted": "mic {volume}% (muted)"   
-    }
-   
+  "battery": {
+    "format": "bat {capacity}%",
+    "format-alt": "{time}",
+    "format-charging": "bat {capacity}% (charging)",
+    "format-full": "bat {capacity}% (full)",
+    "format-plugged": "bat {capacity}% (plugged)"
+  },
+
+  "clock": {
+    "format": "{:%Y-%m-%d %H:%M:%S}",
+    "interval": 1
+  },
+
+  "cpu": {
+    "format": "cpu {usage}%",
+    "tooltip": false
+  },
+
+  "custom/logo": {
+    "format": "ARCH"
+  },
+
+  "disk": {
+    "format": "disk {percentage_used}%"
+  },
+
+  "memory": {
+    "format": "mem {}%"
+  },
+
+  "network": {
+    "format-alt": "{ifname}: {ipaddr}/{cidr}",
+    "format-disconnected": "net (disconnected)",
+    "format-ethernet": "net {ipaddr}/{cidr}",
+    "format-linked": "net {ifname} (no ip)",
+    "format-wifi": "net {essid} ({signalStrength}%)",
+    "tooltip-format": "net {ifname} via {gwaddr}"
+  },
+
+  "pulseaudio": {
+    "format": "vol {volume}% {format_source}",
+    "format-muted": "vol (muted) {format_source}",
+    "format-source": "mic {volume}%",
+    "format-source-muted": "mic {volume}% (muted)"
+  },
+
+  "temperature": {
+    "critical-threshold": 80,
+    "format": "temp {temperatureC}°C"
+  }
 }
