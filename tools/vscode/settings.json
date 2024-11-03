@@ -26,5 +26,6 @@
   },
   "rust-analyzer.check.command": "clippy",
   "security.workspace.trust.untrustedFiles": "open",
-  "workbench.iconTheme": "material-icon-theme"
+  "workbench.iconTheme": "material-icon-theme",
+  "editor.minimap.enabled": false
 }
