@@ -58,14 +58,13 @@
 
 /* The whole bar */
 #waybar {
-	background: rgba(40, 40, 40, 0.8784313725); /* #282828e0 */
+	background: transparent;
 	color: @white;
 	font-family: JetBrains Mono, Siji;
 	font-size: 10pt;
 	/*font-weight: bold;*/
 }
 
-/* Each module */
 #battery,
 #clock,
 #cpu,
@@ -73,39 +72,15 @@
 #network,
 #pulseaudio,
 #temperature,
-#tray,
 #backlight,
-#idle_inhibitor,
-#disk,
-#user,
-#mpris {
+#disk {
 	padding-left: 8pt;
 	padding-right: 8pt;
 }
 
-/* Each critical module */
-#memory.critical,
-#cpu.critical,
-#temperature.critical,
-#battery.critical.discharging {
-	animation-timing-function: linear;
-	animation-iteration-count: infinite;
-	animation-direction: alternate;
-	animation-name: blink-critical;
-	animation-duration: 1s;
-}
-
-/* Each warning */
-#network.disconnected,
-#memory.warning,
-#cpu.warning,
-#temperature.warning,
-#battery.warning.discharging {
-	color: @warning;
-    
-}
 
 #workspaces {
+	padding-left: 10px;
     padding-right: 10px;
     background: @unfocused;
 }
@@ -119,16 +94,15 @@
 	background: @unfocused;
 }
 
-/* Inactive (on unfocused output) */
-#workspaces button.visible {
-	color: @white;
-	background: @inactive;
-}
 
 /* Active (on focused output) */
-#workspaces button.focused {
-	color: @black;
-	background: @focused;
+#workspaces button.active {
+	color: @white;
+	background-color: @red;
+	font-weight: 900;
+	border-radius: 100px;
+	margin-top: 2px;
+	margin-bottom: 2px;
 }
 
 /* Contains an urgent window */

@@ -27,14 +27,14 @@
 
   "battery": {
     "interval": 10,
-    "format-time": "{H}:{M:02}",
+    "format-time": "{H}h {M:02}m",
     "format": "{icon} {capacity}% ",
     "format-charging": " {capacity}%",
     "format-charging-full": " {capacity}%",
     "format-full": "{icon} {capacity}%",
-    "format-icons": ["", "", "", "", ""],
+    "format-icons": [" ", " ", " ", " ", " "],
     "tooltip": true,
-    "tooltip-format": "{time} {power}W"
+    "tooltip-format": "{time} left, drawing {power}W"
   },
 
   "clock#time": {
@@ -53,21 +53,20 @@
   "cpu": {
     "interval": 2,
     "tooltip": false,
-    "format": " {usage}%"
+    "format": "  {usage}%"
   },
 
   "memory": {
     "interval": 2,
-    "format": " {percentage}%",
+    "format": "  {percentage}%",
     "tooltip": false
   },
 
   "network": {
     "interval": 5,
-    "format-wifi": " {essid} ({signalStrength}%)",
-    "format-ethernet": " {ifname}",
-    "format-disconnected": "No connection",
-    "format-alt": " {ipaddr}/{cidr}",
+    "format-wifi": "  {essid} ({signalStrength}%) ({ipaddr}/{cidr})",
+    "format-ethernet": "󱘖 {ifname} ({ipaddr}/{cidr})",
+    "format-disconnected": "no connection",
     "tooltip": false
   },
 
@@ -81,32 +80,19 @@
   "pulseaudio": {
     "format": "{icon} {volume}%",
     "format-bluetooth": "{icon} {volume}%",
-    "format-muted": "",
-    "format-icons": {
-      "headphone": "",
-      "hands-free": "",
-      "headset": "",
-      "phone": "",
-      "portable": "",
-      "car": "",
-      "default": ["", ""]
-    },
-    "scroll-step": 1,
+    "format-muted": " ",
+    "format-icons": [" ", " "],
     "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
     "tooltip": false
   },
 
+  // TODO: add microphone block
+
   "temperature": {
-    "critical-threshold": 90,
     "interval": 5,
     "format": "{icon} {temperatureC}°",
     "format-icons": ["", "", "", "", ""],
     "tooltip": false
-  },
-
-  "tray": {
-    "icon-size": 18
-    //"spacing": 10
   },
 
   "custom/arrow1": {
@@ -159,4 +145,3 @@
     "tooltip": false
   }
 }
-// vi:ft=json
