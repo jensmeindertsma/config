@@ -9,6 +9,7 @@
 
 /* Colors (gruvbox) */
 @define-color black	#282828;
+@define-color orange #F58216;
 @define-color red	#cc241d;
 @define-color green	#98971a;
 @define-color yellow	#d79921;
@@ -37,7 +38,7 @@
 @define-color network	@purple;
 @define-color memory	@braqua;
 @define-color cpu	@green;
-@define-color temp	@brgreen;
+@define-color temp	@orange;
 @define-color layout	@bryellow;
 @define-color battery	@aqua;
 @define-color date	@blue;
@@ -169,7 +170,7 @@
 
 #temperature {
 	background: @temp;
-	color: @black;
+	color: @white;
 }
 
 #battery {
