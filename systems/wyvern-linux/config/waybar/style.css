@@ -53,7 +53,6 @@
 	padding: 0;
 	box-shadow: none;
 	text-shadow: none;
-	icon-shadow: none;
 }
 
 /* The whole bar */
@@ -80,18 +79,15 @@
 
 
 #workspaces {
-	padding-left: 10px;
     padding-right: 10px;
     background: @unfocused;
 }
 
 /* Workspaces stuff */
 #workspaces button {
-	/*font-weight: bold;*/
-	padding-left: 2pt;
-	padding-right: 2pt;
 	color: @white;
 	background: @unfocused;
+	padding: 0 4px;
 }
 
 
@@ -100,9 +96,6 @@
 	color: @white;
 	background-color: @red;
 	font-weight: 900;
-	border-radius: 100px;
-	margin-top: 2px;
-	margin-bottom: 2px;
 }
 
 /* Contains an urgent window */
@@ -111,11 +104,6 @@
 	background: @warning;
 }
 
-/* Style when cursor is on the button */
-#workspaces button:hover {
-	background: @black;
-	color: @white;
-}
 
 #window {
 	margin-right: 35pt;

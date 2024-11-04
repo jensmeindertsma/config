@@ -28,11 +28,10 @@
   "battery": {
     "interval": 10,
     "format-time": "{H}h {M:02}m",
-    "format": "{icon} {capacity}% ",
-    "format-charging": " {capacity}%",
-    "format-charging-full": " {capacity}%",
-    "format-full": "{icon} {capacity}%",
-    "format-icons": [" ", " ", " ", " ", " "],
+    "format": "bat {capacity}% ",
+    "format-charging": "bat {capacity}% (ch)",
+    "format-charging-full": "bat {capacity}% (ch+f)",
+    "format-full": "bat {capacity}% (f)",
     "tooltip": true,
     "tooltip-format": "{time} left, drawing {power}W"
   },
@@ -53,19 +52,19 @@
   "cpu": {
     "interval": 2,
     "tooltip": false,
-    "format": "  {usage}%"
+    "format": "cpu {usage}%"
   },
 
   "memory": {
     "interval": 2,
-    "format": "  {percentage}%",
+    "format": "mem {percentage}%",
     "tooltip": false
   },
 
   "network": {
     "interval": 5,
-    "format-wifi": "  {essid} ({signalStrength}%) ({ipaddr}/{cidr})",
-    "format-ethernet": "󱘖 {ifname} ({ipaddr}/{cidr})",
+    "format-wifi": "net {essid} ({signalStrength}%)",
+    "format-ethernet": "net {ifname}",
     "format-disconnected": "no connection",
     "tooltip": false
   },
@@ -90,8 +89,7 @@
 
   "temperature": {
     "interval": 5,
-    "format": "{icon} {temperatureC}°",
-    "format-icons": ["", "", "", "", ""],
+    "format": "temp {temperatureC}°",
     "tooltip": false
   },
 
