@@ -29,5 +29,6 @@
   "editor.minimap.enabled": false,
   "window.autoDetectColorScheme": true,
   "window.titleBarStyle": "custom",
-  "terminal.integrated.sendKeybindingsToShell": true
+  "terminal.integrated.sendKeybindingsToShell": true,
+  "typescript.updateImportsOnFileMove.enabled": "always"
 }
