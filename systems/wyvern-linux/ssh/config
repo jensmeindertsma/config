@@ -1,8 +1,0 @@
-Host captain
-   Hostname 192.168.101.216
-   ForwardAgent yes
-
-Host kali
-   Hostname 192.168.102.147
-   User kali
-

@@ -1,0 +1,80 @@
+{
+  "layer": "top",
+  "position": "bottom",
+  "modules-left": ["hyprland/workspaces"],
+  "modules-center": [],
+  "modules-right": [
+    "pulseaudio#input",
+    "custom/separator",
+    "pulseaudio#output",
+    "custom/separator",
+    "cpu",
+    "custom/separator",
+    "memory",
+    "custom/separator",
+    "disk",
+    "custom/separator",
+    "temperature",
+    "custom/separator",
+    "network",
+    "custom/separator",
+    "backlight",
+    "custom/separator",
+    "battery",
+    "custom/separator",
+    "clock#date",
+    "custom/separator",
+    "clock#time"
+  ],
+
+  "custom/separator": {
+    "format": "|"
+  },
+
+  "pulseaudio#input": {
+    "format": "input",
+    "tooltip": false
+  },
+  "pulseaudio#output": {
+    "format": "output",
+    "tooltip": false
+  },
+  "cpu": {
+    "format": "cpu {usage}%",
+    "tooltip": false
+  },
+  "memory": {
+    "format": "mem {percentage}%",
+    "tooltip": false
+  },
+  "disk": {
+    "format": "disk {percentage_used}%",
+    "tooltip": false
+  },
+  "temperature": {
+    "format": "temp {temperatureC}c",
+    "tooltip": false
+  },
+  "network": {
+    "format": "network",
+    "tooltip": false
+  },
+  "backlight": {
+    "format": "backlight",
+    "tooltip": false
+  },
+  "battery": {
+    "format": "battery",
+    "tooltip": false
+  },
+  "clock#date": {
+    "format": "{:%m/%d/%Y}",
+    "tooltip": false,
+    "interval": 60
+  },
+  "clock#time": {
+    "format": "{:%H:%M:%S}",
+    "tooltip": false,
+    "interval": 1
+  }
+}

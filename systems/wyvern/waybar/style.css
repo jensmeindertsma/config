@@ -1,0 +1,57 @@
+@define-color background #333333;
+@define-color separator #666666;
+@define-color normal white;
+@define-color bright orangered;
+
+* {
+  font-family: JetBrainsMono Nerd Font;
+  font-size: 13px;
+  padding: 0;
+  margin: 0;
+}
+
+button {
+  box-shadow: none;
+  border: none;
+  border-radius: 0;
+}
+
+button:hover {
+  background: inherit;
+  box-shadow: none;
+  outline: none;
+  text-shadow: none;
+}
+
+#waybar {
+  background-color: @background;
+  color: @normal;
+}
+
+#custom-separator {
+  margin: 0 10px;
+  color: @separator;
+  font-weight: bold;
+}
+
+#workspaces {
+  color: white;
+}
+
+#workspaces button {
+  padding: 0 5px;
+}
+
+#workspaces button.active {
+  background-color: @bright;
+  color: white;
+  font-weight: 900;
+}
+
+#memory em {
+  color: red;
+}
+
+#clock.time {
+  margin-right: 10px;
+}
