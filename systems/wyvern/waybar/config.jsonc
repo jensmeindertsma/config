@@ -50,11 +50,13 @@
   },
   "cpu": {
     "format": "cpu {usage}%",
-    "tooltip": false
+    "tooltip": false,
+    "interval": 1
   },
   "memory": {
     "format": "mem {percentage}%",
-    "tooltip": false
+    "tooltip": false,
+    "interval": 1
   },
   "disk": {
     "format": "disk {percentage_used}%",
@@ -62,22 +64,20 @@
   },
   "temperature": {
     "format": "temp {temperatureC}°",
-    "tooltip": false
+    "tooltip": false,
+    "interval": 2
   },
   "network": {
     "format": "{ifname} - {ipaddr}/{cidr}",
     "format-disconnected": "disconnected",
     "tooltip": false
   },
-  "backlight": {
-    "format": "backlight",
-    "tooltip": false
-  },
   "battery": {
     "format": "bat {capacity}%",
     "format-charging": "bat {capacity}% [+]",
     "format-plugged": "bat {capacity}% [~]",
-    "tooltip": false
+    "tooltip": false,
+    "interval": 5
   },
   "clock#date": {
     "format": "{:%m/%d/%Y}",
