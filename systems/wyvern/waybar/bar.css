@@ -19,14 +19,14 @@ button:hover {
 }
 
 #waybar {
-  background-color: #333333;
-  color: white;
+  background-color: @background;
+  color: @text;
 }
 
 #custom-separator {
   margin: 0 10px;
   font-weight: bold;
-  color: orangered;
+  color: @bright;
 }
 
 #workspaces {
@@ -38,13 +38,13 @@ button:hover {
 }
 
 #workspaces button.urgent {
-  background-color: white;
-  color: #333333;
+  background-color: @text;
+  color: @background;
   font-weight: 900;
 }
 
 #workspaces button.active {
-  background-color: orangered;
+  background-color: @bright;
   color: white;
   font-weight: 900;
 }
