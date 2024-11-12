@@ -1,8 +1,3 @@
-@define-color background #333333;
-@define-color separator #666666;
-@define-color normal white;
-@define-color bright orangered;
-
 * {
   font-family: JetBrainsMono Nerd Font;
   font-size: 13px;
@@ -24,14 +19,14 @@ button:hover {
 }
 
 #waybar {
-  background-color: @background;
-  color: @normal;
+  background-color: #333333;
+  color: white;
 }
 
 #custom-separator {
   margin: 0 10px;
-  color: @separator;
   font-weight: bold;
+  color: orangered;
 }
 
 #workspaces {
@@ -42,14 +37,16 @@ button:hover {
   padding: 0 5px;
 }
 
-#workspaces button.active {
-  background-color: @bright;
-  color: white;
+#workspaces button.urgent {
+  background-color: white;
+  color: #333333;
   font-weight: 900;
 }
 
-#memory em {
-  color: red;
+#workspaces button.active {
+  background-color: orangered;
+  color: white;
+  font-weight: 900;
 }
 
 #clock.time {

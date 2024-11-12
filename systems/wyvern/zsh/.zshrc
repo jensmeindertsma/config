@@ -19,9 +19,6 @@ zinit light-mode for \
     zdharma-continuum/zinit-annex-rust
 
 zinit light zsh-users/zsh-autosuggestions
-
-export NVM_COMPLETION=true
-export NVM_SYMLINK_CURRENT="true"
 zinit wait lucid light-mode for lukechilds/zsh-nvm
 
 SAVEHIST=1000

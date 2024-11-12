@@ -18,8 +18,6 @@
     "custom/separator",
     "network",
     "custom/separator",
-    "backlight",
-    "custom/separator",
     "battery",
     "custom/separator",
     "clock#date",
@@ -32,11 +30,22 @@
   },
 
   "pulseaudio#input": {
-    "format": "input",
+    "format": "{format_source}",
+    "format-source": "mic {volume}%",
+    "format-source-muted": "mic [/]",
+    "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 1%+ -l 1.0",
+    "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 1%- -l 1.0",
+    "on-click": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
+    "max-volume": 100,
     "tooltip": false
   },
   "pulseaudio#output": {
-    "format": "output",
+    "format": "vol {volume}%",
+    "format-muted": "vol [/]",
+    "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%+ -l 1.0",
+    "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%- -l 1.0",
+    "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+    "max-volume": 100,
     "tooltip": false
   },
   "cpu": {
@@ -52,11 +61,12 @@
     "tooltip": false
   },
   "temperature": {
-    "format": "temp {temperatureC}c",
+    "format": "temp {temperatureC}°",
     "tooltip": false
   },
   "network": {
-    "format": "network",
+    "format": "{ifname} - {ipaddr}/{cidr}",
+    "format-disconnected": "disconnected",
     "tooltip": false
   },
   "backlight": {
@@ -64,12 +74,15 @@
     "tooltip": false
   },
   "battery": {
-    "format": "battery",
+    "format": "bat {capacity}%",
+    "format-charging": "bat {capacity}% [+]",
+    "format-plugged": "bat {capacity}% [~]",
     "tooltip": false
   },
   "clock#date": {
     "format": "{:%m/%d/%Y}",
-    "tooltip": false,
+    "tooltip": true,
+    "tooltip-format": "{:%A}",
     "interval": 60
   },
   "clock#time": {
