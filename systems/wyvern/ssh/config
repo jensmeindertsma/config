@@ -1,6 +1,5 @@
-Host github.com
+Host *
     AddKeysToAgent yes
-    IdentityFile ~/.ssh/id_ed25519
 
 Host cabin
     Hostname 64.227.78.92
