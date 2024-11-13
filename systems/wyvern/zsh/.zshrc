@@ -26,6 +26,4 @@ HISTFILE=~/.zsh_history
 
 alias mit="license-generator --author 'Jens Meindertsma' mit --output LICENSE.md"
 
-
-
 eval "$(starship init zsh)"

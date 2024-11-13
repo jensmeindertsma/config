@@ -80,7 +80,7 @@
     "interval": 5
   },
   "clock#date": {
-    "format": "{:%m/%d/%Y}",
+    "format": "{:%d/%m/%Y}",
     "tooltip": true,
     "tooltip-format": "{:%A}",
     "interval": 60
