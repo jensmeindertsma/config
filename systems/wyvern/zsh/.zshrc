@@ -24,6 +24,13 @@ zinit wait lucid light-mode for lukechilds/zsh-nvm
 SAVEHIST=1000
 HISTFILE=~/.zsh_history
 
+export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/ssh-agent.socket
+
 alias mit="license-generator --author 'Jens Meindertsma' mit --output LICENSE.md"
 
 eval "$(starship init zsh)"
+
+bindkey '^[^[[D' backward-word  # Alt + Left Arrow
+bindkey '^[^[[C' forward-word   # Alt + Right Arrow
+
+alias ssh="kitten ssh"
