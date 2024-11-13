@@ -29,7 +29,7 @@
   "workbench.iconTheme": "material-icon-theme",
   "workbench.layoutControl.enabled": false,
   "workbench.preferredDarkColorTheme": "Tokyo Night Storm",
-  "workbench.preferredLightColorTheme": "GitHub Light",
+  "workbench.preferredLightColorTheme": "Gruvbox Light Hard",
   "workbench.startupEditor": "none",
   "[css]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
