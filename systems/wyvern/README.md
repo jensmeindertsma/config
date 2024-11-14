@@ -21,8 +21,7 @@ $ stow zsh --target ~
 With these you can link up your local VSCode settings and keybindings to the shared file that is in version control.
 
 ```bash
-$ ln -sf ~/dev/config/shared/vscode/settings.json ~/.config/Code/User/settings.json
-$ ln -sf ~/dev/config/shared/vscode/keybindings.json ~/.config/Code/User/keybindings.json
+$ stow vscode ~/.config/Code/User/
 ```
 
 To be able to toggle the theme on a system without a desktop environment, this script can be very helpful. It sets all the right variables. You can customize it to set a different Kitty (terminal) theme to your liking.
