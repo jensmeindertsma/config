@@ -1,13 +1,14 @@
 {
-    "workbench.startupEditor": "none",
-    "remote.SSH.remotePlatform": {
-        "drift": "linux"
-    },
-    "explorer.confirmDragAndDrop": false,
-    "remote.SSH.enableAgentForwarding": true,
-    "remote.SSH.useLocalServer": false,
-    "remote.SSH.useExecServer": false,
-    "remote.SSH.remoteServerListenOnSocket": true,
-    "git.confirmSync": false,
-    "terminal.integrated.shellIntegration.decorationsEnabled": "never"
+  "explorer.confirmDragAndDrop": false,
+  "git.confirmSync": false,
+  "remote.SSH.enableAgentForwarding": true,
+  "remote.SSH.remotePlatform": {
+    "drift": "linux"
+  },
+  "remote.SSH.remoteServerListenOnSocket": true,
+  "remote.SSH.useExecServer": false,
+  "remote.SSH.useLocalServer": false,
+  "rust-analyzer.check.command": "clippy",
+  "terminal.integrated.shellIntegration.decorationsEnabled": "never",
+  "workbench.startupEditor": "none"
 }

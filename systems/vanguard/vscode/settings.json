@@ -1,4 +1,7 @@
 {
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -30,8 +33,5 @@
   "workbench.layoutControl.enabled": false,
   "workbench.preferredDarkColorTheme": "Tokyo Night Storm",
   "workbench.preferredLightColorTheme": "Gruvbox Light Hard",
-  "workbench.startupEditor": "none",
-  "[css]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  "workbench.startupEditor": "none"
 }

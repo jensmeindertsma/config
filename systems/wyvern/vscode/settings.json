@@ -1,4 +1,7 @@
 {
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -16,6 +19,11 @@
     "justfile": "just"
   },
   "git.confirmSync": false,
+  "git.enableSmartCommit": true,
+  "remote.SSH.enableAgentForwarding": true,
+  "remote.SSH.remoteServerListenOnSocket": true,
+  "remote.SSH.useExecServer": false,
+  "remote.SSH.useLocalServer": false,
   "rust-analyzer.check.command": "clippy",
   "security.workspace.trust.untrustedFiles": "open",
   "terminal.integrated.fontSize": 15,
@@ -30,8 +38,5 @@
   "workbench.layoutControl.enabled": false,
   "workbench.preferredDarkColorTheme": "Tokyo Night Storm",
   "workbench.preferredLightColorTheme": "Gruvbox Light Hard",
-  "workbench.startupEditor": "none",
-  "[css]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  "workbench.startupEditor": "none"
 }
