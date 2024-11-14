@@ -38,8 +38,11 @@
   "workbench.layoutControl.enabled": false,
   "workbench.preferredDarkColorTheme": "Tokyo Night Storm",
   "workbench.preferredLightColorTheme": "Gruvbox Light Hard",
-  "workbench.startupEditor": "none",
+  "workbench.startupEditor": "welcomePage",
   "terminal.integrated.enablePersistentSessions": false,
   "terminal.integrated.hideOnStartup": "whenEmpty",
-  "window.restoreWindows": "none"
+  "window.restoreWindows": "none",
+  "remote.SSH.remotePlatform": {
+    "captain": "linux"
+  }
 }
