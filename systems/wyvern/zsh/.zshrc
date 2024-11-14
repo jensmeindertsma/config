@@ -34,3 +34,6 @@ bindkey '^[^[[D' backward-word  # Alt + Left Arrow
 bindkey '^[^[[C' forward-word   # Alt + Right Arrow
 
 alias ssh="kitten ssh"
+alias reloadbar="killall -SIGUSR2 waybar"
+
+eval $(keychain --eval id_ed25519 -q)
