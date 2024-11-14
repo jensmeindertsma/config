@@ -1,0 +1,13 @@
+{
+    "workbench.startupEditor": "none",
+    "remote.SSH.remotePlatform": {
+        "drift": "linux"
+    },
+    "explorer.confirmDragAndDrop": false,
+    "remote.SSH.enableAgentForwarding": true,
+    "remote.SSH.useLocalServer": false,
+    "remote.SSH.useExecServer": false,
+    "remote.SSH.remoteServerListenOnSocket": true,
+    "git.confirmSync": false,
+    "terminal.integrated.shellIntegration.decorationsEnabled": "never"
+}
