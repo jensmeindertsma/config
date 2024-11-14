@@ -9,6 +9,5 @@ $ stow starship --target ~/.config
 ```
 
 ``` bash
-$ ln -sf ~/Development/config/shared/vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
-$ ln -sf ~/Development/config/shared/vscode/keybindings.json ~/Library/Application\ Support/Code/User/keybindings.json
+$ stow vscode ~/Library/Application\ Support/Code/User
 ```
