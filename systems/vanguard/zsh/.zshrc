@@ -19,10 +19,7 @@ zinit light-mode for \
     zdharma-continuum/zinit-annex-rust
 
 zinit light zsh-users/zsh-autosuggestions
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+zinit wait lucid light-mode for lukechilds/zsh-nvm
 
 alias mit="license-generator --author 'Jens Meindertsma' mit --output LICENSE.md"
 
