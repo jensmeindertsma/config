@@ -4,3 +4,13 @@ Host *
 
 Host cabin
     Hostname 64.227.78.92
+    User jens
+
+Host cruiser
+    Hostname 192.168.64.3
+    User jens
+    ForwardAgent yes
+
+Host kali
+    Hostname 192.168.64.4
+    User kali

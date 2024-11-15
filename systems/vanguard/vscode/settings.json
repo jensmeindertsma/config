@@ -19,19 +19,29 @@
     "justfile": "just"
   },
   "git.confirmSync": false,
+  "remote.SSH.enableAgentForwarding": true,
+  "remote.SSH.remoteServerListenOnSocket": true,
+  "remote.SSH.useExecServer": false,
+  "remote.SSH.useLocalServer": false,
   "rust-analyzer.check.command": "clippy",
   "security.workspace.trust.untrustedFiles": "open",
+  "terminal.integrated.enablePersistentSessions": false,
   "terminal.integrated.fontSize": 15,
+  "terminal.integrated.hideOnStartup": "whenEmpty",
   "terminal.integrated.sendKeybindingsToShell": true,
   "terminal.integrated.shellIntegration.decorationsEnabled": "never",
   "typescript.updateImportsOnFileMove.enabled": "always",
   "window.autoDetectColorScheme": true,
   "window.commandCenter": false,
+  "window.restoreWindows": "none",
   "window.titleBarStyle": "custom",
   "workbench.colorTheme": "Gruvbox Dark Hard",
   "workbench.iconTheme": "material-icon-theme",
   "workbench.layoutControl.enabled": false,
   "workbench.preferredDarkColorTheme": "Tokyo Night Storm",
   "workbench.preferredLightColorTheme": "Gruvbox Light Hard",
-  "workbench.startupEditor": "none"
+  "workbench.startupEditor": "none",
+  "remote.SSH.remotePlatform": {
+    "cruiser": "linux"
+  }
 }
