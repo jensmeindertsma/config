@@ -1,0 +1,5 @@
+Host *
+    AddKeysToAgent yes
+
+Host cabin
+    Hostname 64.227.78.92

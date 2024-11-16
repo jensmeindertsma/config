@@ -1,0 +1,5 @@
+@define-color background #333333;
+@define-color text white;
+@define-color bright orangered;
+
+@import url("./bar.css");

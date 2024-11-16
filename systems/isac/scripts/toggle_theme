@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# Get the current color scheme
+current_scheme=$(gsettings get org.gnome.desktop.interface color-scheme | tr -d "'")
+
+if [[ "$current_scheme" == "prefer-dark" ]]; then
+	# Switch to light mode
+        gsettings set org.gnome.desktop.interface color-scheme 'prefer-light'
+        gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'
+	kitten themes --reload-in=all Adwaita Light
+else
+        # Switch to dark mode
+        gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
+        gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita'
+	kitten themes --reload-in=all Tokyo Night
+fi
+
