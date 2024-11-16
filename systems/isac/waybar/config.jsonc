@@ -67,7 +67,7 @@
   },
   "network": {
     "interval": 3,
-    "format": "{ifname} - {ipaddr}/{cidr}",
+    "format": "[TODO BETTER NETWORK DISPLAY] {ifname} - {ipaddr}/{cidr}",
     "format-disconnected": "disconnected",
     "tooltip": false
   },
