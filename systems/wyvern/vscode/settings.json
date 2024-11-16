@@ -38,7 +38,7 @@
   "workbench.layoutControl.enabled": false,
   "workbench.preferredDarkColorTheme": "Tokyo Night Storm",
   "workbench.preferredLightColorTheme": "Gruvbox Light Hard",
-  "workbench.startupEditor": "welcomePage",
+  "workbench.startupEditor": "none",
   "terminal.integrated.enablePersistentSessions": false,
   "terminal.integrated.hideOnStartup": "whenEmpty",
   "window.restoreWindows": "none",
