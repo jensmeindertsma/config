@@ -1,3 +1,7 @@
+SAVEHIST=10000
+mkdir -p ~/.cache/zsh
+HISTFILE=~/.cache/zsh/history
+
 #### ZINIT ####
 if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
     print -P "%F{33} %F{220}Installing %F{33}ZDHARMA-CONTINUUM%F{220} Initiative Plugin Manager (%F{33}zdharma-continuum/zinit%F{220})…%f"
@@ -21,19 +25,14 @@ zinit light-mode for \
 zinit light zsh-users/zsh-autosuggestions
 zinit wait lucid light-mode for lukechilds/zsh-nvm
 
-SAVEHIST=1000
-HISTFILE=~/.zsh_history
-
-export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/ssh-agent.socket
-
-alias mit="license-generator --author 'Jens Meindertsma' mit --output LICENSE.md"
-
-eval "$(starship init zsh)"
-
 bindkey '^[^[[D' backward-word  # Alt + Left Arrow
 bindkey '^[^[[C' forward-word   # Alt + Right Arrow
 
+alias mit="license-generator --author 'Jens Meindertsma' mit --output LICENSE.md"
 alias ssh="kitten ssh"
 alias reloadbar="killall -SIGUSR2 waybar"
 
+export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/ssh-agent.socket
+
+eval "$(starship init zsh)"
 eval $(keychain --eval id_ed25519 -q --inherit any)
