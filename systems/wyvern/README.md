@@ -21,11 +21,11 @@ $ stow zsh --target ~
 With these you can link up your local VSCode settings and keybindings to the shared file that is in version control.
 
 ```bash
-$ stow vscode ~/.config/Code/User/
+$ stow vscode -t ~/.config/Code/User/
 ```
 
 To be able to toggle the theme on a system without a desktop environment, this script can be very helpful. It sets all the right variables. You can customize it to set a different Kitty (terminal) theme to your liking.
 
 ```bash
-$ sudo ln -sf ~/dev/config/systems/wyvern/scripts/toggle_theme /usr/local/bin/toggle_theme
+$ sudo ln -sf ~/development/config/systems/wyvern/scripts/toggle_theme /usr/local/bin/toggle_theme
 ```

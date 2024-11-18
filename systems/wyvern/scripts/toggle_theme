@@ -12,6 +12,6 @@ else
         # Switch to dark mode
         gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
         gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita'
-	kitten themes --reload-in=all Adwaita Dark
+	kitten themes --reload-in=all Gruvbox Dark Hard
 fi
 
