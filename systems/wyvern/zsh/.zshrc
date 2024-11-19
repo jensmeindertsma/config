@@ -34,5 +34,7 @@ alias reloadbar="killall -SIGUSR2 waybar"
 
 export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/ssh-agent.socket
 
-eval "$(starship init zsh)"
 eval $(keychain --eval id_ed25519 -q --inherit any)
+
+eval "$(starship init zsh)"
+
