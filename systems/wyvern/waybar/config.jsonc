@@ -16,7 +16,7 @@
     "custom/separator",
     "temperature",
     "custom/separator",
-    "network",
+    "custom/network",
     "custom/separator",
     "battery",
     "custom/separator",
@@ -67,10 +67,10 @@
     "tooltip": false,
     "interval": 2
   },
-  "network": {
-    "interval": 3,
-    "format": "{ifname} - {ipaddr}/{cidr}",
-    "format-disconnected": "disconnected",
+  "custom/network": {
+    "interval": 2,
+    "format": "{}",
+    "exec": "~/.config/waybar/network.sh",
     "tooltip": false
   },
   "battery": {
