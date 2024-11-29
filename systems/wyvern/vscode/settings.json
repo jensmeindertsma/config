@@ -38,11 +38,13 @@
   "workbench.layoutControl.enabled": false,
   "workbench.preferredDarkColorTheme": "Tokyo Night Storm",
   "workbench.preferredLightColorTheme": "Gruvbox Light Hard",
-  "workbench.startupEditor": "none",
+  "workbench.startupEditor": "readme",
   "terminal.integrated.enablePersistentSessions": false,
-  "terminal.integrated.hideOnStartup": "whenEmpty",
+  "terminal.integrated.hideOnStartup": "always",
   "window.restoreWindows": "none",
   "remote.SSH.remotePlatform": {
     "captain": "linux"
-  }
+  },
+  "editor.stickyScroll.enabled": false,
+  "breadcrumbs.enabled": false
 }
