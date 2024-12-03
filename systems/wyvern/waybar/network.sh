@@ -5,7 +5,13 @@ OUTPUT=$(nmcli)
 CONNECTED=$(echo "$OUTPUT" | grep "ip4 default")
 
 if [ -z "$CONNECTED" ]; then
-	echo "disconnected"
+	DISABLED=$(echo "$OUTPUT" | grep "wifi " | grep "sw disabled")
+
+	if [ -n "$DISABLED" ]; then
+		echo "disabled"
+	else
+		echo "disconnected"
+	fi
 	return 0
 fi
 
