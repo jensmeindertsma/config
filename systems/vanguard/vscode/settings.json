@@ -38,7 +38,7 @@
   "workbench.colorTheme": "Gruvbox Dark Hard",
   "workbench.iconTheme": "material-icon-theme",
   "workbench.layoutControl.enabled": false,
-  "workbench.preferredDarkColorTheme": "Tokyo Night Storm",
+  "workbench.preferredDarkColorTheme": "Gruvbox Dark Medium",
   "workbench.preferredLightColorTheme": "Gruvbox Light Hard",
   "workbench.startupEditor": "none",
   "remote.SSH.remotePlatform": {
