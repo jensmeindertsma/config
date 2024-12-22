@@ -44,5 +44,11 @@
   "remote.SSH.remotePlatform": {
     "captain": "linux"
   },
-  "workbench.preferredDarkColorTheme": "Tokyo Night"
+  "workbench.preferredDarkColorTheme": "Tokyo Night",
+  "editor.fontLigatures": true,
+  "diffEditor.ignoreTrimWhitespace": true,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "[markdown]": {
+    "editor.wordWrap": "off"
+  }
 }
