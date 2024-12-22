@@ -68,7 +68,7 @@
     "interval": 2
   },
   "custom/network": {
-    "interval": 2,
+    "interval": 1,
     "format": "{}",
     "exec": "~/.config/waybar/network.sh",
     "tooltip": false
