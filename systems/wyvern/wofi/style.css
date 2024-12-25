@@ -29,5 +29,6 @@ Any GTK widget can be selected by using the name of its CSS node, these however 
 
 #entry {
     padding: 5px;
+    padding-left: 10px;
     margin-bottom: 3px;
 }
