@@ -26,3 +26,8 @@ Any GTK widget can be selected by using the name of its CSS node, these however 
 #expander-box
     The name of all boxes shown when expanding entries with multiple actions 
 */
+
+#entry {
+    padding: 5px;
+    margin-bottom: 3px;
+}
