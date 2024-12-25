@@ -36,15 +36,12 @@
   "workbench.colorTheme": "Gruvbox Dark Hard",
   "workbench.iconTheme": "material-icon-theme",
   "workbench.layoutControl.enabled": false,
-  "workbench.preferredDarkColorTheme": "Tokyo Night Storm",
   "workbench.preferredLightColorTheme": "Gruvbox Light Hard",
   "workbench.startupEditor": "readme",
   "terminal.integrated.enablePersistentSessions": false,
   "terminal.integrated.hideOnStartup": "always",
   "window.restoreWindows": "none",
-  "remote.SSH.remotePlatform": {
-    "captain": "linux"
-  },
   "editor.stickyScroll.enabled": false,
-  "breadcrumbs.enabled": false
+  "breadcrumbs.enabled": false,
+  "workbench.preferredDarkColorTheme": "Tokyo Night"
 }

@@ -4,6 +4,6 @@ height=350
 always_parse_args=true
 show_all=false
 insensitive=true
-allow_images=true
+allow_images=false
 normal_window=true
 allow_markup=true
