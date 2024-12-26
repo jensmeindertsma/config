@@ -21,9 +21,7 @@
   "git.confirmSync": false,
   "git.enableSmartCommit": true,
   "remote.SSH.enableAgentForwarding": true,
-  "remote.SSH.remoteServerListenOnSocket": true,
-  "remote.SSH.useExecServer": false,
-  "remote.SSH.useLocalServer": false,
+  "remote.SSH.useLocalServer": true,
   "rust-analyzer.check.command": "clippy",
   "security.workspace.trust.untrustedFiles": "open",
   "terminal.integrated.fontSize": 15,
@@ -41,14 +39,18 @@
   "terminal.integrated.enablePersistentSessions": false,
   "terminal.integrated.hideOnStartup": "whenEmpty",
   "window.restoreWindows": "none",
-  "remote.SSH.remotePlatform": {
-    "captain": "linux"
-  },
-  "workbench.preferredDarkColorTheme": "Tokyo Night",
+  "workbench.preferredDarkColorTheme": "Gruvbox Dark Hard",
   "editor.fontLigatures": true,
   "diffEditor.ignoreTrimWhitespace": true,
   "javascript.updateImportsOnFileMove.enabled": "always",
   "[markdown]": {
     "editor.wordWrap": "off"
-  }
+  },
+  "files.exclude": {
+    "**/.host": true
+  },
+  "remote.SSH.remotePlatform": {
+    "river": "linux"
+  },
+  "remote.SSH.useExecServer": false
 }

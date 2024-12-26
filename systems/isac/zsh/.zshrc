@@ -29,10 +29,9 @@ bindkey '^[^[[D' backward-word  # Alt + Left Arrow
 bindkey '^[^[[C' forward-word   # Alt + Right Arrow
 
 alias mit="license-generator --author 'Jens Meindertsma' mit --output LICENSE.md"
-alias ssh="kitten ssh"
 alias reloadbar="killall -SIGUSR2 waybar"
 
-export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/ssh-agent.socket
-
 eval "$(starship init zsh)"
-eval $(keychain --eval id_ed25519 -q --inherit any)
+
+export SSH_AUTH_SOCK=/run/user/1000/ssh-agent.socket
+eval $(keychain --eval --quiet id_ed25519 --inherit any)
