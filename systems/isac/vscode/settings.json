@@ -52,5 +52,6 @@
   "remote.SSH.remotePlatform": {
     "river": "linux"
   },
-  "remote.SSH.useExecServer": false
+  "remote.SSH.useExecServer": false,
+  "debug.allowBreakpointsEverywhere": true
 }

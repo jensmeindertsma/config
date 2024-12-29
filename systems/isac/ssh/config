@@ -1,6 +1,10 @@
 Host *
     AddKeysToAgent yes
 
+Host kali
+	HostName 192.168.102.181
+	User kali
+
 Host river
 	HostName 192.168.101.137
 	User jens
