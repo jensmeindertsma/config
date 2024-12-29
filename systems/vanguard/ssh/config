@@ -2,6 +2,7 @@ Host *
     AddKeysToAgent yes
     UseKeychain yes
 
-Host cabin
-    Hostname 64.227.78.92
-    User jens
+Host cruiser
+    HostName 192.168.64.3
+    ForwardAgent yes
+
