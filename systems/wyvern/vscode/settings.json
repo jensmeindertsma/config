@@ -43,5 +43,8 @@
   "window.restoreWindows": "none",
   "editor.stickyScroll.enabled": false,
   "breadcrumbs.enabled": false,
-  "workbench.preferredDarkColorTheme": "Tokyo Night"
+  "workbench.preferredDarkColorTheme": "Gruvbox Dark Hard",
+  "remote.SSH.remotePlatform": {
+    "surf": "linux"
+  }
 }
