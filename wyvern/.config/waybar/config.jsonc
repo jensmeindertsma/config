@@ -4,9 +4,9 @@
   "modules-left": ["hyprland/workspaces"],
   "modules-center": [],
   "modules-right": [
-    "pulseaudio#input",
-    "custom/separator",
     "pulseaudio#output",
+    "custom/separator",
+    "pulseaudio#input",
     "custom/separator",
     "cpu",
     "custom/separator",
@@ -24,6 +24,8 @@
     "custom/separator",
     "clock#time"
   ],
+
+  "hyprland/workspaces": {},
 
   "custom/separator": {
     "format": "|"

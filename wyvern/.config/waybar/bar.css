@@ -29,11 +29,8 @@ button:hover {
   color: @bright;
 }
 
-#workspaces {
-  color: white;
-}
-
 #workspaces button {
+  color: @text;
   padding: 0 5px;
 }
 
