@@ -36,14 +36,15 @@
   "workbench.colorTheme": "Gruvbox Dark Hard",
   "workbench.iconTheme": "material-icon-theme",
   "workbench.layoutControl.enabled": false,
-  "workbench.startupEditor": "readme",
   "terminal.integrated.enablePersistentSessions": false,
   "terminal.integrated.hideOnStartup": "always",
   "window.restoreWindows": "none",
   "editor.stickyScroll.enabled": false,
   "breadcrumbs.enabled": false,
-  "workbench.preferredDarkColorTheme": "Default Dark+",
+  "workbench.preferredDarkColorTheme": "Gruvbox Dark Hard",
   "remote.SSH.remotePlatform": {
     "surf": "linux"
-  }
+  },
+  "workbench.startupEditor": "none",
+  "workbench.welcomePage.walkthroughs.openOnInstall": false
 }
