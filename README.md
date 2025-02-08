@@ -8,16 +8,12 @@ $ stow --target ~ wyvern
 ```
 
 ### TODO
-- VPN
-- nm-connection-editor
 
-- hyprlock
-- style launcher and install file explorer
-- get virtualization set up
+- style launche 
 - set up development projects including docker and rust analyzer
+
 - kali
 - development box for sail
-- wallpaper would be nice
 - style vscode
 - style neovim
 - make my own attackbox

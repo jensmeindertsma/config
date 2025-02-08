@@ -36,14 +36,13 @@
   "workbench.colorTheme": "Gruvbox Dark Hard",
   "workbench.iconTheme": "material-icon-theme",
   "workbench.layoutControl.enabled": false,
-  "workbench.preferredLightColorTheme": "Gruvbox Light Hard",
   "workbench.startupEditor": "readme",
   "terminal.integrated.enablePersistentSessions": false,
   "terminal.integrated.hideOnStartup": "always",
   "window.restoreWindows": "none",
   "editor.stickyScroll.enabled": false,
   "breadcrumbs.enabled": false,
-  "workbench.preferredDarkColorTheme": "Gruvbox Dark Hard",
+  "workbench.preferredDarkColorTheme": "Default Dark+",
   "remote.SSH.remotePlatform": {
     "surf": "linux"
   }
