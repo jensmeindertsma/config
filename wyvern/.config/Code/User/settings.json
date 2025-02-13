@@ -43,7 +43,8 @@
   "breadcrumbs.enabled": false,
   "workbench.preferredDarkColorTheme": "Gruvbox Dark Hard",
   "remote.SSH.remotePlatform": {
-    "surf": "linux"
+    "surf": "linux",
+    "marina": "linux"
   },
   "workbench.startupEditor": "none",
   "workbench.welcomePage.walkthroughs.openOnInstall": false
