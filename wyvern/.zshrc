@@ -24,7 +24,7 @@ zinit light-mode for \
 ### NVM ###
 export NVM_COMPLETION=true
 
-zinit wait lucid light-mode for lukechilds/zsh-nvm
+zinit light lukechilds/zsh-nvm
 ### NVM END ###
 
 ### SSH ###
