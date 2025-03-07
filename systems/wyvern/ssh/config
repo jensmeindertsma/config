@@ -1,7 +1,0 @@
-Host *
-    AddKeysToAgent yes
-
-Host surf
-	HostName 192.168.101.223
-	User jens
-	ForwardAgent yes

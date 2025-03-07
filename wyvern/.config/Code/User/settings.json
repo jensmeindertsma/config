@@ -1,0 +1,51 @@
+{
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.codeLens": false,
+  "editor.fontFamily": "JetBrainsMono Nerd Font",
+  "editor.fontSize": 17,
+  "editor.formatOnSave": true,
+  "editor.inlayHints.enabled": "offUnlessPressed",
+  "editor.minimap.enabled": false,
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+  "files.associations": {
+    ".envrc": "plaintext",
+    "config": "plaintext",
+    "justfile": "just"
+  },
+  "git.confirmSync": false,
+  "git.enableSmartCommit": true,
+  "remote.SSH.enableAgentForwarding": true,
+  "remote.SSH.remoteServerListenOnSocket": true,
+  "remote.SSH.useExecServer": false,
+  "remote.SSH.useLocalServer": false,
+  "rust-analyzer.check.command": "clippy",
+  "security.workspace.trust.untrustedFiles": "open",
+  "terminal.integrated.fontSize": 15,
+  "terminal.integrated.sendKeybindingsToShell": true,
+  "terminal.integrated.shellIntegration.decorationsEnabled": "never",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "window.autoDetectColorScheme": true,
+  "window.commandCenter": false,
+  "window.titleBarStyle": "custom",
+  "workbench.colorTheme": "Gruvbox Dark Hard",
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.layoutControl.enabled": false,
+  "terminal.integrated.enablePersistentSessions": false,
+  "terminal.integrated.hideOnStartup": "always",
+  "window.restoreWindows": "none",
+  "editor.stickyScroll.enabled": false,
+  "breadcrumbs.enabled": false,
+  "workbench.preferredDarkColorTheme": "Gruvbox Dark Hard",
+  "remote.SSH.remotePlatform": {
+    "surf": "linux",
+    "marina": "linux"
+  },
+  "workbench.startupEditor": "none",
+  "workbench.welcomePage.walkthroughs.openOnInstall": false
+}

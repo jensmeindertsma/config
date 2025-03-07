@@ -1,7 +1,0 @@
-Host *
-    AddKeysToAgent yes
-    UseKeychain yes
-
-Host cabin
-    Hostname 64.227.78.92
-    User jens

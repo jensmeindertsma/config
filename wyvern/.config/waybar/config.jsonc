@@ -1,0 +1,96 @@
+{
+  "layer": "top",
+  "position": "bottom",
+  "modules-left": ["hyprland/workspaces"],
+  "modules-center": [],
+  "modules-right": [
+    "pulseaudio#output",
+    "custom/separator",
+    "pulseaudio#input",
+    "custom/separator",
+    "cpu",
+    "custom/separator",
+    "memory",
+    "custom/separator",
+    "disk",
+    "custom/separator",
+    "temperature",
+    "custom/separator",
+    "custom/network",
+    "custom/separator",
+    "battery",
+    "custom/separator",
+    "clock#date",
+    "custom/separator",
+    "clock#time"
+  ],
+
+  "hyprland/workspaces": {},
+
+  "custom/separator": {
+    "format": "|"
+  },
+
+  "pulseaudio#input": {
+    "format": "{format_source}",
+    "format-source": "mic {volume}%",
+    "format-source-muted": "mic [/]",
+    "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 1%+ -l 1.0",
+    "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 1%- -l 1.0",
+    "on-click": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
+    "max-volume": 100,
+    "tooltip": false
+  },
+  "pulseaudio#output": {
+    "format": "vol {volume}%",
+    "format-muted": "vol [/]",
+    "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%+ -l 1.0",
+    "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%- -l 1.0",
+    "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+    "max-volume": 100,
+    "tooltip": false
+  },
+  "cpu": {
+    "format": "cpu {usage}%",
+    "tooltip": false,
+    "interval": 1
+  },
+  "memory": {
+    "format": "mem {percentage}%",
+    "tooltip": false,
+    "interval": 1
+  },
+  "disk": {
+    "format": "disk {percentage_used}%",
+    "tooltip": false
+  },
+  "temperature": {
+    "format": "temp {temperatureC}°",
+    "tooltip": false,
+    "interval": 2
+  },
+  "custom/network": {
+    "interval": 1,
+    "format": "{}",
+    "exec": "~/.config/waybar/network.sh",
+    "tooltip": false
+  },
+  "battery": {
+    "format": "bat {capacity}%",
+    "format-charging": "bat {capacity}% [+]",
+    "format-plugged": "bat {capacity}% [~]",
+    "tooltip": false,
+    "interval": 5
+  },
+  "clock#date": {
+    "format": "{:%d/%m/%Y}",
+    "tooltip": true,
+    "tooltip-format": "{:%A}",
+    "interval": 60
+  },
+  "clock#time": {
+    "format": "{:%H:%M:%S}",
+    "tooltip": false,
+    "interval": 1
+  }
+}

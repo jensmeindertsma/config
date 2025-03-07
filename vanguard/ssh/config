@@ -1,0 +1,8 @@
+Host *
+    AddKeysToAgent yes
+    UseKeychain yes
+
+Host cruiser
+    HostName 192.168.64.3
+    ForwardAgent yes
+
