@@ -32,7 +32,7 @@
   "window.commandCenter": false,
   "window.titleBarStyle": "custom",
   "workbench.colorTheme": "Gruvbox Dark Hard",
-  "workbench.iconTheme": "material-icon-theme",
+  "workbench.iconTheme": "vscode-icons",
   "workbench.layoutControl.enabled": false,
   "workbench.preferredLightColorTheme": "Gruvbox Light Hard",
   "workbench.startupEditor": "none",
@@ -53,5 +53,6 @@
     "river": "linux"
   },
   "remote.SSH.useExecServer": false,
-  "debug.allowBreakpointsEverywhere": true
+  "debug.allowBreakpointsEverywhere": true,
+  "lldb.suppressUpdateNotifications": true
 }
