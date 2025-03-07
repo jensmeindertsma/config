@@ -54,5 +54,6 @@
   },
   "remote.SSH.useExecServer": false,
   "debug.allowBreakpointsEverywhere": true,
-  "lldb.suppressUpdateNotifications": true
+  "lldb.suppressUpdateNotifications": true,
+  "vsicons.dontShowNewVersionMessage": true
 }
