@@ -33,8 +33,8 @@
     "format": "{format_source}",
     "format-source": "mic {volume}%",
     "format-source-muted": "mic [/]",
-    "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 1%+ -l 1.0",
-    "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 1%- -l 1.0",
+    "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 1%+ -l 1.0",
+    "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 1%- -l 1.0",
     "on-click": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
     "max-volume": 100,
     "tooltip": false
@@ -42,8 +42,8 @@
   "pulseaudio#output": {
     "format": "vol {volume}%",
     "format-muted": "vol [/]",
-    "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%+ -l 1.0",
-    "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%- -l 1.0",
+    "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%+ -l 1.0",
+    "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%- -l 1.0",
     "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
     "max-volume": 100,
     "tooltip": false
