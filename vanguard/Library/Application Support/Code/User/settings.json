@@ -43,5 +43,6 @@
   "workbench.startupEditor": "none",
   "remote.SSH.remotePlatform": {
     "cruiser": "linux"
-  }
+  },
+  "editor.lineNumbers": "relative"
 }
