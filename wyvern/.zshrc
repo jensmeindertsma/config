@@ -52,7 +52,6 @@ bindkey '^[[1;3C' forward-word   # Alt + Right Arrow
 export PATH="$HOME/.local/bin:$PATH"
 
 alias mit="license-generator --author 'Jens Meindertsma' mit --output LICENSE.md"
-alias ssh="kitten ssh"
 alias ip='ip --color=auto'
 alias ls='eza'
 
