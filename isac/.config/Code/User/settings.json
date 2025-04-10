@@ -55,5 +55,6 @@
   "remote.SSH.useExecServer": false,
   "debug.allowBreakpointsEverywhere": true,
   "lldb.suppressUpdateNotifications": true,
-  "vsicons.dontShowNewVersionMessage": true
+  "vsicons.dontShowNewVersionMessage": true,
+  "workbench.editor.empty.hint": "hidden"
 }
