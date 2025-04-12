@@ -56,4 +56,6 @@ alias ssh="kitten ssh"
 alias ip='ip --color=auto'
 alias ls='eza'
 
+. "$HOME/.cargo/env"
+
 eval "$(starship init zsh)"
