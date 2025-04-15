@@ -12,7 +12,8 @@ if [ -z "$CONNECTED" ]; then
 	else
 		echo "disconnected"
 	fi
-	return 0
+
+	exit 0
 fi
 
 VPN=$(echo "$OUTPUT" | grep "VPN connection" | awk '{print $1}')
@@ -26,7 +27,7 @@ if [ -n "$VPN" ]; then
 		echo "loading ($VPN)"
 	fi
 
-	return 0
+	exit 0
 fi
 
 IP=$(echo "$OUTPUT" | grep "ip4 default" -A 1 | grep "inet4" | awk '{print $2}' )

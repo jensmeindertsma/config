@@ -20,7 +20,7 @@
     "custom/separator",
     "battery",
     "custom/separator",
-    "clock#date",
+    "custom/date",
     "custom/separator",
     "clock#time"
   ],
@@ -82,10 +82,8 @@
     "tooltip": false,
     "interval": 5
   },
-  "clock#date": {
-    "format": "{:%d/%m/%Y}",
-    "tooltip": true,
-    "tooltip-format": "{:%A}",
+  "custom/date": {
+    "exec": "python3 ~/.config/waybar/date.py",
     "interval": 60
   },
   "clock#time": {
