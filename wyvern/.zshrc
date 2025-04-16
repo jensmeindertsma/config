@@ -55,4 +55,6 @@ alias mit="license-generator --author 'Jens Meindertsma' mit --output LICENSE.md
 alias ip='ip --color=auto'
 alias ls='eza'
 
+. "$HOME/.cargo/env"
+
 eval "$(starship init zsh)"
