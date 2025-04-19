@@ -56,5 +56,6 @@
   "debug.allowBreakpointsEverywhere": true,
   "lldb.suppressUpdateNotifications": true,
   "vsicons.dontShowNewVersionMessage": true,
-  "workbench.editor.empty.hint": "hidden"
+  "workbench.editor.empty.hint": "hidden",
+  "workbench.sideBar.location": "right"
 }
