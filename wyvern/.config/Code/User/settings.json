@@ -47,5 +47,6 @@
     "marina": "linux"
   },
   "workbench.startupEditor": "none",
-  "workbench.welcomePage.walkthroughs.openOnInstall": false
+  "workbench.welcomePage.walkthroughs.openOnInstall": false,
+  "editor.renderWhitespace": "none"
 }
