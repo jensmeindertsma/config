@@ -45,15 +45,16 @@ setopt hist_save_no_dups
 setopt hist_ignore_dups
 setopt hist_find_no_dups
 
-bindkey '^[[1;3D' backward-word  # Alt + Left Arrow
-bindkey '^[[1;3C' forward-word   # Alt + Right Arrow
-
 # For the `toggle_theme` script
 export PATH="$HOME/.local/bin:$PATH"
 
 alias mit="license-generator --author 'Jens Meindertsma' mit --output LICENSE.md"
 alias ip='ip --color=auto'
 alias ls='eza'
+alias vi="vim"
+
+bindkey "^[[1;5C" forward-word
+bindkey "^[[1;5D" backward-word
 
 . "$HOME/.cargo/env"
 
