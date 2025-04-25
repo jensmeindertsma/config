@@ -57,5 +57,6 @@
   "lldb.suppressUpdateNotifications": true,
   "vsicons.dontShowNewVersionMessage": true,
   "workbench.editor.empty.hint": "hidden",
-  "workbench.sideBar.location": "right"
+  "workbench.sideBar.location": "right",
+  "makefile.configureOnOpen": true
 }
