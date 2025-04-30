@@ -48,6 +48,9 @@ setopt hist_find_no_dups
 # For the `toggle_theme` script
 export PATH="$HOME/.local/bin:$PATH"
 
+export PATH=/usr/bin:$PATH
+export DOCKER_HOST=unix:///run/user/1000/docker.sock
+
 alias mit="license-generator --author 'Jens Meindertsma' mit --output LICENSE.md"
 alias ip='ip --color=auto'
 alias ls='eza'
