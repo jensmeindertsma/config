@@ -50,6 +50,7 @@ export PATH="$HOME/.local/bin:$PATH"
 
 export PATH=/usr/bin:$PATH
 export DOCKER_HOST=unix:///run/user/1000/docker.sock
+export COMPOSE_BAKE=true
 
 alias mit="license-generator --author 'Jens Meindertsma' mit --output LICENSE.md"
 alias ip='ip --color=auto'

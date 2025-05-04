@@ -21,9 +21,6 @@
   "git.confirmSync": false,
   "git.enableSmartCommit": true,
   "remote.SSH.enableAgentForwarding": true,
-  "remote.SSH.remoteServerListenOnSocket": true,
-  "remote.SSH.useExecServer": false,
-  "remote.SSH.useLocalServer": false,
   "rust-analyzer.check.command": "clippy",
   "security.workspace.trust.untrustedFiles": "open",
   "terminal.integrated.fontSize": 15,
@@ -42,12 +39,15 @@
   "editor.stickyScroll.enabled": false,
   "breadcrumbs.enabled": false,
   "workbench.preferredDarkColorTheme": "Gruvbox Dark Hard",
-  "remote.SSH.remotePlatform": {
-    "surf": "linux",
-    "marina": "linux"
-  },
   "workbench.startupEditor": "none",
   "workbench.welcomePage.walkthroughs.openOnInstall": false,
   "editor.renderWhitespace": "none",
-  "editor.fontLigatures": true
+  "editor.fontLigatures": true,
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "remote.SSH.experimental.chat": false,
+  "remote.SSH.enableX11Forwarding": false
+  // "dev.containers.dockerSocketPath": "",
+  // "dev.containers.dockerPath": "/usr/bin/docker"
 }
