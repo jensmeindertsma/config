@@ -2,5 +2,6 @@
   "workbench.startupEditor": "none",
   "workbench.colorTheme": "Gruvbox Dark Hard",
   "editor.fontSize": 16,
-  "editor.fontFamily": "JetBrainsMono Nerd Font"
+  "editor.fontFamily": "JetBrainsMono Nerd Font",
+  "git.autofetch": true
 }
