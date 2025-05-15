@@ -16,6 +16,11 @@ $ stow --target ~ wyvern
 
 `ANNA` is named after the rogue SHD Network artifial intelligence entity from Tom Clancy's The Division 2. It is a Windows system with a WSL Ubuntu distribution set up for development. There are also several virtual machines configured with SSH forwarding. VSCode is installed on Windows and has the necessary extensions installed to be used to develop on the WSL distribution and over SSH on the virtual machines.
 
+The WSL dotfiles can be symlinked with Stow like this:
+
+```
+$ stow --target ~ --dir anna wsl
+```
 
 #### Windows symbolic links
 
