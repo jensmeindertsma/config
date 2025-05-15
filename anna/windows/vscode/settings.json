@@ -1,14 +1,6 @@
 {
-  "explorer.confirmDragAndDrop": false,
-  "git.confirmSync": false,
-  "remote.SSH.enableAgentForwarding": true,
-  "remote.SSH.remotePlatform": {
-    "drift": "linux"
-  },
-  "remote.SSH.remoteServerListenOnSocket": true,
-  "remote.SSH.useExecServer": false,
-  "remote.SSH.useLocalServer": false,
-  "rust-analyzer.check.command": "clippy",
-  "terminal.integrated.shellIntegration.decorationsEnabled": "never",
-  "workbench.startupEditor": "none"
+  "workbench.startupEditor": "none",
+  "workbench.colorTheme": "Gruvbox Dark Hard",
+  "editor.fontSize": 16,
+  "editor.fontFamily": "JetBrainsMono Nerd Font"
 }
