@@ -1,11 +1,20 @@
 {
-    "editor.fontFamily": "JetBrains Mono",
-    "editor.fontSize": 16,
-    "explorer.confirmDragAndDrop": false,
-    "terminal.integrated.fontFamily": "Fira Code",
-    "terminal.integrated.fontSize": 16,
-    "window.autoDetectColorScheme": true,
-    "workbench.preferredDarkColorTheme": "One Dark Pro Darker",
-    "workbench.preferredLightColorTheme": "Atom One Light",
-    "workbench.startupEditor": "none"
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.fontFamily": "JetBrainsMono Nerd Font Mono",
+  "editor.fontSize": 16,
+  "editor.formatOnSave": true,
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+  "git.autofetch": true,
+  "git.confirmSync": false,
+  "terminal.integrated.fontFamily": "FiraCode Nerd Font Mono",
+  "terminal.integrated.fontSize": 16,
+  "terminal.integrated.shellIntegration.decorationsEnabled": "never",
+  "window.autoDetectColorScheme": true,
+  "window.customTitleBarVisibility": "windowed",
+  "workbench.preferredDarkColorTheme": "One Dark Pro Darker",
+  "workbench.preferredLightColorTheme": "Atom One Light",
+  "workbench.startupEditor": "none"
 }

@@ -28,8 +28,11 @@ export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 ### SSH ###
 eval $(keychain --eval id_ed25519 --quiet)
 
-## Aliases
+### Aliases ###
 alias ls="eza"
+
+### Other ###
+export DYLD_LIBRARY_PATH=/usr/local/lib:$DYLD_LIBRARY_PATH
 
 ### Prompt ###
 eval "$(starship init zsh)"
