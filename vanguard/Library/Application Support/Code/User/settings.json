@@ -5,6 +5,7 @@
   "editor.fontFamily": "JetBrainsMono Nerd Font Mono",
   "editor.fontSize": 16,
   "editor.formatOnSave": true,
+  "editor.inlayHints.enabled": "offUnlessPressed",
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
   "git.autofetch": true,
@@ -16,6 +17,5 @@
   "window.customTitleBarVisibility": "windowed",
   "workbench.preferredDarkColorTheme": "One Dark Pro Darker",
   "workbench.preferredLightColorTheme": "Atom One Light",
-  "workbench.startupEditor": "none",
-  "editor.inlayHints.enabled": "offUnlessPressed"
+  "workbench.startupEditor": "none"
 }
