@@ -37,5 +37,8 @@ alias ls="eza"
 ### Other ###
 export DYLD_LIBRARY_PATH=/usr/local/lib:$DYLD_LIBRARY_PATH
 
+bindkey '^[[1;3D' backward-word   # Option + Left Arrow
+bindkey '^[[1;3C' forward-word    # Option + Right Arrow
+
 ### Prompt ###
 eval "$(starship init zsh)"
