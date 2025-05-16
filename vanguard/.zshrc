@@ -26,7 +26,10 @@ fpath=(/Users/Jens/.docker/completions $fpath)
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 
 ### SSH ###
-eval $(keychain --eval id_ed25519 --quiet)
+
+# The keychain program is currently broken, see https://github.com/funtoo/keychain/issues/177,
+# until it is fixed we can manually run `ssh-add ~/.ssh/id_ed25519`.
+# eval $(keychain --eval id_ed25519 --quiet)
 
 ### Aliases ###
 alias ls="eza"
