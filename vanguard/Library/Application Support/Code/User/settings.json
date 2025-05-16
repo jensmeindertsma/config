@@ -1,0 +1,11 @@
+{
+    "editor.fontFamily": "JetBrains Mono",
+    "editor.fontSize": 16,
+    "explorer.confirmDragAndDrop": false,
+    "terminal.integrated.fontFamily": "Fira Code",
+    "terminal.integrated.fontSize": 16,
+    "window.autoDetectColorScheme": true,
+    "workbench.preferredDarkColorTheme": "One Dark Pro Darker",
+    "workbench.preferredLightColorTheme": "Atom One Light",
+    "workbench.startupEditor": "none"
+}

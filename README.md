@@ -33,3 +33,11 @@ $ New-Item -ItemType SymbolicLink -Path "C:\Users\Jens\AppData\Roaming\Code\User
 
 $ New-Item -ItemType SymbolicLink -Path "C:\Users\Jens\AppData\Roaming\Code\User\keybindings.json" -Target "\\wsl`$\Ubuntu\home\jens\development\config\anna\windows\vscode\keybindings.json"
 ```
+
+### Vanguard
+
+Vanguard is named after the rogue Division agent Aaron Keener from the Tom Clancy's The Division series. It is my 2020 MacBook Air.
+
+```
+$ stow --target ~ vanguard
+```
