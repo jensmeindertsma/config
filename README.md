@@ -14,7 +14,7 @@ $ stow --target ~ wyvern
 
 ### ANNA
 
-`ANNA` is named after the rogue SHD Network artifial intelligence entity from Tom Clancy's The Division 2. It is a Windows system with a WSL Ubuntu distribution set up for development. There are also several virtual machines configured with SSH forwarding. VSCode is installed on Windows and has the necessary extensions installed to be used to develop on the WSL distribution and over SSH on the virtual machines.
+`ANNA` is a Windows system with a WSL Ubuntu distribution set up for development. VSCode is installed on Windows and has the necessary extensions installed to be used to develop on the WSL distribution and over SSH on the virtual machines.
 
 The WSL dotfiles can be symlinked with Stow like this:
 
@@ -36,7 +36,7 @@ $ New-Item -ItemType SymbolicLink -Path "C:\Users\Jens\AppData\Roaming\Code\User
 
 ### Vanguard
 
-Vanguard is named after the rogue Division agent Aaron Keener from the Tom Clancy's The Division series. It is my 2020 MacBook Air.
+Vanguard is my 2020 MacBook Air running macOS Sequoia.
 
 ```
 $ stow --target ~ vanguard
