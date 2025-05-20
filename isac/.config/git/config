@@ -27,3 +27,11 @@
 
 [alias]
     setup = "!git commit --allow-empty -m 'Initial commit' && git push"
+
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+
