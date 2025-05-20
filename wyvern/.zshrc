@@ -21,6 +21,13 @@ export PATH="$HOME/.local/bin:$PATH"
 export ELECTRON_OZONE_PLATFORM_HINT=wayland
 
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
-eval $(keychain --eval id_ed25519 --quiet)
+
+# I don't know how to make `keychain` add the
+# key to the static SSH_AUTH_SOCK instead of
+# prompting for the password even though the
+# key has already been added only to spawn
+# its own SSH agent.
+#
+eval $(keychain --eval id_ed25519 --quiet --ssh-agent-socket "$SSH_AUTH_SOCK" )
 
 eval "$(starship init zsh)"
