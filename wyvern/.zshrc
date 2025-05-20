@@ -21,6 +21,11 @@ export PATH="$HOME/.local/bin:$PATH"
 export ELECTRON_OZONE_PLATFORM_HINT=wayland
 
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
-eval $(keychain --eval id_ed25519 --quiet --ssh-allow-forwarded)
+if ! [ -S "$SSH_AUTH_SOCK" ] || ! ssh-add -l &>/dev/null; then
+    echo "Starting ssh-agent at $SSH_AUTH_SOCK"
+    rm -f "$SSH_AUTH_SOCK"
+    eval "$(ssh-agent -a "$SSH_AUTH_SOCK")" >/dev/null
+    ssh-add ~/.ssh/id_ed25519 2>/dev/null
+fi
 
 eval "$(starship init zsh)"
