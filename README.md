@@ -18,7 +18,7 @@ $ stow --target ~ vanguard
 
 ### Wyvern
 
-My ASUS Zenbook laptop has a dualboot setup with Arch Linux and Windows, where the Linux installation is named Wyvern.
+My ASUS Zenbook laptop has a dualboot setup with Arch Linux and Windows, where the Linux installation is named Wyvern. All of the systems in here are named after people or names from Tom Clancy's The Division by Ubisoft, one of my favorite game with cool names :D
 
 ```
 $ stow --target ~ wyvern
