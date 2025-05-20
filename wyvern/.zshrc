@@ -20,6 +20,7 @@ zinit light zsh-users/zsh-autosuggestions
 export PATH="$HOME/.local/bin:$PATH"
 export ELECTRON_OZONE_PLATFORM_HINT=wayland
 
-eval $(keychain --eval id_ed25519 --quiet)
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+eval $(keychain --eval id_ed25519 --quiet --ssh-allow-forwarded)
 
 eval "$(starship init zsh)"
