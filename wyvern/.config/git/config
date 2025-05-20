@@ -4,7 +4,7 @@
 [user]
     name = "Jens Meindertsma"
     email = "mail@jensmeindertsma.com"
-    signingKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJhI5sNxApLWYWOKljGuaVzt/6rsAVlAlb2lKv0nPHyD"
+    signingKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHpqD6eIj6LMDbir9PMKsSzP/e3JuYKKwWDROve1a30l"
 
 [commit]
     gpgsign = true
