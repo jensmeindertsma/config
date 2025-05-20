@@ -25,6 +25,6 @@ bindkey '^[[1;5D' backward-word
 # Map Ctrl+Right to forward-word
 bindkey '^[[1;5C' forward-word
 
-eval $(keychain id_ed25519 --eval --ssh-allow-forwarded)
+eval $(keychain id_ed25519 --eval --ssh-allow-forwarded --quiet)
 
 eval "$(starship init zsh)"
