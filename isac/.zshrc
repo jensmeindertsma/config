@@ -19,6 +19,12 @@ zinit light zsh-users/zsh-autosuggestions
 
 export PATH="$HOME/.local/bin:$PATH"
 
-eval $(keychain --eval id_ed25519 --quiet)
+# Map Ctrl+Left to backward-word
+bindkey '^[[1;5D' backward-word
+
+# Map Ctrl+Right to forward-word
+bindkey '^[[1;5C' forward-word
+
+eval $(keychain id_ed25519 --eval --ssh-allow-forwarded)
 
 eval "$(starship init zsh)"
