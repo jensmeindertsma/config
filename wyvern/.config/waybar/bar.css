@@ -1,8 +1,13 @@
 * {
-  font-family: JetBrainsMono Nerd Font;
+  font-family: FiraCode Nerd Font;
   font-size: 13px;
   padding: 0;
   margin: 0;
+}
+
+#waybar {
+  background-color: @background;
+  color: @text;
 }
 
 button {
@@ -18,34 +23,32 @@ button:hover {
   text-shadow: none;
 }
 
-#waybar {
-  background-color: @background;
-  color: @text;
-}
-
 #custom-separator {
-  margin: 0 10px;
+  margin: 0 7px;
   font-weight: bold;
   color: @bright;
 }
 
-#workspaces button {
+#workspaces {
   color: @text;
-  padding: 0 5px;
+  margin: 5px 0px 5px 5px;
+  font-weight: bold;
+}
+
+#workspaces button {
+  padding: 0px 4px;
 }
 
 #workspaces button.urgent {
-  background-color: @text;
-  color: @background;
+  color: @active;
   font-weight: 900;
 }
 
 #workspaces button.active {
-  background-color: @bright;
-  color: white;
+  color: @active;
   font-weight: 900;
 }
 
 #clock.time {
-  margin-right: 10px;
+  margin: 5px 10px 5px 0px;
 }

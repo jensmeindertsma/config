@@ -1,5 +1,5 @@
 from datetime import datetime
 
 date = datetime.now()
-output = date.strftime("%a %d/%m/%Y").lower()
+output = date.strftime("%d/%m/%Y").lower()
 print(output)

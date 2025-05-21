@@ -1,9 +1,16 @@
 {
   "layer": "top",
-  "position": "top",
+  "position": "bottom",
+
+  "margin-top": 0,
+  "margin-left": 20,
+  "margin-right": 20,
+  "margin-bottom": 20,
+
   "modules-left": ["hyprland/workspaces"],
   "modules-center": [],
   "modules-right": [
+    "custom/separator",
     "pulseaudio#output",
     "custom/separator",
     "pulseaudio#input",
@@ -28,7 +35,7 @@
   "hyprland/workspaces": {},
 
   "custom/separator": {
-    "format": "|"
+    "format": "/"
   },
 
   "pulseaudio#input": {
