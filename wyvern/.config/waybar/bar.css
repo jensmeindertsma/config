@@ -37,6 +37,7 @@ button:hover {
 }
 
 .modules-left {
+  padding: 0px 4px 0px 4px;
   background-color: @background;
 }
 
