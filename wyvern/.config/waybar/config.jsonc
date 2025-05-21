@@ -10,7 +10,6 @@
   "modules-left": ["hyprland/workspaces"],
   "modules-center": [],
   "modules-right": [
-    "custom/separator",
     "pulseaudio#output",
     "custom/separator",
     "pulseaudio#input",
@@ -32,7 +31,18 @@
     "clock#time"
   ],
 
-  "hyprland/workspaces": {},
+  "hyprland/workspaces": {
+    "persistent-workspaces": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": [],
+      "6": [],
+      "7": [],
+      "8": [],
+      "9": []
+    }
+  },
 
   "custom/separator": {
     "format": "/"
@@ -78,9 +88,10 @@
   },
   "custom/network": {
     "interval": 1,
-    "format": "{}",
     "exec": "~/.config/waybar/network.sh",
-    "tooltip": false
+    "return-type": "json",
+    "format": "{text}",
+    "tooltip": true
   },
   "battery": {
     "format": "bat {capacity}%",
@@ -91,6 +102,9 @@
   },
   "custom/date": {
     "exec": "python3 ~/.config/waybar/date.py",
+    "return-type": "json",
+    "format": "{text}",
+    "tooltip": true,
     "interval": 60
   },
   "clock#time": {

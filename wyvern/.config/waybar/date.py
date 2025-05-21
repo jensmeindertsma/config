@@ -1,5 +1,15 @@
 from datetime import datetime
+import json
 
 date = datetime.now()
-output = date.strftime("%d/%m/%Y").lower()
-print(output)
+
+text = date.strftime("%d/%m/%Y").lower()
+tooltip = date.strftime("%A")
+
+output = {
+    "text": text,
+    "tooltip": tooltip
+}
+
+print(json.dumps(output))
+

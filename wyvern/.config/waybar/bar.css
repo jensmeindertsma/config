@@ -5,9 +5,10 @@
   margin: 0;
 }
 
-#waybar {
-  background-color: @background;
+window#waybar {
   color: @text;
+  font-weight: 400;
+  background-color: transparent;
 }
 
 button {
@@ -25,14 +26,24 @@ button:hover {
 
 #custom-separator {
   margin: 0 7px;
-  font-weight: bold;
+  font-weight: 900;
   color: @bright;
 }
 
-#workspaces {
+.modules-left,
+.modules-right {
   color: @text;
-  margin: 5px 0px 5px 5px;
-  font-weight: bold;
+  background-color: @background;
+  border: 3px solid @border;
+}
+
+.modules-right {
+  font-weight: 500;
+  padding: 0 10px 0 10px;
+}
+
+#workspaces {
+  font-weight: 700;
 }
 
 #workspaces button {
@@ -40,15 +51,13 @@ button:hover {
 }
 
 #workspaces button.urgent {
-  color: @active;
+  color: @background;
+  background-color: @text;
   font-weight: 900;
 }
 
 #workspaces button.active {
   color: @active;
+  background-color: @bright;
   font-weight: 900;
-}
-
-#clock.time {
-  margin: 5px 10px 5px 0px;
 }
