@@ -4,10 +4,10 @@ ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 source "${ZINIT_HOME}/zinit.zsh"
 
 zinit light-mode for \
-    zdharma-continuum/zinit-annex-as-monitor \
-    zdharma-continuum/zinit-annex-bin-gem-node \
-    zdharma-continuum/zinit-annex-patch-dl \
-    zdharma-continuum/zinit-annex-rust
+  zdharma-continuum/zinit-annex-as-monitor \
+  zdharma-continuum/zinit-annex-bin-gem-node \
+  zdharma-continuum/zinit-annex-patch-dl \
+  zdharma-continuum/zinit-annex-rust
 
 ### History & auto-completion ###
 HISTFILE=~/.zsh_history
@@ -16,6 +16,13 @@ SAVEHIST=10000
 setopt appendhistory
 
 zinit light zsh-users/zsh-autosuggestions
+
+autoload -Uz compinit && compinit
+
+export PATH="/home/jens/.local/share/fnm:$PATH"
+eval "$(fnm env --use-on-cd --corepack-enabled --shell zsh)"
+eval "$(fnm completions --shell zsh)"
+alias nvm="fnm"
 
 export PATH="$HOME/.local/bin:$PATH"
 export ELECTRON_OZONE_PLATFORM_HINT=wayland
@@ -31,3 +38,10 @@ alias ls="eza"
 eval $(keychain id_ed25519 --eval --ssh-allow-forwarded --quiet)
 
 eval "$(starship init zsh)"
+
+# fnm
+FNM_PATH="/home/jens/.local/share/fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="/home/jens/.local/share/fnm:$PATH"
+  eval "$(fnm env)"
+fi
