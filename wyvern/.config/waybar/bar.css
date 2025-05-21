@@ -50,6 +50,14 @@ button:hover {
   padding: 0px 4px;
 }
 
+#workspaces button.empty {
+  color: #888888;
+}
+
+/* #workspaces button:not(.empty) {
+  color: orangered;
+} */
+
 #workspaces button.urgent {
   color: @background;
   background-color: @text;
