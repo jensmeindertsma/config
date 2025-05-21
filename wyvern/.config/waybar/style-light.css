@@ -2,6 +2,6 @@
 @define-color text #333333;
 @define-color bright orangered;
 @define-color active white;
-@define-color border #333333;
+@define-color border #cccccc;
 
 @import url("./bar.css");

@@ -4,13 +4,17 @@
 current_scheme=$(gsettings get org.gnome.desktop.interface color-scheme | tr -d "'")
 
 if [[ "$current_scheme" == "prefer-dark" ]]; then
-	# Switch to light mode
+    # Switch to light mode
     gsettings set org.gnome.desktop.interface color-scheme 'prefer-light'
     gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'
-	kitten themes --reload-in=all --config-file-name theme.conf Adwaita Light
+    kitten themes --reload-in=all --config-file-name theme.conf Adwaita Light
+    echo 'source = ~/.config/hypr/light.conf' >~/.config/hypr/theme.conf
+    hyprctl reload
 else
     # Switch to dark mode
     gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
     gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita'
-	kitten themes --reload-in=all --config-file-name theme.conf Gruvbox Dark Hard
+    kitten themes --reload-in=all --config-file-name theme.conf Gruvbox Dark Hard
+    echo 'source = ~/.config/hypr/dark.conf' >~/.config/hypr/theme.conf
+    hyprctl reload
 fi
