@@ -1,8 +1,10 @@
-@define-color background #222222;
+@define-color background #1f1f1f;
 @define-color background-right #222222;
 @define-color text white;
+@define-color text-dimmed #DDDDDD;
 @define-color bright orangered;
 @define-color active white;
 @define-color border #333333;
+@define-color empty #888888;
 
 @import url("./bar.css");
