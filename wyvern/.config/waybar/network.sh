@@ -8,9 +8,9 @@ if [ -z "$CONNECTED" ]; then
 	DISABLED=$(echo "$OUTPUT" | grep "wifi " | grep "sw disabled")
 
 	if [ -n "$DISABLED" ]; then
-		echo "disabled"
+		echo "{\"text\": \"disabled\", \"tooltip\": \"\"}"
 	else
-		echo "disconnected"
+		echo "{\"text\": \"disconnected\", \"tooltip\": \"\"}"
 	fi
 
 	exit 0

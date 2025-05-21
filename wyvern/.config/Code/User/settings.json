@@ -24,5 +24,6 @@
   "workbench.startupEditor": "none",
   "files.associations": {
     "*.conf": "plaintext"
-  }
+  },
+  "git.openRepositoryInParentFolders": "never"
 }
