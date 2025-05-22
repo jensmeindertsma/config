@@ -25,5 +25,6 @@
   "files.associations": {
     "*.conf": "plaintext"
   },
-  "git.openRepositoryInParentFolders": "never"
+  "git.openRepositoryInParentFolders": "never",
+  "direnv.restart.automatic": true
 }

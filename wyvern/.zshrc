@@ -34,14 +34,9 @@ bindkey '^[[1;5D' backward-word
 bindkey '^[[1;5C' forward-word
 
 alias ls="eza"
+alias ssh="kitten ssh"
 
 eval $(keychain id_ed25519 --eval --ssh-allow-forwarded --quiet)
 
 eval "$(starship init zsh)"
 
-# fnm
-FNM_PATH="/home/jens/.local/share/fnm"
-if [ -d "$FNM_PATH" ]; then
-  export PATH="/home/jens/.local/share/fnm:$PATH"
-  eval "$(fnm env)"
-fi
