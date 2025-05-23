@@ -18,6 +18,7 @@ setopt appendhistory
 zinit light zsh-users/zsh-autosuggestions
 
 export PATH="$HOME/.local/bin:$PATH"
+export ELECTRON_OZONE_PLATFORM_HINT=wayland
 
 # Map Ctrl+Left to backward-word
 bindkey '^[[1;5D' backward-word
