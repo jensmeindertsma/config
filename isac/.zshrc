@@ -17,6 +17,13 @@ setopt appendhistory
 
 zinit light zsh-users/zsh-autosuggestions
 
+autoload -Uz compinit && compinit
+
+export PATH="/home/jens/.local/share/fnm:$PATH"
+eval "$(fnm env --use-on-cd --corepack-enabled --shell zsh)"
+eval "$(fnm completions --shell zsh)"
+alias nvm="fnm"
+
 export PATH="$HOME/.local/bin:$PATH"
 export ELECTRON_OZONE_PLATFORM_HINT=wayland
 
