@@ -18,5 +18,10 @@
   "window.customTitleBarVisibility": "windowed",
   "workbench.preferredDarkColorTheme": "One Dark Pro Darker",
   "workbench.preferredLightColorTheme": "Atom One Light",
-  "workbench.startupEditor": "none"
+  "workbench.startupEditor": "none",
+  "direnv.restart.automatic": true,
+  "editor.minimap.enabled": false,
+  "security.workspace.trust.untrustedFiles": "open",
+  "git.openRepositoryInParentFolders": "never",
+  "git.suggestSmartCommit": false
 }
