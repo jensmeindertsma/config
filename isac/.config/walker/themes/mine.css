@@ -28,42 +28,41 @@ slider,
   font-size: 1.2em;
 }
 
-#window {
-  color: @foreground;
+
+#box {
+  border-radius: 2px;
+  background: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  padding: 32px;
+  box-shadow:
+    0 19px 38px rgba(0, 0, 0, 0.3),
+    0 15px 12px rgba(0, 0, 0, 0.22);
 }
 
-#window.light #box {
-  background: white;
-  color: black;
-}
-
-#window.dark #box {
-  background: #111111;
+window.dark #box {
+  background: #333333;
   color: white;
 }
 
-#box {
-  border-radius: 4px;
-  padding: 32px;
-}
-
 #search {
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.22);
-  background: lighter(@background);
+  box-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.1),
+    0 1px 2px rgba(0, 0, 0, 0.22);
+  background: rgb(255, 255, 255)white;
   padding: 8px;
 }
 
 #prompt {
   margin-left: 4px;
   margin-right: 12px;
-  color: @foreground;
   opacity: 0.2;
 }
 
 #clear {
-  color: @foreground;
   opacity: 0.8;
 }
+
+
 
 #password,
 #input,
@@ -83,7 +82,6 @@ slider,
 }
 
 #typeahead {
-  color: @foreground;
   opacity: 0.8;
 }
 
@@ -101,8 +99,16 @@ child {
 
 child:selected,
 child:hover {
-  background: alpha(@color1, 0.4);
+  background: rgb(255, 69, 0);
+  color: white;
 }
+
+window.dark child:selected,
+window.dark child:hover {
+   background: rgb(194, 70, 29);
+  color: white;
+}
+
 
 #item {
 }
@@ -121,38 +127,4 @@ child:hover {
 #sub {
   opacity: 0.5;
   font-size: 0.8em;
-}
-
-#activationlabel {
-}
-
-#bar {
-}
-
-.barentry {
-}
-
-.activation #activationlabel {
-}
-
-.activation #text,
-.activation #icon,
-.activation #search {
-  opacity: 0.5;
-}
-
-.aiItem {
-  padding: 10px;
-  border-radius: 2px;
-  color: @foreground;
-  background: @background;
-}
-
-.aiItem.user {
-  padding-left: 0;
-  padding-right: 0;
-}
-
-.aiItem.assistant {
-  background: lighter(@background);
 }

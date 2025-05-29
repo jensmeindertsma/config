@@ -20,7 +20,7 @@ zinit light zsh-users/zsh-autosuggestions
 autoload -Uz compinit && compinit
 
 export PATH="/home/jens/.local/share/fnm:$PATH"
-eval "$(fnm env --use-on-cd --corepack-enabled --shell zsh)"
+eval "$(fnm env --use-on-cd --corepack-enabled --log-level quiet --shell zsh)"
 eval "$(fnm completions --shell zsh)"
 alias nvm="fnm"
 
@@ -34,6 +34,7 @@ bindkey '^[[1;5D' backward-word
 bindkey '^[[1;5C' forward-word
 
 alias ls="eza"
+alias cat="bat"
 
 eval $(keychain id_ed25519 --eval --ssh-allow-forwarded --quiet)
 

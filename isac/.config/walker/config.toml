@@ -2,7 +2,7 @@ app_launch_prefix = "uwsm app -- "
 terminal_title_flag = ""
 locale = ""
 close_when_open = false
-theme = "default"
+theme = "mine"
 monitor = ""
 hotreload_theme = false
 as_window = false
@@ -57,6 +57,7 @@ labels = "jkl;asdf"
 
 [builtins.applications]
 weight = 5
+cache = true
 name = "applications"
 placeholder = "Applications"
 prioritize_new = true
@@ -208,30 +209,31 @@ placeholder = "Switcher"
 prefix = "/"
 
 [builtins.websearch]
+hidden = true
 keep_selection = true
 weight = 5
 icon = "applications-internet"
 name = "websearch"
 placeholder = "Websearch"
 
-[[builtins.websearch.entries]]
-name = "Google"
-url = "https://www.google.com/search?q=%TERM%"
+# [[builtins.websearch.entries]]
+# name = "Google"
+# url = "https://www.google.com/search?q=%TERM%"
 
-[[builtins.websearch.entries]]
-name = "DuckDuckGo"
-url = "https://duckduckgo.com/?q=%TERM%"
-switcher_only = true
+# [[builtins.websearch.entries]]
+# name = "DuckDuckGo"
+# url = "https://duckduckgo.com/?q=%TERM%"
+# switcher_only = true
 
-[[builtins.websearch.entries]]
-name = "Ecosia"
-url = "https://www.ecosia.org/search?q=%TERM%"
-switcher_only = true
+# [[builtins.websearch.entries]]
+# name = "Ecosia"
+# url = "https://www.ecosia.org/search?q=%TERM%"
+# switcher_only = true
 
-[[builtins.websearch.entries]]
-name = "Yandex"
-url = "https://yandex.com/search/?text=%TERM%"
-switcher_only = true
+# [[builtins.websearch.entries]]
+# name = "Yandex"
+# url = "https://yandex.com/search/?text=%TERM%"
+# switcher_only = true
 
 [builtins.dmenu]
 hidden = true

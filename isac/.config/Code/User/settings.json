@@ -23,5 +23,19 @@
   "editor.minimap.enabled": false,
   "security.workspace.trust.untrustedFiles": "open",
   "git.openRepositoryInParentFolders": "never",
-  "git.suggestSmartCommit": false
+  "git.suggestSmartCommit": false,
+  "C_Cpp.copilotHover": "disabled",
+  "github.copilot.chat.agent.autoFix": false,
+  "github.copilot.chat.agent.runTasks": false,
+  "github.copilot.chat.codeGeneration.useInstructionFiles": false,
+  "github.copilot.chat.useProjectTemplates": false,
+  "github.copilot.editor.enableCodeActions": false,
+  "github.copilot.renameSuggestions.triggerAutomatically": false,
+  "github.copilot.chat.reviewSelection.enabled": false,
+  "github.copilot.chat.copilotDebugCommand.enabled": false,
+  "typescript.suggest.objectLiteralMethodSnippets.enabled": false,
+  "accessibility.verbosity.inlineCompletions": false,
+  "javascript.suggest.includeAutomaticOptionalChainCompletions": false,
+  "typescript.suggest.includeAutomaticOptionalChainCompletions": false,
+  "typescript.suggest.includeCompletionsForImportStatements": false
 }
