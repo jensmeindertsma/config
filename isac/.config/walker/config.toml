@@ -57,20 +57,20 @@ labels = "jkl;asdf"
 
 [builtins.applications]
 weight = 5
-cache = true
+cache = false
 name = "applications"
 placeholder = "Applications"
 prioritize_new = true
 hide_actions_with_empty_query = true
 context_aware = true
 refresh = true
-show_sub_when_single = true
+show_sub_when_single = false
 show_icon_when_single = true
 show_generic = true
 history = true
 
 [builtins.applications.actions]
-enabled = true
+enabled = false
 hide_category = false
 hide_without_query = true
 
