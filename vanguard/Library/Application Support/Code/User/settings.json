@@ -7,10 +7,14 @@
   "editor.fontSize": 16,
   "editor.formatOnSave": true,
   "editor.inlayHints.enabled": "offUnlessPressed",
+  "editor.minimap.enabled": false,
+  "editor.renderWhitespace": "trailing",
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
   "git.autofetch": true,
   "git.confirmSync": false,
+  "git.suggestSmartCommit": false,
+  "rust-analyzer.check.features": "all",
   "terminal.integrated.fontFamily": "FiraCode Nerd Font Mono",
   "terminal.integrated.fontSize": 16,
   "terminal.integrated.shellIntegration.decorationsEnabled": "never",
@@ -18,7 +22,5 @@
   "window.customTitleBarVisibility": "windowed",
   "workbench.preferredDarkColorTheme": "One Dark Pro Darker",
   "workbench.preferredLightColorTheme": "Atom One Light",
-  "workbench.startupEditor": "none",
-  "editor.renderWhitespace": "trailing",
-  "editor.minimap.enabled": false
+  "workbench.startupEditor": "none"
 }
