@@ -30,6 +30,8 @@ eval $(keychain --eval id_ed25519 --quiet)
 
 ### Aliases ###
 alias ls="eza"
+alias cat="bat"
+alias mit="license-generator mit --author 'Jens Meindertsma' --output LICENSE.md"
 
 ### Other ###
 export DYLD_LIBRARY_PATH=/usr/local/lib:$DYLD_LIBRARY_PATH
