@@ -14,7 +14,7 @@ zinit light zsh-users/zsh-autosuggestions
 autoload -Uz compinit && compinit
 
 ### Fast Node Manager ###
-eval "$(fnm env --use-on-cd --corepack-enabled --shell zsh)"
+eval "$(fnm env --use-on-cd --corepack-enabled --log-level quiet --shell zsh)"
 eval "$(fnm completions --shell zsh)"
 
 alias nvm="fnm"
