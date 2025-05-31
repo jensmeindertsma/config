@@ -27,6 +27,10 @@ alias nvm="fnm"
 export PATH="$HOME/.local/bin:$PATH"
 export ELECTRON_OZONE_PLATFORM_HINT=wayland
 
+export PATH="$HOME/.cargo/bin:$PATH"
+
+export COMPOSE_BAKE=true
+
 # Map Ctrl+Left to backward-word
 bindkey '^[[1;5D' backward-word
 
@@ -34,7 +38,8 @@ bindkey '^[[1;5D' backward-word
 bindkey '^[[1;5C' forward-word
 
 alias ls="eza"
-alias cat="bat"
+alias mit="license-generator mit --author 'Jens Meindertsma' --output LICENSE.md"
+alias s="kitten ssh"
 
 eval $(keychain id_ed25519 --eval --ssh-allow-forwarded --quiet)
 
