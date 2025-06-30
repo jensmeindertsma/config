@@ -46,5 +46,15 @@
   "window.customTitleBarVisibility": "windowed",
   "workbench.preferredDarkColorTheme": "One Dark Pro Darker",
   "workbench.preferredLightColorTheme": "Atom One Light",
-  "workbench.startupEditor": "none"
+  "workbench.startupEditor": "none",
+  "workbench.localHistory.enabled": false,
+  "javascript.updateImportsOnFileMove.enabled": "never",
+  "diffEditor.ignoreTrimWhitespace": true,
+  "rust-analyzer.inlayHints.bindingModeHints.enable": true,
+  "rust-analyzer.inlayHints.closureReturnTypeHints.enable": "always",
+  "rust-analyzer.inlayHints.genericParameterHints.lifetime.enable": true,
+  "rust-analyzer.inlayHints.genericParameterHints.type.enable": true,
+  "rust-analyzer.inlayHints.implicitDrops.enable": true,
+  "rust-analyzer.inlayHints.implicitSizedBoundHints.enable": true,
+  "typescript.updateImportsOnFileMove.enabled": "never"
 }
