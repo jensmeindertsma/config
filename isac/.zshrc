@@ -31,6 +31,8 @@ export PATH="$HOME/.cargo/bin:$PATH"
 
 export COMPOSE_BAKE=true
 
+export EDITOR=vim
+
 # Map Ctrl+Left to backward-word
 bindkey '^[[1;5D' backward-word
 
