@@ -45,7 +45,7 @@
   "window.autoDetectColorScheme": true,
   "window.customTitleBarVisibility": "windowed",
   "workbench.preferredDarkColorTheme": "One Dark Pro Darker",
-  "workbench.preferredLightColorTheme": "Atom One Light",
+  "workbench.preferredLightColorTheme": "GitHub Light",
   "workbench.startupEditor": "none",
   "workbench.localHistory.enabled": false,
   "javascript.updateImportsOnFileMove.enabled": "never",
