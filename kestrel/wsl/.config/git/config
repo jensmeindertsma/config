@@ -4,7 +4,7 @@ defaultBranch = "main"
 [user]
 name = "Jens Meindertsma"
 email = "mail@jensmeindertsma.com"
-signingKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDP3sPwga9ALfXRE8gjD/lokt6MHt71c67KFK4AXoVkd"
+signingKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPyP+ECQjswKmq64BJsMjeyrIgWfX7mtXKvmMAow5DzP"
 
 [commit]
 gpgsign = true
