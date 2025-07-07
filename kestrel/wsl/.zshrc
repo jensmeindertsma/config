@@ -18,12 +18,18 @@ autoload -Uz compinit && compinit
 
 zinit light zsh-users/zsh-autosuggestions
 
+FNM_PATH="/home/jens/.local/share/fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="/home/jens/.local/share/fnm:$PATH"
+  eval "`fnm env --use-on-cd --corepack-enabled`"
+fi
+
 # Map Ctrl+Left to backward-word
 bindkey '^[[1;5D' backward-word
 
 # Map Ctrl+Right to forward-word
 bindkey '^[[1;5C' forward-word
 
-eval $(keychain id_ed25519 --eval --inherit any)
+eval $(keychain id_ed25519 --eval --inherit any --quiet)
 
 eval "$(starship init zsh)"
