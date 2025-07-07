@@ -4,7 +4,7 @@ defaultBranch = "main"
 [user]
 name = "Jens Meindertsma"
 email = "mail@jensmeindertsma.com"
-signingKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIM8rneO2ZuFtGTkKRhbaBQvFEa9EQl2dCvZkvvhjfmRc"
+signingKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDP3sPwga9ALfXRE8gjD/lokt6MHt71c67KFK4AXoVkd"
 
 [commit]
 gpgsign = true
@@ -27,3 +27,10 @@ rebase = false
 
 [alias]
 setup = "!git commit --allow-empty -m 'Initial commit' && git push"
+
+[credential "https://github.com"]
+        helper = 
+        helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+        helper = 
+        helper = !/usr/bin/gh auth git-credential

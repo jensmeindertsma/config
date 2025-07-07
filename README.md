@@ -38,17 +38,24 @@ Windows 11 on my ASUS Zenbook.
 
 Development is done inside WSL. This repository should be cloned inside its filesystem. A few symlinks are needed from the Windows side to WSL for configuration files I want to manage in this repository but are for Windows programs. This includes VSCode (runs as Windows program) and SSH (can't SSH from inside WSL to VirtualBox machines).
 
+#### Windows Setup
+
 1. Inside WSL, make a `development` directory and clone this repository inside.
 2. Install GNU stow with `sudo apt install stow`.
-3. Inside the `config` repository, run `stow -t ~ kestrel/wsl`.
-4. Inside Windows, install VSCode through the Microsoft Store.
-5. Create the `.ssh` directory in your home folder.
-6. Run each of these commands below in a PowerShell session (Run as Administrator), substituting my usernames for yours.
+3. Inside Windows, install VSCode through the Microsoft Store.
+4. Create the `.ssh` directory in your home folder.
+5. Run each of these commands below in a PowerShell session (Run as Administrator), substituting my usernames for yours.
 
 ```powershell
-$ New-Item -ItemType SymbolicLink -Path "C:\Users\Jens\.ssh\config" -Target "\\wsl`$\Ubuntu\home\jens\development\config\kestrel\wsl\ssh\config"
+$ New-Item -ItemType SymbolicLink -Path "C:\Users\Jens\.ssh\config" -Target "\\wsl`$\Ubuntu\home\jens\development\config\kestrel\windows\ssh\config"
 
-$ New-Item -ItemType SymbolicLink -Path "C:\Users\Jens\AppData\Roaming\Code\User\settings.json" -Target "\\wsl`$\Ubuntu\home\jens\development\config\kestrel\wsl\vscode\settings.json"
+$ New-Item -ItemType SymbolicLink -Path "C:\Users\Jens\AppData\Roaming\Code\User\settings.json" -Target "\\wsl`$\Ubuntu\home\jens\development\config\kestrel\windows\vscode\settings.json"
 
-$ New-Item -ItemType SymbolicLink -Path "C:\Users\Jens\AppData\Roaming\Code\User\keybindings.json" -Target "\\wsl`$\Ubuntu\home\jens\development\config\kestrel\wsl\ vscode\keybindings.json"
+$ New-Item -ItemType SymbolicLink -Path "C:\Users\Jens\AppData\Roaming\Code\User\keybindings.json" -Target "\\wsl`$\Ubuntu\home\jens\development\config\kestrel\windows\ vscode\keybindings.json"
 ```
+
+#### WSL setup
+
+1. `sudo apt install starship stow`
+2. `cd kestrel`
+3. `stow -t ~ wsl`
