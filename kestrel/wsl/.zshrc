@@ -9,29 +9,13 @@ zinit light-mode for \
     zdharma-continuum/zinit-annex-patch-dl \
     zdharma-continuum/zinit-annex-rust
 
-### History & auto-completion ###
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
 setopt appendhistory
 
+autoload -Uz compinit && compinit
+
 zinit light zsh-users/zsh-autosuggestions
 
-### Fast Node Manager ###
-FNM_PATH="/home/jens/.local/share/fnm"
-if [ -d "$FNM_PATH" ]; then
-  export PATH="/home/jens/.local/share/fnm:$PATH"
-  eval "$(fnm env --use-on-cd --corepack-enabled --shell zsh)"
-  eval "$(fnm completions --shell zsh)"
-fi
-
-alias nvm="fnm"
-
-### SSH ###
-eval $(keychain --eval id_ed25519 --quiet)
-
-## Aliases
-alias ls="eza"
-
-### Prompt ###
 eval "$(starship init zsh)"
