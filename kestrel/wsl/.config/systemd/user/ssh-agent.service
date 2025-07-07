@@ -1,0 +1,11 @@
+[Unit]
+Description=SSH agent service
+
+[Service]
+Environment=SSH_AUTH_SOCK=%t/ssh-agent.socket
+ExecStart=/usr/bin/ssh-agent -D -a ${SSH_AUTH_SOCK}
+SuccessExitStatus=2
+Type=simple
+
+[Install]
+WantedBy=default.target
