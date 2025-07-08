@@ -34,7 +34,6 @@ bindkey '^[[1;5D' backward-word
 bindkey '^[[1;5C' forward-word
 
 alias ls="eza"
-alias ssh="kitten ssh"
 
 eval $(keychain id_ed25519 --eval --ssh-allow-forwarded --quiet)
 
