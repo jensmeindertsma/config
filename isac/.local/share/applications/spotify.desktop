@@ -2,7 +2,7 @@
 Type=Application
 Name=Spotify
 GenericName=Music Player
-Icon=drum
+Icon=saxophone
 TryExec=spotify
 Exec=spotify --uri=%u
 Terminal=false
