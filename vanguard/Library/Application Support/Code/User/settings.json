@@ -23,5 +23,6 @@
   "workbench.preferredDarkColorTheme": "One Dark Pro Darker",
   "workbench.preferredLightColorTheme": "Atom One Light",
   "workbench.startupEditor": "none",
-  "makefile.configureOnOpen": true
+  "makefile.configureOnOpen": true,
+  "editor.fontLigatures": true
 }
