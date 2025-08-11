@@ -38,5 +38,13 @@ export DYLD_LIBRARY_PATH=/usr/local/lib:$DYLD_LIBRARY_PATH
 bindkey '^[[1;3D' backward-word # Option + Left Arrow
 bindkey '^[[1;3C' forward-word  # Option + Right Arrow
 
+# Add a newline between commands
+# https://github.com/starship/starship/issues/560
+precmd() { 
+    precmd() { 
+        echo "" 
+    } 
+}
+
 ### Prompt ###
 eval "$(starship init zsh)"
