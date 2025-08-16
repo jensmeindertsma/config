@@ -16,5 +16,7 @@
   "workbench.startupEditor": "none",
   "remote.SSH.remotePlatform": {
     "marina": "linux"
-  }
+  },
+  "remote.SSH.externalSSH_ASKPASS": true,
+  "chat.agent.enabled": false
 }
