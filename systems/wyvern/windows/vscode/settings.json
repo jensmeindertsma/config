@@ -13,5 +13,8 @@
   "terminal.integrated.fontSize": 16,
   "terminal.integrated.shellIntegration.decorationsEnabled": "never",
   "workbench.colorTheme": "Gruvbox Dark Hard",
-  "workbench.startupEditor": "none"
+  "workbench.startupEditor": "none",
+  "remote.SSH.remotePlatform": {
+    "marina": "linux"
+  }
 }
