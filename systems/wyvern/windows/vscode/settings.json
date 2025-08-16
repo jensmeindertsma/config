@@ -18,5 +18,7 @@
     "marina": "linux"
   },
   "remote.SSH.externalSSH_ASKPASS": true,
-  "chat.agent.enabled": false
+  "chat.agent.enabled": false,
+  "editor.minimap.enabled": false,
+  "makefile.configureOnOpen": true
 }
