@@ -1,0 +1,32 @@
+#!/bin/bash
+
+# Configuration
+TLP_CONF="/etc/tlp.conf"
+THRESH_FILE="/sys/class/power_supply/BATT/charge_control_end_threshold"
+DESIRED_80=80
+DESIRED_100=100
+
+# Get current threshold
+current=$(cat "$THRESH_FILE")
+
+if [ "$current" -eq "$DESIRED_100" ]; then
+    new_value=$DESIRED_80
+    mode="battery saver (80%)"
+else
+    new_value=$DESIRED_100
+    mode="full charge (100%)"
+fi
+
+echo "Switching to $mode..."
+
+# Update tlp.conf
+sudo sed -i "s/^STOP_CHARGE_THRESH_BAT0=.*/STOP_CHARGE_THRESH_BAT0=$new_value/" "$TLP_CONF"
+
+# Apply to sysfs
+echo "$new_value" | sudo tee "$THRESH_FILE" > /dev/null
+
+# Restart TLP
+sudo systemctl restart tlp.service
+
+echo "Done. Threshold set to $new_value%."
+

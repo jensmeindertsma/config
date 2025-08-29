@@ -1,8 +1,0 @@
-[Desktop Entry]
-Name=battop
-Exec=battop
-Icon=battop
-Terminal=true
-Type=Application
-Comment=Interactive batteries viewer
-Hidden=true
