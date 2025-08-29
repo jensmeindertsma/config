@@ -7,7 +7,7 @@
 
 window#waybar {
   color: @text;
-  font-weight: 700;
+  font-weight: 600;
   background-color: @background;
 }
 
@@ -36,13 +36,14 @@ button:hover {
 }
 
 .modules-left {
-  padding: 2px 4px 0px 4px;
+  padding: 0 4px 0px 4px;
   background-color: @background;
 }
 
 .modules-right {
-  padding: 2px 10px 0 10px;
+  padding: 0 10px 0 10px;
   color: @text-dimmed;
+  font-weight: 500;
   background-color: @background-right;
 }
 
