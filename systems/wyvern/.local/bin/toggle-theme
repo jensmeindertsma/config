@@ -8,11 +8,11 @@ if [[ "$current_scheme" == "prefer-dark" ]]; then
     echo 'source = ~/.config/hypr/light.conf' >~/.config/hypr/theme.conf
     hyprctl reload
     gsettings set org.gnome.desktop.interface color-scheme 'prefer-light'
-    gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita'
+    gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'
 else
     # Switch to dark mode
     echo 'source = ~/.config/hypr/dark.conf' >~/.config/hypr/theme.conf
     hyprctl reload
     gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
-    gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'
+    gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita'
 fi

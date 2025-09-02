@@ -20,27 +20,33 @@ zinit light zsh-users/zsh-autosuggestions
 autoload -Uz compinit && compinit
 
 export PATH="$HOME/.local/bin:$PATH"
-
 export PATH="$HOME/.local/share/fnm:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
+
+### NODE.JS ###
 eval "$(fnm env --use-on-cd --corepack-enabled --shell zsh)"
 eval "$(fnm completions --shell zsh)"
-alias nvm="fnm"
 
+### CONTROLS ###
 # Map Ctrl+Left to backward-word
 bindkey '^[[1;5D' backward-word
 
 # Map Ctrl+Right to forward-word
 bindkey '^[[1;5C' forward-word
 
+### BINDS ###
+alias cat="bat"
+alias ls="eza"
+alias nvm="fnm"
+
+### SSH ###
+eval $(keychain id_ed25519 --eval --ssh-allow-forwarded --quiet)
+
+### PROMPT ###
 # Add a newline between commands
 # https://github.com/starship/starship/issues/560
 precmd() { precmd() { echo "" } }
 alias clear="precmd() { precmd() { echo } } && clear"
-
-alias cat="bat"
-alias ls="eza"
-
-eval $(keychain id_ed25519 --eval --ssh-allow-forwarded --quiet)
 
 eval "$(starship init zsh)"
 
