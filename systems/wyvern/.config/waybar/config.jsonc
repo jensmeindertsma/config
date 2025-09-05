@@ -46,7 +46,8 @@
   },
 
   "custom/separator": {
-    "format": "/"
+    "format": "/",
+    "tooltip": false
   },
 
   "pulseaudio#input": {
