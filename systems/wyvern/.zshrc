@@ -40,6 +40,8 @@ alias cat="bat"
 alias ls="eza"
 alias nvm="fnm"
 
+alias mit="license-generator mit --author 'Jens Meindertsma' --output LICENSE.md"
+
 ### SSH ###
 eval $(keychain id_ed25519 --eval --ssh-allow-forwarded --quiet)
 
