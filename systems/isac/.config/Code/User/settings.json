@@ -1,8 +1,18 @@
 {
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "editor.fontFamily": "JetBrainsMono Nerd Font Mono",
   "editor.fontSize": 18,
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "security.workspace.trust.untrustedFiles": "open",
   "terminal.integrated.fontFamily": "FiraCode Nerd Font Mono",
   "terminal.integrated.fontSize": 16,
+  "workbench.preferredDarkColorTheme": "Gruvbox Dark Hard",
+  "workbench.preferredLightColorTheme": "Atom One Light",
   "workbench.startupEditor": "none",
-  "security.workspace.trust.untrustedFiles": "open"
+  "editor.renderWhitespace": "all",
+  "workbench.colorTheme": "Atom One Light",
+  "window.autoDetectColorScheme": true
 }
