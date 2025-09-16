@@ -28,34 +28,17 @@ $ stow --target ~ vanguard
 
 ### Wyvern
 
-> My ASUS Zenbook dual boot Windows and Arch Linux
-
-#### Linux
+> My ASUS Zenbook booting Arch Linux
 
 ```
-$ cd systems/wyvern
-$ stow --target ~ linux
+$ cd systems
+$ stow --target ~ wyvern
 ```
 
-#### WSL
+## Useful commands
+
+To reload waybar and apply the latest configuration you can run:
 
 ```
-$ cd systems/wyvern
-$ stow --target ~ wsl
+$ kill -USR1 $(pidof waybar)
 ```
-
-#### Windows
-
-```powershell
-$ New-Item -ItemType SymbolicLink -Path "C:\Users\Jens\.ssh\config" -Target "\\wsl`$\Ubuntu\home\jens\development\config\systems\wyvern\windows\ssh\config"
-
-$ New-Item -ItemType SymbolicLink -Path "C:\Users\Jens\AppData\Roaming\Code\User\settings.json" -Target "\\wsl`$\Ubuntu\home\jens\development\config\systems\wyvern\windows\vscode\settings.json"
-
-$ New-Item -ItemType SymbolicLink -Path "C:\Users\Jens\AppData\Roaming\Code\User\keybindings.json" -Target "\\wsl`$\Ubuntu\home\jens\development\config\systems\wyvern\windows\vscode\keybindings.json"
-```
-
-#### WSL setup
-
-1. `sudo apt install starship stow`
-2. `cd kestrel`
-3. `stow -t ~ wsl`
