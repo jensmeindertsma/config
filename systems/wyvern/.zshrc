@@ -21,8 +21,7 @@ autoload -Uz compinit && compinit
 
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.local/share/fnm:$PATH"
-
-. "$HOME/.cargo/env"
+export PATH="$HOME/.cargo/bin:$PATH"
 
 ### NODE.JS ###
 eval "$(fnm env --use-on-cd --corepack-enabled --shell zsh)"
