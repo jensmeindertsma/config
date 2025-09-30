@@ -1,60 +1,18 @@
 {
-  "[ignore]": {
-    "editor.defaultFormatter": "foxundermoon.shell-format"
-  },
-  "[jsonc]": {
+  "[css]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "accessibility.verbosity.inlineCompletions": false,
-  "C_Cpp.copilotHover": "disabled",
-  "direnv.restart.automatic": true,
-  "editor.codeLens": false,
   "editor.fontFamily": "JetBrainsMono Nerd Font Mono",
   "editor.fontSize": 18,
   "editor.formatOnSave": true,
-  "editor.inlayHints.enabled": "offUnlessPressed",
-  "editor.minimap.enabled": false,
-  "explorer.confirmDelete": false,
-  "explorer.confirmDragAndDrop": false,
-  "files.associations": {
-    "*.css": "tailwindcss"
-  },
-  "git.autofetch": true,
-  "git.confirmSync": false,
-  "git.openRepositoryInParentFolders": "never",
-  "git.suggestSmartCommit": false,
-  "github.copilot.chat.agent.autoFix": false,
-  "github.copilot.chat.agent.runTasks": false,
-  "github.copilot.chat.codeGeneration.useInstructionFiles": false,
-  "github.copilot.chat.copilotDebugCommand.enabled": false,
-  "github.copilot.chat.reviewSelection.enabled": false,
-  "github.copilot.chat.useProjectTemplates": false,
-  "github.copilot.editor.enableCodeActions": false,
-  "github.copilot.renameSuggestions.triggerAutomatically": false,
-  "javascript.suggest.includeAutomaticOptionalChainCompletions": false,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "security.workspace.trust.untrustedFiles": "open",
   "terminal.integrated.fontFamily": "FiraCode Nerd Font Mono",
   "terminal.integrated.fontSize": 16,
-  "terminal.integrated.shellIntegration.decorationsEnabled": "never",
-  "typescript.suggest.includeAutomaticOptionalChainCompletions": false,
-  "typescript.suggest.includeCompletionsForImportStatements": false,
-  "typescript.suggest.objectLiteralMethodSnippets.enabled": false,
-  "window.autoDetectColorScheme": true,
-  "window.customTitleBarVisibility": "windowed",
   "workbench.preferredDarkColorTheme": "Gruvbox Dark Hard",
-  "workbench.preferredLightColorTheme": "GitHub Light",
+  "workbench.preferredLightColorTheme": "Atom One Light",
   "workbench.startupEditor": "none",
-  "workbench.localHistory.enabled": false,
-  "javascript.updateImportsOnFileMove.enabled": "never",
-  "diffEditor.ignoreTrimWhitespace": true,
-  "rust-analyzer.inlayHints.bindingModeHints.enable": true,
-  "rust-analyzer.inlayHints.closureReturnTypeHints.enable": "always",
-  "rust-analyzer.inlayHints.genericParameterHints.lifetime.enable": true,
-  "rust-analyzer.inlayHints.genericParameterHints.type.enable": true,
-  "rust-analyzer.inlayHints.implicitDrops.enable": true,
-  "rust-analyzer.inlayHints.implicitSizedBoundHints.enable": true,
-  "typescript.updateImportsOnFileMove.enabled": "never"
+  "editor.renderWhitespace": "all",
+  "workbench.colorTheme": "Atom One Light",
+  "window.autoDetectColorScheme": true
 }

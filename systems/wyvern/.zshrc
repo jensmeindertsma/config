@@ -34,21 +34,20 @@ bindkey '^[[1;5D' backward-word
 # Map Ctrl+Right to forward-word
 bindkey '^[[1;5C' forward-word
 
-### BINDS ###
-alias cat="bat"
-alias ls="eza"
-alias nvm="fnm"
-
-alias mit="license-generator mit --author 'Jens Meindertsma' --output LICENSE.md"
-
-### SSH ###
-eval $(keychain id_ed25519 --eval --ssh-allow-forwarded --quiet)
-
 ### PROMPT ###
 # Add a newline between commands
 # https://github.com/starship/starship/issues/560
 precmd() { precmd() { echo "" } }
 alias clear="precmd() { precmd() { echo } } && clear"
 
-eval "$(starship init zsh)"
+alias cat="bat"
+alias ls="eza"
+alias nvm="fnm"
 
+alias mit="license-generator mit --author 'Jens Meindertsma' --output LICENSE.md"
+
+export EDITOR=nvim
+
+eval $(keychain id_ed25519 --eval --ssh-allow-forwarded --quiet)
+
+eval "$(starship init zsh)"

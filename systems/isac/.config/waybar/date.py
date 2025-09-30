@@ -3,5 +3,12 @@ import json
 
 date = datetime.now()
 
-print(date.strftime("%a %d/%m/%Y").lower())
+current_date = date.strftime("%d/%m/%Y").lower()
+day = date.strftime("%A").lower()
+
+output = {
+    "text": f'{current_date} ({day})',
+}
+
+print(json.dumps(output))
 

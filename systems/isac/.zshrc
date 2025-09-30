@@ -19,17 +19,10 @@ zinit light zsh-users/zsh-autosuggestions
 
 autoload -Uz compinit && compinit
 
-export PATH="/home/jens/.local/share/fnm:$PATH"
-eval "$(fnm env --use-on-cd --corepack-enabled --log-level quiet --shell zsh)"
-eval "$(fnm completions --shell zsh)"
-alias nvm="fnm"
-
 export PATH="$HOME/.local/bin:$PATH"
-export ELECTRON_OZONE_PLATFORM_HINT=wayland
-
 export PATH="$HOME/.cargo/bin:$PATH"
 
-export COMPOSE_BAKE=true
+. "$HOME/.cargo/env"
 
 export EDITOR=vim
 
@@ -39,9 +32,22 @@ bindkey '^[[1;5D' backward-word
 # Map Ctrl+Right to forward-word
 bindkey '^[[1;5C' forward-word
 
-alias ls="eza"
-alias mit="license-generator mit --author 'Jens Meindertsma' --output LICENSE.md"
-alias s="kitten ssh"
+precmd() { 
+    # Split PWD by /, ignoring the first empty element
+    dir_parts=("${(@s:/:)PWD}") 
+    # Remove empty elements
+    dir_parts=(${dir_parts:#""})
+    len=${#dir_parts[@]}
+
+    if (( len <= 2 )); then
+        title="$PWD"
+    else
+        title="../${dir_parts[len-1]}/${dir_parts[len]}"
+    fi
+
+    # Set Kitty window title: shell name + path
+    kitty @ set-window-title "${SHELL##*/} - $title"
+}
 
 eval $(keychain id_ed25519 --eval --ssh-allow-forwarded --quiet)
 

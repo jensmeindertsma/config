@@ -123,4 +123,3 @@ Keywords=Graphics;Viewer;GNOME;GTK;Publishing;
 StartupNotify=true
 StartupWMClass=font-manager
 X-GNOME-UsesNotifications=true
-Hidden=true
