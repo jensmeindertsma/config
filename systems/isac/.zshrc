@@ -26,29 +26,14 @@ export PATH="$HOME/.cargo/bin:$PATH"
 
 export EDITOR=vim
 
+alias cdg='cd $(git rev-parse --show-toplevel)'
+
 # Map Ctrl+Left to backward-word
 bindkey '^[[1;5D' backward-word
 
 # Map Ctrl+Right to forward-word
 bindkey '^[[1;5C' forward-word
 
-precmd() { 
-    # Split PWD by /, ignoring the first empty element
-    dir_parts=("${(@s:/:)PWD}") 
-    # Remove empty elements
-    dir_parts=(${dir_parts:#""})
-    len=${#dir_parts[@]}
-
-    if (( len <= 2 )); then
-        title="$PWD"
-    else
-        title="../${dir_parts[len-1]}/${dir_parts[len]}"
-    fi
-
-    # Set Kitty window title: shell name + path
-    kitty @ set-window-title "${SHELL##*/} - $title"
-}
-
-eval $(keychain id_ed25519 --eval --ssh-allow-forwarded --quiet)
+#eval $(keychain id_ed25519 --eval --ssh-allow-forwarded --quiet)
 
 eval "$(starship init zsh)"

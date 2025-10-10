@@ -14,5 +14,28 @@
   "workbench.startupEditor": "none",
   "editor.renderWhitespace": "all",
   "workbench.colorTheme": "Atom One Light",
-  "window.autoDetectColorScheme": true
+  "window.autoDetectColorScheme": true,
+  "git.confirmSync": false,
+  "git.autofetch": true,
+  "terminal.integrated.profiles.linux": {
+    "bash": {
+      "path": "bash",
+      "icon": "terminal-bash"
+    },
+    "zsh": {
+      "path": "zsh"
+    },
+    "fish": {
+      "path": "fish"
+    },
+    "tmux": {
+      "path": "tmux",
+      "icon": "terminal-tmux"
+    },
+    "pwsh": {
+      "path": "pwsh",
+      "icon": "terminal-powershell"
+    }
+  },
+  "terminal.integrated.defaultProfile.linux": "zsh"
 }
