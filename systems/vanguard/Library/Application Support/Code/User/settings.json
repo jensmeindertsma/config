@@ -6,6 +6,7 @@
   "editor.fontFamily": "FiraMono Nerd Font Mono",
   "editor.fontLigatures": true,
   "editor.fontSize": 16,
+  "editor.formatOnSave": true,
   "terminal.integrated.fontSize": 16,
   "terminal.integrated.fontWeight": "bold",
   "terminal.integrated.shellIntegration.decorationsEnabled": "never",
