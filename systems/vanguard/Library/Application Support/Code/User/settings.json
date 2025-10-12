@@ -7,11 +7,12 @@
   "editor.fontLigatures": true,
   "editor.fontSize": 16,
   "editor.formatOnSave": true,
+  "editor.minimap.enabled": false,
   "git.confirmSync": false,
   "terminal.integrated.fontSize": 16,
   "terminal.integrated.fontWeight": "bold",
   "terminal.integrated.shellIntegration.decorationsEnabled": "never",
-  "workbench.colorTheme": "Gruvbox Dark Hard",
   "window.commandCenter": false,
+  "workbench.colorTheme": "Gruvbox Dark Hard",
   "workbench.layoutControl.enabled": false
 }

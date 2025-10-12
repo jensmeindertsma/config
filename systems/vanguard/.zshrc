@@ -27,5 +27,4 @@ precmd() {
     } 
 }
 
-### Prompt ###
 eval "$(starship init zsh)"
