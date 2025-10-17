@@ -11,29 +11,12 @@ zinit light-mode for \
 
 zinit light zsh-users/zsh-autosuggestions
 
-autoload -Uz compinit && compinit
+. "$HOME/.cargo/env"
 
-### Fast Node Manager ###
-eval "$(fnm env --use-on-cd --corepack-enabled --log-level quiet --shell zsh)"
-eval "$(fnm completions --shell zsh)"
+eval "$(fnm env --use-on-cd --shell zsh --corepack-enabled)"
 
-alias nvm="fnm"
-
-### Docker ###
-fpath=(/Users/Jens/.docker/completions $fpath)
-
-### Homebrew ###
-export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
-
-### SSH ###
-eval $(keychain --eval id_ed25519 --quiet)
-
-### Aliases ###
 alias ls="eza"
 alias mit="license-generator mit --author 'Jens Meindertsma' --output LICENSE.md"
-
-### Other ###
-export DYLD_LIBRARY_PATH=/usr/local/lib:$DYLD_LIBRARY_PATH
 
 bindkey '^[[1;3D' backward-word # Option + Left Arrow
 bindkey '^[[1;3C' forward-word  # Option + Right Arrow
@@ -46,5 +29,9 @@ precmd() {
     } 
 }
 
-### Prompt ###
 eval "$(starship init zsh)"
+# The following lines have been added by Docker Desktop to enable Docker CLI completions.
+fpath=(/Users/Jens/.docker/completions $fpath)
+autoload -Uz compinit
+compinit
+# End of Docker CLI completions
