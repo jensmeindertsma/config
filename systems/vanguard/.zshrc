@@ -13,6 +13,8 @@ zinit light zsh-users/zsh-autosuggestions
 
 . "$HOME/.cargo/env"
 
+eval "$(fnm env --use-on-cd --shell zsh --corepack-enabled)"
+
 alias ls="eza"
 alias mit="license-generator mit --author 'Jens Meindertsma' --output LICENSE.md"
 
@@ -28,3 +30,8 @@ precmd() {
 }
 
 eval "$(starship init zsh)"
+# The following lines have been added by Docker Desktop to enable Docker CLI completions.
+fpath=(/Users/Jens/.docker/completions $fpath)
+autoload -Uz compinit
+compinit
+# End of Docker CLI completions
