@@ -1,8 +1,8 @@
 * {
   font-family: FiraCode Nerd Font;
   font-size: 13px;
-  padding: 0;
-  margin: 0;
+  padding: 0px;
+  margin: 0px;
 }
 
 window#waybar {
@@ -20,7 +20,7 @@ window#waybar {
 }
 
 .modules-left {
-  padding: 0px 5px;
+  padding: 0px 1px;
   background-color: @background;
 }
 
@@ -30,36 +30,44 @@ window#waybar {
   background-color: @background;
 }
 
+/* SEPARATOR */
+
 #custom-separator {
-  margin: 0 10px;
+  margin: 0px 10px;
 
   color: @bright;
 
   font-weight: 900;
 }
 
-#workspaces button {
-  padding: 0 4px;
+#workspaces {
+  border: 2px solid @background;
+}
+
+/* WORKSPACE */
+#workspaces button label {
+  padding: 3px 6px;
   border: 2px solid transparent;
   border-radius: 0;
 
   color: @text;
 }
 
-#workspaces button.empty {
+#workspaces button:hover label {
+  background-color: @background;
+  border-color: @bright;
+}
+
+#workspaces button.empty label {
   color: @text-dimmed;
 }
 
-#workspaces button.urgent {
-  border-color: @bright;
-
+#workspaces button.active label {
   color: @bright;
-
-  font-weight: 900;
 }
 
-#workspaces button.active {
-  color: @bright;
-
+#workspaces button.urgent label {
+  background-color: @bright;
+  color: @text;
   font-weight: 900;
 }
