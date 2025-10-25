@@ -17,21 +17,18 @@ window#waybar {
   border: 4px solid @border;
 
   color: @text;
+  background-color: @background;
 }
 
 .modules-left {
   padding: 0px 1px;
-  background-color: @background;
 }
 
 .modules-right {
   padding: 0px 15px;
-
-  background-color: @background;
 }
 
 /* SEPARATOR */
-
 #custom-separator {
   margin: 0px 10px;
 
@@ -56,6 +53,11 @@ window#waybar {
 #workspaces button:hover label {
   background-color: @background;
   border-color: @bright;
+  color: @bright;
+}
+
+#workspaces button.empty:hover label {
+  color: @bright;
 }
 
 #workspaces button.empty label {
