@@ -1,5 +1,20 @@
 #!/bin/bash
 
+# File to store toggle state
+STATE_FILE="/tmp/waybar_network_hidden"
+
+# Check if we should show "hidden"
+if [ -f "$STATE_FILE" ]; then
+    HIDDEN=$(cat "$STATE_FILE")
+else
+    HIDDEN=0
+fi
+
+if [ "$HIDDEN" -eq 1 ]; then
+    echo '{"text": "DE.AD.BE.EF/16 (hidden)"}'
+    exit 0
+fi
+
 OUTPUT=$(nmcli)
 
 CONNECTED=$(echo "$OUTPUT" | grep "ip4 default")
