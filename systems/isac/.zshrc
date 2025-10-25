@@ -9,6 +9,10 @@ zinit light-mode for \
     zdharma-continuum/zinit-annex-patch-dl \
     zdharma-continuum/zinit-annex-rust
 
+HISTFILE=~/.zsh_history
+HISTSIZE=10000
+SAVEHIST=10000
+
 zinit light zsh-users/zsh-autosuggestions
 
 export PATH="$HOME/.local/bin:$PATH"
