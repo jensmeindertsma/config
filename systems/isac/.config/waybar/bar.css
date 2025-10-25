@@ -6,10 +6,7 @@
 }
 
 window#waybar {
-  color: @text;
   background-color: transparent;
-
-  font-weight: 500;
 }
 
 .modules-left,
@@ -18,6 +15,8 @@ window#waybar {
 
   color: @text;
   background-color: @background;
+
+  font-weight: 500;
 }
 
 .modules-left {
@@ -39,6 +38,7 @@ window#waybar {
 
 #workspaces {
   border: 2px solid @background;
+  font-weight: 600;
 }
 
 /* WORKSPACE */
@@ -52,19 +52,21 @@ window#waybar {
 
 #workspaces button:hover label {
   background-color: @background;
+  border-color: @text;
+}
+
+#workspaces button.active label {
+  background-color: @background;
   border-color: @bright;
+  color: @bright;
 }
 
 #workspaces button.empty label {
   color: @text-dimmed;
 }
 
-#workspaces button.active label {
-  color: @bright;
-}
-
 #workspaces button.urgent label {
   background-color: @bright;
-  color: @text;
+  color: @background;
   font-weight: 900;
 }
