@@ -20,7 +20,7 @@ window#waybar {
 }
 
 .modules-left {
-  padding: 0px 1px;
+  padding: 0px 0px;
 }
 
 .modules-right {
@@ -37,6 +37,7 @@ window#waybar {
 }
 
 #workspaces {
+  padding: 0px 0px 0px 1px; 
   border: 2px solid @background;
   font-weight: 600;
 }
