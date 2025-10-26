@@ -60,7 +60,9 @@
     "status-icons": {
       "paused": "⏸️",
       "playing": "🎸"
-    }
+    },
+    "on-click-middle": "",
+    "on-click-right": ""
   },
 
   "pulseaudio#input": {
