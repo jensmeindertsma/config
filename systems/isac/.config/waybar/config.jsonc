@@ -7,7 +7,8 @@
   "margin-right": 16,
   "margin-bottom": 16,
 
-  "modules-left": ["hyprland/workspaces", "mpris"],
+  "modules-left": ["hyprland/workspaces", "mpris", "custom/group"],
+  "modules/center": [],
   "modules-right": [
     "pulseaudio#output",
     "custom/separator",
@@ -48,21 +49,19 @@
     }
   },
 
-  // "custom/groups": {
-  //   "exec": "~/.config/waybar/modules/groups.sh",
-  //   "return-type": "json",
-  // },
-
   "mpris": {
-    "player": "spotify_player",
-    "format": "{status_icon} {title} ({album})",
+    "format": "🎸 {title} - {artist} ({album})",
     "tooltip": false,
-    "status-icons": {
-      "paused": "⏸️",
-      "playing": "🎸"
-    },
+    "interval": 1,
+    "on-click": "",
     "on-click-middle": "",
     "on-click-right": ""
+  },
+
+  "custom/group": {
+    "format": "{}",
+    "return-type": "json",
+    "exec": "~/.config/waybar/modules/group.sh"
   },
 
   "pulseaudio#input": {
