@@ -3,6 +3,8 @@
   font-size: 13px;
   padding: 0px;
   margin: 0px;
+
+  color: @text;
 }
 
 window#waybar {
@@ -39,7 +41,7 @@ window#waybar {
 
 /* WORKSPACE */
 #workspaces button label {
-  padding: 2px 6px;
+  padding: 3px 7px;
   border: 2px solid transparent;
   border-radius: 0;
 

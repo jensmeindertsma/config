@@ -42,11 +42,11 @@ handle() {
     if [[ -n "$GROUPED" ]]; then
       echo "{ \"text\": \"group active\"}"
     else
-      echo "{ \"text\": \"\"}"
+      echo "{ \"text\": \"group not focused\"}"
     fi
     ;;
   *)
-    echo "{ \"text\": \"\"}"
+    echo "{ \"text\": \"no group\"}"
     ;;
   esac
 }
