@@ -103,7 +103,8 @@
     "interval": 1,
     "exec": "~/.config/waybar/modules/network.sh",
     "return-type": "json",
-    "format": "{text}"
+    "format": "{text}",
+    "on-click": "~/.config/waybar/modules/hide-network.sh"
   },
 
   "custom/date": {
