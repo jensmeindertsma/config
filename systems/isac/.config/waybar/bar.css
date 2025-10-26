@@ -20,7 +20,7 @@ window#waybar {
 }
 
 .modules-left {
-  padding: 0px 1px;
+  padding: 0px;
 }
 
 .modules-right {
