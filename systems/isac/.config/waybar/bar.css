@@ -62,6 +62,8 @@ window#waybar {
   background-color: @background;
   border-color: @bright;
   color: @bright;
+
+  font-weight: 900;
 }
 
 #workspaces button.urgent label {
