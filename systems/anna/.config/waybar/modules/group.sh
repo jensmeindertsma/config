@@ -1,52 +1,49 @@
 #!/usr/bin/env bash
 
-echo "{ \"text\": \"todo\"}"
+# The goal of this script is to detect when a "group window" is focused in Hyprland
+# in the current workspace. This script will run as a waybar module where it will
+# show a list in the form of `a b (c) d`, where `(c)` highlights the currently visible window
+# in the group.
 
-# We need to handle some cases in which to show to group list
-# 1. a focused window is toggled into a group (no activewindow change)
-# 2. a group window is brought into focus (activewindow change, look up if windows=======+++++++____)
-# 3. a window is added to the group
-
-# We need to handle some cases in which to hide the group list
-# 4. a group window goes out of focus
-# 5. a group window is toggled into a regular group
-# 6. a window leaves the group (moveoutofgroup), using the ID, we remove it from our list and we rerender
-
-# Events
-# - `togglegroup>>1,55b73aad9420` (1 means group created)
-# - `togglegroup>>0,55b73aad9420` (0 means group destroyed)
-# - `activewindowv2>>55b73aad9420` focus switch to another window (check whether group)
-# - `moveintogroup`
-
-# If toggle is created, show h
-
-# If toggle is removed, then hide the list
-# If focus goes out of window, hide the list
-# If toggle is disabled hide the hist
-
-# - activewindowv2
-#     + check if new window is a group
-#     + if yes then display module (fetch group members)w
-# - closewindow
-#      +  check if window was a in group, then hide the module
-# - moveoutofgroup
-#     + check
 handle() {
   local line="$1"
 
   case $line in
-  activewindowv2*)
-    ID=$(echo "$line" | awk -F '>>' '{print $2}')
-    GROUPED=$(hyprctl -j clients | jq -r --arg id "0x$ID" '.[] | select(.address == $id) .grouped | join(", ")')
+  activewindowv2* | togglegroup* | workspacev2*)
+    active_window="$(hyprctl -j activewindow)"
 
-    if [[ -n "$GROUPED" ]]; then
-      echo "{ \"text\": \"group active\"}"
-    else
-      echo "{ \"text\": \"group not focused\"}"
+    active_id="$(echo "$active_window" | jq -r '.address')"
+
+    # Get the list of grouped window IDs as an array
+    read -ra group_arr <<<"$(echo "$active_window" | jq -r '.grouped | join(" ")')"
+
+    # If no group, output empty
+    if [[ ${#group_arr[@]} -eq 0 ]]; then
+      echo '{ "text": "" }'
+      return
     fi
-    ;;
-  *)
-    echo "{ \"text\": \"no group\"}"
+
+    display=""
+    for i in "${!group_arr[@]}"; do
+      letter=$(printf "\\x$(printf %x $((97 + i)))")
+
+      if [[ "${group_arr[i]}" == "$active_id" ]]; then
+        display+="<span foreground='#FF0000'>[</span>"
+        display+="<span>$letter</span>"
+        display+="<span foreground='#FF0000'>]</span>"
+      else
+        display+="<span></span>"
+        display+="<span>$letter</span>"
+        display+="<span></span>"
+      fi
+
+      # Space between items except last
+      if [[ $i -lt $((${#group_arr[@]} - 1)) ]]; then
+        display+=" "
+      fi
+    done
+
+    echo "{ \"text\": \"$display\" }"
     ;;
   esac
 }

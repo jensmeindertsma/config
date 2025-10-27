@@ -18,7 +18,7 @@ window#waybar {
   color: @text;
   background-color: @background;
 
-  font-weight: 500;
+  font-weight: 600;
 }
 
 #workspaces,
@@ -29,7 +29,7 @@ window#waybar {
   color: @text;
   background-color: @background;
 
-  font-weight: 500;
+  font-weight: 600;
 }
 
 #workspaces {
@@ -51,7 +51,7 @@ window#waybar {
 #workspaces button.empty label {
   color: @text-dimmed;
 
-  font-weight: 500;
+  font-weight: 600;
 }
 
 #workspaces button.active label,
@@ -91,6 +91,10 @@ window#waybar {
 
 #mpris {
   margin-right: 16px;
+}
+
+#custom-group {
+  font-weight: 600;
 }
 
 /* SEPARATOR */
