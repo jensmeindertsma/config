@@ -6,9 +6,5 @@
     "editor.defaultFormatter": "tamasfe.even-better-toml"
   },
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.formatOnSave": true,
-  "files.associations": {
-    "css": "less",
-    "hyprland.conf": "plaintext"
-  }
+  "editor.formatOnSave": true
 }

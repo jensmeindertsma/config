@@ -26,6 +26,9 @@
   "editor.inlayHints.enabled": "offUnlessPressed",
   "editor.minimap.enabled": false,
   "explorer.confirmDragAndDrop": false,
+  "files.associations": {
+    "*.css": "less"
+  },
   "git.confirmSync": false,
   "terminal.integrated.fontFamily": "FiraCode Nerd Font Mono",
   "terminal.integrated.fontSize": 16,
