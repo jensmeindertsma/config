@@ -27,12 +27,14 @@ alias ls="eza"
 bindkey '^[[1;5D' backward-word # Option + Left Arrow
 bindkey '^[[1;5C' forward-word  # Option + Right Arrow
 
+eval $(keychain id_ed25519 --eval --ssh-allow-forwarded --quiet)
+
 # Add a newline between commands
 # https://github.com/starship/starship/issues/560
-precmd() { 
-    precmd() { 
-        echo "" 
-    } 
+precmd() {
+    precmd() {
+        echo ""
+    }
 }
 
 eval "$(starship init zsh)"

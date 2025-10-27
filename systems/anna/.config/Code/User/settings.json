@@ -21,11 +21,14 @@
   "editor.codeLens": false,
   "editor.fontFamily": "JetBrainsMono Nerd Font",
   "editor.fontLigatures": true,
-  "editor.fontSize": 15,
+  "editor.fontSize": 17,
   "editor.formatOnSave": true,
   "editor.inlayHints.enabled": "offUnlessPressed",
   "editor.minimap.enabled": false,
   "explorer.confirmDragAndDrop": false,
+  "files.associations": {
+    "*.css": "less"
+  },
   "git.confirmSync": false,
   "terminal.integrated.fontFamily": "FiraCode Nerd Font Mono",
   "terminal.integrated.fontSize": 16,
