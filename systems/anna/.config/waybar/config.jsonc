@@ -7,7 +7,7 @@
   "margin-right": 16,
   "margin-bottom": 16,
 
-  "modules-left": ["hyprland/workspaces", "mpris"],
+  "modules-left": ["hyprland/workspaces", "mpris", "custom/group"],
   "modules/center": [],
   "modules-right": [
     "pulseaudio#output",
@@ -56,6 +56,12 @@
     "on-click": "",
     "on-click-middle": "",
     "on-click-right": ""
+  },
+
+  "custom/group": {
+    "format": "{}",
+    "return-type": "json",
+    "exec": "~/.config/waybar/modules/group.sh"
   },
 
   "pulseaudio#input": {
