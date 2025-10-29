@@ -48,18 +48,14 @@ window#waybar {
   color: @text;
 }
 
-#workspaces button.empty label {
-  color: @text-dimmed;
-
-  font-weight: 600;
-}
-
-#workspaces button.active label,
-#workspaces button.active:hover label {
+#workspaces button.active label {
   background-color: @background;
   border-color: @bright;
-  color: @bright;
+}
 
+#workspaces button.active:hover label {
+  border-color: @bright;
+  color: inherit;
   font-weight: 900;
 }
 
@@ -72,13 +68,19 @@ window#waybar {
   background-color: @background;
   border-color: @text;
 
-  color: @bright;
+  color: @text;
 
   font-weight: 900;
 }
 
+#workspaces button.empty label {
+  color: @text-dimmed;
+
+  font-weight: 600;
+}
+
 #workspaces button.empty:hover label {
-  color: @text;
+  color: @text-dimmed;
 
   font-weight: 900;
 }
