@@ -13,6 +13,8 @@ zinit light zsh-users/zsh-autosuggestions
 
 . "$HOME/.cargo/env"
 
+export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+
 eval "$(fnm env --shell zsh --use-on-cd --log-level quiet)"
 
 alias ls="eza"
