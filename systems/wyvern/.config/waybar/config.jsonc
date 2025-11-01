@@ -15,7 +15,6 @@
     "hyprland/workspaces"
   ],
   "modules-right": [
-    "custom/separator",
     "pulseaudio#output",
     "custom/separator",
     "pulseaudio#input",

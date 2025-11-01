@@ -28,10 +28,6 @@ window#waybar {
   font-weight: bold;
 }
 
-#workspaces {
-  margin-left: 2px;
-}
-
 #workspaces button label {
   padding: 3px 7px;
   border: 2px solid transparent;
