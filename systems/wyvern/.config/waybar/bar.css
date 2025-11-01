@@ -13,7 +13,9 @@ window#waybar {
 }
 
 .modules-left {
+  padding-top: 4px;
   padding-left: 15px;
+  padding-bottom: 4px;
 }
 
 .modules-right {
