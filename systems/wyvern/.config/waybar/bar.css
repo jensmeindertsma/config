@@ -2,7 +2,7 @@
   font-family: FiraCode Nerd Font;
   font-size: 13px;
   font-weight: 500;
-  padding: 0px;
+  padding: 1px 0px;
   margin: 0px;
 
   color: @text;
@@ -21,9 +21,60 @@ window#waybar {
 }
 
 #custom-separator {
-  margin: 0px 10px;
+  margin: 0px 9px;
 
   color: @bright;
 
   font-weight: bold;
+}
+
+#workspaces {
+  margin-left: 2px;
+}
+
+#workspaces button label {
+  padding: 3px 7px;
+  border: 2px solid transparent;
+  border-radius: 0;
+
+  color: @text;
+}
+
+#workspaces button.active label {
+  border-color: @bright;
+  color: @text;
+  font-weight: 900;
+}
+
+#workspaces button.empty label {
+  color: @text-dimmed;
+
+  font-weight: 600;
+}
+
+#workspaces button.empty.active label {
+  color: @text-dimmed;
+  font-weight: 600;
+}
+
+#workspaces button:hover {
+  border-radius: 0;
+  border: none;
+
+  outline: none;
+  box-shadow: none;
+  border-color: transparent;
+  background-color: transparent;
+}
+
+#workspaces button,
+#workspaces button:hover,
+#workspaces button:focus,
+#workspaces button:active,
+#workspaces button:checked {
+  background: transparent;
+  background-color: transparent;
+  box-shadow: none;
+  outline: none;
+  border: none;
 }
