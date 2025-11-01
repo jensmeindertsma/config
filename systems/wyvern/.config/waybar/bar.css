@@ -1,0 +1,29 @@
+* {
+  font-family: FiraCode Nerd Font;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 0px;
+  margin: 0px;
+
+  color: @text;
+}
+
+window#waybar {
+  background-color: @background;
+}
+
+.modules-left {
+  padding-left: 10px;
+}
+
+.modules-right {
+  padding-right: 10px;
+}
+
+#custom-separator {
+  margin: 0px 10px;
+
+  color: @bright;
+
+  font-weight: bold;
+}
