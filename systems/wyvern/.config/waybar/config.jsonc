@@ -8,20 +8,20 @@
   "margin-bottom": 0,
 
   "modules-left": [
-    "clock",
-    "custom/separator",
-    "custom/date",
-    "custom/separator",
-    "hyprland/workspaces"
-  ],
-  "modules-right": [
     "pulseaudio#output",
     "custom/separator",
     "pulseaudio#input",
     "custom/separator",
-    "custom/network",
+    "custom/battery",
     "custom/separator",
-    "custom/battery"
+    "custom/network"
+  ],
+  "modules-right": [
+    "custom/date",
+    "custom/separator",
+    "clock",
+    "custom/separator",
+    "hyprland/workspaces"
   ],
 
   "custom/separator": {
