@@ -2,7 +2,7 @@
   font-family: FiraCode Nerd Font;
   font-size: 13px;
   font-weight: 500;
-  padding: 1px 0px;
+  padding: 0px;
   margin: 0px;
 
   color: @text;
@@ -29,7 +29,7 @@ window#waybar {
 }
 
 #workspaces {
-  margin-left: 15px;
+  margin-left: 5px;
 }
 
 #workspaces button label {

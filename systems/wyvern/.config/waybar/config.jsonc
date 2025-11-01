@@ -15,12 +15,9 @@
     "hyprland/workspaces"
   ],
   "modules-right": [
-    "custom/separator",
     "pulseaudio#output",
     "custom/separator",
     "pulseaudio#input",
-    "custom/separator",
-    "temperature",
     "custom/separator",
     "custom/network",
     "custom/separator",
@@ -80,12 +77,6 @@
     "on-click": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
     "max-volume": 100,
     "tooltip": false
-  },
-
-  "temperature": {
-    "format": "temp {temperatureC}°",
-    "tooltip": false,
-    "interval": 2
   },
 
   "custom/network": {
