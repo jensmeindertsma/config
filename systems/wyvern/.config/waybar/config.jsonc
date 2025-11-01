@@ -15,12 +15,9 @@
     "hyprland/workspaces"
   ],
   "modules-right": [
-    "custom/separator",
     "pulseaudio#output",
     "custom/separator",
     "pulseaudio#input",
-    "custom/separator",
-    "temperature",
     "custom/separator",
     "custom/network",
     "custom/separator",
@@ -82,13 +79,7 @@
     "tooltip": false
   },
 
-  "temperature": {
-    "format": "temp {temperatureC}°",
-    "tooltip": false,
-    "interval": 2
-  },
-
-  "custom/network": {
+   "custom/network": {
     "interval": 1,
     "exec": "~/.config/waybar/modules/network.sh",
     "return-type": "json",
