@@ -13,11 +13,11 @@ window#waybar {
 }
 
 .modules-left {
-  padding-left: 10px;
+  padding-left: 15px;
 }
 
 .modules-right {
-  padding-right: 10px;
+  padding-right: 15px;
 }
 
 #custom-separator {
@@ -26,6 +26,10 @@ window#waybar {
   color: @bright;
 
   font-weight: bold;
+}
+
+#workspaces {
+  margin-left: 15px;
 }
 
 #workspaces button label {
