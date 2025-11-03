@@ -25,7 +25,7 @@ window#waybar {
 }
 
 #custom-separator {
-  margin: 0px 9px;
+  margin: 0px 12px;
 
   color: @bright;
 
