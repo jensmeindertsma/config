@@ -40,5 +40,7 @@
   "workbench.preferredDarkColorTheme": "Gruvbox Dark Hard",
   "workbench.preferredLightColorTheme": "Gruvbox Light Soft",
   "workbench.secondarySideBar.defaultVisibility": "hidden",
-  "workbench.startupEditor": "none"
+  "workbench.startupEditor": "none",
+  "terminal.integrated.stickyScroll.enabled": false,
+  "editor.largeFileOptimizations": false
 }
