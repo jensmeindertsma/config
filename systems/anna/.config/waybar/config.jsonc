@@ -50,12 +50,15 @@
   },
 
   "mpris": {
-    "format": "🎸 {title} - {artist} ({album})",
+    "format": "🎸 {title} - {artist} - ({album})",
     "tooltip": false,
     "interval": 1,
     "on-click": "",
     "on-click-middle": "",
-    "on-click-right": ""
+    "on-click-right": "",
+    "title-len": 35,
+    "artist-len": 35,
+    "album-len": 40
   },
 
   "custom/group": {
