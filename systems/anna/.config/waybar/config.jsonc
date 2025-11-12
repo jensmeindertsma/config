@@ -1,32 +1,17 @@
 {
-  "layer": "top",
-  "position": "bottom",
-
-  "margin-top": 0,
-  "margin-left": 16,
-  "margin-right": 16,
-  "margin-bottom": 16,
-
-  "modules-left": ["hyprland/workspaces", "mpris", "custom/group"],
-  "modules/center": [],
+  "modules-left": ["hyprland/workspaces", "custom/separator", "custom/network"],
+  "modules-center": ["custom/date", "custom/separator", "clock"],
   "modules-right": [
     "pulseaudio#output",
     "custom/separator",
     "pulseaudio#input",
     "custom/separator",
+    "temperature",
     "cpu",
     "custom/separator",
     "memory",
     "custom/separator",
-    "disk",
-    "custom/separator",
-    "temperature",
-    "custom/separator",
-    "custom/network",
-    "custom/separator",
-    "custom/date",
-    "custom/separator",
-    "clock"
+    "disk"
   ],
 
   "custom/separator": {
@@ -47,24 +32,6 @@
       "9": [],
       "10": []
     }
-  },
-
-  "mpris": {
-    "format": "🎸 {title} - {artist} - ({album})",
-    "tooltip": false,
-    "interval": 1,
-    "on-click": "",
-    "on-click-middle": "",
-    "on-click-right": "",
-    "title-len": 35,
-    "artist-len": 35,
-    "album-len": 40
-  },
-
-  "custom/group": {
-    "format": "{}",
-    "return-type": "json",
-    "exec": "~/.config/waybar/modules/group.sh"
   },
 
   "pulseaudio#input": {
