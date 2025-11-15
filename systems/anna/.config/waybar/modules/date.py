@@ -3,11 +3,12 @@ import json
 
 now = datetime.now()
 
-date = now.strftime("%d/%m/%Y").lower()
-day = now.strftime("%A").lower()
+day_name = now.strftime("%A")
+month_name = now.strftime("%B")
+day_number = now.strftime("%d").lstrip("0")
 
 output = {
-    "text": f'{date} ({day})',
+    "text": f"{day_name} {month_name} {day_number}"
 }
 
 print(json.dumps(output))
