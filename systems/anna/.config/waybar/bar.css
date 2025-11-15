@@ -1,6 +1,7 @@
 * {
   font-family: FiraCode Nerd Font;
   font-size: 13px;
+  font-weight: 600;
   padding: 0px;
   margin: 0px;
 
@@ -8,38 +9,23 @@
 }
 
 window#waybar {
-  background-color: transparent;
+  background-color: @background;
+}
+
+.modules-left {
+  padding-left: 0px;
 }
 
 .modules-right {
-  padding: 0px 10px;
-  border: 4px solid @border;
-
-  color: @text;
-  background-color: @background;
-
-  font-weight: 600;
+  padding-right: 12px;
 }
 
-#workspaces,
-#mpris,
-#custom-group {
-  border: 4px solid @border;
-
-  color: @text;
-  background-color: @background;
-
-  font-weight: 600;
-}
-
-#workspaces {
-  padding: 2px;
-  margin-right: 16px;
-
+#custom-separator {
+  color: @bright;
   font-weight: 900;
+  padding: 0 16px;
 }
 
-/* WORKSPACE */
 #workspaces button label {
   padding: 3px 7px;
   border: 2px solid transparent;
@@ -49,27 +35,8 @@ window#waybar {
 }
 
 #workspaces button.active label {
-  background-color: @background;
   border-color: @bright;
-}
-
-#workspaces button.active:hover label {
-  border-color: @bright;
-  color: inherit;
-  font-weight: 900;
-}
-
-#workspaces button.urgent label {
-  background-color: @bright;
-  color: @background;
-}
-
-#workspaces button:hover label {
-  background-color: @background;
-  border-color: @text;
-
   color: @text;
-
   font-weight: 900;
 }
 
@@ -79,31 +46,29 @@ window#waybar {
   font-weight: 600;
 }
 
-#workspaces button.empty:hover label {
+#workspaces button.empty.active label {
   color: @text-dimmed;
-
-  font-weight: 900;
-}
-
-/* MPRIS */
-#mpris,
-#custom-group {
-  padding: 0px 12px;
-}
-
-#mpris {
-  margin-right: 16px;
-}
-
-#custom-group {
   font-weight: 600;
 }
 
-/* SEPARATOR */
-#custom-separator {
-  margin: 0px 10px;
+#workspaces button:hover {
+  border-radius: 0;
+  border: none;
 
-  color: @bright;
+  outline: none;
+  box-shadow: none;
+  border-color: transparent;
+  background-color: transparent;
+}
 
-  font-weight: bold;
+#workspaces button,
+#workspaces button:hover,
+#workspaces button:focus,
+#workspaces button:active,
+#workspaces button:checked {
+  background: transparent;
+  background-color: transparent;
+  box-shadow: none;
+  outline: none;
+  border: none;
 }
