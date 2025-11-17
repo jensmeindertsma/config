@@ -1,9 +1,9 @@
 {
   "modules-left": [
-    "hyprland/workspaces",
-    "custom/separator",
     "clock",
-    "custom/separator",
+    "custom/separator-workspace-left",
+    "hyprland/workspaces",
+    "custom/separator-workspace-right",
     "custom/network"
   ],
   "modules-center": ["custom/date"],
@@ -21,8 +21,18 @@
     "disk"
   ],
 
+  "custom/separator-workspace-left": {
+    "format": "|",
+    "tooltip": false
+  },
+
+  "custom/separator-workspace-right": {
+    "format": "|",
+    "tooltip": false
+  },
+
   "custom/separator": {
-    "format": "/",
+    "format": "|",
     "tooltip": false
   },
 
@@ -36,8 +46,7 @@
       "6": [],
       "7": [],
       "8": [],
-      "9": [],
-      "10": []
+      "9": []
     }
   },
 
