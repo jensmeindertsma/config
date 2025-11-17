@@ -13,11 +13,25 @@ window#waybar {
 }
 
 .modules-left {
-  padding-left: 0px;
+  padding-left: 16px;
 }
 
 .modules-right {
-  padding-right: 12px;
+  padding-right: 16px;
+}
+
+#custom-separator-workspace-left {
+  color: @bright;
+  font-weight: 900;
+  padding-left: 16px;
+  padding-right: 8px;
+}
+
+#custom-separator-workspace-right {
+  color: @bright;
+  font-weight: 900;
+  padding-left: 8px;
+  padding-right: 16px;
 }
 
 #custom-separator {

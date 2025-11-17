@@ -45,5 +45,7 @@
   "security.workspace.trust.untrustedFiles": "open",
   "[dockercompose]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  "terminal.integrated.tabs.enabled": false,
+  "workbench.sideBar.location": "right"
 }
