@@ -1,0 +1,6 @@
+@import url("./bar.css");
+
+@define-color text #EBDBB2;
+@define-color text-dimmed #777777;
+@define-color background #1d2021;
+@define-color bright #FF0000;
