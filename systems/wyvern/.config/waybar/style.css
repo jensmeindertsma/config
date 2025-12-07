@@ -27,8 +27,8 @@ window#waybar {
 
 #workspaces button {
   padding: 1px 5px;
-  color: #fff4d2;
-  border: 3px solid #fff4d2;
+  color: #ebdbb2;
+  border: 3px solid #ebdbb2;
   margin-right: 5px;
 }
 
@@ -40,18 +40,16 @@ window#waybar {
 #memory {
   padding: 1px 8px;
   border: 3px solid #e54b4b;
-
-  /* #e8871e; */
 }
 
 #disk {
   padding: 1px 8px;
-  border: 3px solid #f37748;
+  border: 3px solid #d04d25;
 }
 
 #pulseaudio.input {
   padding: 1px 8px;
-  border: 3px solid #d8a657;
+  border: 3px solid #e8871e;
 }
 
 #pulseaudio.output {
@@ -59,12 +57,12 @@ window#waybar {
   border: 3px solid #6a8532;
 }
 
-#clock {
-  padding: 1px 8px;
-  border: 3px solid #839f9b;
-}
-
 #battery {
   padding: 1px 8px;
   border: 3px solid #458588;
+}
+
+#clock {
+  padding: 1px 8px;
+  border: 3px solid #839f9b;
 }

@@ -36,7 +36,7 @@
   "cpu": {
     "interval": 3,
     "tooltip": false,
-    "format": "<span color='#D3869B'></span> {usage}%"
+    "format": "<span color='#d3869b'></span> {usage}%"
   },
 
   "memory": {
@@ -48,11 +48,11 @@
   "disk": {
     "interval": 5,
     "tooltip": false,
-    "format": "<span color='#f37748'></span> {used}"
+    "format": "<span color='#D04D25'></span> {used}"
   },
 
   "pulseaudio#input": {
-    "format": "<span color='#d8a657'></span> {format_source}",
+    "format": "<span color='#e8871e'></span> {format_source}",
     "format-source": "{volume}%",
     "format-source-muted": "mut",
     "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 1%- -l 1.0",
