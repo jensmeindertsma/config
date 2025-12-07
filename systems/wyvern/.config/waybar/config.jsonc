@@ -25,7 +25,7 @@
     "exec": "python3 ~/.config/waybar/modules/date.py",
     "interval": 60,
     "return-type": "json",
-    "format": "<span color='#83a598'></span> {text}",
+    "format": "<span color='#858AE3'></span> {text}",
     "tooltip": false
   },
 
