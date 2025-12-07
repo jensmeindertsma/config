@@ -9,7 +9,7 @@
   "margin-right": 5,
   "margin-bottom": 5,
 
-  "modules-left": ["custom/date", "hyprland/workspaces"],
+  "modules-left": ["battery", "custom/date", "hyprland/workspaces"],
   "modules-center": [],
   "modules-right": [
     "cpu",
@@ -17,9 +17,15 @@
     "disk",
     "pulseaudio#input",
     "pulseaudio#output",
-    "battery",
     "clock"
   ],
+
+  "battery": {
+    "interval": 1,
+    "tooltip": false,
+    "format": "<span color='#689d68'>󰁹</span> {capacity}%",
+    "format-charging": "<span color='#689d68'>󰂅</span> {capacity}%"
+  },
 
   "custom/date": {
     "exec": "python3 ~/.config/waybar/modules/date.py",
@@ -63,8 +69,8 @@
   },
 
   "pulseaudio#output": {
-    "format": "<span color='#6A8532'>󰋋</span> {volume}%",
-    "format-muted": "<span color='#6A8532'>󰋋</span> mut",
+    "format": "<span color='#689d68'>󰋋</span> {volume}%",
+    "format-muted": "<span color='#689d68'>󰋋</span> mut",
     "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%- -l 1.0",
     "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%+ -l 1.0",
     "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
@@ -72,16 +78,9 @@
     "tooltip": false
   },
 
-  "battery": {
-    "interval": 1,
-    "tooltip": false,
-    "format": "<span color='#458588'>󰁹</span> {capacity}%",
-    "format-charging": "<span color='#458588'>󰂅</span> {capacity}%"
-  },
-
   "clock": {
     "interval": 1,
     "tooltip": false,
-    "format": "<span color='#83a598'>󰥔</span> {:%H:%M:%S}"
+    "format": "<span color='#458588'>󰥔</span> {:%H:%M:%S}"
   }
 }

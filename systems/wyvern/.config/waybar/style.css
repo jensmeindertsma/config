@@ -20,6 +20,11 @@ window#waybar {
   font-weight: 800;
 }
 
+#battery {
+  padding: 1px 8px;
+  border: 3px solid #689d68;
+}
+
 #custom-date {
   padding: 1px 8px;
   border: 3px solid #858ae3;
@@ -54,15 +59,10 @@ window#waybar {
 
 #pulseaudio.output {
   padding: 1px 8px;
-  border: 3px solid #6a8532;
-}
-
-#battery {
-  padding: 1px 8px;
-  border: 3px solid #458588;
+  border: 3px solid #689d68;
 }
 
 #clock {
   padding: 1px 8px;
-  border: 3px solid #839f9b;
+  border: 3px solid #458588;
 }
