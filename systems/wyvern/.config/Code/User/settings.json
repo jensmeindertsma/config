@@ -15,6 +15,7 @@
     "editor.defaultFormatter": "prettier.prettier-vscode"
   },
   "chat.commandCenter.enabled": false,
+  "diffEditor.ignoreTrimWhitespace": false,
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "always"
   },
@@ -26,22 +27,17 @@
   "editor.inlayHints.enabled": "offUnlessPressed",
   "editor.largeFileOptimizations": false,
   "editor.minimap.enabled": false,
+  "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
   "files.associations": {
     "*.css": "less"
   },
   "git.confirmSync": false,
   "terminal.explorerKind": "integrated",
-  "terminal.external.linuxExec": "kitty",
   "terminal.integrated.defaultProfile.linux": "zsh",
   "terminal.integrated.fontFamily": "FiraCode Nerd Font Mono",
   "terminal.integrated.fontSize": 16,
   "terminal.integrated.fontWeight": "500",
-  "terminal.integrated.profiles.linux": {
-    "kitty": {
-      "path": "/usr/bin/kitty"
-    }
-  },
   "terminal.integrated.shellIntegration.decorationsEnabled": "never",
   "terminal.integrated.stickyScroll.enabled": false,
   "terminal.sourceControlRepositoriesKind": "external",
@@ -52,7 +48,5 @@
   "workbench.preferredDarkColorTheme": "Gruvbox Dark Hard",
   "workbench.preferredLightColorTheme": "Gruvbox Light Soft",
   "workbench.secondarySideBar.defaultVisibility": "hidden",
-  "workbench.startupEditor": "none",
-  "diffEditor.ignoreTrimWhitespace": false,
-  "explorer.confirmDelete": false
+  "workbench.startupEditor": "none"
 }

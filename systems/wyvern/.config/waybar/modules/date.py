@@ -3,11 +3,10 @@ import json
 
 now = datetime.now()
 
-date = now.strftime("%d/%m/%Y").lower()
-day = now.strftime("%A").lower()
+date = now.strftime("%a %b %-d")
 
 output = {
-    "text": f'{date} ({day})',
+    "text": f'{date}',
 }
 
 print(json.dumps(output))
