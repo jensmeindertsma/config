@@ -1,3 +1,11 @@
 {
-  "recommendations": ["prettier.prettier-vscode", "skellock.just"]
+  "recommendations": [
+    "prettier.prettier-vscode",
+    "skellock.just",
+    "foxundermoon.shell-format", // The latest version is broken, install 7.2.5
+    "jdinhlife.gruvbox",
+    "ms-python.python",
+    "skellock.just",
+    "tamasfe.even-better-toml"
+  ]
 }

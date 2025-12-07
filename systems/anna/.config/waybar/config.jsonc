@@ -1,0 +1,119 @@
+{
+  "modules-left": [
+    "clock",
+    "custom/separator-workspace-left",
+    "hyprland/workspaces",
+    "custom/separator-workspace-right",
+    "custom/network"
+  ],
+  "modules-center": ["custom/date"],
+  "modules-right": [
+    "pulseaudio#output",
+    "custom/separator",
+    "pulseaudio#input",
+    "custom/separator",
+    "temperature",
+    "custom/separator",
+    "cpu",
+    "custom/separator",
+    "memory",
+    "custom/separator",
+    "disk"
+  ],
+
+  "custom/separator-workspace-left": {
+    "format": "|",
+    "tooltip": false
+  },
+
+  "custom/separator-workspace-right": {
+    "format": "|",
+    "tooltip": false
+  },
+
+  "custom/separator": {
+    "format": "|",
+    "tooltip": false
+  },
+
+  "hyprland/workspaces": {
+    "persistent-workspaces": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": [],
+      "5": [],
+      "6": [],
+      "7": [],
+      "8": [],
+      "9": []
+    }
+  },
+
+  "pulseaudio#input": {
+    "format": "{format_source}",
+    "format-source": "mic {volume}%",
+    "format-source-muted": "mic [/]",
+    "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 1%- -l 1.0",
+    "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 1%+ -l 1.0",
+    "on-click": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
+    "max-volume": 100,
+    "tooltip": false
+  },
+
+  "pulseaudio#output": {
+    "format": "vol {volume}%",
+    "format-muted": "vol [/]",
+    "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%- -l 1.0",
+    "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%+ -l 1.0",
+    "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+    "max-volume": 100,
+    "tooltip": false
+  },
+
+  "cpu": {
+    "format": "cpu {usage}%",
+    "tooltip": false,
+    "interval": 1
+  },
+
+  "memory": {
+    "format": "mem {percentage}%",
+    "tooltip": false,
+    "interval": 1
+  },
+
+  "disk": {
+    "format": "disk {percentage_used}%",
+    "unit": "GB",
+    "tooltip": false
+  },
+
+  "temperature": {
+    "format": "temp {temperatureC}°",
+    "tooltip": false,
+    "interval": 2
+  },
+
+  "custom/network": {
+    "interval": 1,
+    "exec": "~/.config/waybar/modules/network.sh",
+    "return-type": "json",
+    "format": "{text}",
+    "on-click": "~/.config/waybar/modules/hide-network.sh"
+  },
+
+  "custom/date": {
+    "exec": "python3 ~/.config/waybar/modules/date.py",
+    "interval": 60,
+    "return-type": "json",
+    "format": "{text}",
+    "tooltip": false
+  },
+
+  "clock": {
+    "format": "{:%H:%M:%S}",
+    "tooltip": false,
+    "interval": 1
+  }
+}
