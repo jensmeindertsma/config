@@ -9,8 +9,6 @@
   box-shadow: none;
 }
 
-@define-color text #ebdbb2;
-
 window#waybar {
   color: @text;
   background: none;
