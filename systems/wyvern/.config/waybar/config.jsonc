@@ -59,7 +59,7 @@
   },
 
   "pulseaudio#input": {
-    "format": "<span color='#EFD28D'></span> {format_source}",
+    "format": "<span color='#d8a657'></span> {format_source}",
     "format-source": "{volume}%",
     "format-source-muted": "mut",
     "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 1%- -l 1.0",
