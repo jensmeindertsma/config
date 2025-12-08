@@ -11,7 +11,7 @@
 
   "modules-left": [
     "battery",
-    "custom/date",
+    "clock",
     //"hyprland/window",
     "hyprland/workspaces"
   ],
@@ -22,7 +22,7 @@
     "disk",
     "pulseaudio#input",
     "pulseaudio#output",
-    "clock"
+    "custom/date"
   ],
 
   "battery": {
@@ -36,7 +36,7 @@
     "exec": "python3 ~/.config/waybar/modules/date.py",
     "interval": 60,
     "return-type": "json",
-    "format": "<span color='#858AE3'></span> {text}",
+    "format": "<span color='#458588'></span> {text}",
     "tooltip": false
   },
 
@@ -82,6 +82,6 @@
   "clock": {
     "interval": 1,
     "tooltip": false,
-    "format": "<span color='#458588'>󰥔</span> {:%H:%M:%S}"
+    "format": "<span color='#858AE3'>󰥔</span> {:%H:%M:%S}"
   }
 }
