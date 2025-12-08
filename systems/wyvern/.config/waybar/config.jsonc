@@ -40,10 +40,6 @@
     "tooltip": false
   },
 
-  // "hyprland/window": {
-  //   "format": "{class}"
-  // },
-
   "cpu": {
     "interval": 3,
     "tooltip": false,
