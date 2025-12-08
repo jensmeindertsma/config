@@ -4,12 +4,17 @@
 
   "spacing": 5,
 
-  "margin-top": 0,
-  "margin-left": 5,
-  "margin-right": 5,
-  "margin-bottom": 5,
+  "margin-top": 5,
+  "margin-left": 0,
+  "margin-right": 0,
+  "margin-bottom": 0,
 
-  "modules-left": ["battery", "custom/date", "hyprland/workspaces"],
+  "modules-left": [
+    "battery",
+    "custom/date",
+    //"hyprland/window",
+    "hyprland/workspaces"
+  ],
   "modules-center": [],
   "modules-right": [
     "cpu",
@@ -35,15 +40,9 @@
     "tooltip": false
   },
 
-  "hyprland/workspaces": {
-    "format": "{windows}",
-
-    "window-rewrite": {
-      "code": "󰨞",
-      "firefox": "󰈹",
-      "kitty": ""
-    }
-  },
+  // "hyprland/window": {
+  //   "format": "{class}"
+  // },
 
   "cpu": {
     "interval": 3,

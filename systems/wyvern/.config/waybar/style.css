@@ -40,8 +40,13 @@ window#waybar {
   margin-right: 5px;
 }
 
+#workspaces button:last-child {
+  margin-right: 0;
+}
+
 #workspaces button.active {
-  color: #ff0000;
+  color: #222222;
+  background-color: #ebdbb2;
 }
 
 #cpu {

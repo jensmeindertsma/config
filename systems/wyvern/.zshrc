@@ -23,6 +23,7 @@ eval "$(fnm env --shell zsh --use-on-cd --log-level quiet)"
 alias cdg='cd $(git rev-parse --show-toplevel)'
 alias mit="license-generator mit --author 'Jens Meindertsma' --output LICENSE.md"
 alias ls="eza"
+alias vim="nvim"
 
 bindkey '^[[1;5D' backward-word # Option + Left Arrow
 bindkey '^[[1;5C' forward-word  # Option + Right Arrow
