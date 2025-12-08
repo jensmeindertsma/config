@@ -36,7 +36,13 @@
   },
 
   "hyprland/workspaces": {
-    "format": "󰈹"
+    "format": "{windows}",
+
+    "window-rewrite": {
+      "code": "󰨞",
+      "firefox": "󰈹",
+      "kitty": ""
+    }
   },
 
   "cpu": {
@@ -54,11 +60,11 @@
   "disk": {
     "interval": 5,
     "tooltip": false,
-    "format": "<span color='#D04D25'></span> {used}"
+    "format": "<span color='#FF751F'></span> {used}"
   },
 
   "pulseaudio#input": {
-    "format": "<span color='#e8871e'></span> {format_source}",
+    "format": "<span color='#EFD28D'></span> {format_source}",
     "format-source": "{volume}%",
     "format-source-muted": "mut",
     "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 1%- -l 1.0",

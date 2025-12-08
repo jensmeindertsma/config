@@ -30,11 +30,18 @@ window#waybar {
   border: 3px solid #858ae3;
 }
 
+#workspaces {
+}
+
 #workspaces button {
   padding: 1px 5px;
   color: #ebdbb2;
   border: 3px solid #ebdbb2;
   margin-right: 5px;
+}
+
+#workspaces button.active {
+  color: #ff0000;
 }
 
 #cpu {
@@ -49,12 +56,12 @@ window#waybar {
 
 #disk {
   padding: 1px 8px;
-  border: 3px solid #d04d25;
+  border: 3px solid #ff751f;
 }
 
 #pulseaudio.input {
   padding: 1px 8px;
-  border: 3px solid #e8871e;
+  border: 3px solid #efd28d;
 }
 
 #pulseaudio.output {
