@@ -31,14 +31,14 @@
   "clock": {
     "interval": 1,
     "tooltip": false,
-    "format": "<span color='#858AE3'>󰥔</span> {:%H:%M:%S}"
+    "format": "<span color='#5D737E'>󰥔</span> {:%H:%M:%S}"
   },
 
   "custom/network": {
     "interval": 1,
     "exec": "bash ~/.config/waybar/modules/network.sh",
     "return-type": "json",
-    "format": "<span color='#545677'>{icon}</span> {text}",
+    "format": "<span color='#81559B'>{icon}</span> {text}",
     "format-icons": {
       "vpn": "󰟥",
       "connected": "󰤨",

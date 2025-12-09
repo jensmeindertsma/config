@@ -23,9 +23,9 @@ window#waybar {
   border: 3px solid #689d68;
 }
 
-#custom-date {
+#clock {
   padding: 1px 8px;
-  border: 3px solid #458588;
+  border: 3px solid #5d737e;
 }
 
 #workspaces button {
@@ -46,7 +46,7 @@ window#waybar {
 
 #custom-network {
   padding: 1px 8px;
-  border: 3px solid #545677;
+  border: 3px solid #81559b;
 }
 
 #cpu {
@@ -74,7 +74,7 @@ window#waybar {
   border: 3px solid #689d68;
 }
 
-#clock {
+#custom-date {
   padding: 1px 8px;
-  border: 3px solid #858ae3;
+  border: 3px solid #458588;
 }
