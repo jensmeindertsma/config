@@ -44,6 +44,11 @@ window#waybar {
   background-color: #ebdbb2;
 }
 
+#custom-network {
+  padding: 1px 8px;
+  border: 3px solid #545677;
+}
+
 #cpu {
   padding: 1px 8px;
   border: 3px solid #d3869b;

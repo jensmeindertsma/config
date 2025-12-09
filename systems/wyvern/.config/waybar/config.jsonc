@@ -9,14 +9,10 @@
   "margin-right": 5,
   "margin-bottom": 5,
 
-  "modules-left": [
-    "battery",
-    "clock",
-    //"hyprland/window",
-    "hyprland/workspaces"
-  ],
+  "modules-left": ["battery", "clock", "hyprland/workspaces"],
   "modules-center": [],
   "modules-right": [
+    "custom/network",
     "cpu",
     "memory",
     "disk",
@@ -32,12 +28,24 @@
     "format-charging": "<span color='#689d68'>󰂅</span> {capacity}%"
   },
 
-  "custom/date": {
-    "exec": "python3 ~/.config/waybar/modules/date.py",
-    "interval": 60,
+  "clock": {
+    "interval": 1,
+    "tooltip": false,
+    "format": "<span color='#858AE3'>󰥔</span> {:%H:%M:%S}"
+  },
+
+  "custom/network": {
+    "interval": 1,
+    "exec": "bash ~/.config/waybar/modules/network.sh",
     "return-type": "json",
-    "format": "<span color='#458588'></span> {text}",
-    "tooltip": false
+    "format": "<span color='#545677'>{icon}</span> {text}",
+    "format-icons": {
+      "vpn": "󰟥",
+      "connected": "󰤨",
+      "disconnected": "󰤨",
+      "loading": "",
+      "disabled": "󰤭"
+    }
   },
 
   "cpu": {
@@ -79,9 +87,11 @@
     "tooltip": false
   },
 
-  "clock": {
-    "interval": 1,
-    "tooltip": false,
-    "format": "<span color='#858AE3'>󰥔</span> {:%H:%M:%S}"
+  "custom/date": {
+    "exec": "python3 ~/.config/waybar/modules/date.py",
+    "interval": 60,
+    "return-type": "json",
+    "format": "<span color='#458588'></span> {text}",
+    "tooltip": false
   }
 }
