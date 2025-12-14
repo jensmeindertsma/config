@@ -28,12 +28,14 @@ alias vim="nvim"
 bindkey '^[[1;5D' backward-word # Option + Left Arrow
 bindkey '^[[1;5C' forward-word  # Option + Right Arrow
 
-# Add a newline between commands
-# https://github.com/starship/starship/issues/560
+FIRST_PROMPT=true
 precmd() {
-    precmd() {
-        echo ""
-    }
+    if [ "$FIRST_PROMPT" = true ]; then
+        FIRST_PROMPT=false
+    else
+        print ""   # Print empty line BEFORE drawing the next prompt (i.e., after previous command)
+    fi
 }
 
-eval "$(starship init zsh)"
+zle_highlight=(default:bold)
+PROMPT="%F{yellow}%f %~ %B%F{yellow}->%f%b "
