@@ -35,6 +35,13 @@ window#waybar {
   margin-right: 5px;
 }
 
+button:hover {
+  box-shadow: none; /* Remove predefined box-shadow */
+  text-shadow: none; /* Remove predefined text-shadow */
+  background: none; /* Remove predefined background color (white) */
+  transition: none; /* Disable predefined animations */
+}
+
 #workspaces button:last-child {
   margin-right: 0;
 }
