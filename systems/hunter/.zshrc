@@ -15,12 +15,9 @@ SAVEHIST=10000
 
 zinit light zsh-users/zsh-autosuggestions
 
-. "$HOME/.cargo/env"
-
+alias vim="nvim"
 alias ls="eza"
-
+``
 eval "$(fnm env --use-on-cd --shell zsh)"
-
-eval "$(keychain --quiet --noask --eval hunter)"
 
 eval "$(starship init zsh)"

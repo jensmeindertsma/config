@@ -1,0 +1,12 @@
+{
+  "workbench.startupEditor": "none",
+  "git.confirmSync": false,
+  "git.autofetch": true,
+  "chat.viewWelcome.enabled": false,
+  "chat.viewSessions.enabled": false,
+  "workbench.navigationControl.enabled": false,
+  "workbench.layoutControl.enabled": false,
+  "chat.commandCenter.enabled": false,
+  "window.commandCenter": false,
+  "editor.fontSize": 16
+}
