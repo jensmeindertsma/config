@@ -15,26 +15,9 @@ SAVEHIST=10000
 
 zinit light zsh-users/zsh-autosuggestions
 
-export PATH="$HOME/.local/bin:$PATH"
-export PATH="$HOME/.cargo/bin:$PATH"
-
-eval "$(fnm env --shell zsh --use-on-cd --log-level quiet)"
-
-alias cdg='cd $(git rev-parse --show-toplevel)'
-alias mit="license-generator mit --author 'Jens Meindertsma' --output LICENSE.md"
+alias vim="nvim"
 alias ls="eza"
 
-bindkey '^[[1;5D' backward-word # Option + Left Arrow
-bindkey '^[[1;5C' forward-word  # Option + Right Arrow
-
-eval $(keychain id_ed25519 --eval --ssh-allow-forwarded --quiet)
-
-# Add a newline between commands
-# https://github.com/starship/starship/issues/560
-precmd() {
-    precmd() {
-        echo ""
-    }
-}
+eval "$(fnm env --use-on-cd --shell zsh)"
 
 eval "$(starship init zsh)"
