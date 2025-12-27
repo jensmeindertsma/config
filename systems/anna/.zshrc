@@ -15,6 +15,8 @@ SAVEHIST=10000
 
 zinit light zsh-users/zsh-autosuggestions
 
+. "$HOME/.cargo/env"
+
 alias vim="nvim"
 alias ls="eza"
 
