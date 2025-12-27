@@ -17,7 +17,9 @@ zinit light zsh-users/zsh-autosuggestions
 
 alias vim="nvim"
 alias ls="eza"
-``
+
+export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+
 eval "$(fnm env --use-on-cd --shell zsh)"
 
 eval "$(starship init zsh)"
