@@ -15,10 +15,11 @@ SAVEHIST=10000
 
 zinit light zsh-users/zsh-autosuggestions
 
-alias ls="eza"
+export PATH="$HOME/.cargo/bin:$PATH"
 
-eval "$(keychain --quiet --noask --eval)"
+alias vim="nvim"
+alias ls="eza"
 
 eval "$(fnm env --use-on-cd --shell zsh)"
 
-eval "$(starship init zsh)
+eval "$(starship init zsh)"
