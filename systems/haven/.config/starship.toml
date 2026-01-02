@@ -16,10 +16,10 @@ $character
 """
 
 [character]
-format = '[┗━ ⟶](bold blue) ' 
+format = '[┗━ ⟶](bold yellow) ' 
 
 [hostname]
-format = '[ $hostname]($style)'
+format = '[$hostname]($style)'
 style = 'bold blue'
 ssh_only = false
 
