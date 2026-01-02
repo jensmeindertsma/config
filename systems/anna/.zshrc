@@ -18,6 +18,7 @@ zinit light zsh-users/zsh-autosuggestions
 alias vim="nvim"
 alias ls="eza"
 
+export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 
 eval "$(fnm env --use-on-cd --shell zsh)"

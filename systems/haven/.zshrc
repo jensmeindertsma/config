@@ -15,7 +15,16 @@ SAVEHIST=10000
 
 zinit light zsh-users/zsh-autosuggestions
 
+export PATH="$HOME/.cargo/bin:$PATH"
+
 alias ls="eza"
+alias mit="license-generator mit --author 'Jens Meindertsma' --output LICENSE.md"
+
+# Add a newline between commands
+# https://github.com/starship/starship/issues/560
+precmd() { precmd() { echo "" } }
+alias clear="precmd() { precmd() { echo } } && clear"
+
 
 eval "$(keychain --quiet --noask --eval)"
 
