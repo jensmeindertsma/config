@@ -2,3 +2,52 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
 add_newline = false
+
+format = """
+$hostname\
+$username\
+$directory\
+$git_branch\
+$git_status\
+$nodejs\
+$rust\
+$line_break\
+$character
+"""
+
+[character]
+format = '[┗━ ⟶](bold blue) ' 
+
+[hostname]
+format = '[ $hostname]($style)'
+style = 'bold blue'
+ssh_only = false
+
+[username]
+format = '[\[](bold)[$user](bold red)[\]](bold) in '
+show_always = true
+
+[directory]
+format = '[$path]($style) '
+style = 'bold yellow'
+truncate_to_repo = false
+truncation_length = 2
+
+[git_branch]
+format = "on [$symbol$branch]($style) "
+symbol = ' '
+style = "bold bright-purple"
+
+[git_status]
+format= '[\[](bold bright-purple)[$all_status$ahead_behind](bold)[\]](bold bright-purple) '
+deleted = "x"
+renamed = "r"
+
+[nodejs]
+format = "with [$symbol($version )]($style)"
+symbol = " "
+
+[rust]
+format = "with [$symbol($version )]($style)"
+symbol = " "
+style = "bold red"
