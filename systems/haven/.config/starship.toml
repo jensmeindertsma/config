@@ -39,9 +39,12 @@ symbol = ' '
 style = "bold bright-purple"
 
 [git_status]
-format= '[\[](bold bright-purple)[$all_status$ahead_behind](bold)[\]](bold bright-purple) '
+format= '([\[](bold bright-purple)[$all_status$ahead_behind](bold)[\]](bold bright-purple)) '
 deleted = "x"
 renamed = "r"
+diverged = ""
+ahead = ""
+behind = ""
 
 [nodejs]
 format = "with [$symbol($version )]($style)"
