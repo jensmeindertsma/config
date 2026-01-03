@@ -1,7 +1,19 @@
 * {
-  padding: 0px;
-  margin: 0px;
+  padding: 0;
+  margin: 0;
+  min-height: 0;
+  border-radius: 0;
   border: none;
+  text-shadow: none;
+  transition: none;
+  box-shadow: none;
+}
+
+button:hover {
+  box-shadow: none; 
+  text-shadow: none; 
+  background: none; 
+  transition: none; 
 }
 
 window#waybar {
@@ -14,6 +26,16 @@ window#waybar {
 #workspaces {
   padding-left: 8px;
   font-size: 16px;
+  font-weight: bolder;
+}
+
+#workspaces button {
+margin-right: 5px;
+  padding: 0px 4px; 
+}
+
+#workspaces button.empty {
+  opacity: 0.5;
 }
 
 #clock {
