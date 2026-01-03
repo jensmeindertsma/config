@@ -1,12 +1,28 @@
 {
   "layer": "top",
   "position": "top",
-  "modules-left": [],
+  "modules-left": ["hyprland/workspaces"],
   "modules-center": ["clock"],
-  "modules-right": [],
+  "modules-right": ["battery"],
+
+  "hyprland/workspaces": {
+  	"tooltip": false,
+	"format": ""
+  },
+
   "clock": {
     "tooltip": false,
     "interval": 1,
     "format": "{:%A %H:%M}"
+  },
+
+  "battery": {
+	"interval": 30,
+	"tooltip": false,
+	"format": "fallback",
+	"format-charging": "󰂄 {capacity}%",
+	"format-discharging": "󰂄 {capacity}%",
+	"format-full": "󰁹 {capacity}%",
+	"format-plugged": " {capacity}%"
   }
 }

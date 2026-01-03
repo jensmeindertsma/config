@@ -24,11 +24,16 @@ bindkey '^[[1;3C' forward-word
 bindkey '^[[1;3D' beginning-of-line
 bindkey '^[[1;3C' end-of-line
 
+# Add a newline between commands
+# https://github.com/starship/starship/issues/560
+precmd() { precmd() { echo "" } }
+alias clear="precmd() { precmd() { echo } } && clear"
+
 export PATH="$HOME/.cargo/bin:$PATH"
 
 alias vim="nvim"
 alias ls="eza"
 
-eval "$(fnm env --use-on-cd --shell zsh)"
+eval "$(fnm env --use-on-cd --log-level quiet --shell zsh)"
 
 eval "$(starship init zsh)"

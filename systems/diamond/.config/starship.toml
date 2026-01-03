@@ -15,7 +15,7 @@ $line_break\
 $character"""
 
 [character]
-format = '[┗━ ⟶](bold yellow) '
+format = '[ ┗━ ](bold yellow) '
 
 [hostname]
 format   = '[$hostname]($style)'
