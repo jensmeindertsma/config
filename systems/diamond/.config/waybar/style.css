@@ -19,12 +19,12 @@ button:hover {
 window#waybar {
   background-color: #181824;
   font-family: Iosevka Nerd Font Mono;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: bold;
 }
 
 #workspaces {
-  font-size: 16px;
+  margin-left: 7px;
   font-weight: bolder;
 }
 
@@ -33,15 +33,22 @@ window#waybar {
   padding: 0px 4px; 
 }
 
-#workspaces button.active {
+/*#workspaces button.active {
   background-color: #1C6E8C;
+}*/
+
+#workspaces button.empty {
+  opacity: 0.5;
 }
 
 #clock {
   padding: 4px;
 }
 
+#custom-network, #pulseaudio.input, #pulseaudio.output {
+  margin-right: 20px;
+}
+
 #battery {
-  padding-right: 8px;
-  font-size: 16px;
+  margin-right: 10px;
 }
