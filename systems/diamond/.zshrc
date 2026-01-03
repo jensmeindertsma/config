@@ -15,6 +15,15 @@ SAVEHIST=10000
 
 zinit light zsh-users/zsh-autosuggestions
 
+bindkey '^[[1;5D' backward-word
+bindkey '^[[1;5C' forward-word
+
+bindkey '^[[1;3D' backward-word
+bindkey '^[[1;3C' forward-word
+
+bindkey '^[[1;3D' beginning-of-line
+bindkey '^[[1;3C' end-of-line
+
 export PATH="$HOME/.cargo/bin:$PATH"
 
 alias vim="nvim"
