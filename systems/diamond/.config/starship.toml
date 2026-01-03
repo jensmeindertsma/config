@@ -3,7 +3,7 @@
 
 add_newline = false
 
-format = '''
+format = """
 $hostname\
 $username\
 $directory\
@@ -12,8 +12,7 @@ $git_status\
 $nodejs\
 $rust\
 $line_break\
-$character
-'''
+$character"""
 
 [character]
 format = '[┗━ ⟶](bold yellow) '
