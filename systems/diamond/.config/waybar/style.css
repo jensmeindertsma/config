@@ -1,16 +1,16 @@
 * {
-   padding: 0px;
-   margin: 0px;
-   border: none;
+  padding: 0px;
+  margin: 0px;
+  border: none;
 }
 
 window#waybar {
-	background-color: #181824;
-	font-family: Iosevka Nerd Font Mono;
-	font-weight: bold;
+  background-color: #181824;
+  font-family: Iosevka Nerd Font Mono;
+  font-weight: bold;
 }
 
 #clock {
-	background-color: transparent;
-	padding: 4px;
+  background-color: transparent;
+  padding: 4px;
 }
