@@ -3,7 +3,7 @@
 
 add_newline = false
 
-format = '''
+format = """
 $hostname\
 $username\
 $directory\
@@ -13,7 +13,7 @@ $nodejs\
 $rust\
 $line_break\
 $character
-'''
+"""
 
 [character]
 format = '[┗━ ⟶](bold yellow) '

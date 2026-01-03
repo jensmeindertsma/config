@@ -5,6 +5,5 @@
   },
   "devDependencies": {
     "prettier": "3.7.4"
-  },
-  "packageManager": "pnpm@10.24.0"
+  }
 }
