@@ -43,6 +43,7 @@ window#waybar {
 
 #clock {
   padding: 4px;
+  font-size: 14px;
 }
 
 #custom-network, #pulseaudio.input, #pulseaudio.output {
