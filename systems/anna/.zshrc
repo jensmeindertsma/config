@@ -15,12 +15,17 @@ SAVEHIST=10000
 
 zinit light zsh-users/zsh-autosuggestions
 
+# Add a newline between commands
+# https://github.com/starship/starship/issues/560
+precmd() { precmd() { echo "" } }
+alias clear="precmd() { precmd() { echo } } && clear"
+
 alias vim="nvim"
 alias ls="eza"
 
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 
-eval "$(fnm env --use-on-cd --shell zsh)"
+eval "$(fnm env --use-on-cd --log-level quiet --shell zsh)"
 
 eval "$(starship init zsh)"

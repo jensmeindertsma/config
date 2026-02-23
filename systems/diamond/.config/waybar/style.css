@@ -10,10 +10,10 @@
 }
 
 button:hover {
-  box-shadow: none; 
-  text-shadow: none; 
-  background: none; 
-  transition: none; 
+  box-shadow: none;
+  text-shadow: none;
+  background: none;
+  transition: none;
 }
 
 window#waybar {
@@ -30,7 +30,7 @@ window#waybar {
 
 #workspaces button {
   margin-right: 5px;
-  padding: 0px 4px; 
+  padding: 0px 4px;
 }
 
 /*#workspaces button.active {
@@ -46,7 +46,9 @@ window#waybar {
   font-size: 14px;
 }
 
-#custom-network, #pulseaudio.input, #pulseaudio.output {
+#custom-network,
+#pulseaudio.input,
+#pulseaudio.output {
   margin-right: 20px;
 }
 

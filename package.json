@@ -1,9 +1,12 @@
 {
+  "type": "module",
   "scripts": {
     "format": "prettier --write .",
-    "format-ci": "prettier --check ."
+    "format-ci": "prettier --check .",
+    "typecheck": "tsc"
   },
   "devDependencies": {
-    "prettier": "3.7.4"
+    "prettier": "3.7.4",
+    "typescript": "^5.9.3"
   }
 }
