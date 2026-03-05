@@ -1,9 +1,18 @@
 {
   "chat.agentsControl.enabled": false,
+  "editor.fontFamily": "FiraCode Nerd Font Mono, monospace",
+  "editor.fontSize": 15,
+  "editor.minimap.enabled": false,
   "explorer.confirmDragAndDrop": false,
+  "git.confirmSync": false,
+  "terminal.integrated.fontSize": 16,
+  "terminal.integrated.stickyScroll.enabled": false,
   "window.autoDetectColorScheme": true,
   "window.commandCenter": false,
+  "window.zoomLevel": 0.4,
   "workbench.layoutControl.enabled": false,
   "workbench.secondarySideBar.defaultVisibility": "hidden",
-  "workbench.startupEditor": "none"
+  "workbench.startupEditor": "none",
+  "terminal.integrated.shellIntegration.decorationsEnabled": "never",
+  "explorer.confirmDelete": false,
 }
