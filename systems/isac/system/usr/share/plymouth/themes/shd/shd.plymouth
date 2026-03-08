@@ -1,6 +1,9 @@
 [Plymouth Theme]
 Name=SHD
-Description=SHD splash screen
+Description=Omarchy splash screen.
+ModuleName=script
+
 [script]
 ImageDir=/usr/share/plymouth/themes/shd
 ScriptFile=/usr/share/plymouth/themes/shd/shd.script
+ConsoleLogBackgroundColor=0x000000

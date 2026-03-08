@@ -5,5 +5,4 @@ help:
 
 link system:   
     stow --dir systems/{{system}} --target ~ home
-    sudo stow --dir systems/{{system}} --target / system
-    @echo "✅ Linked 'systems/{{system}}'"
+    @echo "✅ Linked 'systems/{{system}}/home'"
