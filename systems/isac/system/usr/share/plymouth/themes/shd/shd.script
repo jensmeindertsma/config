@@ -1,0 +1,10 @@
+# Omarchy Plymouth Theme Script
+Window.SetBackgroundTopColor(0.101, 0.105, 0.149);
+Plymouth.SetRefreshFunction (refresh_callback);
+    mode = Plymouth.GetMode();
+Plymouth.SetDisplayNormalFunction(display_normal_callback);
+Plymouth.SetDisplayPasswordFunction(display_password_callback);
+Plymouth.SetBootProgressFunction(progress_callback);
+Plymouth.SetQuitFunction(quit_callback);
+Plymouth.SetDisplayMessageFunction (display_message_callback);
+Plymouth.SetHideMessageFunction (hide_message_callback);

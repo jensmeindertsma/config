@@ -1,0 +1,6 @@
+[Plymouth Theme]
+Name=SHD
+Description=SHD splash screen
+[script]
+ImageDir=/usr/share/plymouth/themes/shd
+ScriptFile=/usr/share/plymouth/themes/shd/shd.script

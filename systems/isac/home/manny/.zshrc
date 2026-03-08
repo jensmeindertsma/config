@@ -18,6 +18,9 @@ zinit light zsh-users/zsh-autosuggestions
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 
+alias cat=bat
+alias ls=eza
+
 # Add a newline between commands
 # https://github.com/starship/starship/issues/560
 precmd() { precmd() { echo "" } }
