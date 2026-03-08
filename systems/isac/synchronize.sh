@@ -8,7 +8,7 @@ SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 REPO="$SCRIPT_DIR/system"
 
 # Temporary test deployment directory
-TARGET="/tmp/deploy-test"
+TARGET="/"
 
 # Function to copy a single file and create parent directories
 copy_file() {
@@ -26,7 +26,7 @@ echo "Deploying files from $REPO to $TARGET..."
 find "$REPO" -type f | while read -r file; do
     # Strip repo prefix and prepend target directory
     relpath="${file#$REPO/}"
-    dest="$TARGET/$relpath"
+    dest="$TARGET$relpath"
 
     echo "Copying $file → $dest"
     copy_file "$file" "$dest"
