@@ -7,7 +7,7 @@ logo.image = Image("logo.png");
 screen_width = Window.GetWidth();
 screen_height = Window.GetHeight();
 
-target_width = screen_width / 3;
+target_width = screen_width / 4;
 scale_factor = target_width / logo.image.GetWidth();  # scale based on original size
 target_height = logo.image.GetHeight() * scale_factor;
 
@@ -25,44 +25,26 @@ logo.sprite.SetX(logo_x);
 logo.sprite.SetY(logo_y);
 logo.sprite.SetOpacity(1);
 
-# -------------------------------------------
-
 fun show_password_dialog()
   {
-    lock.sprite.SetOpacity(1);
     entry.sprite.SetOpacity(1);
   }
 
 fun hide_password_dialog()
   {
-    lock.sprite.SetOpacity(0);
     entry.sprite.SetOpacity(0);
     for (index = 0; bullet.sprites[index]; index++)
       bullet.sprites[index].SetOpacity(0);
   }
 
-lock.image = Image("lock.png");
 entry.image = Image("entry.png");
 bullet.image = Image("bullet.png");
 
 entry.sprite = Sprite(entry.image);
 entry.x = Window.GetWidth()/2 - entry.image.GetWidth()/2;
-entry.y = logo_y + target_height + entry.image.GetHeight();
+entry.y = logo_y + target_height + entry.image.GetHeight()*3;
 entry.sprite.SetPosition(entry.x, entry.y, 10001);
 entry.sprite.SetOpacity(0);
-
-# Scale lock to be slightly shorter than entry field height
-# Original lock is 84x96, entry height determines scale
-lock_height = entry.image.GetHeight() * 0.8;
-lock_scale = lock_height / 96;
-lock_width = 84 * lock_scale;
-
-scaled_lock = lock.image.Scale(lock_width, lock_height);
-lock.sprite = Sprite(scaled_lock);
-lock.x = entry.x - lock_width - 15;
-lock.y = entry.y + entry.image.GetHeight() / 2 - lock_height / 2;
-lock.sprite.SetPosition(lock.x, lock.y, 10001);
-lock.sprite.SetOpacity(0);
 
 # Bullet array
 bullet.sprites = [];
@@ -82,8 +64,8 @@ fun display_password_callback (prompt, bullets)
     for (index = 0; bullet.sprites[index]; index++)
       bullet.sprites[index].SetOpacity(0);
     
-    # Create and show bullets for current password (max 21)
-    max_bullets = 21;
+    # Create and show bullets for current password
+    max_bullets = 19;
     bullets_to_show = bullets;
     if (bullets_to_show > max_bullets)
       bullets_to_show = max_bullets;
@@ -92,10 +74,9 @@ fun display_password_callback (prompt, bullets)
       {
         if (!bullet.sprites[index])
           {
-            # Scale bullet image to 7x7 pixels
-            scaled_bullet = bullet.image.Scale(7, 7);
+            scaled_bullet = bullet.image.Scale(10, 10);
             bullet.sprites[index] = Sprite(scaled_bullet);
-            bullet.x = entry.x + 20 + index * (7 + 5);
+            bullet.x = entry.x + 20 + index * (8 + 5);
             bullet.y = entry.y + entry.image.GetHeight() / 2 - 3.5;
             bullet.sprites[index].SetPosition(bullet.x, bullet.y, 10002);
           }
@@ -106,12 +87,9 @@ fun display_password_callback (prompt, bullets)
 Plymouth.SetDisplayNormalFunction(display_normal_callback);
 Plymouth.SetDisplayPasswordFunction(display_password_callback);
 
-#----------------------------------------- Quit --------------------------------
-
 fun quit_callback ()
 {
-  logo.sprite.SetOpacity (1);
+  logo.sprite.SetOpacity (0);
 }
 
 Plymouth.SetQuitFunction(quit_callback);
-
