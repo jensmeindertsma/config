@@ -14,5 +14,9 @@
   "workbench.layoutControl.enabled": false,
   "workbench.preferredDarkColorTheme": "Gruvbox Dark Hard",
   "workbench.secondarySideBar.defaultVisibility": "hidden",
-  "workbench.startupEditor": "none"
+  "workbench.startupEditor": "none",
+  "[markdown]": {
+    "editor.wordWrap": "off"
+  },
+  "editor.formatOnSave": true
 }
