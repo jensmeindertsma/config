@@ -21,6 +21,15 @@ export PATH="$HOME/.cargo/bin:$PATH"
 alias cat=bat
 alias ls=eza
 
+bindkey -e
+
+# ---- Ctrl + Arrow for word movement ----
+# Ctrl + Left Arrow → move backward one word
+bindkey '^[[1;5D' backward-word
+
+# Ctrl + Right Arrow → move forward one word
+bindkey '^[[1;5C' forward-word
+
 # Add a newline between commands
 # https://github.com/starship/starship/issues/560
 precmd() { precmd() { echo "" } }
