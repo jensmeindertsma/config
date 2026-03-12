@@ -4,5 +4,5 @@ help:
     just --list
 
 link system:   
-    stow --dir systems/{{system}} --target ~ home
+    stow --dir systems --target ~ {{system}}
     @echo "✅ Linked 'systems/{{system}}/home'"

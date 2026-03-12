@@ -1,0 +1,85 @@
+# ------------------------------------------------
+# Background
+# ------------------------------------------------
+
+Window.SetBackgroundTopColor(0,0,0);
+Window.SetBackgroundBottomColor(0,0,0);
+
+screen_width = Window.GetWidth();
+screen_height = Window.GetHeight();
+
+# ------------------------------------------------
+# Logo
+# ------------------------------------------------
+
+logo.image = Image("logo.png");
+
+target_width = screen_width / 4;
+scale = target_width / logo.image.GetWidth();
+target_height = logo.image.GetHeight() * scale;
+
+logo.scaled = logo.image.Scale(target_width, target_height);
+logo.sprite = Sprite(logo.scaled);
+
+logo.x = (screen_width - target_width) / 2;
+logo.y = screen_height / 6;
+
+logo.sprite.SetPosition(logo.x, logo.y, 100);
+logo.sprite.SetOpacity(1);
+
+# ------------------------------------------------
+# Entry Box
+# ------------------------------------------------
+
+entry.image = Image("entry.png");
+entry.sprite = Sprite(entry.image);
+
+entry.x = (screen_width / 2) - (entry.image.GetWidth() / 2);
+entry.y = screen_height - (entry.image.GetHeight() * 4);
+entry.sprite.SetPosition(entry.x, entry.y, 1000);
+entry.sprite.SetOpacity(0);
+
+bullet.image = Image("bullet.png");
+bullet.sprites = [];
+
+# ------------------------------------------------
+# Hooks
+# ------------------------------------------------
+
+fun display_password_callback(prompt, bullets)
+{
+    for (i = 0; bullet.sprites[i]; i++)
+        bullet.sprites[i].SetOpacity(0);
+
+    entry.sprite.SetOpacity(1);
+
+    max_bullets = 19;
+    bullets_to_show = bullets;
+    if (bullets_to_show > max_bullets)
+      bullets_to_show = max_bullets;
+    
+    for (index = 0; index < bullets_to_show; index++)
+    {
+        if (!bullet.sprites[index])
+        {
+            scaled_bullet = bullet.image.Scale(8, 8);
+            bullet.sprites[index] = Sprite(scaled_bullet);
+            bullet.x = entry.x + 20 + index * (8 + 5);
+            bullet.y = entry.y + entry.image.GetHeight() / 2 - (8 / 2);
+            bullet.sprites[index].SetPosition(bullet.x, bullet.y, 10002);
+        }
+
+        bullet.sprites[index].SetOpacity(1);
+    }
+}
+
+fun display_normal_callback()
+{
+    entry.sprite.SetOpacity(0);
+
+    for (index = 0; bullet.sprites[index]; index++)
+      bullet.sprites[index].SetOpacity(0);
+}
+
+Plymouth.SetDisplayPasswordFunction(display_password_callback);
+Plymouth.SetDisplayNormalFunction(display_normal_callback);
