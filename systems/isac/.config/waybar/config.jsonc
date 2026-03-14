@@ -4,17 +4,29 @@
   "modules-left": ["hyprland/workspaces"],
   "modules-center": ["clock"],
   "modules-right": [
-    "pulseaudio#input",
-    "pulseaudio#output",
     "custom/network",
-    "battery"
+    "custom/audio",
+    "custom/calendar",
+    "custom/system"
   ],
 
   "hyprland/workspaces": {
     "tooltip": false,
     "format": "{icon}",
     "format-icons": {
-      "active": ""
+      "active": ""
+    },
+    "persistent-workspaces": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": [],
+      "5": [],
+      "6": [],
+      "7": [],
+      "8": [],
+      "9": [],
+      "10": []
     }
   },
 
@@ -25,36 +37,26 @@
   },
 
   "custom/network": {
-    "interval": 2,
-    "exec": "bash ~/.config/waybar/modules/network.sh",
-    "return-type": "json",
-    "format": "󰈁 {alt}"
-  },
-
-  "pulseaudio#input": {
-    "format": "{format_source}",
-    "format-source": " {volume}%",
-    "format-source-muted": " mut",
-    "max-volume": 100,
     "tooltip": false,
-    "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 1%- -l 1.0",
-    "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 1%+ -l 1.0"
+    "format": "",
+    "on-click": "notify-send network"
   },
 
-  "pulseaudio#output": {
-    "format": "󰓃 {volume}%",
-    "format-muted": "󰓃 mut",
-    "max-volume": 100,
-    "tooltip": false
-  },
-
-  "battery": {
-    "interval": 5,
+  "custom/audio": {
     "tooltip": false,
-    "format": "fallback",
-    "format-charging": "󰂄 {capacity}%",
-    "format-discharging": "󰁾 {capacity}%",
-    "format-full": "󰁹 {capacity}%",
-    "format-plugged": " {capacity}%"
+    "format": "",
+    "on-click": "notify-send audio"
+  },
+
+  "custom/calendar": {
+    "tooltip": false,
+    "format": "",
+    "on-click": "notify-send calendar"
+  },
+
+  "custom/system": {
+    "tooltip": false,
+    "format": "",
+    "on-click": "shd-launch-or-focus-tui btop"
   }
 }

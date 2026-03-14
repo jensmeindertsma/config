@@ -16,8 +16,9 @@
   "workbench.secondarySideBar.defaultVisibility": "hidden",
   "workbench.startupEditor": "none",
   "[markdown]": {
-    "editor.wordWrap": "off"
+    "editor.wordWrap": "off",
   },
   "editor.formatOnSave": true,
-  "editor.codeLens": false
+  "editor.codeLens": false,
+  "workbench.preferredLightColorTheme": "Solarized Light",
 }

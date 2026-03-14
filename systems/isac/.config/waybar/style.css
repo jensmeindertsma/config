@@ -1,4 +1,9 @@
+@import url("./theme.css");
+
 * {
+  font-family: Iosevka Nerd Font Mono;
+  font-size: 14px;
+
   padding: 0;
   margin: 0;
   min-height: 0;
@@ -17,41 +22,37 @@ button:hover {
 }
 
 window#waybar {
-  background-color: #181824;
-  font-family: Iosevka Nerd Font Mono;
-  font-size: 14px;
   font-weight: bold;
 }
 
 #workspaces {
-  margin-left: 7px;
-  font-weight: bolder;
+  margin-left: 6px;
 }
 
 #workspaces button {
-  margin-right: 5px;
-  padding: 0px 4px;
+  padding: 0 6px;
 }
 
-/*#workspaces button.active {
-  background-color: #1C6E8C;
-}*/
-
-#workspaces button.empty {
-  opacity: 0.5;
+/*
+#workspaces button.active {
+  color: #ff6d0f;
 }
+*/
 
 #clock {
-  padding: 4px;
-  font-size: 14px;
+  padding: 5px;
 }
 
 #custom-network,
-#pulseaudio.input,
-#pulseaudio.output {
-  margin-right: 20px;
+#custom-audio,
+#custom-calendar,
+#custom-system {
+  padding: 0 12px;
+  margin-left: 4px;
 }
 
-#battery {
-  margin-right: 10px;
+#custom-system {
+  padding-left: 10px;
+  padding-right: 14px;
+  margin-right: 6px;
 }

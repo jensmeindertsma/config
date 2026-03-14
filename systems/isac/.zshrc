@@ -15,7 +15,7 @@ SAVEHIST=10000
 
 zinit light zsh-users/zsh-autosuggestions
 
-export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.local/share/shd/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 
 alias cat=bat
