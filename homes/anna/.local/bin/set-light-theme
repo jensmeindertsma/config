@@ -1,0 +1,6 @@
+#!/bin/bash
+
+ln -sf "$HOME/.config/hypr/light.lua" "$HOME/.config/hypr/theme.lua" 
+hyprctl reload
+
+gsettings set org.gnome.desktop.interface color-scheme prefer-light
