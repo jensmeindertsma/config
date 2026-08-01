@@ -1,0 +1,18 @@
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+format = '''
+[](bold red) $directory [\[ $git_branch - $git_status \]](bold white)
+[>](bold white) '''
+
+[directory]
+format = '[$path]($style)'
+style = "bold white"
+
+[git_branch]
+format = "[$symbol $branch(:$remote_branch)]($style)"
+symbol = ""
+style = "bold red"
+
+[git_status]
+format = '([\[$all_status$ahead_behind\]]($style))'
