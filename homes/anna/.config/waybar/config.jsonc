@@ -1,25 +1,8 @@
 {
   "position": "bottom",
-  "modules-left": [
-    "hyprland/workspaces",
-    "custom/separator",
-    "custom/network",
-    "custom/separator",
-    "custom/date",
-  ],
+  "modules-left": ["hyprland/workspaces", "custom/network", "custom/date"],
   "modules-center": [],
-  "modules-right": [
-    "pulseaudio#output",
-    "custom/separator",
-    "pulseaudio#input",
-    "custom/separator",
-    "custom/time",
-  ],
-
-  "custom/separator": {
-    "format": "",
-    "tooltip": false,
-  },
+  "modules-right": ["pulseaudio#output", "pulseaudio#input", "custom/time"],
 
   "hyprland/workspaces": {
     "tooltip": false,
