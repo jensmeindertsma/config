@@ -56,7 +56,7 @@ hl.bind(mainMod .. " + SHIFT + Q", hl.dsp.window.close())
 -- SESSION BINDS --
 
 hl.bind(mainMod .. " + SHIFT + L", hl.dsp.exec_cmd("hyprlock"))
-hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd("systemctl suspend"), {locked = true })
+hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd("systemctl suspend"), { locked = true })
 
 hl.bind(
 	mainMod .. " + SHIFT + M",
