@@ -1,0 +1,59 @@
+{
+  "position": "bottom",
+  "modules-left": ["hyprland/workspaces", "custom/network", "custom/date"],
+  "modules-center": [],
+  "modules-right": ["pulseaudio#output", "pulseaudio#input", "custom/time"],
+
+  "hyprland/workspaces": {
+    "tooltip": false,
+    "format": "{icon}",
+    "format-icons": {
+      "active": "",
+    },
+    "persistent-workspaces": {
+      "DP-1": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+    },
+  },
+
+  "custom/date": {
+    "tooltip": false,
+    "interval": 1,
+    "exec": "python3 ~/.config/waybar/date.py",
+    "format": "<span foreground=\"#ff6a13\"></span> {}",
+  },
+
+  "custom/network": {
+    "tooltip": true,
+    "interval": 5,
+    "exec": "bash ~/.config/waybar/network.sh",
+    "return-type": "json",
+    "format": "<span foreground=\"#ff6a13\">󰒃</span> proton-nl ({text})",
+  },
+
+  "pulseaudio#output": {
+    "tooltip": false,
+    "format": "<span foreground=\"#ff6a13\">󰓃</span> {volume}%",
+    "format-muted": "<span foreground=\"#ff6a13\">󰓃</span> {volume}% (muted)",
+    "on-click": "wpctl set-mute @DEFAULT_SINK@ toggle",
+    "on-scroll-up": "wpctl set-volume @DEFAULT_SINK@ 5%+ -l 1",
+    "on-scroll-down": "wpctl set-volume @DEFAULT_SINK@ 5%-",
+  },
+
+  "pulseaudio#input": {
+    "tooltip": false,
+    "format": "{format_source}",
+    "format-source": "<span foreground=\"#ff6a13\"></span> {volume}%",
+    "format-source-muted": "<span foreground=\"#ff6a13\"></span> {volume}% (muted)",
+    "on-click": "wpctl set-mute @DEFAULT_SOURCE@ toggle",
+    "on-scroll-up": "wpctl set-volume @DEFAULT_SOURCE@ 5%+ -l 1",
+    "on-scroll-down": "wpctl set-volume @DEFAULT_SOURCE@ 5%-",
+  },
+
+  "custom/time": {
+    "tooltip": false,
+    "interval": 1,
+    "exec": "python3 ~/.config/waybar/time.py",
+    "return-type": "json",
+    "format": "<span foreground=\"#ff6a13\">󰥔</span> {text}",
+  },
+}
