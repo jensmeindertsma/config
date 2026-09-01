@@ -1,0 +1,58 @@
+{
+  "[lua]": {
+    "editor.defaultFormatter": "JohnnyMorganz.stylua"
+  },
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter"
+  },
+  "[shellscript]": {
+    "editor.defaultFormatter": "mkhl.shfmt"
+  },
+  "[toml]": {
+    "editor.defaultFormatter": "tamasfe.even-better-toml"
+  },
+  "[xml]": {
+    "editor.defaultFormatter": "redhat.vscode-xml",
+    "editor.tabSize": 2,
+    "files.insertFinalNewline": true
+  },
+  "breadcrumbs.enabled": false,
+  "chat.agent.enabled": false,
+  "chat.agent.thinking.terminalTools": false,
+  "chat.disableAIFeatures": true,
+  "editor.codeLens": false,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.fontFamily": "JetBrainsMono Nerd Font Mono",
+  "editor.fontSize": 16,
+  "editor.formatOnSave": true,
+  "editor.inlayHints.enabled": "offUnlessPressed",
+  "editor.minimap.enabled": false,
+  "editor.stickyScroll.enabled": false,
+  "git.confirmSync": false,
+  "github.copilot.enable": {
+    "*": true
+  },
+  "json.schemas": [
+    {
+      "fileMatch": ["*"],
+      "schema": {
+        "allowTrailingCommas": true
+      }
+    }
+  ],
+  "terminal.integrated.enablePersistentSessions": false,
+  "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font Mono",
+  "terminal.integrated.fontLigatures.enabled": true,
+  "terminal.integrated.fontSize": 17,
+  "terminal.integrated.persistentSessionReviveProcess": "never",
+  "terminal.integrated.sendKeybindingsToShell": true,
+  "terminal.integrated.shellIntegration.decorationsEnabled": "never",
+  "terminal.integrated.stickyScroll.enabled": false,
+  "window.autoDetectColorScheme": true,
+  "window.commandCenter": false,
+  "workbench.colorTheme": "Gruvbox Dark Hard",
+  "workbench.preferredDarkColorTheme": "Gruvbox Dark Hard",
+  "workbench.preferredLightColorTheme": "GitHub Light",
+  "workbench.startupEditor": "none",
+  "editor.tabSize": 2
+}
