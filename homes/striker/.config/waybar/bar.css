@@ -35,11 +35,19 @@ window#waybar {
 #workspaces button {
   padding-left: 3px;
   padding-right: 3px;
-  color: white;
+  color: @text;
 }
 
 #workspaces button.active {
   color: #ff0000;
+}
+
+#battery,
+#custom-date,
+#pulseaudio.input,
+#pulseaudio.output,
+#custom-time {
+  color: @text;
 }
 
 #battery,

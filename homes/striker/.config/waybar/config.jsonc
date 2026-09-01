@@ -3,7 +3,7 @@
   "modules-left": ["hyprland/workspaces", "battery"],
   "modules-center": ["custom/date"],
   "modules-right": [
-    "network",
+    //"network",
     "pulseaudio#output",
     "pulseaudio#input",
     "custom/time",
@@ -61,6 +61,6 @@
     "interval": 1,
     "exec": "python3 ~/.config/waybar/time.py",
     "return-type": "json",
-    "format": "{text}",
+    "format": "<span foreground=\"#ff0000\">󰥔</span> {text}",
   },
 }

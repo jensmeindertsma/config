@@ -1,14 +1,26 @@
+require("theme")
+
 ------------------
 ---- MONITORS ----
 ------------------
 
 -- See https://wiki.hypr.land/Configuring/Basics/Monitors/
 hl.monitor({
-    output   = "eDP-1",
-    mode     = "2560x1600@60",
-    position = "0x0",
-    scale    = "2",
+	output = "eDP-1",
+	mode = "2560x1600@60",
+	position = "0x0",
+	scale = "2",
 })
+
+-------------------
+---- AUTOSTART ----
+-------------------
+
+-- See https://wiki.hypr.land/Configuring/Basics/Autostart/
+
+hl.on("hyprland.start", function()
+	hl.exec_cmd("awww-daemon")
+end)
 
 -----------------------
 ---- LOOK AND FEEL ----
@@ -16,61 +28,56 @@ hl.monitor({
 
 -- Refer to https://wiki.hypr.land/Configuring/Basics/Variables/
 hl.config({
-    general = {
-        gaps_in     = 5,
-        gaps_out    = 10,
+	general = {
+		gaps_in = 5,
+		gaps_out = 10,
 
-        border_size = 4,
+		border_size = 4,
+	},
 
-        col         = {
-            active_border   = "rgba(ffffffff)",
-            inactive_border = "rgba(ffffffff)",
-        },
-    },
+	decoration = {
+		rounding = 0,
 
-    decoration = {
-        rounding = 0,
+		shadow = {
+			enabled = false,
+		},
 
-        shadow = {
-            enabled = false,
-        },
+		blur = {
+			enabled = false,
+		},
+	},
 
-        blur = {
-            enabled = false,
-        },
-    },
-
-    animations = {
-        enabled = false,
-    },
+	animations = {
+		enabled = false,
+	},
 })
 
 -- See https://wiki.hypr.land/Configuring/Layouts/Dwindle-Layout/ for more
 hl.config({
-    dwindle = {
-        preserve_split = true,
-    },
+	dwindle = {
+		preserve_split = true,
+	},
 })
 
 hl.config({
-    misc = {
-        force_default_wallpaper = -1,    -- Set to 0 or 1 to disable the anime mascot wallpapers
-        disable_hyprland_logo   = false, -- If true disables the random hyprland logo / anime girl background. :(
-    },
+	misc = {
+		force_default_wallpaper = 1, -- Set to 0 or 1 to disable the anime mascot wallpapers
+		disable_hyprland_logo = true, -- If true disables the random hyprland logo / anime girl background. :(
+	},
 })
 
 hl.config({
-    input = {
-        touchpad = {
-            natural_scroll = true,
-        },
-    },
+	input = {
+		touchpad = {
+			natural_scroll = true,
+		},
+	},
 })
 
 hl.gesture({
-    fingers = 3,
-    direction = "horizontal",
-    action = "workspace"
+	fingers = 3,
+	direction = "horizontal",
+	action = "workspace",
 })
 
 ---------------------
@@ -84,17 +91,19 @@ hl.bind(mainMod .. " + RETURN", hl.dsp.exec_cmd("kitty"))
 hl.bind(mainMod .. " + D", hl.dsp.exec_cmd("fuzzel"))
 
 hl.bind(mainMod .. " + SHIFT + Q", hl.dsp.window.close())
-hl.bind(mainMod .. " + SHIFT + M",
-    hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"),
-    { locked = true })
+hl.bind(
+	mainMod .. " + SHIFT + M",
+	hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"),
+	{ locked = true }
+)
 
+hl.bind(mainMod .. " + Y", hl.dsp.exec_cmd("toggle-theme"))
 
 hl.bind(mainMod .. " + SHIFT + L", hl.dsp.exec_cmd("hyprlock"))
 hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd("systemctl suspend"), { locked = true })
 
 hl.bind(mainMod .. " + SHIFT + H", hl.dsp.exec_cmd("systemctl hibernate"), { locked = true })
 hl.bind(mainMod .. " + SHIFT + B", hl.dsp.exec_cmd("systemctl poweroff"), { locked = true })
-
 
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 
@@ -110,9 +119,9 @@ hl.bind(mainMod .. " + down", hl.dsp.focus({ direction = "down" }))
 -- Switch workspaces with mainMod + [0-9]
 -- Move active window to a workspace with mainMod + SHIFT + [0-9]
 for i = 1, 10 do
-    local key = i % 10 -- 10 maps to key 0
-    hl.bind(mainMod .. " + " .. key, hl.dsp.focus({ workspace = i }))
-    hl.bind(mainMod .. " + SHIFT + " .. key, hl.dsp.window.move({ workspace = i }))
+	local key = i % 10 -- 10 maps to key 0
+	hl.bind(mainMod .. " + " .. key, hl.dsp.focus({ workspace = i }))
+	hl.bind(mainMod .. " + SHIFT + " .. key, hl.dsp.window.move({ workspace = i }))
 end
 
 -- Example special workspace (scratchpad)
@@ -128,14 +137,26 @@ hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(), { mouse = true })
 hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
 
 -- Laptop multimedia keys for volume and LCD brightness
-hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"),
-    { locked = true, repeating = true })
-hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"),
-    { locked = true, repeating = true })
-hl.bind("XF86AudioMute", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"),
-    { locked = true, repeating = true })
-hl.bind("XF86AudioMicMute", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"),
-    { locked = true, repeating = true })
+hl.bind(
+	"XF86AudioRaiseVolume",
+	hl.dsp.exec_cmd("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"),
+	{ locked = true, repeating = true }
+)
+hl.bind(
+	"XF86AudioLowerVolume",
+	hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"),
+	{ locked = true, repeating = true }
+)
+hl.bind(
+	"XF86AudioMute",
+	hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"),
+	{ locked = true, repeating = true }
+)
+hl.bind(
+	"XF86AudioMicMute",
+	hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"),
+	{ locked = true, repeating = true }
+)
 hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%+"), { locked = true, repeating = true })
 hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%-"), { locked = true, repeating = true })
 
@@ -153,24 +174,24 @@ hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"), { locked = true 
 -- and https://wiki.hypr.land/Configuring/Basics/Workspace-Rules/
 
 hl.window_rule({
-    -- Ignore maximize requests from all apps. You'll probably like this.
-    name           = "suppress-maximize-events",
-    match          = { class = ".*" },
+	-- Ignore maximize requests from all apps. You'll probably like this.
+	name = "suppress-maximize-events",
+	match = { class = ".*" },
 
-    suppress_event = "maximize",
+	suppress_event = "maximize",
 })
 
 hl.window_rule({
-    -- Fix some dragging issues with XWayland
-    name     = "fix-xwayland-drags",
-    match    = {
-        class      = "^$",
-        title      = "^$",
-        xwayland   = true,
-        float      = true,
-        fullscreen = false,
-        pin        = false,
-    },
+	-- Fix some dragging issues with XWayland
+	name = "fix-xwayland-drags",
+	match = {
+		class = "^$",
+		title = "^$",
+		xwayland = true,
+		float = true,
+		fullscreen = false,
+		pin = false,
+	},
 
-    no_focus = true,
+	no_focus = true,
 })

@@ -1,3 +1,4 @@
 @import "bar.css";
 
 @define-color bar #333333;
+@define-color text #ffffff;
