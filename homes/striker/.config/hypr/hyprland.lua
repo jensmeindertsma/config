@@ -97,7 +97,8 @@ hl.bind(
 	{ locked = true }
 )
 
-hl.bind(mainMod .. " + Y", hl.dsp.exec_cmd("toggle-theme"))
+--- WHY IS THIS ONE NOT WORKING???
+hl.bind(mainMod .. " + SHIFT + Y", hl.dsp.exec_cmd("toggle-theme"))
 
 hl.bind(mainMod .. " + SHIFT + L", hl.dsp.exec_cmd("hyprlock"))
 hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd("systemctl suspend"), { locked = true })

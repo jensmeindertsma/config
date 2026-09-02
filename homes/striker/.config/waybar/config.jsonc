@@ -23,9 +23,14 @@
   "battery": {
     "tooltip": false,
     "interval": 60,
+    "states": {
+      "full": 100,
+      "empty": 95,
+    },
     "format": "<span foreground=\"#ff0000\">{icon}</span> {capacity}%",
     "format-icons": {
-      "default": "󰁾",
+      "empty": "󰁾",
+      "full": "󰁹",
       "charging": "󰂄",
     },
   },
