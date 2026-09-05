@@ -1,4 +1,10 @@
 {
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "[lua]": {
     "editor.defaultFormatter": "JohnnyMorganz.stylua"
   },
@@ -28,6 +34,7 @@
   "editor.inlayHints.enabled": "offUnlessPressed",
   "editor.minimap.enabled": false,
   "editor.stickyScroll.enabled": false,
+  "editor.tabSize": 2,
   "git.confirmSync": false,
   "github.copilot.enable": {
     "*": true
@@ -53,6 +60,5 @@
   "workbench.colorTheme": "Gruvbox Dark Hard",
   "workbench.preferredDarkColorTheme": "Gruvbox Dark Hard",
   "workbench.preferredLightColorTheme": "GitHub Light",
-  "workbench.startupEditor": "none",
-  "editor.tabSize": 2
+  "workbench.startupEditor": "none"
 }
