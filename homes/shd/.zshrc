@@ -11,6 +11,14 @@ zinit light-mode for \
 
 zinit light zsh-users/zsh-autosuggestions
 
-# eval "$(keychain add --noask --quiet --eval ~/.ssh/shd)"
+HISTFILE="${ZDOTDIR:-$HOME}/.zsh_history"
+HISTSIZE=5000
+SAVEHIST=5000
+unsetopt share_history
+unsetopt inc_append_history_time
+setopt inc_append_history
+setopt hist_ignore_dups
+setopt hist_save_no_dups
+setopt hist_ignore_space
 
 eval "$(starship init zsh)"
