@@ -114,4 +114,4 @@ tooltip="${ip}
 ${city}, ${country}
 ${org}"
 
-json "up" "up" "$tooltip"
+json "up" "up"
