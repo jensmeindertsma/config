@@ -4,10 +4,10 @@ ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 source "${ZINIT_HOME}/zinit.zsh"
 
 zinit light-mode for \
-    zdharma-continuum/zinit-annex-as-monitor \
-    zdharma-continuum/zinit-annex-bin-gem-node \
-    zdharma-continuum/zinit-annex-patch-dl \
-    zdharma-continuum/zinit-annex-rust
+	zdharma-continuum/zinit-annex-as-monitor \
+	zdharma-continuum/zinit-annex-bin-gem-node \
+	zdharma-continuum/zinit-annex-patch-dl \
+	zdharma-continuum/zinit-annex-rust
 
 zinit light zsh-users/zsh-autosuggestions
 
@@ -20,5 +20,7 @@ setopt inc_append_history
 setopt hist_ignore_dups
 setopt hist_save_no_dups
 setopt hist_ignore_space
+
+precmd() { precmd() { echo ""; }; }
 
 eval "$(starship init zsh)"

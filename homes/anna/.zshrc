@@ -29,10 +29,6 @@ bindkey '^[[1;3C' end-of-line
 bindkey '^[[1;5D' backward-word
 bindkey '^[[1;5C' forward-word
 
-export PATH=$HOME/.cargo/bin:$PATH
-
-alias vim="nvim"
-
 precmd() { precmd() { echo ""; }; }
 
 eval "$(starship init zsh)"
