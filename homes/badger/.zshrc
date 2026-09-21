@@ -11,8 +11,10 @@ zinit light-mode for \
 
 zinit light zsh-users/zsh-autosuggestions
 
+alias mit="license-generator mit --author 'Jens Meindertsma' --output LICENSE.md"
+
+precmd() { precmd() { echo ""; }; }
+
 eval "$(fnm env --use-on-cd --log-level quiet --shell zsh)"
 
 eval "$(starship init zsh)"
-
-alias mit="license-generator mit --author 'Jens Meindertsma' --output LICENSE.md"
