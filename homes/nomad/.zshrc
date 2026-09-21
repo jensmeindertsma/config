@@ -21,6 +21,6 @@ setopt hist_ignore_dups
 setopt hist_save_no_dups
 setopt hist_ignore_space
 
-# precmd() { precmd() { echo ""; }; }
+precmd() { precmd() { echo ""; }; }
 
 eval "$(starship init zsh)"
