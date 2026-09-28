@@ -21,16 +21,6 @@ setopt hist_ignore_dups
 setopt hist_save_no_dups
 setopt hist_ignore_space
 
-# Alt + Left/Right
-bindkey '^[[1;3D' beginning-of-line
-bindkey '^[[1;3C' end-of-line
-
-# Ctrl + Left/Right
-bindkey '^[[1;5D' backward-word
-bindkey '^[[1;5C' forward-word
-
-export PATH=$HOME/.cargo/bin:$PATH
-
 precmd() { precmd() { echo ""; }; }
 
 eval "$(starship init zsh)"
