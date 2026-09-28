@@ -10,7 +10,7 @@
     ],
 
     "modules-center": [
-        "clock"
+        "custom/clock"
     ],
 
     "modules-right": [
@@ -38,16 +38,18 @@
         "format-charging": "bat {capacity}% (charging)"
     },
 
-    "clock": {
+    "custom/clock": {
         "tooltip": false,
-        "format": "{:%H:%M}"
+        "exec": "python3 ~/.config/waybar/clock.py",
+        "return-type": "json"
     },
 
     "network": {
         "format": "net ({ifname})",
-        "format-ethernet": "net (eth)",
-        "format-wifi": "net (wlan {essid})",
-        "format-linked": "net (no-ip)"
+        "format-wifi": "net (up)",
+        "format-linked": "net (no-ip)",
+        "format-disconnected": "net (down)",
+        "format-disabled": "net (disabled)"
     },
 
     "pulseaudio#output": {
