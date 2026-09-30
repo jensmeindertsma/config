@@ -33,4 +33,6 @@ export PATH=$HOME/.cargo/bin:$PATH
 
 precmd() { precmd() { echo ""; }; }
 
+alias vim="nvim"
+
 eval "$(starship init zsh)"
