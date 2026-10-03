@@ -1,0 +1,72 @@
+{
+    "position": "bottom", 
+    "height": 30, 
+    "spacing": 16,
+
+    "modules-left": [
+        "hyprland/workspaces",
+        "custom/separator",
+        "battery"
+    ],
+
+    "modules-center": [
+        "custom/clock"
+    ],
+
+    "modules-right": [
+        "network",
+        "custom/separator",
+        "pulseaudio#output",
+        "custom/separator",
+        "pulseaudio#input"
+    ],
+
+    "hyprland/workspaces": {
+        "tooltip": false,
+        "format": "{icon}",
+        "format-icons": {
+            "active": ""
+        },
+        "persistent-workspaces": {
+            "eDP-1": [1, 2, 3, 4, 5, 6, 7, 8, 9]
+        }
+    },
+
+    "battery": {
+        "tooltip": false,
+        "format": "bat {capacity}%",
+        "format-charging": "bat {capacity}% (charging)"
+    },
+
+    "custom/clock": {
+        "tooltip": false,
+	"interval": 5,
+        "exec": "python3 ~/.config/waybar/clock.py",
+        "return-type": "json"
+    },
+
+    "network": {
+        "format": "net ({ifname})",
+        "format-wifi": "net (up)",
+        "format-linked": "net (no-ip)",
+        "format-disconnected": "net (down)",
+        "format-disabled": "net (disabled)"
+    },
+
+    "pulseaudio#output": {
+        "tooltip": false,
+        "format": "audio {volume}% {icon}",
+        "format-muted": "audio {volume}% (mut)"
+    },
+
+    "pulseaudio#input": {
+        "tooltip": false,
+        "format": "mic {format_source}",
+        "format-source": "{volume}%",
+        "format-source-muted": "{volume}% (mut)"
+    },
+
+    "custom/separator": {
+        "format": ""
+    }
+}

@@ -1,1 +1,1 @@
-eval "$(keychain add --noask --quiet --eval ~/.ssh/nomad)"
+eval "$(/opt/homebrew/bin/brew shellenv)"

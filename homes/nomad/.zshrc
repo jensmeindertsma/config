@@ -4,23 +4,17 @@ ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 source "${ZINIT_HOME}/zinit.zsh"
 
 zinit light-mode for \
-	zdharma-continuum/zinit-annex-as-monitor \
-	zdharma-continuum/zinit-annex-bin-gem-node \
-	zdharma-continuum/zinit-annex-patch-dl \
-	zdharma-continuum/zinit-annex-rust
+    zdharma-continuum/zinit-annex-as-monitor \
+    zdharma-continuum/zinit-annex-bin-gem-node \
+    zdharma-continuum/zinit-annex-patch-dl \
+    zdharma-continuum/zinit-annex-rust
 
 zinit light zsh-users/zsh-autosuggestions
 
-HISTFILE="${ZDOTDIR:-$HOME}/.zsh_history"
-HISTSIZE=5000
-SAVEHIST=5000
-unsetopt share_history
-unsetopt inc_append_history_time
-setopt inc_append_history
-setopt hist_ignore_dups
-setopt hist_save_no_dups
-setopt hist_ignore_space
+alias mit="license-generator mit --author 'Jens Meindertsma' --output LICENSE.md"
 
 precmd() { precmd() { echo ""; }; }
+
+eval "$(fnm env --use-on-cd --log-level quiet --shell zsh)"
 
 eval "$(starship init zsh)"
