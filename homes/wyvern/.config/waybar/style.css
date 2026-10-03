@@ -30,7 +30,7 @@ window#waybar {
 }
 
 #workspaces button.active {
-  color: #ff6a13;
+  color: #56A3CF;
 }
 
 #battery {
@@ -38,7 +38,7 @@ window#waybar {
 }
 
 #custom-separator {
-  color: #ff6a13;
+  color: #56A3CF;
   font-weight: 900;
 }
 
