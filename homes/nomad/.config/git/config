@@ -27,3 +27,6 @@
 
 [alias]
     setup = "!git commit --allow-empty -m 'Initialize repository' && git push"
+
+[includeIf "gitdir:~/development/windesheim/"]
+    path = ~/development/windesheim/.gitconfig
