@@ -4,10 +4,10 @@ ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 source "${ZINIT_HOME}/zinit.zsh"
 
 zinit light-mode for \
-	zdharma-continuum/zinit-annex-as-monitor \
-	zdharma-continuum/zinit-annex-bin-gem-node \
-	zdharma-continuum/zinit-annex-patch-dl \
-	zdharma-continuum/zinit-annex-rust
+    zdharma-continuum/zinit-annex-as-monitor \
+    zdharma-continuum/zinit-annex-bin-gem-node \
+    zdharma-continuum/zinit-annex-patch-dl \
+    zdharma-continuum/zinit-annex-rust
 
 zinit light zsh-users/zsh-autosuggestions
 
@@ -31,8 +31,12 @@ bindkey '^[[1;5C' forward-word
 
 export PATH=$HOME/.cargo/bin:$PATH
 
-precmd() { precmd() { echo ""; }; }
+export PATH=$HOME/.local/bin:$PATH
 
-alias vim="nvim"
+eval "$(fnm env --use-on-cd --log-level quiet --shell zsh)"
 
 eval "$(starship init zsh)"
+
+alias mit="license-generator mit --author 'Jens Meindertsma' --output LICENSE.md"
+
+alias vim=nvim
