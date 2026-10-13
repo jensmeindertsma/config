@@ -1,43 +1,56 @@
 {
     "position": "bottom", 
-    "height": 30, 
-    "spacing": 0,
-
     "modules-left": [
-        "hyprland/workspaces"
+	"custom/date",
+	"custom/network"
     ],
 
     "modules-center": [
-        "custom/clock"
     ],
 
     "modules-right": [
+	"hyprland/workspaces",
         "pulseaudio#output",
-        "pulseaudio#input"
-    ],
+        "pulseaudio#input",
+	"clock"
+    ],   
+
+    "custom/date": {
+        "tooltip": false,
+	"interval": 5,
+        "exec": "python3 ~/.config/waybar/date.py",
+        "return-type": "json",
+	"format": "  {}"
+    },
+
+    "custom/network": {
+	"tooltip": false,
+	"interval": 5,
+	"exec": "bash ~/.config/waybar/network.sh",
+	"return-type": "json",
+	"format": "{icon}  {text}",
+	"format-icons": {
+	    "down": "󰤮",
+	    "danger": "",
+	    "safe": "󰤪"
+	}
+    },
 
     "hyprland/workspaces": {
         "tooltip": false,
         "format": "{icon}",
         "format-icons": {
-            "active": ""
+            "active": ""
         },
         "persistent-workspaces": {
             "DP-1": [1, 2, 3, 4, 5, 6, 7, 8, 9]
         }
     },
-
-    "custom/clock": {
-        "tooltip": false,
-	"interval": 5,
-        "exec": "python3 ~/.config/waybar/clock.py",
-        "return-type": "json"
-    },
-
+ 
     "pulseaudio#output": {
         "tooltip": false,
-        "format": "audio {volume}% {icon}",
-        "format-muted": "audio {volume}% (mut)",
+        "format": "󰋋  {volume}%",
+        "format-muted": "󰟎  {volume}%",
 	"on-click": "wpctl set-mute @DEFAULT_SINK@ toggle",
 	"on-scroll-up": "wpctl set-volume @DEFAULT_SINK@ 5%+ --limit 1.0",
         "on-scroll-down": "wpctl set-volume @DEFAULT_SINK@ 5%-"
@@ -45,11 +58,17 @@
 
     "pulseaudio#input": {
         "tooltip": false,
-        "format": "mic {format_source}",
-        "format-source": "{volume}%",
-        "format-source-muted": "{volume}% (mut)",
+        "format": "{format_source}",
+        "format-source": "  {volume}%",
+        "format-source-muted": "   {volume}%",
 	"on-click": "wpctl set-mute @DEFAULT_SOURCE@ toggle",
 	"on-scroll-up": "wpctl set-volume @DEFAULT_SOURCE@ 5%+ --limit 1.0",
         "on-scroll-down": "wpctl set-volume @DEFAULT_SOURCE@ 5%-"
     },
+
+    "clock": {
+    	"tooltip": false,
+	"interval": 1,
+	"format": "  {:%H:%M:%S}"
+    }
 }
