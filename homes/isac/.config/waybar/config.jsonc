@@ -2,10 +2,11 @@
     "position": "bottom", 
     "modules-left": [
 	"custom/date",
-	"custom/network"
+	"custom/network",
     ],
 
     "modules-center": [
+	"mpris"
     ],
 
     "modules-right": [
@@ -34,6 +35,16 @@
 	    "danger": "",
 	    "safe": "󰤪"
 	}
+    },
+
+    "mpris": {
+        "tooltip": false,
+	"format": "󰝚  {title} - {artist}",
+	"format-paused": "󰝚  {title} - {artist} (pauzed)",
+	"on-click-middle": "",
+	"on-click-right": "",
+	"on-click-backward": "",
+	"on-click-forward": ""
     },
 
     "hyprland/workspaces": {
