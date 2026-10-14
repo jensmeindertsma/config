@@ -31,6 +31,8 @@ vim.opt.softtabstop = 4 -- Tab and Backspace use 4 spaces
 vim.opt.autoindent = true -- Copy indentation from the previous line
 vim.opt.smartindent = true -- Basic automatic indentation for code
 
+vim.opt.showmode = false
+
 -- Load plugin manager
 require("lazy").setup({
 	spec = {
