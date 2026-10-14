@@ -1,117 +1,36 @@
 #!/usr/bin/env bash
-set -euo pipefail
 
-WG_IF="proton-nl"
-MAX_HANDSHAKE=180
+IFACE="proton-nl"
+IPV4_TEST="1.1.1.1"
+IPV6_TEST="2606:4700:4700::1111"
 
-json() {
-	local text="$1"
-	local class="$2"
-	local tooltip="${3:-}"
+# Test IPv4 and IPv6 connectivity
+ping -4 -c 1 -W 2 "$IPV4_TEST" >/dev/null 2>&1
+CONNECTIVITY_IPV4=$?
 
-	tooltip=${tooltip//\\/\\\\}
-	tooltip=${tooltip//\"/\\\"}
-	tooltip=${tooltip//$'\n'/\\n}
+ping -6 -c 1 -W 2 "$IPV6_TEST" >/dev/null 2>&1
+CONNECTIVITY_IPV6=$?
 
-	printf '{"text":"%s","class":"%s","tooltip":"%s"}\n' \
-		"$text" "$class" "$tooltip"
-}
+# Get the actual interfaces used by each route
+ROUTE_IPV4=$(ip -4 route get "$IPV4_TEST" 2>/dev/null | awk '{for (i=1; i<=NF; i++) if ($i=="dev") {print $(i+1); exit}}')
+ROUTE_IPV6=$(ip -6 route get "$IPV6_TEST" 2>/dev/null | awk '{for (i=1; i<=NF; i++) if ($i=="dev") {print $(i+1); exit}}')
 
-down() {
-	json "down" "down"
-	exit 0
-}
+# Both fail: down
+if (( CONNECTIVITY_IPV4 != 0 && CONNECTIVITY_IPV6 != 0 )); then
+    echo "{\"text\":\"disconnected\",\"alt\":\"down\"}"
 
-leak() {
-	json "leaking" "leaking"
-	exit 0
-}
+# At least one succeeds: verify both routes use the VPN
+elif [[ "$ROUTE_IPV4" == "$IFACE" && "$ROUTE_IPV6" == "$IFACE" ]]; then
+    echo "{\"text\":\"$IFACE\",\"alt\":\"safe\"}"
 
-############################################################
-# Interface
-############################################################
-
-ip link show "$WG_IF" >/dev/null 2>&1 || down
-
-state=$(<"/sys/class/net/$WG_IF/operstate")
-
-[[ "$state" == "up" || "$state" == "unknown" ]] || down
-
-############################################################
-# Handshake
-############################################################
-
-hs=$(sudo wg show "$WG_IF" latest-handshakes | awk '{print $2}')
-
-[[ "$hs" != "0" ]] || down
-
-age=$(($(date +%s) - hs))
-
-((age <= MAX_HANDSHAKE)) || down
-
-############################################################
-# Allowed IPs
-############################################################
-
-allowed=$(sudo wg show "$WG_IF" allowed-ips)
-
-grep -q '0\.0\.0\.0/0' <<<"$allowed" || leak
-
-ipv6=false
-if grep -q '::/0' <<<"$allowed"; then
-	ipv6=true
+else
+    # At least one of the routes is not going through the VPN, figure out which one and what
+    # interface it is
+    if [[ "$ROUTE_IPV4" != "$IFACE" && -n "$ROUTE_IPV4" ]]; then
+        ACTUAL_IFACE="$ROUTE_IPV4"
+    else
+        ACTUAL_IFACE="$ROUTE_IPV6"
+    fi 
+    
+    echo "{\"text\":\"$ACTUAL_IFACE (danger)\",\"alt\":\"danger\"}"
 fi
-
-############################################################
-# IPv4 routing
-############################################################
-
-route=$(ip route get 1.1.1.1)
-
-dev=$(awk '
-{
-    for(i=1;i<=NF;i++)
-        if($i=="dev"){
-            print $(i+1)
-            exit
-        }
-}' <<<"$route")
-
-[[ "$dev" == "$WG_IF" ]] || leak
-
-############################################################
-# IPv6 routing
-############################################################
-
-if $ipv6 && ip -6 route get 2606:4700:4700::1111 >/dev/null 2>&1; then
-
-	route6=$(ip -6 route get 2606:4700:4700::1111)
-
-	dev6=$(awk '
-    {
-        for(i=1;i<=NF;i++)
-            if($i=="dev"){
-                print $(i+1)
-                exit
-            }
-    }' <<<"$route6")
-
-	[[ "$dev6" == "$WG_IF" ]] || leak
-fi
-
-############################################################
-# Public IP
-############################################################
-
-info=$(curl -fsS --max-time 5 https://ipinfo.io/json) || down
-
-ip=$(jq -r '.ip' <<<"$info")
-city=$(jq -r '.city' <<<"$info")
-country=$(jq -r '.country' <<<"$info")
-org=$(jq -r '.org' <<<"$info")
-
-tooltip="${ip}
-${city}, ${country}
-${org}"
-
-json "up" "up" "$tooltip"
