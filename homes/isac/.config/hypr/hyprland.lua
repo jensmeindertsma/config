@@ -78,6 +78,7 @@ hl.bind(mainMod .. " + D", hl.dsp.exec_cmd("fuzzel"))
 
 hl.bind(mainMod .. " + SHIFT + Q", hl.dsp.window.close())
 hl.bind(mainMod .. " + SHIFT + L", hl.dsp.exec_cmd("hyprlock"))
+hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd("systemctl suspend"), { locked = true })
 hl.bind(mainMod .. " + SHIFT + M", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"), { locked = true })
 hl.bind(mainMod .. " + SHIFT + B", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown -t 'Shutting down...' --post-cmd 'shutdown -P 0' || systemctl poweroff"), { locked = true })
 

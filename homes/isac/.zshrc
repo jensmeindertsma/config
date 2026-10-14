@@ -30,13 +30,15 @@ bindkey '^[[1;5D' backward-word
 bindkey '^[[1;5C' forward-word
 
 export PATH=$HOME/.cargo/bin:$PATH
-
 export PATH=$HOME/.local/bin:$PATH
+
+alias mit="license-generator mit --author 'Jens Meindertsma' --output LICENSE.md"
+alias vim=nvim
 
 eval "$(fnm env --use-on-cd --log-level quiet --shell zsh)"
 
+precmd() { precmd() { echo ""; }; }
+
 eval "$(starship init zsh)"
 
-alias mit="license-generator mit --author 'Jens Meindertsma' --output LICENSE.md"
 
-alias vim=nvim

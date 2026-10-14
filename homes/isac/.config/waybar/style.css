@@ -20,7 +20,7 @@ button:hover {
 }
 
 window#waybar {
-  color: white;
+    background-color: #333333;
 }
 
 #window,
