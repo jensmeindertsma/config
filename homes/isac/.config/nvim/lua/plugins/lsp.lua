@@ -6,7 +6,7 @@ return {
 			signs = true, -- Show icons in the gutter
 			underline = true, -- Underline problematic code
 			severity_sort = true,
-			update_in_insert = false,
+			update_in_insert = true,
 		})
 
 		vim.lsp.config("lua_ls", {
