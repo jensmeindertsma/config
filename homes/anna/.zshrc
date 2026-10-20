@@ -35,4 +35,6 @@ precmd() { precmd() { echo ""; }; }
 
 alias vim="nvim"
 
+eval "$(fnm env --use-on-cd --log-level quiet --shell zsh)"
+
 eval "$(starship init zsh)"
