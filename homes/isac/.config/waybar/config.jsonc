@@ -1,85 +1,86 @@
 {
-    "position": "bottom", 
-    "modules-left": [
-	"custom/date",
-	"custom/network",
-    ],
-
-    "modules-center": [
-	"mpris"
-    ],
-
-    "modules-right": [
-	"hyprland/workspaces",
-        "pulseaudio#output",
-        "pulseaudio#input",
-	"clock"
-    ],   
-
-    "custom/date": {
-        "tooltip": false,
-	"interval": 5,
-        "exec": "python3 ~/.config/waybar/date.py",
-        "return-type": "json",
-	"format": "  {}"
-    },
-
-    "custom/network": {
-	"tooltip": false,
-	"interval": 5,
-	"exec": "bash ~/.config/waybar/network.sh",
-	"return-type": "json",
-	"format": "{icon}  {text}",
-	"format-icons": {
-	    "down": "󰤮",
-	    "danger": "",
-	    "safe": "󰤪"
-	}
-    },
-
-    "mpris": {
-        "tooltip": false,
-	"format": "󰝚  {title} - {artist}",
-	"format-paused": "󰝚  {title} - {artist} (pauzed)",
-	"on-click-middle": "",
-	"on-click-right": "",
-	"on-click-backward": "",
-	"on-click-forward": ""
-    },
-
-    "hyprland/workspaces": {
-        "tooltip": false,
-        "format": "{icon}",
-        "format-icons": {
-            "active": ""
-        },
-        "persistent-workspaces": {
-            "DP-1": [1, 2, 3, 4, 5, 6, 7, 8, 9]
-        }
-    },
- 
-    "pulseaudio#output": {
-        "tooltip": false,
-        "format": "󰋋  {volume}%",
-        "format-muted": "󰟎  {volume}%",
-	"on-click": "wpctl set-mute @DEFAULT_SINK@ toggle",
-	"on-scroll-up": "wpctl set-volume @DEFAULT_SINK@ 5%+ --limit 1.0",
-        "on-scroll-down": "wpctl set-volume @DEFAULT_SINK@ 5%-"
-    },
-
-    "pulseaudio#input": {
-        "tooltip": false,
-        "format": "{format_source}",
-        "format-source": "  {volume}%",
-        "format-source-muted": "   {volume}%",
-	"on-click": "wpctl set-mute @DEFAULT_SOURCE@ toggle",
-	"on-scroll-up": "wpctl set-volume @DEFAULT_SOURCE@ 5%+ --limit 1.0",
-        "on-scroll-down": "wpctl set-volume @DEFAULT_SOURCE@ 5%-"
-    },
-
-    "clock": {
-    	"tooltip": false,
-	"interval": 1,
-	"format": "  {:%H:%M:%S}"
+  "position": "bottom",
+  "modules-left": [
+    "custom/date",
+    "custom/network"
+  ],
+  "modules-center": [
+    "mpris"
+  ],
+  "modules-right": [
+    "hyprland/workspaces",
+    "pulseaudio#output",
+    "pulseaudio#input",
+    "clock"
+  ],
+  "custom/date": {
+    "tooltip": false,
+    "interval": 5,
+    "exec": "python3 ~/.config/waybar/date.py",
+    "return-type": "json",
+    "format": "  {}"
+  },
+  "custom/network": {
+    "tooltip": false,
+    "interval": 5,
+    "exec": "bash ~/.config/waybar/network.sh",
+    "return-type": "json",
+    "format": "{icon}  {text}",
+    "format-icons": {
+      "down": "󰤮",
+      "danger": "",
+      "safe": "󰤪"
     }
+  },
+  "mpris": {
+    "tooltip": false,
+    "format": "󰝚  {title} - {artist}",
+    "format-paused": "󰝚  {title} - {artist} (pauzed)",
+    "on-click-middle": "",
+    "on-click-right": "",
+    "on-click-backward": "",
+    "on-click-forward": ""
+  },
+  "hyprland/workspaces": {
+    "tooltip": false,
+    "format": "{icon}",
+    "format-icons": {
+      "active": ""
+    },
+    "persistent-workspaces": {
+      "DP-1": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    }
+  },
+  "pulseaudio#output": {
+    "tooltip": false,
+    "format": "󰋋  {volume}%",
+    "format-muted": "󰟎  {volume}%",
+    "on-click": "wpctl set-mute @DEFAULT_SINK@ toggle",
+    "on-scroll-up": "wpctl set-volume @DEFAULT_SINK@ 5%+ --limit 1.0",
+    "on-scroll-down": "wpctl set-volume @DEFAULT_SINK@ 5%-"
+  },
+  "pulseaudio#input": {
+    "tooltip": false,
+    "format": "{format_source}",
+    "format-source": "  {volume}%",
+    "format-source-muted": "   {volume}%",
+    "on-click": "wpctl set-mute @DEFAULT_SOURCE@ toggle",
+    "on-scroll-up": "wpctl set-volume @DEFAULT_SOURCE@ 5%+ --limit 1.0",
+    "on-scroll-down": "wpctl set-volume @DEFAULT_SOURCE@ 5%-"
+  },
+  "clock": {
+    "tooltip": false,
+    "interval": 1,
+    "format": "  {:%H:%M:%S}"
+  }
 }
