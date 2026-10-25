@@ -57,6 +57,7 @@ hl.config({
 hl.config({
 	input = {
 		kb_layout = "us,ua",
+		kb_variant = "altgr-intl",
 		kb_options = "grp:alt_shift_toggle",
 	},
 })
