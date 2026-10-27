@@ -12,6 +12,7 @@ return {
 		---@type neotree.Config?
 		opts = {
 			close_if_last_window = true,
+			filesystem = { filtered_items = { hide_gitignored = true } },
 
 			-- fill any relevant options here
 		},
