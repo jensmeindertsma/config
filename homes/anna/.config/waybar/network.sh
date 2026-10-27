@@ -4,6 +4,17 @@ IFACE="proton-nl"
 IPV4_TEST="1.1.1.1"
 IPV6_TEST="2606:4700:4700::1111"
 
+# If Wi-Fi is blocked by rfkill, report disabled
+if rfkill list 2>/dev/null | awk '
+    /Wireless LAN/ {wifi=1; next}
+    /^[0-9]+:/ {wifi=0}
+    wifi && /Soft blocked: yes|Hard blocked: yes/ {blocked=1}
+    END {exit !blocked}
+'; then
+    echo '{"text":"disabled","alt":"disabled"}'
+    exit 0
+fi
+
 # Test IPv4 and IPv6 connectivity
 ping -4 -c 1 -W 2 "$IPV4_TEST" >/dev/null 2>&1
 CONNECTIVITY_IPV4=$?

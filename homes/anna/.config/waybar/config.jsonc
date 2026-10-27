@@ -1,24 +1,25 @@
 {
   "position": "bottom",
-  "modules-left": ["custom/date", "custom/network"],
-
-  "modules-center": ["hyprland/workspaces"],
-
+  "modules-left": [
+    "custom/date",
+    "custom/network"
+  ],
+  "modules-center": [
+    "hyprland/workspaces"
+  ],
   "modules-right": [
     "pulseaudio#output",
     "pulseaudio#input",
     "battery",
-    "clock",
+    "clock"
   ],
-
   "custom/date": {
     "tooltip": false,
     "interval": 5,
     "exec": "python3 ~/.config/waybar/date.py",
     "return-type": "json",
-    "format": "  {}",
+    "format": "  {}"
   },
-
   "custom/network": {
     "tooltip": false,
     "interval": 5,
@@ -26,32 +27,40 @@
     "return-type": "json",
     "format": "{icon}  {text}",
     "format-icons": {
+      "disabled": "󰤭",
       "down": "󰤮",
       "danger": "",
-      "safe": "󰤪",
-    },
+      "safe": "󰤪"
+    }
   },
-
   "hyprland/workspaces": {
     "tooltip": false,
     "format": "{icon}",
     "format-icons": {
-      "active": "",
+      "active": ""
     },
     "persistent-workspaces": {
-      "eDP-1": [1, 2, 3, 4, 5, 6, 7, 8, 9],
-    },
+      "eDP-1": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    }
   },
-
   "pulseaudio#output": {
     "tooltip": false,
     "format": "󰋋  {volume}%",
     "format-muted": "󰟎  {volume}%",
     "on-click": "wpctl set-mute @DEFAULT_SINK@ toggle",
     "on-scroll-up": "wpctl set-volume @DEFAULT_SINK@ 5%+ --limit 1.0",
-    "on-scroll-down": "wpctl set-volume @DEFAULT_SINK@ 5%-",
+    "on-scroll-down": "wpctl set-volume @DEFAULT_SINK@ 5%-"
   },
-
   "pulseaudio#input": {
     "tooltip": false,
     "format": "{format_source}",
@@ -59,18 +68,16 @@
     "format-source-muted": "   {volume}%",
     "on-click": "wpctl set-mute @DEFAULT_SOURCE@ toggle",
     "on-scroll-up": "wpctl set-volume @DEFAULT_SOURCE@ 5%+ --limit 1.0",
-    "on-scroll-down": "wpctl set-volume @DEFAULT_SOURCE@ 5%-",
+    "on-scroll-down": "wpctl set-volume @DEFAULT_SOURCE@ 5%-"
   },
-
   "battery": {
     "tooltip": false,
     "format": "󰂀 {capacity}%",
-    "format-charging": "󰂄 {capacity}%",
+    "format-charging": "󰂄 {capacity}%"
   },
-
   "clock": {
     "tooltip": false,
     "interval": 1,
-    "format": "  {:%H:%M:%S}",
-  },
+    "format": "  {:%H:%M:%S}"
+  }
 }

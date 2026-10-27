@@ -9,8 +9,7 @@ return {
 		formatters_by_ft = {
 			lua = { "stylua" },
 			rust = { "rustfmt", lsp_format = "fallback" },
-			json = { "prettier" },
-			jsonc = { "prettier" },
+			jsonc = { lsp_format = "prefer" },
 		},
 	},
 }

@@ -1,26 +1,19 @@
--- lazy.nvim
 return {
-	"folke/snacks.nvim",
-	---@type snacks.Config
-	opts = {
-		explorer = {
-			replace_netrw = true, -- Replace netrw with the snacks explorer
-			trash = true, -- Use the system trash when deleting files
-			-- your explorer configuration comes here
-			-- or leave it empty to use the default settings
-			-- refer to the configuration section below
+	{
+		"nvim-neo-tree/neo-tree.nvim",
+		branch = "v3.x",
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			"MunifTanjim/nui.nvim",
+			"nvim-tree/nvim-web-devicons", -- optional, but recommended
 		},
-		picker = {
-			files = {
-				hidden = true,
-				ignored = true,
-			},
-			sources = {
-				explorer = {
-					-- your explorer picker configuration comes here
-					-- or leave it empty to use the default settings
-				},
-			},
+		lazy = false, -- neo-tree will lazily load itself,
+		---@module "neo-tree"
+		---@type neotree.Config?
+		opts = {
+			close_if_last_window = true,
+
+			-- fill any relevant options here
 		},
 	},
 }
