@@ -20,25 +20,6 @@ vim.opt.rtp:prepend(lazypath)
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
--- Configure vim.opt settings
-vim.opt.number = true
-vim.opt.relativenumber = true
-
-vim.opt.expandtab = true -- Use spaces instead of literal tab characters
-vim.opt.tabstop = 2 -- A literal tab character displays as 4 spaces
-vim.opt.shiftwidth = 2 -- Indent by 4 spaces with Tab/>>/<<
-vim.opt.softtabstop = 4 -- Tab and Backspace use 4 spaces
-vim.opt.autoindent = true -- Copy indentation from the previous line
-vim.opt.smartindent = true -- Basic automatic indentation for code
-
-vim.opt.showmode = false
-
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
-
--- optionally enable 24-bit colour
-vim.opt.termguicolors = true
-
 -- Load plugin manager
 require("lazy").setup({
 	spec = {
@@ -47,6 +28,6 @@ require("lazy").setup({
 	},
 	-- Configure any other settings here. See the documentation for more details.
 	-- colorscheme that will be used when installing plugins.
-	install = { colorscheme = { "gruvbox" } },
+	install = { colorscheme = { "tokyonight" } },
 	checker = { enabled = true },
 })
