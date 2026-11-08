@@ -62,10 +62,9 @@ hl.config({
 	},
 })
 
-hl.gesture({
-	fingers = 3,
-	direction = "horizontal",
-	action = "workspace",
+hl.device({
+	name = "logitech-gaming-mouse-g502",
+	sensitivity = -0.15,
 })
 
 ---------------------
