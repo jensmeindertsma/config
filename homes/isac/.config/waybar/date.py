@@ -1,5 +1,6 @@
 from datetime import datetime
+import json
 
-now = datetime.now()
+now = datetime.now().strftime("%A %B %-d %Y")
 
-print(f"{now:%B} {now:%-d} ({now:%A})".lower())
+print(json.dumps({"text": now}))
