@@ -1,31 +1,22 @@
 {
-  "position": "bottom",
+  "position": "top",
   "modules-left": [
-    "custom/date",
-    "custom/network"
-  ],
-  "modules-center": [
     "hyprland/workspaces"
   ],
+  "modules-center": [],
   "modules-right": [
+    "custom/network",
     "pulseaudio#output",
     "pulseaudio#input",
     "battery",
     "clock"
   ],
-  "custom/date": {
-    "tooltip": false,
-    "interval": 5,
-    "exec": "python3 ~/.config/waybar/date.py",
-    "return-type": "json",
-    "format": "  {}"
-  },
   "custom/network": {
     "tooltip": false,
     "interval": 5,
     "exec": "bash ~/.config/waybar/network.sh",
     "return-type": "json",
-    "format": "{icon}  {text}",
+    "format": "<span foreground='#ff6d0f'>{icon}</span>  {text}",
     "format-icons": {
       "disabled": "󰤭",
       "down": "󰤮",
@@ -55,8 +46,8 @@
   },
   "pulseaudio#output": {
     "tooltip": false,
-    "format": "󰋋  {volume}%",
-    "format-muted": "󰟎  {volume}%",
+    "format": "<span foreground='#ff6d0f'>󰋋</span>  {volume}%",
+    "format-muted": "<span foreground='#ff6d0f'>󰟎</span>  {volume}%",
     "on-click": "wpctl set-mute @DEFAULT_SINK@ toggle",
     "on-scroll-up": "wpctl set-volume @DEFAULT_SINK@ 5%+ --limit 1.0",
     "on-scroll-down": "wpctl set-volume @DEFAULT_SINK@ 5%-"
@@ -64,20 +55,20 @@
   "pulseaudio#input": {
     "tooltip": false,
     "format": "{format_source}",
-    "format-source": "  {volume}%",
-    "format-source-muted": "   {volume}%",
+    "format-source": "<span foreground='#ff6d0f'></span>  {volume}%",
+    "format-source-muted": "<span foreground='#ff6d0f'></span>  {volume}%",
     "on-click": "wpctl set-mute @DEFAULT_SOURCE@ toggle",
     "on-scroll-up": "wpctl set-volume @DEFAULT_SOURCE@ 5%+ --limit 1.0",
     "on-scroll-down": "wpctl set-volume @DEFAULT_SOURCE@ 5%-"
   },
   "battery": {
     "tooltip": false,
-    "format": "󰂀 {capacity}%",
-    "format-charging": "󰂄 {capacity}%"
+    "format": "<span foreground='#ff6d0f'>󰂀</span> {capacity}%",
+    "format-charging": "<<span foreground='#ff6d0f'>󰂄</span {capacity}%"
   },
   "clock": {
     "tooltip": false,
     "interval": 1,
-    "format": "  {:%H:%M:%S}"
+    "format": "<span foreground='#ff6d0f'></span>  {:%H:%M:%S}"
   }
 }
