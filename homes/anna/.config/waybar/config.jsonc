@@ -1,16 +1,23 @@
 {
   "position": "top",
+  "spacing": 8,
   "modules-left": [
     "hyprland/workspaces"
   ],
   "modules-center": [],
   "modules-right": [
     "custom/network",
+    "custom/separator",
     "pulseaudio#output",
     "pulseaudio#input",
+    "custom/separator",
     "battery",
+    "custom/separator",
     "clock"
   ],
+  "custom/separator": {
+    "format": "/"
+  },
   "custom/network": {
     "tooltip": false,
     "interval": 5,

@@ -20,7 +20,7 @@ button:hover {
 }
 
 window#waybar {
-    background-color: transparent;
+    background-color: #333333;
 }
 
 #window,
@@ -30,12 +30,14 @@ window#waybar {
 #pulseaudio,
 #battery,
 #clock {
-  border: 0px solid #333333;
-  border-radius: 4px;
-  margin: 6px 4px;
-  padding: 4px 12px;
-  background-color: #333333;
+  padding: 5px 12px;
+  background-color: transparent;
   color: #ffffff;
+}
+
+#custom-separator {
+  color: #444444;
+  font-weight: 900;
 }
 
 #workspaces {
@@ -51,13 +53,4 @@ window#waybar {
 #workspaces button.active {
   color: #ff6d0f;
 }
-
-#workspaces {
-  margin-left: 10px;
-}
-
-#clock {
-  margin-right: 10px;
-}
-
 
