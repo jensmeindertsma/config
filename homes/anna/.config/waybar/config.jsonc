@@ -9,6 +9,7 @@
     "custom/network",
     "custom/separator",
     "pulseaudio#output",
+    "custom/separator",
     "pulseaudio#input",
     "custom/separator",
     "battery",
