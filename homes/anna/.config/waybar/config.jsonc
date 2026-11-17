@@ -1,10 +1,14 @@
 {
   "position": "top",
+
   "spacing": 8,
+
   "modules-left": [
     "hyprland/workspaces"
   ],
+
   "modules-center": [],
+  
   "modules-right": [
     "custom/network",
     "custom/separator",
@@ -14,24 +18,11 @@
     "custom/separator",
     "battery",
     "custom/separator",
-    "clock"
+    "clock#time",
+    "custom/separator",
+    "clock#date"
   ],
-  "custom/separator": {
-    "format": "/"
-  },
-  "custom/network": {
-    "tooltip": false,
-    "interval": 5,
-    "exec": "bash ~/.config/waybar/network.sh",
-    "return-type": "json",
-    "format": "<span foreground='#ff6d0f'>{icon}</span>  {text}",
-    "format-icons": {
-      "disabled": "󰤭",
-      "down": "󰤮",
-      "danger": "",
-      "safe": "󰤪"
-    }
-  },
+
   "hyprland/workspaces": {
     "tooltip": false,
     "format": "{icon}",
@@ -52,6 +43,25 @@
       ]
     }
   },
+
+  "custom/network": {
+    "tooltip": false,
+    "interval": 5,
+    "exec": "bash ~/.config/waybar/network.sh",
+    "return-type": "json",
+    "format": "<span foreground='#ff6d0f'>{icon}</span>  {text}",
+    "format-icons": {
+      "disabled": "󰤭",
+      "down": "󰤮",
+      "danger": "",
+      "safe": "󰤪"
+    }
+  },
+
+  "custom/separator": {
+    "format": "/"
+  },
+
   "pulseaudio#output": {
     "tooltip": false,
     "format": "<span foreground='#ff6d0f'>󰋋</span>  {volume}%",
@@ -69,14 +79,22 @@
     "on-scroll-up": "wpctl set-volume @DEFAULT_SOURCE@ 5%+ --limit 1.0",
     "on-scroll-down": "wpctl set-volume @DEFAULT_SOURCE@ 5%-"
   },
+
   "battery": {
     "tooltip": false,
     "format": "<span foreground='#ff6d0f'>󰂀</span> {capacity}%",
     "format-charging": "<<span foreground='#ff6d0f'>󰂄</span {capacity}%"
   },
-  "clock": {
-    "tooltip": false,
+
+  "clock#time": {
+    "tooltip": true,
     "interval": 1,
     "format": "<span foreground='#ff6d0f'></span>  {:%H:%M:%S}"
+  },
+
+  "clock#date": {
+    "tooltip": false,
+    "interval": 60,
+    "format": "<span foreground='#ff6d0f'></span>  {:%d/%m/%Y}"
   }
 }

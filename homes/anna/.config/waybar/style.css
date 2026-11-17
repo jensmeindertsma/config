@@ -20,7 +20,7 @@ button:hover {
 }
 
 window#waybar {
-    background-color: #333333;
+  background-color: #333333;
 }
 
 #window,
@@ -54,3 +54,6 @@ window#waybar {
   color: #ff6d0f;
 }
 
+#clock.date {
+  margin-left: 4px;
+}
