@@ -12,7 +12,7 @@ style = "bold red"
 
 [git_branch]
 symbol = "󰊢 "
-style = "bold cyan"
+style = "bold yellow"
 
 [git_status]
-style = "bold cyan"
+style = "bold yellow"
