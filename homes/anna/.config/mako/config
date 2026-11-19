@@ -1,7 +1,6 @@
-
-# ── Gruvbox Yellow ───────────────────
+# ── Gruvbox Blue ─────────────────────
 font=JetBrainsMono Nerd Font 10
-background-color=#d79921
+background-color=#458588
 text-color=#282828
 border-size=0
 border-radius=8
@@ -39,7 +38,7 @@ text-color=#282828
 border-color=#665c54
 
 [urgency=normal]
-background-color=#d79921
+background-color=#98971A
 text-color=#282828
 border-color=#504945
 
