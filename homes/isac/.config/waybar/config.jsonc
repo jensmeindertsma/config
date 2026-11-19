@@ -1,46 +1,28 @@
 {
-  "position": "bottom",
+  "position": "top",
+
+  "spacing": 8,
+
   "modules-left": [
-    "custom/date",
-    "custom/network"
-  ],
-  "modules-center": [
+    "hyprland/workspaces",
+    "custom/separator",
     "mpris"
   ],
+
+  "modules-center": [],
+  
   "modules-right": [
-    "hyprland/workspaces",
+    "custom/network",
+    "custom/separator",
     "pulseaudio#output",
+    "custom/separator",
     "pulseaudio#input",
-    "clock"
+    "custom/separator",
+    "clock#time",
+    "custom/separator",
+    "clock#date"
   ],
-  "custom/date": {
-    "tooltip": false,
-    "interval": 5,
-    "exec": "python3 ~/.config/waybar/date.py",
-    "return-type": "json",
-    "format": "  {}"
-  },
-  "custom/network": {
-    "tooltip": false,
-    "interval": 5,
-    "exec": "bash ~/.config/waybar/network.sh",
-    "return-type": "json",
-    "format": "{icon}  {text}",
-    "format-icons": {
-      "down": "󰤮",
-      "danger": "",
-      "safe": "󰤪"
-    }
-  },
-  "mpris": {
-    "tooltip": false,
-    "format": "󰝚  {title} - {artist}",
-    "format-paused": "󰝚  {title} - {artist} (pauzed)",
-    "on-click-middle": "",
-    "on-click-right": "",
-    "on-click-backward": "",
-    "on-click-forward": ""
-  },
+
   "hyprland/workspaces": {
     "tooltip": false,
     "format": "{icon}",
@@ -61,10 +43,39 @@
       ]
     }
   },
+
+  "mpris": {
+    "tooltip": false,
+    "format": "<span foreground='#ff6d0f'>󰝚</span>  {title} - {artist}",
+    "format-paused": "<span foreground='#ff6d0f'>󰝚</span>  {title} - {artist} (pauzed)",
+    "on-click-middle": "",
+    "on-click-right": "",
+    "on-click-backward": "",
+    "on-click-forward": ""
+  },
+
+  "custom/network": {
+    "tooltip": false,
+    "interval": 5,
+    "exec": "bash ~/.config/waybar/network.sh",
+    "return-type": "json",
+    "format": "<span foreground='#ff6d0f'>{icon}</span>  {text}",
+    "format-icons": {
+      "disabled": "󰤭",
+      "down": "󰤮",
+      "danger": "",
+      "safe": "󰤪"
+    }
+  },
+
+  "custom/separator": {
+    "format": "/"
+  },
+
   "pulseaudio#output": {
     "tooltip": false,
-    "format": "󰋋  {volume}%",
-    "format-muted": "󰟎  {volume}%",
+    "format": "<span foreground='#ff6d0f'>󰋋</span>  {volume}%",
+    "format-muted": "<span foreground='#ff6d0f'>󰟎</span>  {volume}%",
     "on-click": "wpctl set-mute @DEFAULT_SINK@ toggle",
     "on-scroll-up": "wpctl set-volume @DEFAULT_SINK@ 5%+ --limit 1.0",
     "on-scroll-down": "wpctl set-volume @DEFAULT_SINK@ 5%-"
@@ -72,15 +83,22 @@
   "pulseaudio#input": {
     "tooltip": false,
     "format": "{format_source}",
-    "format-source": "  {volume}%",
-    "format-source-muted": "   {volume}%",
+    "format-source": "<span foreground='#ff6d0f'></span>  {volume}%",
+    "format-source-muted": "<span foreground='#ff6d0f'></span>  {volume}%",
     "on-click": "wpctl set-mute @DEFAULT_SOURCE@ toggle",
     "on-scroll-up": "wpctl set-volume @DEFAULT_SOURCE@ 5%+ --limit 1.0",
     "on-scroll-down": "wpctl set-volume @DEFAULT_SOURCE@ 5%-"
   },
-  "clock": {
-    "tooltip": false,
+
+  "clock#time": {
+    "tooltip": true,
     "interval": 1,
-    "format": "  {:%H:%M:%S}"
+    "format": "<span foreground='#ff6d0f'></span>  {:%H:%M:%S}"
+  },
+
+  "clock#date": {
+    "tooltip": false,
+    "interval": 60,
+    "format": "<span foreground='#ff6d0f'></span>  {:%d/%m/%Y}"
   }
 }

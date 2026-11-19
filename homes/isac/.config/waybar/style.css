@@ -20,21 +20,24 @@ button:hover {
 }
 
 window#waybar {
-    background-color: #333333;
+  background-color: #333333;
 }
 
 #window,
-#custom-date,
 #custom-network,
 #mpris,
 #workspaces,
 #pulseaudio,
+#battery,
 #clock {
-  border-radius: 4px;
-  margin: 6px 4px;
-  padding: 4px 12px;
-  background-color: #A6A3A1;
-  color: #000000;
+  padding: 5px 12px;
+  background-color: transparent;
+  color: #ffffff;
+}
+
+#custom-separator {
+  color: #444444;
+  font-weight: 900;
 }
 
 #workspaces {
@@ -44,19 +47,13 @@ window#waybar {
 #workspaces button {
   padding-left: 7px;
   padding-right: 7px;
-  color: #000000;
+  color: #ffffff;
 }
 
 #workspaces button.active {
-  /* color: #ff6d0f; */
+  color: #ff6d0f;
 }
 
-#custom-date {
-  margin-left: 8px;
+#clock.date {
+  margin-right: 4px;
 }
-
-#clock {
-  margin-right: 8px
-}
-
-
